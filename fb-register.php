@@ -29,6 +29,7 @@ $check_seller_email = $get_seller_email->rowCount();
 if($check_seller_email > 0){
 	$row_seller_email = $get_seller_email->fetch();
 	$u_name = $row_seller_email->seller_user_name;
+	session_regenerate_id(true);
 	$_SESSION['seller_user_name']=$u_name;
 	unset($_SESSION['userData']['email']);
 	unset($_SESSION['userData']['first_name']);
@@ -240,8 +241,9 @@ if(isset($_POST['continue'])){
 		$regsiter_seller_id = $db->lastInsertId();
 		
 		if($insert_seller){
-		
-    	$_SESSION['seller_user_name'] = $u_name;		
+
+    	session_regenerate_id(true);
+    	$_SESSION['seller_user_name'] = $u_name;
 		$insert_seller_account = $db->insert("seller_accounts",array("seller_id" => $regsiter_seller_id));
 
 		if($paymentGateway == 1){

@@ -218,6 +218,7 @@ if(isset($_POST['admin_login'])){
     	  }
       }
     	
+      session_regenerate_id(true);
       $_SESSION['admin_email'] = $admin_email;
       $_SESSION['loggedin_time'] = time();
           

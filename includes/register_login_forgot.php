@@ -130,6 +130,7 @@ if(isset($_POST['register'])){
             $regsiter_seller_id = $db->lastInsertId();
 
             if($insert_seller){
+                session_regenerate_id(true);
                 $_SESSION['seller_user_name'] = $u_name;
                 $db->insert("seller_accounts", array("seller_id" => $regsiter_seller_id));
                 
@@ -223,6 +224,7 @@ if(isset($_POST['login'])){
                         array("u_email"=>$seller_user_name, "u_name"=>$seller_user_name, "u_pass"=>$row_seller->seller_pass));
                     
                     if($check_login->rowCount() == 1){
+                        session_regenerate_id(true);
                         $_SESSION['seller_user_name'] = $row_seller->seller_user_name;
                         $db->update("sellers", array("seller_status"=>'online', "seller_ip"=>get_real_user_ip()), array("seller_id"=>$row_seller->seller_id));
                         

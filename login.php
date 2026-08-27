@@ -58,6 +58,7 @@ if(isset($_POST['access'])){
                         ["seller_id" => $row_seller->seller_id]
                     );
 
+                    session_regenerate_id(true);
                     $_SESSION['seller_user_name'] = $row_seller->seller_user_name;
                     $success_login_msg = str_replace('{seller_user_name}', ucfirst($row_seller->seller_user_name), $lang['alert']['successfully_login']);
                     

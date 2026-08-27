@@ -215,6 +215,7 @@ $get_admin = $db->query("select * from admins where (admin_email=:a_email OR adm
     	  }
       }
     	
+      session_regenerate_id(true);
       $_SESSION['admin_email'] = $admin_email;
       $_SESSION['loggedin_time'] = time();
           
