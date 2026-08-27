@@ -7,6 +7,23 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Sicherheit
 
+- **Kritisch – unbenutzte `apis/`-REST-API entfernt (Auth-Bypass).** `apis/`
+  war eine über CodeIgniter 3 gebaute REST-API für eine Mobile App, die nie
+  gebaut/eingesetzt wurde (keine einzige Referenz darauf sonst irgendwo im
+  Code; Controller-Kommentare sprechen sogar von einer Arzt/Patient/Pfleger-
+  Domäne – offensichtlich unangepasstes Boilerplate aus einer anderen
+  Vorlage). Der Zugriffsschutz in
+  `apis/application/core/MY_Controller.php` verglich den API-Key so:
+  `if($this->input->post("apiKey") != $this->mobileApp_apiKey){ exit(); }`
+  – lose Vergleich (`!=`). Da `mobileApp_apiKey` nie konfiguriert wurde
+  (leerer String in der DB), lieferte ein Request ganz ohne `apiKey`-Feld
+  `NULL` von `input->post()`, und `NULL != ''` ist in PHP `false` – die
+  Prüfung ließ jeden unautorisierten Request durch. Dahinter lag u. a.
+  `Apis::data($table, $id)`, ein generischer „gib mir jede Zeile aus jeder
+  Tabelle zurück"-Endpunkt ohne Tabellen-Whitelist – erreichbar hätte das
+  z. B. `admins` (Passwort-Hashes) oder `payment_settings` (echte Stripe/
+  PayPal/AWS-Keys) offengelegt. Da keine App davon abhängt, wurde das
+  gesamte Verzeichnis entfernt statt nur gepatcht.
 - **Kritisch – PHP Object Injection behoben.** `checkout.php` hat die vom Käufer
   gewählten Bestell-Extras serialisiert und base64-kodiert in ein verstecktes
   Formularfeld geschrieben (`<input type="hidden" name="proposal_extras" ...>`).
