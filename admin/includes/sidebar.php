@@ -16,14 +16,11 @@ echo "<script>window.open('login','_self');</script>";
   <li class="menu-item-has-children dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Settings"> <i class="menu-icon fa fa-cog"></i> Settings</a>
     <ul class="sub-menu children dropdown-menu">
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?general_settings">General Settings</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?layout_settings">Layout Settings</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?payment_settings">Payment Settings</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?mail_settings">Mail Server Settings</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?email_templates">Email Templates</a></li>
+      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?general">General Settings</a></li>
+      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?payment">Payment Settings</a></li>
+      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?mail-server">Mail Server Settings</a></li>
+      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?mail-templates">Email Templates</a></li>
       <li><i class="fa  fa-arrow-circle-right"></i><a href="index?api_settings">Api Settings</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?app_license">Application License</a></li>
-      <li><i class="fa  fa-arrow-circle-right"></i><a href="index?app_update">Application Update</a></li>
     </ul>
   </li>
 
@@ -58,9 +55,9 @@ echo "<script>window.open('login','_self');</script>";
       <i class="menu-icon fa fa fa-rss"></i> Blog
     </a>
     <ul class="sub-menu children dropdown-menu">
-      <li><i class="fa fa-arrow-circle-right"></i><a href="index?post_categories"> Categories </a></li>
-      <li><i class="fa fa-arrow-circle-right"></i><a href="index?posts"> Posts </a></li>
-      <li><i class="fa fa-arrow-circle-right"></i><a href="index?post_comments"> Comments </a></li>
+      <li><i class="fa fa-arrow-circle-right"></i><a href="index?blog_categories"> Categories </a></li>
+      <li><i class="fa fa-arrow-circle-right"></i><a href="index?blog"> Posts </a></li>
+      <li><i class="fa fa-arrow-circle-right"></i><a href="index?blog_comments"> Comments </a></li>
     </ul>
   </li><!-- li Ends --->
 
