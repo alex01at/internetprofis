@@ -43,6 +43,21 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Geändert
+
+- **Update-Anzeige reagiert jetzt auf veröffentlichte Releases statt auf
+  jeden Commit.** Vorher zeigte `admin/app_update.php` jeden Push auf
+  `main` sofort als "Update verfügbar" — jetzt erst, wenn jemand
+  bewusst eine [GitHub Release](https://github.com/alex01at/internetprofis/releases)
+  veröffentlicht. Ruft dafür `/releases/latest` statt `/commits/main`
+  ab und löst den zugehörigen Tag über `/commits/{tag}` auf; zeigt
+  zusätzlich den Release-Text über der Commit-Liste an. Klarer Hinweis,
+  falls noch kein Release existiert. Tag `v1.0.0` wurde als erster
+  Kandidat gepusht — **muss aber noch einmalig manuell auf GitHub als
+  echter Release veröffentlicht werden** (Releases → Draft a new
+  release → v1.0.0 auswählen → Publish), das kann ich von hier aus
+  nicht ohne API-Token auslösen.
+
 ### Hinzugefügt
 
 - **Echte, sichere Auto-Update-Funktion** in `admin/app_update.php` (ersetzt
