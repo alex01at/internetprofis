@@ -46,7 +46,7 @@ echo "<script>window.open('view_proposals','_self');</script>";
 <meta name="keywords" content="freelance, freelancer, gigs, onlinejobs, proposals, sellers, buyers">
 <meta name="author" content="<?= $site_author; ?>">
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+<link href="../fonts/roboto.css" rel="stylesheet">
 <link href="../styles/bootstrap.css" rel="stylesheet">
 <link href="../styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 <link href="../styles/styles.css" rel="stylesheet">

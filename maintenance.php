@@ -32,7 +32,7 @@ if($enable_maintenance_mode == "no"){
     <title><?= $site_name; ?> In Maintenance Mode</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+    <link href="fonts/roboto.css" rel="stylesheet">
     <link href="styles/bootstrap.css" rel="stylesheet">
 
     <!--- stylesheet width modifications --->

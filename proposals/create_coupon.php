@@ -20,9 +20,9 @@ $login_seller_language = $row_login_seller->seller_language;
 <meta name="description" content="<?= $site_desc; ?>">
 <meta name="keywords" content="<?= $site_keywords; ?>">
 <meta name="author" content="<?= $site_author; ?>">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+<link href="../fonts/roboto.css" rel="stylesheet">
 <link href="../styles/bootstrap.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
+<link href="../styles/summernote-0.8.16/summernote-bs4.min.css" rel="stylesheet">
 <link href="../styles/styles.css" rel="stylesheet">
 <link href="../styles/user_nav_styles.css" rel="stylesheet">
 <link href="../font_awesome/css/font-awesome.css" rel="stylesheet">

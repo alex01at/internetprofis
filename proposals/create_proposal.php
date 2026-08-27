@@ -54,7 +54,7 @@ if($enable_unlimited_revisions == 1){
     
     <!-- CSS Assets -->
     <link href="../styles/bootstrap.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link href="../styles/summernote-0.8.18/summernote-bs4.min.css" rel="stylesheet">
     <link href="../styles/styles.css" rel="stylesheet">
     <link href="../styles/user_nav_styles.css" rel="stylesheet">
     <link href="../font_awesome/css/font-awesome.css" rel="stylesheet">

@@ -32,7 +32,7 @@ $count_declined_proposals = $db->count("proposals",array("proposal_seller_id" =>
 	<meta name="description" content="<?= $site_desc; ?>">
 	<meta name="keywords" content="<?= $site_keywords; ?>">
 	<meta name="author" content="<?= $site_author; ?>">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+	<link href="../fonts/roboto.css" rel="stylesheet">
 	<link href="../styles/bootstrap.css" rel="stylesheet">
 	<link href="../styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 	<link href="../styles/styles.css" rel="stylesheet">

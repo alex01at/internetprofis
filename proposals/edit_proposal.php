@@ -120,7 +120,7 @@ $img_4_extension = pathinfo($d_proposal_img4,PATHINFO_EXTENSION);
   <meta name="keywords" content="<?= $site_keywords; ?>">
   <meta name="author" content="<?= $site_author; ?>">
   <link href="../styles/bootstrap.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
+  <link href="../styles/summernote-0.8.16/summernote-bs4.min.css" rel="stylesheet">
   <link href="../styles/styles.css" rel="stylesheet">
   <?php if($paymentGateway == 1){ ?>
   <link href="../plugins/paymentGateway/proposals/styles/styles.css" rel="stylesheet">

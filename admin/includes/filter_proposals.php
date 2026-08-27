@@ -108,7 +108,7 @@ $videoPlugin = $core->checkPlugin("videoPlugin");;
     <?php if(!empty($site_favicon)){ ?>
     <link rel="shortcut icon" href="<?= $site_favicon; ?>" type="image/x-icon">
     <?php } ?>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800'rel='stylesheet'type='text/css'>
+    <link href='../../fonts/opensans.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/sweat_alert.css" >
     <script type="text/javascript" src="assets/js/ie.js"></script>
     <script type="text/javascript" src="assets/js/sweat_alert.js"></script>

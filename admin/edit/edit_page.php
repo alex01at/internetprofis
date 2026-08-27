@@ -54,7 +54,7 @@ if(isset($_GET['edit_page'])){
 ?>
 
 <!-- Summernote Assets -->
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<link href="../../styles/summernote-0.8.18/summernote-bs4.min.css" rel="stylesheet">
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="../js/summernote.js"></script>

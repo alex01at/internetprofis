@@ -18,7 +18,7 @@ if(isset($_GET['tag'])){
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="<?= $site_author; ?>">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100" rel="stylesheet">
+	<link href="../fonts/roboto.css" rel="stylesheet">
 	<link href="<?= $site_url; ?>/styles/bootstrap.css" rel="stylesheet">
 	<link href="<?= $site_url; ?>/styles/custom.css" rel="stylesheet">
 	<!-- Custom css code from modified in admin panel --->
