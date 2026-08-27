@@ -146,7 +146,6 @@ if(isset($_POST['continue'])){
 	curl_setopt($ch, CURLOPT_FILE, $fp);
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_exec($ch);
-	curl_close($ch);
 	fclose($fp);
 	
 	$check_seller_username = $db->count("sellers",array("seller_user_name" => $u_name));

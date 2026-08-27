@@ -103,7 +103,6 @@ function sendPushMessage($notification_id){
    ));
    $response = curl_exec($curl);
    $err = curl_error($curl);
-   curl_close($curl);
    /// End For Push Notification
 
 }
@@ -149,7 +148,6 @@ function check_purchase(){
    ));
 
    $response = curl_exec($curl);
-   curl_close($curl);
    
    return $response;
 

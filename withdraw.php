@@ -84,7 +84,6 @@ if(isset($_POST['withdraw'])){
 
 		$err = curl_error($curl);
 
-		curl_close($curl);
 
 		if($err){
 

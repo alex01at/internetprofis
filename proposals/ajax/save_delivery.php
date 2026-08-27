@@ -40,7 +40,6 @@ function watermarkImage($image,$data){
 		ob_start();
 		imagejpeg($to_image,null,100);
 		$image_contents = ob_get_clean();
-		imagedestroy($to_image);
 
 		uploadToS3("$image","",$image_contents);
 

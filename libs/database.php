@@ -26,8 +26,11 @@ class Database {
         if($host == "localhost") { $host = "127.0.0.1"; }
 
         try {
+            // Pdo\Mysql::ATTR_INIT_COMMAND replaces PDO::MYSQL_ATTR_INIT_COMMAND as of
+            // PHP 8.4; the old constant is deprecated (but still works) since PHP 8.5.
+            $initCommandAttr = class_exists('Pdo\\Mysql') ? \Pdo\Mysql::ATTR_INIT_COMMAND : PDO::MYSQL_ATTR_INIT_COMMAND;
             $this->con = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8mb4", $user, $pass, array(
-                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'",
+                $initCommandAttr => "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'",
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
             ));

@@ -38,7 +38,6 @@
 	$response = curl_exec($curl);
 	$err = curl_error($curl);
 
-	curl_close($curl);
 
 	if($err){
 		echo "cURL Error #:".$err;

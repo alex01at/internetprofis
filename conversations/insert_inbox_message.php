@@ -69,7 +69,6 @@ curl_setopt_array($curl, array(
 ));
 $response = curl_exec($curl);
 $err = curl_error($curl);
-curl_close($curl);
 // End
 
 $update_inbox_sellers = $db->update("inbox_sellers",array("sender_id" => $login_seller_id,"receiver_id" => $receiver_seller_id,"message_status" => $message_status,"time"=>$time,"message_id" => $last_message_id,'popup'=>'1'),array("message_group_id" => $message_group_id));
