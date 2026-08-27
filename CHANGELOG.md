@@ -43,6 +43,28 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Behoben (Bugs) – Navigation & doppelte Seitenstruktur
+
+- **"Application Update"-Link war in der falschen Datei.** Der Link
+  wurde ursprünglich in `admin/includes/sidebar.php` ergänzt – diese
+  Datei wird aber in der echten Seite **gar nicht eingebunden**. Die
+  tatsächlich angezeigte Navigation kommt aus `admin/includes/menu.php`.
+  Alle Link-Korrekturen dort waren dadurch wirkungslos. Link jetzt an
+  der richtigen Stelle (`menu.php`) ergänzt.
+- **Doppelte alte Seitenstruktur bei "Filter Proposals" gefunden und
+  behoben.** Zwei parallele Alt-Implementierungen derselben Funktion:
+  `admin/filter_proposals.php` (über den Router erreichbar, aber gab
+  mitten in der Seite ein eigenes `</head><body>` samt eigener
+  Sidebar/Header aus – ungültiges, verschachteltes HTML) und
+  `admin/includes/filter_proposals.php` (eine zweite, fast identische
+  716-Zeilen-Kopie, auf die alle fünf "View Proposals"-Seiten ihr
+  Filterformular direkt als eigenständigen Seitenaufruf schickten –
+  hier wurde `sidebar.php` tatsächlich gerendert, mit den vorher
+  "reparierten", aber wirkungslosen Links). Auf die geroutete Version
+  konsolidiert, redundante Datei entfernt, Filterlogik selbst
+  unverändert. `admin/includes/sidebar.php` danach komplett entfernt,
+  da bestätigt tot.
+
 ### Geändert
 
 - **Update-Anzeige reagiert jetzt auf veröffentlichte Releases statt auf
