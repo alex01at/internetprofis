@@ -6,6 +6,10 @@ config.php
 /order_files/*
 !/order_files/.htaccess
 /conversations/conversations_files/*
+!/conversations/conversations_files/.gitkeep
 /proposals/proposal_files/*
+!/proposals/proposal_files/.gitkeep
 /requests/request_files/*
+!/requests/request_files/.gitkeep
 /ticket_files/*
+!/ticket_files/.gitkeep
