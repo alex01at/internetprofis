@@ -1,6 +1,10 @@
 # Contains live DB credentials
 config.php
 
+# Tracks which commit is deployed on this server (written by the
+# in-admin updater); local deployment state, not part of the script
+/admin/.deployed_version
+
 # Local working screenshots, not part of the script
 /screenshots/
 

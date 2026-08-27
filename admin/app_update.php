@@ -6,6 +6,7 @@ echo "<script>window.open('login','_self');</script>";
 
 $githubRepo = 'alex01at/internetprofis';
 $githubBranch = 'main';
+$versionFile = $dir.'admin/.deployed_version';
 
 function readLocalGitHead($rootDir){
 	$rootDir = rtrim($rootDir, '/\\');
@@ -31,12 +32,20 @@ function readLocalGitHead($rootDir){
 	return preg_match('/^[0-9a-f]{40}$/', $head) ? $head : null;
 }
 
+function readDeployedVersion($versionFile, $rootDir){
+	if(is_file($versionFile)){
+		$sha = trim(file_get_contents($versionFile));
+		if(preg_match('/^[0-9a-f]{40}$/', $sha)){ return $sha; }
+	}
+	return readLocalGitHead($rootDir);
+}
+
 function githubApiGet($url){
 	$context = stream_context_create([
 		'http' => [
 			'method'  => 'GET',
 			'header'  => "User-Agent: internetprofis-admin\r\nAccept: application/vnd.github+json\r\n",
-			'timeout' => 5,
+			'timeout' => 8,
 		],
 	]);
 	$response = @file_get_contents($url, false, $context);
@@ -45,17 +54,150 @@ function githubApiGet($url){
 	return is_array($data) ? $data : null;
 }
 
-$localSha = readLocalGitHead($dir);
-$compareData = null;
-$latestCommit = null;
-$apiError = false;
+function githubRawGet($repo, $sha, $path){
+	$url = "https://raw.githubusercontent.com/$repo/$sha/".implode('/', array_map('rawurlencode', explode('/', $path)));
+	$context = stream_context_create([
+		'http' => [
+			'method'  => 'GET',
+			'header'  => "User-Agent: internetprofis-admin\r\n",
+			'timeout' => 15,
+		],
+	]);
+	return @file_get_contents($url, false, $context);
+}
 
-if($localSha){
-	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$localSha...$githubBranch");
+// Paths this mechanism must never write to or delete, no matter what a diff
+// says -- defense in depth on top of the fact that none of these are
+// actually tracked in the repo (they're gitignored) so a legitimate diff
+// should never mention them.
+function isProtectedPath($relativePath){
+	$protected = [
+		'config.php',
+		'admin/.deployed_version',
+	];
+	if(in_array($relativePath, $protected, true)){ return true; }
+	$protectedPrefixes = [
+		'order_files/',
+		'conversations/conversations_files/',
+		'proposals/proposal_files/',
+		'requests/request_files/',
+		'ticket_files/',
+		'.git/',
+	];
+	foreach($protectedPrefixes as $prefix){
+		if(strpos($relativePath, $prefix) === 0){ return true; }
+	}
+	return false;
+}
+
+// Same shape of validation as the plugin installer's zip-slip checks: no
+// traversal, no absolute paths, resolved target must stay inside $rootDir.
+function isSafeRelativePath($relativePath, $rootDir){
+	if($relativePath === '' || strpos($relativePath, "\0") !== false){ return false; }
+	if($relativePath[0] === '/' || preg_match('#^[a-zA-Z]:#', $relativePath)){ return false; }
+	$normalized = str_replace('\\', '/', $relativePath);
+	if(in_array('..', explode('/', $normalized), true)){ return false; }
+	if(isProtectedPath($normalized)){ return false; }
+	$targetDir = dirname($rootDir.'/'.$normalized);
+	@mkdir($targetDir, 0755, true);
+	$targetDirReal = realpath($targetDir);
+	$rootReal = realpath($rootDir);
+	if($targetDirReal === false || $rootReal === false || strpos($targetDirReal, $rootReal) !== 0){ return false; }
+	return true;
+}
+
+function applyUpdate($githubRepo, $fromSha, $toSha, $rootDir, $versionFile){
+	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$fromSha...$toSha");
+	if($compareData === null){
+		return ['ok' => false, 'message' => 'Could not reach GitHub to fetch the file list. Nothing was changed.'];
+	}
+	$files = $compareData['files'] ?? [];
+	if(count($files) >= 300){
+		return ['ok' => false, 'message' => 'This update touches too many files to apply safely from here (GitHub only lists the first 300 in a comparison). Please sync manually this time.'];
+	}
+
+	$written = [];
+	$deleted = [];
+	$failed = [];
+
+	foreach($files as $file){
+		$status = $file['status'];
+		$path = $file['filename'];
+
+		if($status === 'removed' || $status === 'renamed'){
+			$oldPath = $status === 'renamed' ? $file['previous_filename'] : $path;
+			if(isSafeRelativePath($oldPath, $rootDir)){
+				$fullOld = $rootDir.'/'.$oldPath;
+				if(is_file($fullOld)){
+					if(@unlink($fullOld)){ $deleted[] = $oldPath; }
+					else{ $failed[] = $oldPath; }
+				}
+			}
+		}
+
+		if($status === 'removed'){ continue; }
+
+		if(!isSafeRelativePath($path, $rootDir)){
+			$failed[] = $path;
+			continue;
+		}
+
+		$content = githubRawGet($githubRepo, $toSha, $path);
+		if($content === null || $content === false){
+			$failed[] = $path;
+			continue;
+		}
+
+		$fullPath = $rootDir.'/'.$path;
+		if(@file_put_contents($fullPath, $content) === false){
+			$failed[] = $path;
+		}else{
+			$written[] = $path;
+		}
+	}
+
+	if(!empty($failed)){
+		return [
+			'ok' => false,
+			'message' => count($failed).' file(s) could not be written (check file permissions). The deployed-version marker was NOT updated, so a retry will attempt the same files again.',
+			'written' => $written, 'deleted' => $deleted, 'failed' => $failed,
+		];
+	}
+
+	@file_put_contents($versionFile, $toSha);
+
+	return [
+		'ok' => true,
+		'message' => 'Updated successfully: '.count($written).' file(s) written, '.count($deleted).' file(s) removed.',
+		'written' => $written, 'deleted' => $deleted, 'failed' => $failed,
+	];
+}
+
+$deployedSha = readDeployedVersion($versionFile, $dir);
+$compareData = null;
+$latestCommit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/$githubBranch");
+$apiError = ($latestCommit === null);
+$updateResult = null;
+
+if(!$apiError && $deployedSha){
+	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$deployedSha...".$latestCommit['sha']);
 	if($compareData === null){ $apiError = true; }
-}else{
-	$latestCommit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/$githubBranch");
-	if($latestCommit === null){ $apiError = true; }
+}
+
+if(isset($_POST['init_version']) && $latestCommit){
+	@file_put_contents($versionFile, $latestCommit['sha']);
+	echo "<script>window.open('index?app_update','_self');</script>";
+}
+
+if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])){
+	$targetSha = preg_replace('/[^0-9a-f]/', '', $_POST['target_sha']);
+	if(preg_match('/^[0-9a-f]{40}$/', $targetSha)){
+		$updateResult = applyUpdate($githubRepo, $deployedSha, $targetSha, rtrim($dir, '/\\'), $versionFile);
+		if($updateResult['ok']){
+			$deployedSha = $targetSha;
+			$compareData = null;
+		}
+	}
 }
 
 ?>
@@ -93,10 +235,10 @@ if($localSha){
           <div class="form-group row mb-0 pl-3 pr-3 pb-2 pt-2"><!--- form-group row Starts --->
           <label class="col-md-3 control-label"> Deployed Commit : </label>
           <div class="col-md-9 text-right">
-          <?php if($localSha){ ?>
-            <a href="https://github.com/<?= $githubRepo; ?>/commit/<?= $localSha; ?>" target="_blank"><code><?= substr($localSha, 0, 10); ?></code></a>
+          <?php if($deployedSha){ ?>
+            <a href="https://github.com/<?= $githubRepo; ?>/commit/<?= $deployedSha; ?>" target="_blank"><code><?= substr($deployedSha, 0, 10); ?></code></a>
           <?php }else{ ?>
-            <span class="text-muted">Could not be determined (no .git found on this server)</span>
+            <span class="text-muted">Unknown -- not tracked yet on this server</span>
           <?php } ?>
           </div>
           </div><!--- form-group row Ends --->
@@ -110,45 +252,57 @@ if($localSha){
     <div class="card mb-5"><!--- card mb-5 Starts --->
       <div class="card-header"><!--- card-header Starts --->
       <h4 class="h4 mb-0">
-      <i class="fa fa-github fa-fw"></i> Update Check
+      <i class="fa fa-github fa-fw"></i> Update
       </h4>
       </div><!--- card-header Ends --->
       <div class="card-body"><!--- card-body Starts --->
 
+      <?php if($updateResult){ ?>
+        <div class="alert <?= $updateResult['ok'] ? 'alert-success' : 'alert-danger'; ?>">
+          <?= htmlspecialchars($updateResult['message'], ENT_QUOTES, 'UTF-8'); ?>
+        </div>
+      <?php } ?>
+
       <?php if($apiError){ ?>
         <div class="alert alert-warning mb-0">Could not reach GitHub to check for updates right now. Try again in a moment.</div>
 
-      <?php }elseif($compareData){ ?>
-        <?php if($compareData['status'] === 'identical' || $compareData['status'] === 'behind'){ ?>
-          <div class="alert alert-success mb-0">You're running the latest version of the code (<?= $githubBranch; ?>).</div>
-        <?php }elseif($compareData['status'] === 'ahead'){ ?>
-          <div class="alert alert-info mb-0">This deployment is <?= (int) $compareData['ahead_by']; ?> commit(s) ahead of <?= $githubBranch; ?> on GitHub (local, unpushed changes?).</div>
-        <?php }else{ ?>
-          <div class="alert alert-warning mb-3">This deployment is <?= (int) $compareData['behind_by']; ?> commit(s) behind <?= $githubBranch; ?> on GitHub.</div>
-          <ul class="list-unstyled mb-3">
-          <?php foreach(array_slice($compareData['commits'], -10) as $commit){ ?>
-            <li class="mb-2">
-              <a href="<?= $commit['html_url']; ?>" target="_blank"><code><?= substr($commit['sha'], 0, 10); ?></code></a>
-              &mdash; <?= htmlspecialchars(strtok($commit['commit']['message'], "\n"), ENT_QUOTES, 'UTF-8'); ?>
-              <small class="text-muted">(<?= htmlspecialchars($commit['commit']['author']['name'], ENT_QUOTES, 'UTF-8'); ?>, <?= date('Y-m-d', strtotime($commit['commit']['author']['date'])); ?>)</small>
-            </li>
-          <?php } ?>
-          </ul>
-          <a class="btn btn-success" href="<?= $compareData['html_url']; ?>" target="_blank">View full comparison on GitHub</a>
-        <?php } ?>
+      <?php }elseif(!$deployedSha){ ?>
+        <p>This server doesn't have a tracked deployment version yet (no <code>admin/.deployed_version</code> and no <code>.git</code> folder found).</p>
+        <p>If the code currently on this server already matches <code><?= $githubBranch; ?></code> on GitHub (e.g. you just finished a manual sync), mark it as up to date to start tracking updates from here on:</p>
+        <form method="post" onsubmit="return confirm('This only records the current commit as your baseline -- it does not change any files. Only do this right after the server\'s files actually match GitHub main. Continue?');">
+          <input type="hidden" name="init_version" value="1">
+          <button type="submit" class="btn btn-success">Mark current server state as up to date (<code><?= substr($latestCommit['sha'], 0, 10); ?></code>)</button>
+        </form>
 
-      <?php }elseif($latestCommit){ ?>
-        <p>Deployed commit could not be detected on this server, so a direct comparison isn't possible. Latest commit on <?= $githubBranch; ?>:</p>
-        <p>
-          <a href="<?= $latestCommit['html_url']; ?>" target="_blank"><code><?= substr($latestCommit['sha'], 0, 10); ?></code></a>
-          &mdash; <?= htmlspecialchars(strtok($latestCommit['commit']['message'], "\n"), ENT_QUOTES, 'UTF-8'); ?>
-          <small class="text-muted">(<?= date('Y-m-d', strtotime($latestCommit['commit']['author']['date'])); ?>)</small>
-        </p>
+      <?php }elseif($compareData['status'] === 'identical' || $compareData['status'] === 'behind'){ ?>
+        <div class="alert alert-success mb-0">You're running the latest version of the code (<?= $githubBranch; ?>).</div>
+
+      <?php }elseif($compareData['status'] === 'ahead'){ ?>
+        <div class="alert alert-info mb-0">This deployment is <?= (int) $compareData['ahead_by']; ?> commit(s) ahead of <?= $githubBranch; ?> on GitHub (local, unpushed changes?).</div>
+
+      <?php }else{ ?>
+        <div class="alert alert-warning mb-3">This deployment is <?= (int) $compareData['behind_by']; ?> commit(s) behind <?= $githubBranch; ?> on GitHub (<?= count($compareData['files'] ?? []); ?> file(s) changed).</div>
+        <ul class="list-unstyled mb-3">
+        <?php foreach(array_slice($compareData['commits'], -10) as $commit){ ?>
+          <li class="mb-2">
+            <a href="<?= $commit['html_url']; ?>" target="_blank"><code><?= substr($commit['sha'], 0, 10); ?></code></a>
+            &mdash; <?= htmlspecialchars(strtok($commit['commit']['message'], "\n"), ENT_QUOTES, 'UTF-8'); ?>
+            <small class="text-muted">(<?= htmlspecialchars($commit['commit']['author']['name'], ENT_QUOTES, 'UTF-8'); ?>, <?= date('Y-m-d', strtotime($commit['commit']['author']['date'])); ?>)</small>
+          </li>
+        <?php } ?>
+        </ul>
+        <a class="btn btn-secondary mr-2" href="<?= $compareData['html_url']; ?>" target="_blank">View full comparison on GitHub</a>
+        <form method="post" class="d-inline" onsubmit="return confirm('This will fetch and overwrite <?= count($compareData['files']); ?> file(s) on this server directly from GitHub, and delete files that were removed upstream. Make sure you have a backup. Continue?');">
+          <input type="hidden" name="apply_update" value="1">
+          <input type="hidden" name="target_sha" value="<?= htmlspecialchars($latestCommit['sha'], ENT_QUOTES, 'UTF-8'); ?>">
+          <button type="submit" class="btn btn-success">Update now</button>
+        </form>
       <?php } ?>
 
       <p class="text-muted mt-3 mb-0">
-        Updates are pulled via <code>git</code> on the server (e.g. <code>git pull</code>), not through this page.
-        This page only checks and reports the status &mdash; it never downloads, extracts, or runs anything.
+        Fetches only the changed files directly from <code>github.com/<?= $githubRepo; ?></code> over HTTPS and writes them in place --
+        no ZIP upload, no arbitrary source, no SQL execution. <code>config.php</code> and all folders holding real
+        user-submitted content are always left untouched.
       </p>
 
       </div><!--- card-body Ends --->
