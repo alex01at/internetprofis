@@ -7,6 +7,26 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Entfernt
 
+- **Toter/doppelter CSS- und Vendor-Code entfernt** (353 Dateien,
+  ~168.000 Zeilen). Vor jeder Löschung projektweit (alle `.php` **und**
+  `.js`) geprüft, ob wirklich keine Referenz mehr existiert; auffällige
+  Zufallstreffer einzeln nachgeprüft und als unabhängige
+  Namensgleichheit bestätigt.
+  - Frontend: `sweat_alert_backup.css` (byte-identisches Duplikat von
+    `sweat_alert.css`), `footer.css` (0 Bytes), `chosen.css`,
+    `home.css`, `jquery-ui.css` + `js/jquery-ui.js` (nirgends
+    eingebunden). **Nicht** gelöscht: `styles/summernote.css` – wird
+    zwar nicht eingebunden, aber `summernote.js` (der Editor) ist im
+    Admin aktiv in Nutzung, sieht eher nach fehlendem `<link>` als
+    nach totem Code aus.
+  - Admin: `core.min.css`, `icon-font.css`, `style.min.css`
+    (unbenutzte Build-Varianten). Von 29 gebündelten Vendor-Plugins in
+    `admin/src/plugins/` waren **26 komplett unreferenziert** (nur
+    `apexcharts`, `cropperjs`, `datatables` werden benutzt) – u. a.
+    Bootstrap, Select2, Fullcalendar, SweetAlert2, Fancybox, Dropzone,
+    jVectorMap. Alle 5 Ordner in `admin/src/fonts/` waren unbenutzte
+    Quell-Kopien der Icon-Fonts – die tatsächlich geladenen Dateien
+    liegen komplett eigenständig in `admin/vendors/fonts/`.
 - **`admin_old/` komplett entfernt** (11 MB, 181 Dateien). Systematischer
   Abgleich bestätigte: jede Seite ist im neuen `admin/` vorhanden (teils
   umbenannt/umstrukturiert), bewusst nicht mehr relevant (Kaufcode-/
