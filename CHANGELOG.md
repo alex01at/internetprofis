@@ -15,10 +15,17 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   - Frontend: `sweat_alert_backup.css` (byte-identisches Duplikat von
     `sweat_alert.css`), `footer.css` (0 Bytes), `chosen.css`,
     `home.css`, `jquery-ui.css` + `js/jquery-ui.js` (nirgends
-    eingebunden). **Nicht** gelöscht: `styles/summernote.css` – wird
-    zwar nicht eingebunden, aber `summernote.js` (der Editor) ist im
-    Admin aktiv in Nutzung, sieht eher nach fehlendem `<link>` als
-    nach totem Code aus.
+    eingebunden). Nachtrag: `styles/summernote.css` zunächst stehen
+    gelassen, da der Editor aktiv genutzt wird – Nachprüfung ergab
+    aber, dass alle drei Editor-Seiten (`admin/insert/insert_article.php`,
+    `admin/insert/insert_blog_posts.php`, `admin/edit/edit_term.php`)
+    das Stylesheet bereits über ein CDN laden
+    (`cdn.jsdelivr.net/npm/summernote@0.8.16`), kein fehlender Link
+    also – die lokale Datei war wirklich unbenutzt und wurde
+    nachträglich ebenfalls entfernt. Nebenbei aufgefallen: das ist die
+    einzige Stelle im Admin-Panel, die nicht selbst gehostet wird
+    (alles andere liegt lokal unter `admin/src`/`admin/vendors`) —
+    nicht behoben, da nicht angefragt, aber erwähnenswert.
   - Admin: `core.min.css`, `icon-font.css`, `style.min.css`
     (unbenutzte Build-Varianten). Von 29 gebündelten Vendor-Plugins in
     `admin/src/plugins/` waren **26 komplett unreferenziert** (nur
