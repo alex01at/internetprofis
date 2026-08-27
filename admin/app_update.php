@@ -5,7 +5,6 @@ echo "<script>window.open('login','_self');</script>";
 }else{
 
 $githubRepo = 'alex01at/internetprofis';
-$githubBranch = 'main';
 $versionFile = $dir.'admin/.deployed_version';
 
 function readLocalGitHead($rootDir){
@@ -175,11 +174,22 @@ function applyUpdate($githubRepo, $fromSha, $toSha, $rootDir, $versionFile){
 
 $deployedSha = readDeployedVersion($versionFile, $dir);
 $compareData = null;
-$latestCommit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/$githubBranch");
-$apiError = ($latestCommit === null);
 $updateResult = null;
 
-if(!$apiError && $deployedSha){
+// Updates are keyed off published GitHub Releases, not raw commits -- so an
+// update only appears here once someone deliberately tags a checkpoint as
+// ready, rather than after every single push to main.
+$latestRelease = githubApiGet("https://api.github.com/repos/$githubRepo/releases/latest");
+$noReleases = ($latestRelease === null);
+$latestCommit = null;
+$apiError = false;
+
+if(!$noReleases){
+	$latestCommit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/".rawurlencode($latestRelease['tag_name']));
+	$apiError = ($latestCommit === null);
+}
+
+if(!$apiError && !$noReleases && $deployedSha){
 	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$deployedSha...".$latestCommit['sha']);
 	if($compareData === null){ $apiError = true; }
 }
@@ -263,25 +273,38 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
         </div>
       <?php } ?>
 
-      <?php if($apiError){ ?>
+      <?php if($noReleases){ ?>
+        <div class="alert alert-info mb-0">
+          No release has been published on <a href="https://github.com/<?= $githubRepo; ?>/releases" target="_blank">GitHub</a> yet.
+          This page only offers updates for published releases, not every individual commit -- publish one there first
+          (Releases &rarr; Draft a new release) once a set of changes is ready to go live.
+        </div>
+
+      <?php }elseif($apiError){ ?>
         <div class="alert alert-warning mb-0">Could not reach GitHub to check for updates right now. Try again in a moment.</div>
 
       <?php }elseif(!$deployedSha){ ?>
         <p>This server doesn't have a tracked deployment version yet (no <code>admin/.deployed_version</code> and no <code>.git</code> folder found).</p>
-        <p>If the code currently on this server already matches <code><?= $githubBranch; ?></code> on GitHub (e.g. you just finished a manual sync), mark it as up to date to start tracking updates from here on:</p>
-        <form method="post" onsubmit="return confirm('This only records the current commit as your baseline -- it does not change any files. Only do this right after the server\'s files actually match GitHub main. Continue?');">
+        <p>If the code currently on this server already matches release <code><?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?></code> on GitHub (e.g. you just finished a manual sync), mark it as up to date to start tracking updates from here on:</p>
+        <form method="post" onsubmit="return confirm('This only records the current release as your baseline -- it does not change any files. Only do this right after the server\'s files actually match that release. Continue?');">
           <input type="hidden" name="init_version" value="1">
-          <button type="submit" class="btn btn-success">Mark current server state as up to date (<code><?= substr($latestCommit['sha'], 0, 10); ?></code>)</button>
+          <button type="submit" class="btn btn-success">Mark current server state as up to date (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>)</button>
         </form>
 
       <?php }elseif($compareData['status'] === 'identical' || $compareData['status'] === 'behind'){ ?>
-        <div class="alert alert-success mb-0">You're running the latest version of the code (<?= $githubBranch; ?>).</div>
+        <div class="alert alert-success mb-0">You're running the latest published release (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>).</div>
 
       <?php }elseif($compareData['status'] === 'ahead'){ ?>
-        <div class="alert alert-info mb-0">This deployment is <?= (int) $compareData['ahead_by']; ?> commit(s) ahead of <?= $githubBranch; ?> on GitHub (local, unpushed changes?).</div>
+        <div class="alert alert-info mb-0">This deployment is <?= (int) $compareData['ahead_by']; ?> commit(s) ahead of the latest release (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>) on GitHub.</div>
 
       <?php }else{ ?>
-        <div class="alert alert-warning mb-3">This deployment is <?= (int) $compareData['behind_by']; ?> commit(s) behind <?= $githubBranch; ?> on GitHub (<?= count($compareData['files'] ?? []); ?> file(s) changed).</div>
+        <div class="alert alert-warning mb-3">
+          A newer release is available: <strong><?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?></strong>
+          &mdash; <?= (int) $compareData['behind_by']; ?> commit(s), <?= count($compareData['files'] ?? []); ?> file(s) changed.
+        </div>
+        <?php if(!empty($latestRelease['body'])){ ?>
+          <div class="mb-3"><strong>Release notes:</strong><br><?= nl2br(htmlspecialchars($latestRelease['body'], ENT_QUOTES, 'UTF-8')); ?></div>
+        <?php } ?>
         <ul class="list-unstyled mb-3">
         <?php foreach(array_slice($compareData['commits'], -10) as $commit){ ?>
           <li class="mb-2">
@@ -291,8 +314,9 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
           </li>
         <?php } ?>
         </ul>
-        <a class="btn btn-secondary mr-2" href="<?= $compareData['html_url']; ?>" target="_blank">View full comparison on GitHub</a>
-        <form method="post" class="d-inline" onsubmit="return confirm('This will fetch and overwrite <?= count($compareData['files']); ?> file(s) on this server directly from GitHub, and delete files that were removed upstream. Make sure you have a backup. Continue?');">
+        <a class="btn btn-secondary mr-2" href="<?= $latestRelease['html_url']; ?>" target="_blank">View release on GitHub</a>
+        <a class="btn btn-secondary mr-2" href="<?= $compareData['html_url']; ?>" target="_blank">View full comparison</a>
+        <form method="post" class="d-inline" onsubmit="return confirm('This will fetch and overwrite <?= count($compareData['files']); ?> file(s) on this server directly from GitHub release <?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>, and delete files that were removed upstream. Make sure you have a backup. Continue?');">
           <input type="hidden" name="apply_update" value="1">
           <input type="hidden" name="target_sha" value="<?= htmlspecialchars($latestCommit['sha'], ENT_QUOTES, 'UTF-8'); ?>">
           <button type="submit" class="btn btn-success">Update now</button>
@@ -300,8 +324,9 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
       <?php } ?>
 
       <p class="text-muted mt-3 mb-0">
-        Fetches only the changed files directly from <code>github.com/<?= $githubRepo; ?></code> over HTTPS and writes them in place --
-        no ZIP upload, no arbitrary source, no SQL execution. <code>config.php</code> and all folders holding real
+        Only offers updates for published <a href="https://github.com/<?= $githubRepo; ?>/releases" target="_blank">GitHub Releases</a>,
+        not every commit. Fetches only the changed files directly from <code>github.com/<?= $githubRepo; ?></code> over HTTPS and writes them
+        in place -- no ZIP upload, no arbitrary source, no SQL execution. <code>config.php</code> and all folders holding real
         user-submitted content are always left untouched.
       </p>
 
