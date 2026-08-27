@@ -64,7 +64,7 @@ if(isset($_POST['register'])){
         } else {
             $ip_api = @file_get_contents("http://www.geoplugin.net/php.gp?ip=".$ip);
             if($ip_api !== false){
-                $geoplugin = unserialize($ip_api);
+                $geoplugin = unserialize($ip_api, ['allowed_classes' => false]);
                 $country = $geoplugin['geoplugin_countryName'] ?? "Germany";
             } else {
                 $country = "Germany";

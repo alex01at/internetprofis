@@ -57,7 +57,7 @@ if($type == "proposal" & $status == "COMPLETED"){
 	$_SESSION['proposal_revisions'] = $revisions;
 
 	if(!empty($extras)){
-    	$_SESSION['proposal_extras'] = unserialize(base64_decode($extras));
+    	$_SESSION['proposal_extras'] = unserialize(base64_decode($extras), ['allowed_classes' => false]);
 	}
 
 	if(!empty($minutes)){

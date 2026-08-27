@@ -186,7 +186,7 @@ if(isset($_POST['continue'])){
 		$referral_code = mt_rand();
 		$verification_code = "ok";
 
-		$geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip));
+		$geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip), ['allowed_classes' => false]);
 		$country = $geoplugin['geoplugin_countryName'];
 		if(empty($country)){ 
 			$country = ""; 

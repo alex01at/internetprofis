@@ -77,7 +77,7 @@ class Database extends CI_Model{
 		$con_pass = $this->input->post('con_pass');
 		// This is just an example. In application this will come from Javascript (via an AJAX or something)
 		$timezone = $this->input->post('timezone');
-		$geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip));
+		$geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip), ['allowed_classes' => false]);
 		$country = $geoplugin['geoplugin_countryName'];
 		if(empty($country)){ 
 			$country = ""; 

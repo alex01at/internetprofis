@@ -85,7 +85,7 @@ public function execute_payment($reference_no,$method){
     $_SESSION['proposal_delivery'] = $data->delivery_id;
     $_SESSION['proposal_revisions'] = $data->revisions;
     if(!empty($data->extras)){
-      $_SESSION['proposal_extras'] = unserialize(base64_decode($data->extras));
+      $_SESSION['proposal_extras'] = unserialize(base64_decode($data->extras), ['allowed_classes' => false]);
     }
     if(!empty($data->minutes)){
       $_SESSION['proposal_minutes'] = $data->minutes;

@@ -127,7 +127,7 @@
 		if (isset($_POST['add_order'])) {
 			$proposal_extras = $_SESSION['c_proposal_extras'];
 		}else{
-			$proposal_extras = unserialize(base64_decode($input->post('proposal_extras')));
+			$proposal_extras = unserialize(base64_decode($input->post('proposal_extras')), ['allowed_classes' => false]);
 			$_SESSION['c_proposal_extras'] = $proposal_extras;
 		}
 		
@@ -284,7 +284,7 @@ if(isset($_POST['code'])){
 		if (isset($_POST['add_order'])) {
 			$proposal_extras = $_SESSION['c_proposal_extras'];
 		}else{
-			$proposal_extras = unserialize(base64_decode($input->post('proposal_extras')));
+			$proposal_extras = unserialize(base64_decode($input->post('proposal_extras')), ['allowed_classes' => false]);
 		}
 		$sub_total = $proposal_price * $proposal_qty;
 		$processing_fee = processing_fee($sub_total);
