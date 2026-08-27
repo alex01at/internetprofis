@@ -36,6 +36,7 @@ echo "<script>window.open('login','_self');</script>";
 						<li><a href="index?mail-server">Mail Server Settings</a></li>
 						<li><a href="index?mail-templates">Mail Templates</a></li>
 						<li><a href="index?api_settings">API Settings</a></li>
+						<li><a href="index?app_update">Application Update</a></li>
 						<li><a href="index?view_words">Restricted Words</a></li>
 						<li><a href="index?countries">Countries</a></li>
 					</ul>
