@@ -5,6 +5,17 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-08-27
 
+### Entfernt
+
+- **`admin_old/` komplett entfernt** (11 MB, 181 Dateien). Systematischer
+  Abgleich bestätigte: jede Seite ist im neuen `admin/` vorhanden (teils
+  umbenannt/umstrukturiert), bewusst nicht mehr relevant (Kaufcode-/
+  Lizenzprüfung fürs alte CodeCanyon-Produkt), oder war auch in
+  `admin_old` nie fertig gebaut (S3-Datei-Browser, Datei-Pagination).
+  Der einzige echte Fund dabei (`admin/change_password.php`, siehe oben)
+  wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
+  Admin-Menü ist ebenfalls weg.
+
 ### Hinzugefügt
 
 - **Plugin-Update-Funktion wiederhergestellt, gehärtet** (`admin/update_plugin.php`).
