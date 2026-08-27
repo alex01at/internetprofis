@@ -184,11 +184,6 @@ echo "<script>window.open('login','_self');</script>";
 						<span class="micon dw dw-chat3"></span><span class="mtext">Credits</span>
 					</a>
 				</li>
-				<li>
-					<a href="../admin_old/index?dashboard" class="dropdown-toggle no-arrow">
-						<span class="micon dw dw-chat3"></span><span class="mtext">Old Admincenter</span>
-					</a>
-				</li>
 				<!-- <div class="dropdown-divider"></div>
 			<li>
 				<div class="sidebar-small-cap">Extra</div>
