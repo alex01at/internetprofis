@@ -94,6 +94,38 @@ Der Installer prüft dabei streng:
 Jeder Verstoß bricht die gesamte Installation ab, bevor irgendetwas auf die
 Festplatte geschrieben wird.
 
+## Format eines Update-Pakets
+
+Ein bereits installiertes Plugin kann über **Admin → Plugins → Update**
+(`admin/update_plugin.php`) aktualisiert werden. Das Paket sieht ähnlich
+aus wie das Installationspaket, nutzt aber andere Feldnamen und Dateien:
+
+```
+update.zip
+├── readme.txt        (Version: / Compatible Version:)
+├── update.sql
+├── files.zip          (überschreibt Dateien im bestehenden Plugin-Ordner)
+└── delete_files.txt   (optional)
+```
+
+- **`readme.txt`**: `Version: 1.1` und `Compatible Version: 1.0` (die
+  aktuell installierte Version, gegen die geprüft wird — ein Downgrade
+  oder ein Sprung über eine Zwischenversion wird abgelehnt).
+- **`update.sql`**: wie `plugin.sql`, nur für Änderungen (`ALTER TABLE`
+  etc.), keine Neuregistrierung nötig. Unterliegt derselben Blockliste
+  wie bei der Installation.
+- **`files.zip`**: muss ebenfalls komplett unter `<Folder>/` liegen (wird
+  gegen den in der Datenbank hinterlegten Ordnernamen geprüft, nicht
+  gegen `readme.txt`) und denselben Dateityp-Regeln entsprechen.
+- **`delete_files.txt`** (optional): eine Datei pro Zeile, relativ zum
+  Plugin-Ordner, die nach dem Update gelöscht werden soll (z. B. eine
+  Datei, die in der neuen Version nicht mehr existiert). Jede Zeile mit
+  `..` oder führendem `/` wird ignoriert, und der aufgelöste Pfad muss
+  innerhalb des Plugin-Ordners bleiben.
+
+Nach einem erfolgreichen Update wird die `version`-Spalte des Plugins in
+der Datenbank automatisch aktualisiert.
+
 ## Die `plugins`-Tabelle
 
 ```sql
