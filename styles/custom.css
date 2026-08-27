@@ -1,0 +1,15 @@
+/*
+Author Name: Prossliner Alexander
+Author Email: info@gigtodo.net
+Author URL: https://www.internetprofis.at
+Script Version: v0.9
+NB: If changes don't apply, try adding "!important" For example:
+.btn {
+    color: blue !important;
+}
+
+*/
+
+/********** Start Writing Your Own Custom CSS Code Here ***********/
+  /* Zusätzliche benutzerdefinierte Styles für die Hero-Section */
+#mainNav{min-width:1400px;}

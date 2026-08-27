@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'dropways';
+	src:  url('../fonts/dropways.eot?jm47o8');
+	src:  url('../fonts/dropways.eot?jm47o8#iefix') format('embedded-opentype'),
+		  url('../fonts/dropways.ttf?jm47o8') format('truetype'),
+		  url('../fonts/dropways.woff?jm47o8') format('woff'),
+		  url('../fonts/dropways.svg?jm47o8#dropways') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.dw {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'dropways' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.dw-apartment:before {
+	content: "\e902";
+}
+.dw-edit-2:before {
+	content: "\e942";
+}
+.dw-library:before {
+	content: "\e973";
+}
+.dw-user1:before {
+	content: "\eb0f";
+}
+.dw-check:before {
+	content: "\eb1d";
+}
+.dw-padlock1:before {
+	content: "\eb37";
+}
+.dw-chat3:before {
+	content: "\eb40";
+}
+.dw-logout:before {
+	content: "\eb4c";
+}
+.dw-help:before {
+	content: "\ec36";
+}
+.dw-settings2:before {
+	content: "\edc9";
+}
+.dw-next-2:before {
+	content: "\edd2";
+}
+.dw-fast-forward-1:before {
+	content: "\ee07";
+}
+.dw-next:before {
+	content: "\ee36";
+}

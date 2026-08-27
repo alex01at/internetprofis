@@ -1,0 +1,1 @@
+Please don't use gigtodo in productive environment. Current version could be full of unknown bugs. Please report them to support@gigtodo.net or <a href="https://social4you.net/gigtodo" target= "_blank">https://social4you.net/gigtodo</a>

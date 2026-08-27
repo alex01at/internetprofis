@@ -1,0 +1,11 @@
+# Contains live DB credentials
+config.php
+
+# Private, user-submitted content (order deliverables, chat attachments,
+# support tickets) -- not part of the script itself, must never be public
+/order_files/*
+!/order_files/.htaccess
+/conversations/conversations_files/*
+/proposals/proposal_files/*
+/requests/request_files/*
+/ticket_files/*

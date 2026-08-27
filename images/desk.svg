@@ -1,0 +1,2153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 3840 2160"
+   version="1.1"
+   id="svg7064"
+   sodipodi:docname="desk.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7066"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="2.8962962"
+     inkscape:cx="1530.9208"
+     inkscape:cy="325.07034"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7064">
+    <sodipodi:guide
+       position="1558.1969,1863.0691"
+       orientation="0,-1"
+       id="guide8138" />
+    <sodipodi:guide
+       position="1555.4348,1853.4015"
+       orientation="1,0"
+       id="guide8140" />
+    <sodipodi:guide
+       position="1678.0052,1776.0614"
+       orientation="0,-1"
+       id="guide24007" />
+    <sodipodi:guide
+       position="1579.4472,1729.1264"
+       orientation="1,0"
+       id="guide24009" />
+  </sodipodi:namedview>
+  <defs
+     id="defs6280">
+    <style
+       id="style6278">.cls-1, .cls-5 { fill: #956230; } .cls-1, .cls-2, .cls-3, .cls-4 { stroke: #956230; } .cls-1, .cls-19, .cls-2, .cls-26, .cls-29, .cls-3, .cls-30, .cls-31, .cls-32, .cls-38, .cls-39, .cls-4, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-49, .cls-51, .cls-52, .cls-53, .cls-54, .cls-55, .cls-56, .cls-57, .cls-58, .cls-59, .cls-60, .cls-61, .cls-62, .cls-63, .cls-64, .cls-65, .cls-66, .cls-68, .cls-69, .cls-7, .cls-70, .cls-74, .cls-76, .cls-77, .cls-78, .cls-79, .cls-80, .cls-81, .cls-82, .cls-83, .cls-84, .cls-85 { stroke-linejoin: round; } .cls-1 { stroke-width: 30px; } .cls-2, .cls-3, .cls-44 { fill: #b47b42; } .cls-2, .cls-26, .cls-3, .cls-32, .cls-39, .cls-42, .cls-43, .cls-44, .cls-51, .cls-59, .cls-61, .cls-62, .cls-64, .cls-68, .cls-69, .cls-70, .cls-82 { stroke-width: 2px; } .cls-17, .cls-18, .cls-19, .cls-2, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-33, .cls-34, .cls-35, .cls-36, .cls-42, .cls-43, .cls-44, .cls-46, .cls-49, .cls-50, .cls-51, .cls-52, .cls-53, .cls-55, .cls-56, .cls-57, .cls-6, .cls-60, .cls-61, .cls-63, .cls-64, .cls-65, .cls-66, .cls-67, .cls-68, .cls-69, .cls-7, .cls-75, .cls-76, .cls-77, .cls-79, .cls-81, .cls-86, .cls-87 { fill-rule: evenodd; } .cls-4, .cls-6 { fill: #fdc689; } .cls-4, .cls-65, .cls-66 { stroke-width: 4px; } .cls-19, .cls-26, .cls-29, .cls-38, .cls-40, .cls-41, .cls-45, .cls-46, .cls-49, .cls-60, .cls-63, .cls-69, .cls-7, .cls-74, .cls-76, .cls-79 { fill: none; } .cls-30, .cls-31, .cls-38, .cls-39, .cls-42, .cls-43, .cls-44, .cls-52, .cls-53, .cls-54, .cls-55, .cls-57, .cls-58, .cls-59, .cls-60, .cls-61, .cls-62, .cls-63, .cls-64, .cls-68, .cls-69, .cls-7, .cls-70, .cls-74, .cls-78, .cls-80, .cls-81, .cls-82, .cls-83, .cls-84, .cls-85 { stroke: #000; } .cls-31, .cls-54, .cls-55, .cls-56, .cls-7, .cls-74, .cls-76, .cls-77, .cls-78, .cls-79, .cls-80, .cls-81, .cls-83, .cls-84, .cls-85 { stroke-width: 1px; } .cls-8 { fill: #362f2d; } .cls-9 { fill: #00a651; } .cls-10 { fill: #a0410d; } .cls-11 { fill: #003471; } .cls-12 { fill: #662d91; } .cls-13, .cls-24 { fill: #598527; } .cls-14 { fill: #f26d7d; } .cls-15 { fill: #9e0b0f; } .cls-16 { fill: #f26c4f; } .cls-17 { fill: #00aeef; } .cls-18 { fill: #5674b9; } .cls-19 { stroke: #fff; } .cls-19, .cls-26, .cls-29, .cls-46, .cls-47, .cls-49, .cls-65, .cls-66 { stroke-linecap: round; } .cls-19, .cls-29, .cls-30, .cls-41, .cls-49, .cls-52, .cls-53, .cls-57, .cls-58, .cls-60 { stroke-width: 5px; } .cls-20 { fill: #bd8cbf; } .cls-21 { fill: #7accc8; } .cls-22, .cls-85 { fill: #fbaf5d; } .cls-23, .cls-27, .cls-51 { fill: #a2781f; } .cls-25 { fill: #8dc63f; } .cls-26 { stroke: #aabb38; } .cls-28, .cls-37, .cls-52, .cls-59 { fill: #fff; } .cls-29 { stroke: #754c24; } .cls-30, .cls-68, .cls-72, .cls-77 { fill: #d7d7d7; } .cls-31 { fill: #b170af; } .cls-32 { fill: #e8a820; stroke: #a0410d; } .cls-33 { fill: #301176; } .cls-34 { fill: #3f2e8a; } .cls-35 { fill: #5f54ac; } .cls-36 { fill: #9691cb; } .cls-38, .cls-40, .cls-45, .cls-63 { stroke-width: 10px; } .cls-39, .cls-42, .cls-66, .cls-78 { fill: #b7b7b7; } .cls-40, .cls-41 { stroke: #707070; } .cls-43, .cls-47, .cls-48 { fill: #0054a6; } .cls-45, .cls-46, .cls-47 { stroke: #0054a6; } .cls-46, .cls-47 { stroke-width: 7px; } .cls-49 { stroke: #005826; } .cls-50 { fill: #005826; } .cls-51 { stroke: #a36209; } .cls-53, .cls-58 { fill: #00746b; } .cls-56 { fill: #6dcff6; stroke: #56a3c2; } .cls-57 { fill: #cf971f; } .cls-61, .cls-62 { fill: #331942; } .cls-64, .cls-65 { fill: #1b1464; } .cls-65 { stroke: #cda52c; } .cls-66, .cls-79 { stroke: #b7b7b7; } .cls-70 { fill: #f7941d; } .cls-71, .cls-75 { fill: #111; } .cls-73 { fill: #707070; } .cls-76, .cls-77 { stroke: #d7d7d7; } .cls-80, .cls-81 { fill: #a7dcdb; } .cls-82 { fill: #363636; } .cls-83 { fill: #f4a992; } .cls-84 { fill: #ffc484; } .cls-86 { fill: #e1e1e1; } .cls-87 { fill: #47311c; }
+       
+       </style>
+    <style
+       type="text/css"
+       id="style18187">
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </defs>
+  <path
+     class="cls-7"
+     d="m1478 11"
+     id="path6306" />
+  <rect
+     class="cls-8"
+     x="2094"
+     y="471"
+     width="677"
+     height="28"
+     rx="10"
+     ry="10"
+     data-name="Rounded Rectangle 5"
+     id="rect6308" />
+  <ellipse
+     class="cls-30"
+     cx="1925"
+     cy="456"
+     rx="24"
+     ry="47"
+     id="ellipse6504" />
+  <rect
+     class="cls-31"
+     x="1818"
+     y="439"
+     width="215"
+     height="172"
+     id="rect6506" />
+  <circle
+     class="cls-32"
+     cx="1960"
+     cy="474"
+     r="26"
+     id="circle6508" />
+  <path
+     class="cls-33"
+     d="m1817 566s17.68-43.181 70 7 84.25 30.9 95 16 50.46-14.494 50-5 1 36 1 36l-1 104-4 8-210-4z"
+     id="path6510" />
+  <path
+     class="cls-34"
+     d="m1818 603.2s17.68-32.984 70 5.347 84.25 23.6 95 12.222 50.46-11.072 50-3.819 1 27.5 1 27.5l-1 79.441-4 6.109-210-3.055z"
+     data-name="Shape 72 copy"
+     id="path6512" />
+  <path
+     class="cls-35"
+     d="m1818 637.62s17.68-24.031 70 3.9 84.25 17.2 95 8.9 50.46-8.066 50-2.782 1 20.035 1 20.035l-1 57.878-4 4.452-210-2.226z"
+     data-name="Shape 72 copy 2"
+     id="path6514" />
+  <path
+     class="cls-36"
+     d="m1818 670.22s17.68-15.55 70 2.521 84.25 11.127 95 5.761 50.46-5.219 50-1.8 1 12.964 1 12.964l-1 37.45-4 2.881-210-1.44z"
+     data-name="Shape 72 copy 3"
+     id="path6516" />
+  <g
+     id="wolke2">
+    <circle
+       class="cls-37"
+       cx="1951"
+       cy="541"
+       r="23"
+       id="circle6518" />
+    <circle
+       class="cls-37"
+       cx="1984"
+       cy="549"
+       r="23"
+       data-name="Ellipse 3 copy"
+       id="circle6520" />
+    <circle
+       class="cls-37"
+       cx="2012"
+       cy="541"
+       r="23"
+       data-name="Ellipse 3 copy 2"
+       id="circle6522" />
+    <circle
+       class="cls-37"
+       cx="1997"
+       cy="520"
+       r="23"
+       data-name="Ellipse 3 copy 3"
+       id="circle6524" />
+    <circle
+       class="cls-37"
+       cx="1977"
+       cy="526"
+       r="23"
+       data-name="Ellipse 3 copy 4"
+       id="circle6526" />
+  </g>
+  <g
+     id="wolke1">
+    <circle
+       class="cls-37"
+       cx="1898"
+       cy="495"
+       r="23"
+       data-name="Ellipse 3 copy 5"
+       id="circle6528" />
+    <circle
+       class="cls-37"
+       cx="1865"
+       cy="503"
+       r="23"
+       data-name="Ellipse 3 copy 5"
+       id="circle6530" />
+    <circle
+       class="cls-37"
+       cx="1837"
+       cy="495"
+       r="23"
+       data-name="Ellipse 3 copy 5"
+       id="circle6532" />
+    <circle
+       class="cls-37"
+       cx="1852"
+       cy="474"
+       r="23"
+       data-name="Ellipse 3 copy 5"
+       id="circle6534" />
+    <circle
+       class="cls-37"
+       cx="1872"
+       cy="480"
+       r="23"
+       data-name="Ellipse 3 copy 5"
+       id="circle6536" />
+  </g>
+  <rect
+     class="cls-38"
+     x="1812"
+     y="433"
+     width="227"
+     height="304"
+     rx="10"
+     ry="10"
+     data-name="Rounded Rectangle 15"
+     id="rect6538" />
+  <circle
+     class="cls-39"
+     cx="1925.5"
+     cy="422.5"
+     r="5.5"
+     id="circle6540" />
+  <g
+     id="g10615">
+    <rect
+       class="cls-9"
+       x="2213"
+       y="237"
+       width="47"
+       height="235"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 6"
+       id="rect6310" />
+    <rect
+       class="cls-10"
+       x="2260"
+       y="249"
+       width="43"
+       height="223"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 7"
+       id="rect6312" />
+    <rect
+       class="cls-11"
+       x="2303"
+       y="277"
+       width="69"
+       height="195"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 8"
+       id="rect6314" />
+    <rect
+       class="cls-12"
+       x="2372"
+       y="228"
+       width="24"
+       height="244"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 9"
+       id="rect6316" />
+    <rect
+       class="cls-13"
+       x="2396"
+       y="232"
+       width="29"
+       height="240"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 10"
+       id="rect6318" />
+    <rect
+       class="cls-14"
+       x="2425"
+       y="255"
+       width="44"
+       height="217"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 11"
+       id="rect6320" />
+    <rect
+       class="cls-15"
+       x="2469"
+       y="283"
+       width="24"
+       height="189"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 12"
+       id="rect6322" />
+    <rect
+       class="cls-16"
+       x="2493"
+       y="287"
+       width="45"
+       height="185"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 13"
+       id="rect6324" />
+    <path
+       class="cls-17"
+       d="m2545.5 295.65 8.7-2.329a10.005 10.005 0 0 1 12.25 7.071l41.92 156.48a10 10 0 0 1-7.07 12.248l-8.69 2.329a10 10 0 0 1-12.25-7.071l-41.93-156.48a10 10 0 0 1 7.07-12.248z"
+       data-name="Rounded Rectangle 14"
+       id="path6326" />
+    <path
+       class="cls-18"
+       d="m2573.7 295.68 8.69-2.341a10 10 0 0 1 12.26 7.055l42.14 156.42a10 10 0 0 1-7.05 12.258l-8.69 2.341a10 10 0 0 1-12.26-7.055l-42.14-156.42a10 10 0 0 1 7.05-12.258z"
+       data-name="Rounded Rectangle 14 copy"
+       id="path6328" />
+    <path
+       class="cls-19"
+       d="m2221 254h30"
+       id="path6330" />
+    <path
+       class="cls-19"
+       d="m2266 261h30"
+       data-name="Shape 3 copy"
+       id="path6332" />
+    <path
+       class="cls-19"
+       d="m2233 303 1 143"
+       id="path6334" />
+    <path
+       class="cls-19"
+       d="m2246 375v71"
+       id="path6336" />
+    <path
+       class="cls-19"
+       d="m2279 285v143"
+       id="path6338" />
+    <path
+       class="cls-19"
+       d="m2291 382 1 47"
+       id="path6340" />
+    <path
+       class="cls-19"
+       d="m2358 296 1 44"
+       id="path6342" />
+    <path
+       class="cls-19"
+       d="m2337 299 3 148"
+       id="path6344" />
+    <path
+       class="cls-19"
+       d="m2320 399v38"
+       id="path6346" />
+    <path
+       class="cls-19"
+       d="m2377 247h12"
+       id="path6348" />
+    <path
+       class="cls-19"
+       d="m2403 250h15"
+       id="path6350" />
+    <path
+       class="cls-19"
+       d="m2418 324v82"
+       id="path6352" />
+    <path
+       class="cls-19"
+       d="m2383 384 1 46"
+       id="path6354" />
+    <path
+       class="cls-19"
+       d="m2432 291 27-1"
+       id="path6356" />
+    <path
+       class="cls-19"
+       d="m2446 343v79"
+       id="path6358" />
+    <path
+       class="cls-19"
+       d="m2433 307h20"
+       id="path6360" />
+    <path
+       class="cls-19"
+       d="m2476 299 10-1"
+       id="path6362" />
+    <path
+       class="cls-19"
+       d="m2507 304h20"
+       id="path6364" />
+    <path
+       class="cls-19"
+       d="m2481 413v34"
+       id="path6366" />
+    <path
+       class="cls-19"
+       d="m2524 331 1 115"
+       id="path6368" />
+    <path
+       class="cls-19"
+       d="m2512 365-1 66"
+       id="path6370" />
+    <rect
+       class="cls-20"
+       x="2615"
+       y="703"
+       width="217"
+       height="44"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 11 copy"
+       id="rect6372" />
+    <rect
+       class="cls-21"
+       x="2643"
+       y="679"
+       width="189"
+       height="24"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 12 copy"
+       id="rect6374" />
+    <rect
+       class="cls-22"
+       x="2647"
+       y="634"
+       width="185"
+       height="45"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 13 copy"
+       id="rect6376" />
+    <path
+       class="cls-19"
+       d="m2651 740-1-27"
+       data-name="Shape 16 copy"
+       id="path6378" />
+    <path
+       class="cls-19"
+       d="m2703 726h79"
+       data-name="Shape 17 copy"
+       id="path6380" />
+    <path
+       class="cls-19"
+       d="m2667 739v-20"
+       data-name="Shape 18 copy"
+       id="path6382" />
+    <path
+       class="cls-19"
+       d="m2659 696-1-10"
+       data-name="Shape 19 copy"
+       id="path6384" />
+    <path
+       class="cls-19"
+       d="m2664 665v-20"
+       data-name="Shape 20 copy"
+       id="path6386" />
+    <path
+       class="cls-19"
+       d="m2773 691h34"
+       data-name="Shape 21 copy"
+       id="path6388" />
+    <path
+       class="cls-19"
+       d="m2691 648 115-1"
+       data-name="Shape 22 copy"
+       id="path6390" />
+    <path
+       class="cls-19"
+       d="m2725 660 66 1"
+       data-name="Shape 23 copy"
+       id="path6392" />
+    <path
+       class="cls-19"
+       d="m2545 314 15-5"
+       id="path6394" />
+    <path
+       class="cls-19"
+       d="m2573 312 15-5"
+       id="path6396" />
+    <path
+       class="cls-19"
+       d="m2577 399 16 52"
+       id="path6398" />
+    <path
+       class="cls-19"
+       d="m2596 352 18 59"
+       id="path6400" />
+    <path
+       class="cls-19"
+       d="m2320 460h31"
+       id="path6402" />
+    <ellipse
+       class="cls-23"
+       cx="2962"
+       cy="630.5"
+       rx="48"
+       ry="13.5"
+       id="ellipse6404" />
+    <path
+       class="cls-24"
+       d="m2933 638s-39.11-169.53 27-163 25 173 25 173z"
+       id="path6406" />
+    <path
+       class="cls-24"
+       d="m2989 550s19.57 15.191 23-7 1.37-47.885 27-44 6.91 91.386-56 77 6-26 6-26z"
+       id="path6408" />
+    <path
+       class="cls-25"
+       d="m2943 485s-15.61 53.494-7.79 131.57 7.79-131.57 7.79-131.57z"
+       id="path6410" />
+    <path
+       class="cls-25"
+       d="m2960 635.99s-14.53-53.808-5.14-131.72 5.14 131.72 5.14 131.72z"
+       data-name="Shape 31 copy"
+       id="path6412" />
+    <path
+       class="cls-26"
+       d="m2946 470 7 10"
+       id="path6414" />
+    <path
+       class="cls-26"
+       d="m2955 471-2 10"
+       id="path6416" />
+    <path
+       class="cls-26"
+       d="m2970 474-1 12"
+       id="path6418" />
+    <path
+       class="cls-26"
+       d="m2968 487 13-7"
+       id="path6420" />
+    <path
+       class="cls-26"
+       d="m2922 497 8 8 1-13"
+       id="path6422" />
+    <path
+       class="cls-26"
+       d="m2934 479 7 5-1-8"
+       id="path6424" />
+    <path
+       class="cls-26"
+       d="m2947 505 4 7 4-5"
+       id="path6426" />
+    <path
+       class="cls-26"
+       d="m2965 510 7 1 2-7"
+       id="path6428" />
+    <path
+       class="cls-26"
+       d="m2994 499-11 14"
+       id="path6430" />
+    <path
+       class="cls-26"
+       d="m2985 511 16 2"
+       id="path6432" />
+    <path
+       class="cls-26"
+       d="m2914 534 13 1v-12"
+       id="path6434" />
+    <path
+       class="cls-26"
+       d="m2915 558 12 2-8-10"
+       id="path6436" />
+    <path
+       class="cls-26"
+       d="m2918 572 12 7-8 13"
+       id="path6438" />
+    <path
+       class="cls-26"
+       d="m2923 602 10 1-7 17"
+       id="path6440" />
+    <path
+       class="cls-26"
+       d="m2944 548 4 7 9-8"
+       id="path6442" />
+    <path
+       class="cls-26"
+       d="m2947 530 2 6 6-7"
+       id="path6444" />
+    <path
+       class="cls-26"
+       d="m2943 567 4 7 8-4"
+       id="path6446" />
+    <path
+       class="cls-26"
+       d="m2943 592 4 8 11-6"
+       id="path6448" />
+    <path
+       class="cls-26"
+       d="m2949 620 4 10 11-1"
+       id="path6450" />
+    <path
+       class="cls-26"
+       d="m2974 527-6 9 6 8"
+       id="path6452" />
+    <path
+       class="cls-26"
+       d="m2968 560 2 9 10-7"
+       id="path6454" />
+    <path
+       class="cls-26"
+       d="m2966 587 5 4 4-16"
+       id="path6456" />
+    <path
+       class="cls-26"
+       d="m2969 604-2 16 9-3"
+       id="path6458" />
+    <path
+       class="cls-26"
+       d="m2988 533 3 13 6-11"
+       id="path6460" />
+    <path
+       class="cls-26"
+       d="m2990 561v13l8-3"
+       id="path6462" />
+    <path
+       class="cls-26"
+       d="m2991 594-3 13 12-1"
+       id="path6464" />
+    <path
+       class="cls-26"
+       d="m3004 552 4 8 1-8"
+       id="path6466" />
+    <path
+       class="cls-26"
+       d="m3011 537 7 3-2-15"
+       id="path6468" />
+    <path
+       class="cls-26"
+       d="m3015 508 7 5 1-10"
+       id="path6470" />
+    <path
+       class="cls-26"
+       d="m3037 498v8l10-1"
+       id="path6472" />
+    <path
+       class="cls-26"
+       d="m3057 521-11 4 10 11"
+       id="path6474" />
+    <path
+       class="cls-26"
+       d="m3019 579 4-14 7 5"
+       id="path6476" />
+    <path
+       class="cls-26"
+       d="m3040 564-6-16 16 4"
+       id="path6478" />
+    <path
+       class="cls-26"
+       d="m3003 566 4 6 6 1"
+       id="path6480" />
+    <path
+       class="cls-26"
+       d="m3030 519 5 10 6-7"
+       id="path6482" />
+    <path
+       class="cls-26"
+       d="m3013 549 9 5 1-14"
+       id="path6484" />
+    <path
+       class="cls-25"
+       d="m2976 492s15.61 53.505 7.79 131.6-7.79-131.6-7.79-131.6z"
+       data-name="Shape 31 copy 2"
+       id="path6486" />
+    <path
+       class="cls-25"
+       d="m3030.4 502.99s-10.22 17.224-14.7 45.224 14.7-45.224 14.7-45.224z"
+       data-name="Shape 31 copy 3"
+       id="path6488" />
+    <path
+       class="cls-25"
+       d="m3026.3 556.32s-0.04-20.153 10.3-46.488-10.3 46.488-10.3 46.488z"
+       data-name="Shape 31 copy 3"
+       id="path6490" />
+    <path
+       class="cls-25"
+       d="m3045 506.53s0.44 20.148-9.38 46.691 9.38-46.691 9.38-46.691z"
+       data-name="Shape 31 copy 3"
+       id="path6492" />
+    <path
+       class="cls-27"
+       d="m2915.2 630s-22.08 86.594 16.85 118l61.38-1.2s32.56-57.15 15.64-116.8c0 0-50.23 18.16-93.87 0z"
+       id="path6494" />
+    <rect
+       class="cls-8"
+       x="2385"
+       y="745"
+       width="677"
+       height="28"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 5 copy"
+       id="rect6496" />
+    <path
+       class="cls-28"
+       d="m2994.8 677s0.84 37.8-22.11 45.147-8.6 23.431 13.67 11.652 11.29-56.658 8.44-56.799z"
+       id="path6498" />
+    <path
+       class="cls-29"
+       d="m2917 646s57.04 13.79 90-2"
+       id="path6500" />
+    <path
+       class="cls-29"
+       d="m2917 661s57.04 13.79 90-2"
+       data-name="Shape 71 copy"
+       id="path6502" />
+    <path
+       class="cls-49"
+       d="m2502.3 533.9c-0.85 2.624-38.7 117.44-12.97 157.66"
+       id="path6592" />
+    <path
+       class="cls-49"
+       d="m2524 591.07s-42.87 41.989-34.59 102.22"
+       id="path6594" />
+    <path
+       class="cls-49"
+       d="m2521.4 630.92s-35.16 42.188-31.99 61.505"
+       id="path6596" />
+    <path
+       class="cls-49"
+       d="m2460 634.39s10.44 4.191 28.53 58.04"
+       id="path6598" />
+    <path
+       class="cls-50"
+       d="m2502.9 512.06c3.53 0.631 5.23 7.633 3.8 15.639s-5.44 13.985-8.97 13.354-5.22-7.634-3.8-15.64 5.45-13.985 8.97-13.353z"
+       id="path6600" />
+    <path
+       class="cls-50"
+       d="m2480.2 540.99c3.35-1.287 8.42 3.825 11.33 11.417s2.56 14.79-0.78 16.077-8.42-3.825-11.33-11.417-2.56-14.79 0.78-16.077z"
+       data-name="Ellipse 10 copy"
+       id="path6602" />
+    <path
+       class="cls-50"
+       d="m2508.6 545.45c-2.82-2.329-9.38 0.773-14.66 6.93s-7.27 13.037-4.46 15.367 9.38-0.772 14.66-6.929 7.28-13.038 4.46-15.368z"
+       data-name="Ellipse 10 copy 2"
+       id="path6604" />
+    <path
+       class="cls-50"
+       d="m2474.2 567.85c3.34-1.287 8.41 3.825 11.33 11.417s2.56 14.79-0.79 16.077-8.41-3.825-11.32-11.417-2.56-14.79 0.78-16.077z"
+       data-name="Ellipse 10 copy 3"
+       id="path6606" />
+    <path
+       class="cls-50"
+       d="m2502.6 572.3c-2.82-2.33-9.38 0.772-14.66 6.929s-7.28 13.037-4.46 15.367 9.38-0.772 14.66-6.929 7.27-13.036 4.46-15.367z"
+       data-name="Ellipse 10 copy 3"
+       id="path6608" />
+    <path
+       class="cls-50"
+       d="m2469.8 600.76c3.34-1.287 8.41 3.825 11.32 11.417s2.56 14.79-0.78 16.077-8.41-3.825-11.32-11.417-2.56-14.79 0.78-16.077z"
+       data-name="Ellipse 10 copy 4"
+       id="path6610" />
+    <path
+       class="cls-50"
+       d="m2498.2 605.22c-2.81-2.329-9.38 0.773-14.65 6.93s-7.28 13.037-4.46 15.367 9.38-0.773 14.65-6.93 7.28-13.037 4.46-15.367z"
+       data-name="Ellipse 10 copy 4"
+       id="path6612" />
+    <path
+       class="cls-50"
+       d="m2482.5 637.1c2.14-0.8 5.38 2.377 7.24 7.1s1.64 9.19-0.5 9.989-5.38-2.377-7.24-7.094-1.64-9.195 0.5-9.995z"
+       data-name="Ellipse 10 copy 11"
+       id="path6614" />
+    <path
+       class="cls-50"
+       d="m2510.2 615.62c-1.8-1.448-6 0.48-9.38 4.305s-4.65 8.1-2.85 9.549 6-0.48 9.38-4.306 4.65-8.101 2.85-9.548z"
+       data-name="Ellipse 10 copy 12"
+       id="path6616" />
+    <path
+       class="cls-50"
+       d="m2510.2 585.45c2.69 0.26 4.4 5.423 3.81 11.532s-3.25 10.851-5.94 10.592-4.39-5.423-3.8-11.532 3.24-10.846 5.93-10.592z"
+       data-name="Ellipse 10 copy 9"
+       id="path6618" />
+    <path
+       class="cls-50"
+       d="m2527.9 598.06c-1.12-2.524-6.6-2.644-12.23-0.269s-9.3 6.347-8.18 8.871 6.59 2.644 12.23 0.269 9.29-6.347 8.18-8.871z"
+       data-name="Ellipse 10 copy 9"
+       id="path6620" />
+    <path
+       class="cls-50"
+       d="m2454.5 642.91c0.92-1.89 5.13-1.74 9.4 0.336s7.01 5.291 6.09 7.182-5.12 1.74-9.4-0.336-7-5.293-6.09-7.182z"
+       data-name="Ellipse 10 copy 5"
+       id="path6622" />
+    <path
+       class="cls-50"
+       d="m2468.4 633.42c-2.14 0.134-3.7 4.091-3.5 8.839s2.1 8.487 4.24 8.353 3.7-4.092 3.49-8.839-2.1-8.487-4.23-8.353z"
+       data-name="Ellipse 10 copy 5"
+       id="path6624" />
+    <path
+       class="cls-50"
+       d="m2457.7 634.12c-1.72 1.273-0.89 5.447 1.85 9.323s6.37 5.985 8.09 4.712 0.88-5.448-1.86-9.323-6.36-5.986-8.08-4.712z"
+       data-name="Ellipse 10 copy 6"
+       id="path6626" />
+    <path
+       class="cls-50"
+       d="m2517.2 617.27c2.1 8e-3 3.78 3.875 3.76 8.636s-1.73 8.615-3.83 8.607-3.78-3.875-3.76-8.636 1.73-8.615 3.83-8.607z"
+       data-name="Ellipse 10 copy 7"
+       id="path6628" />
+    <path
+       class="cls-50"
+       d="m2531.8 625.74c-1.04-1.869-5.28-1.571-9.47 0.668s-6.72 5.568-5.68 7.438 5.28 1.571 9.46-0.668 6.73-5.568 5.69-7.438z"
+       data-name="Ellipse 10 copy 7"
+       id="path6630" />
+    <path
+       class="cls-50"
+       d="m2506.8 631.14c2.09 8e-3 3.78 3.874 3.76 8.635s-1.73 8.615-3.83 8.607-3.78-3.875-3.76-8.636 1.73-8.615 3.83-8.606z"
+       data-name="Ellipse 10 copy 8"
+       id="path6632" />
+    <path
+       class="cls-50"
+       d="m2521.4 639.6c-1.04-1.869-5.28-1.571-9.46 0.668s-6.73 5.568-5.69 7.438 5.29 1.571 9.47-0.668 6.73-5.564 5.68-7.438z"
+       data-name="Ellipse 10 copy 8"
+       id="path6634" />
+    <path
+       class="cls-50"
+       d="m2528 618.12c-1.72-1.27-5.45 0.758-8.34 4.529s-3.83 7.857-2.11 9.127 5.46-0.757 8.35-4.528 3.83-7.857 2.1-9.128z"
+       data-name="Ellipse 10 copy 7"
+       id="path6636" />
+    <path
+       class="cls-50"
+       d="m2524.6 585.47c-2.21-1.528-6.99 0.911-10.68 5.448s-4.9 9.453-2.7 10.98 6.99-0.911 10.68-5.447 4.9-9.448 2.7-10.981z"
+       data-name="Ellipse 10 copy 10"
+       id="path6638" />
+    <path
+       class="cls-51"
+       d="m2456.1 664.33s12.93 10.527 0 33.406-13.6 48.547 7.59 49.044 49.95 0 49.95 0 20.35 4.331 3.8-50.465c0 0-14.76-23.482-0.64-32.7s-44.14 12.068-60.7 0.715z"
+       id="path6640" />
+    <path
+       class="cls-28"
+       d="m2507.5 696.76s17.55 33.464 4.32 41.58-8.67-8.187-8.64-8.662 7.52-4.596 4.32-32.918z"
+       id="path6642" />
+  </g>
+  <g
+     id="g10859">
+    <rect
+       class="cls-40"
+       x="662"
+       y="437"
+       width="643"
+       height="590"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 16"
+       id="rect6542" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="442"
+       width="105"
+       height="580"
+       id="rect6544" />
+    <rect
+       class="cls-41"
+       x="773"
+       y="437"
+       width="105"
+       height="580"
+       data-name="Rectangle 2 copy"
+       id="rect6546" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="912"
+       width="630"
+       height="105"
+       data-name="Rectangle 2 copy 6"
+       id="rect6548" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="807"
+       width="630"
+       height="105"
+       data-name="Rectangle 2 copy 7"
+       id="rect6550" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="702"
+       width="630"
+       height="105"
+       data-name="Rectangle 2 copy 8"
+       id="rect6552" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="597"
+       width="630"
+       height="105"
+       data-name="Rectangle 2 copy 9"
+       id="rect6554" />
+    <rect
+       class="cls-41"
+       x="668"
+       y="492"
+       width="630"
+       height="105"
+       data-name="Rectangle 2 copy 10"
+       id="rect6556" />
+    <rect
+       class="cls-41"
+       x="878"
+       y="437"
+       width="105"
+       height="580"
+       data-name="Rectangle 2 copy 2"
+       id="rect6558" />
+    <rect
+       class="cls-41"
+       x="983"
+       y="437"
+       width="105"
+       height="580"
+       data-name="Rectangle 2 copy 3"
+       id="rect6560" />
+    <rect
+       class="cls-41"
+       x="1088"
+       y="437"
+       width="105"
+       height="580"
+       data-name="Rectangle 2 copy 4"
+       id="rect6562" />
+    <rect
+       class="cls-41"
+       x="1193"
+       y="437"
+       width="105"
+       height="580"
+       data-name="Rectangle 2 copy 5"
+       id="rect6564" />
+    <path
+       class="cls-52"
+       d="m967.13 478.46 116.96-21.533 24.22 131.55-116.96 21.534z"
+       id="path6644" />
+    <path
+       class="cls-53"
+       d="m1073.9 467.78 15.29 89.129-91.677 18.751-15.291-89.129z"
+       data-name="Rectangle 3 copy"
+       id="path6646" />
+    <circle
+       class="cls-54"
+       cx="1022.5"
+       cy="530.5"
+       r="8.5"
+       id="circle6648" />
+    <circle
+       class="cls-54"
+       cx="1052.5"
+       cy="521.5"
+       r="8.5"
+       data-name="Ellipse 11 copy"
+       id="circle6650" />
+    <path
+       class="cls-55"
+       d="m1017 568s-6.68-26.168 7-33 26.75 26.358 24 27-31 6-31 6z"
+       id="path6652" />
+    <path
+       class="cls-55"
+       d="M1045.4,564s-5.66-29.328,5.94-36.984,22.68,29.54,20.34,30.26S1045.4,564,1045.4,564Z"
+       data-name="Shape 81 copy"
+       id="path6654" />
+    <path
+       class="cls-7"
+       d="m989 508s7.571-17.591 24.97-9.516 16.45-7.066 17.03-6.8 9.27-11.9 26.11 0 14.12-12.123 15.89-9.516"
+       id="path6656" />
+    <path
+       class="cls-7"
+       d="m990 517s7.571-17.591 24.97-9.516 16.45-7.066 17.03-6.8 9.27-11.9 26.11 0 14.12-12.123 15.89-9.516"
+       data-name="Shape 82 copy"
+       id="path6658" />
+    <path
+       class="cls-7"
+       d="m994 527s7.57-17.591 24.97-9.516 16.45-7.066 17.03-6.8 9.27-11.9 26.11 0 14.12-12.123 15.89-9.516"
+       data-name="Shape 82 copy 2"
+       id="path6660" />
+    <path
+       class="cls-56"
+       d="m957.85 498.97 37.154-36.381 9.1 9.289-37.159 36.38z"
+       id="path6662" />
+    <path
+       class="cls-52"
+       d="m1264.7 529.51-116.59-21.525-24.15 131.5 116.59 21.525z"
+       data-name="Rectangle 3 copy 2"
+       id="path6664" />
+    <path
+       class="cls-57"
+       d="m1158.3 518.84-15.25 89.092 91.39 18.744 15.25-89.092z"
+       data-name="Rectangle 3 copy 2"
+       id="path6666" />
+    <circle
+       class="cls-58"
+       cx="1185"
+       cy="561"
+       r="4"
+       id="circle6668" />
+    <circle
+       class="cls-58"
+       cx="1189"
+       cy="569"
+       r="4"
+       data-name="Ellipse 12 copy"
+       id="circle6670" />
+    <circle
+       class="cls-58"
+       cx="1197"
+       cy="563"
+       r="4"
+       data-name="Ellipse 12 copy 2"
+       id="circle6672" />
+    <path
+       class="cls-56"
+       d="m1274 550.01-37.04-36.366-9.07 9.285 37.04 36.366z"
+       data-name="Rectangle 4 copy"
+       id="path6674" />
+    <path
+       class="cls-7"
+       d="m1185 554s3.12 39.062-7 57"
+       id="path6676" />
+    <path
+       class="cls-7"
+       d="m1200 556s3.76 47.453-5 60"
+       id="path6678" />
+    <path
+       class="cls-7"
+       d="m1188 576s7.65 3.607 9 2"
+       id="path6680" />
+    <path
+       class="cls-7"
+       d="m1187 589s8.5 7.473 11 3"
+       id="path6682" />
+    <path
+       class="cls-7"
+       d="m1185 601s5.21 5.1 12 4"
+       id="path6684" />
+    <path
+       class="cls-7"
+       d="m1164 558s11.57-16.56 25-9"
+       id="path6686" />
+    <path
+       class="cls-7"
+       d="m1171 537s20.75-1.2 23 9"
+       id="path6688" />
+    <path
+       class="cls-7"
+       d="m1196 548s19.37-10.2 24 1"
+       id="path6690" />
+    <path
+       class="cls-7"
+       d="m1197 552s25.17 3.427 21 14"
+       id="path6692" />
+    <path
+       class="cls-7"
+       d="m1198 556s19.99 13.422 17 21"
+       id="path6694" />
+    <path
+       class="cls-7"
+       d="m1187 553s-12.99 4.734-14 11"
+       id="path6696" />
+    <path
+       class="cls-7"
+       d="m1196 543s10.43-4.557 13-2"
+       id="path6698" />
+    <path
+       class="cls-7"
+       d="m1185 560s2.92-7.043 6-7"
+       id="path6700" />
+    <path
+       class="cls-7"
+       d="m1192 555 4 6"
+       id="path6702" />
+    <path
+       class="cls-7"
+       d="m1191 556-1 11"
+       id="path6704" />
+    <path
+       class="cls-7"
+       d="m1164 555s3.67-2.1 4-1"
+       id="path6706" />
+    <path
+       class="cls-7"
+       d="m1168 551h3"
+       id="path6708" />
+    <path
+       class="cls-7"
+       d="m1172 547 3 1"
+       id="path6710" />
+    <path
+       class="cls-7"
+       d="m1177 546 3 1"
+       id="path6712" />
+    <path
+       class="cls-7"
+       d="m1184 546 1 2"
+       id="path6714" />
+    <path
+       class="cls-7"
+       d="m1167 555v6"
+       id="path6716" />
+    <path
+       class="cls-7"
+       d="m1171 551-1 8"
+       id="path6718" />
+    <path
+       class="cls-7"
+       d="m1175 549v7"
+       id="path6720" />
+    <path
+       class="cls-7"
+       d="m1179 548-1 5"
+       id="path6722" />
+    <path
+       class="cls-7"
+       d="m1185 548-4 4"
+       id="path6724" />
+    <path
+       class="cls-7"
+       d="m1173 535 3 2"
+       id="path6726" />
+    <path
+       class="cls-7"
+       d="m1176 538-4 3"
+       id="path6728" />
+    <path
+       class="cls-7"
+       d="m1177 535 2 2"
+       id="path6730" />
+    <path
+       class="cls-7"
+       d="m1182 536 1 2"
+       id="path6732" />
+    <path
+       class="cls-7"
+       d="m1186 537 2 3"
+       id="path6734" />
+    <path
+       class="cls-7"
+       d="m1190 538v4"
+       id="path6736" />
+    <path
+       class="cls-7"
+       d="m1179 538-3 5"
+       id="path6738" />
+    <path
+       class="cls-7"
+       d="m1185 539-4 4"
+       id="path6740" />
+    <path
+       class="cls-7"
+       d="m1189 541-4 3"
+       id="path6742" />
+    <path
+       class="cls-7"
+       d="m1192 544-3 1"
+       id="path6744" />
+    <path
+       class="cls-7"
+       d="m1197 544 3 1"
+       id="path6746" />
+    <path
+       class="cls-7"
+       d="m1202 542 2 1"
+       id="path6748" />
+    <path
+       class="cls-7"
+       d="m1207 542 1 1"
+       id="path6750" />
+    <path
+       class="cls-7"
+       d="m1201 539-1 3"
+       id="path6752" />
+    <path
+       class="cls-7"
+       d="m1206 539-1 2"
+       id="path6754" />
+    <path
+       class="cls-7"
+       d="m1209 541 3 1"
+       id="path6756" />
+    <path
+       class="cls-7"
+       d="m1199 547 3 3"
+       id="path6758" />
+    <path
+       class="cls-7"
+       d="m1203 546 3 4"
+       id="path6760" />
+    <path
+       class="cls-7"
+       d="m1208 545 2 6"
+       id="path6762" />
+    <path
+       class="cls-7"
+       d="m1213 545v6"
+       id="path6764" />
+    <path
+       class="cls-7"
+       d="M1217,546c-0.34.568,0,5,0,5"
+       id="path6766" />
+    <path
+       class="cls-7"
+       d="m1219 549a19.039 19.039 0 0 1 1 3"
+       id="path6768" />
+    <path
+       class="cls-7"
+       d="m1191 548 3 3"
+       id="path6770" />
+    <path
+       class="cls-7"
+       d="m1195 547-1 5"
+       id="path6772" />
+    <path
+       class="cls-7"
+       d="m1194 552 2 3"
+       id="path6774" />
+    <path
+       class="cls-7"
+       d="m1193 551-5 2"
+       id="path6776" />
+    <path
+       class="cls-7"
+       d="m1200 554 3 4"
+       id="path6778" />
+    <path
+       class="cls-7"
+       d="m1206 555 1 4"
+       id="path6780" />
+    <path
+       class="cls-7"
+       d="m1211 556v6"
+       id="path6782" />
+    <path
+       class="cls-7"
+       d="m1215 559-1 5"
+       id="path6784" />
+    <path
+       class="cls-7"
+       d="m1218 562-2 6"
+       id="path6786" />
+    <path
+       class="cls-7"
+       d="m1208 555h6"
+       id="path6788" />
+    <path
+       class="cls-7"
+       d="m1216 559 2 1"
+       id="path6790" />
+    <path
+       class="cls-7"
+       d="m1219 563 1 3"
+       id="path6792" />
+    <path
+       class="cls-7"
+       d="m1218 565"
+       id="path6794" />
+    <path
+       class="cls-7"
+       d="m1219 564 2 5"
+       id="path6796" />
+    <path
+       class="cls-7"
+       d="m1218 567v4"
+       id="path6798" />
+    <path
+       class="cls-7"
+       d="m1203 561 1 6"
+       id="path6800" />
+    <path
+       class="cls-7"
+       d="m1206 565 1 6"
+       id="path6802" />
+    <path
+       class="cls-7"
+       d="m1210 568v6"
+       id="path6804" />
+    <path
+       class="cls-7"
+       d="m1213 573v4"
+       id="path6806" />
+    <path
+       class="cls-7"
+       d="m1214 573 1 6"
+       id="path6808" />
+    <path
+       class="cls-7"
+       d="m1172 563c0.33 1.067-1 5-1 5"
+       id="path6810" />
+    <path
+       class="cls-7"
+       d="m1173 563 1 6"
+       id="path6812" />
+    <path
+       class="cls-7"
+       d="m1174 561 2 5"
+       id="path6814" />
+    <path
+       class="cls-7"
+       d="m1177 559v4"
+       id="path6816" />
+    <path
+       class="cls-7"
+       d="m1180 557-1 5"
+       id="path6818" />
+    <path
+       class="cls-7"
+       d="m1182 556v4"
+       id="path6820" />
+    <rect
+       class="cls-80"
+       x="741"
+       y="712"
+       width="174"
+       height="203"
+       id="rect6988" />
+    <path
+       class="cls-81"
+       d="m767 759 89-2"
+       id="path6990" />
+    <path
+       class="cls-81"
+       d="m786 780h76"
+       id="path6992" />
+    <path
+       class="cls-81"
+       d="m768 799 93-2"
+       id="path6994" />
+    <path
+       class="cls-81"
+       d="m807 814h68"
+       id="path6996" />
+    <path
+       class="cls-81"
+       d="m772 836 71-2"
+       id="path6998" />
+    <path
+       class="cls-81"
+       d="m814 855h64"
+       id="path7000" />
+    <path
+       class="cls-81"
+       d="m864 881h31"
+       id="path7002" />
+    <path
+       class="cls-81"
+       d="m859 896 44 1"
+       id="path7004" />
+    <path
+       class="cls-81"
+       d="m755 737 35-1"
+       id="path7006" />
+    <rect
+       class="cls-82"
+       x="782"
+       y="693"
+       width="84"
+       height="29"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 22"
+       id="rect7008" />
+    <circle
+       class="cls-82"
+       cx="824.5"
+       cy="686.5"
+       r="11.5"
+       id="circle7010" />
+    <rect
+       class="cls-83"
+       x="1087"
+       y="704"
+       width="107"
+       height="119"
+       data-name="Rectangle 13 copy"
+       id="rect7012" />
+    <path
+       class="cls-81"
+       d="m1099 740.15 68.4-1.7"
+       data-name="Shape 177 copy"
+       id="path7014" />
+    <path
+       class="cls-81"
+       d="m1113.6 758.03h58.41"
+       data-name="Shape 178 copy"
+       id="path7016" />
+    <path
+       class="cls-81"
+       d="m1099.8 774.2 71.48-1.7"
+       data-name="Shape 179 copy"
+       id="path7018" />
+    <rect
+       class="cls-82"
+       x="1098"
+       y="688"
+       width="84"
+       height="29"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 22 copy"
+       id="rect7022" />
+    <circle
+       class="cls-82"
+       cx="1140.5"
+       cy="681.5"
+       r="11.5"
+       data-name="Ellipse 18 copy"
+       id="circle7024" />
+    <rect
+       class="cls-84"
+       x="770"
+       y="500"
+       width="108"
+       height="134"
+       data-name="Rectangle 13 copy 2"
+       id="rect7026" />
+    <path
+       class="cls-81"
+       d="m777.14 530.02 55.241-1.321"
+       data-name="Shape 177 copy 2"
+       id="path7028" />
+    <path
+       class="cls-81"
+       d="m777.93 543.89h47.169"
+       data-name="Shape 178 copy 2"
+       id="path7030" />
+    <path
+       class="cls-81"
+       d="m777.76 556.43 57.724-1.321"
+       data-name="Shape 179 copy 2"
+       id="path7032" />
+    <path
+       class="cls-81"
+       d="m777.97 568.33h42.206"
+       data-name="Shape 180 copy 2"
+       id="path7034" />
+    <path
+       class="cls-81"
+       d="m782.24 586.85 44.069-1.32"
+       data-name="Shape 181 copy 2"
+       id="path7036" />
+    <path
+       class="cls-81"
+       d="m785.31 601.39h39.724"
+       data-name="Shape 182 copy 2"
+       id="path7038" />
+    <path
+       class="cls-81"
+       d="m816.34 613.56h19.241"
+       data-name="Shape 183 copy 2"
+       id="path7040" />
+    <path
+       class="cls-81"
+       d="m813.24 623.46 27.311 0.66"
+       data-name="Shape 184 copy 2"
+       id="path7042" />
+    <path
+       class="cls-81"
+       d="M778.69,516.5l21.724-.66"
+       data-name="Shape 185 copy 2"
+       id="path7044" />
+    <rect
+       class="cls-82"
+       x="782"
+       y="482"
+       width="84"
+       height="29"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 22 copy 2"
+       id="rect7046" />
+    <circle
+       class="cls-82"
+       cx="824.5"
+       cy="475.5"
+       r="11.5"
+       data-name="Ellipse 18 copy 2"
+       id="circle7048" />
+    <rect
+       class="cls-85"
+       x="845"
+       y="519"
+       width="28"
+       height="28"
+       id="rect7050" />
+    <rect
+       class="cls-85"
+       x="835"
+       y="572"
+       width="33"
+       height="29"
+       id="rect7052" />
+  </g>
+  <g
+     id="g10724">
+    <rect
+       class="cls-1"
+       x="1383"
+       y="1244"
+       width="36"
+       height="411"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 4"
+       id="rect6282" />
+    <rect
+       class="cls-1"
+       x="1476"
+       y="1185"
+       width="36"
+       height="411"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 4 copy"
+       id="rect6284" />
+    <rect
+       class="cls-1"
+       x="2510"
+       y="1244"
+       width="36"
+       height="411"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 4 copy 2"
+       id="rect6286" />
+    <rect
+       class="cls-1"
+       x="2417"
+       y="1185"
+       width="36"
+       height="411"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 4 copy 2"
+       id="rect6288" />
+    <path
+       class="cls-2"
+       d="M1356,1224l124-58,995,3,94,55H1356Z"
+       id="path6290" />
+    <rect
+       class="cls-3"
+       x="1349"
+       y="1223"
+       width="1227"
+       height="106"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 1"
+       id="rect6292" />
+    <rect
+       class="cls-4"
+       x="1383"
+       y="1244"
+       width="572"
+       height="58"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 2"
+       id="rect6294" />
+    <rect
+       class="cls-4"
+       x="1974"
+       y="1244"
+       width="572"
+       height="58"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 2 copy"
+       id="rect6296" />
+    <rect
+       class="cls-5"
+       x="1630"
+       y="1262"
+       width="83"
+       height="19"
+       rx="9.5"
+       ry="9.5"
+       data-name="Rounded Rectangle 3"
+       id="rect6298" />
+    <rect
+       class="cls-5"
+       x="2216"
+       y="1264"
+       width="83"
+       height="19"
+       rx="9.5"
+       ry="9.5"
+       data-name="Rounded Rectangle 3 copy"
+       id="rect6300" />
+    <path
+       class="cls-6"
+       d="m1636 1272s-2.32 4.8 2 6 69 0 69 0 4.36-1.78 2-6-73 0-73 0z"
+       id="path6302" />
+    <path
+       class="cls-6"
+       d="m2221 1274s-2.32 4.8 2 6 69 0 69 0 4.36-1.78 2-6-73 0-73 0z"
+       data-name="Shape 2 copy"
+       id="path6304" />
+    <path
+       class="cls-42"
+       d="m2446 1192.4c0.01 3.32-18.34 6.26-40.99 6.57s-41.02-2.12-41.03-5.44 18.35-6.25 41-6.57 41.01 2.12 41.02 5.44z"
+       id="path6566" />
+    <path
+       class="cls-42"
+       d="m2423.4 1193.3-58.11 0.52"
+       id="path6568" />
+    <path
+       class="cls-43"
+       d="m2408.1 1193.4s37.79-38.41 54.98-16.77-54.98 16.77-54.98 16.77z"
+       id="path6570" />
+    <path
+       class="cls-43"
+       d="m2408.1 1193.4s39.27 36.74 55.48 14.27-55.48-14.27-55.48-14.27z"
+       data-name="Shape 73 copy"
+       id="path6572" />
+    <path
+       class="cls-44"
+       d="m2457 1180.1c0.49 4.46-3.68 8.6-9.31 9.24s-10.59-2.45-11.08-6.91 3.68-8.6 9.31-9.25 10.59 2.46 11.08 6.92z"
+       id="path6574" />
+    <path
+       class="cls-44"
+       d="m2455.4 1206.3c2.18-4.24-2.12-9.33-9.61-11.37s-15.33-0.27-17.51 3.96 2.11 9.33 9.6 11.38 15.33 0.27 17.52-3.97z"
+       data-name="Ellipse 6 copy"
+       id="path6576" />
+    <ellipse
+       class="cls-59"
+       cx="1631.5"
+       cy="887.28"
+       rx="28.545"
+       ry="28.563"
+       id="ellipse6822" />
+    <path
+       class="cls-60"
+       d="m1559.3 849.98-49.17-22.217-117.36 173.77 97.54 199.16"
+       id="path6824" />
+    <path
+       class="cls-61"
+       d="m1584.7 849.98s-24.99-21.051-32.51-1.587 17.88 20.475 23 23.8 9.51-22.213 9.51-22.213z"
+       id="path6826" />
+    <path
+       class="cls-61"
+       d="m1660 844.42-49.17 92.041s-63.37-25.405-35.68-78.552 84.85-13.489 84.85-13.489z"
+       id="path6828" />
+    <circle
+       class="cls-62"
+       cx="1510.9"
+       cy="827.74"
+       r="8.715"
+       id="circle6830" />
+    <circle
+       class="cls-62"
+       cx="1392.7"
+       cy="1002.1"
+       r="8.72"
+       data-name="Ellipse 13 copy"
+       id="circle6832" />
+    <rect
+       class="cls-62"
+       x="1431.6"
+       y="1189.6"
+       width="114.19"
+       height="21.44"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 18"
+       id="rect6834" />
+    <path
+       class="cls-63"
+       d="m2382 1037-14 63"
+       id="path6836" />
+    <path
+       class="cls-63"
+       d="m2316 1046.8 27.65 58.32"
+       data-name="Shape 159 copy"
+       id="path6838" />
+    <path
+       class="cls-64"
+       d="m2371 1097s17.03-80.15 30-78-20 83-20 83c-0.92 0.93-10-5-10-5z"
+       id="path6840" />
+    <path
+       class="cls-65"
+       d="m2400 1033s-0.35 13.83-6.7 24.82"
+       id="path6842" />
+    <path
+       class="cls-66"
+       d="M2372.22,1040.57l-1.22-3.43s3.98-6.97,6.86-12.03c1.64-2.86,2.92-5.11,2.92-5.11s0.15,2.64.36,6.03c0.36,6.07.86,14.54,0.86,14.54l-4.89,3.43-4.89-3.43"
+       id="path6844" />
+    <path
+       class="cls-67"
+       d="m2379.2 1028.4 2.19-0.15-0.55-6.98-3.94 5.87z"
+       id="path6846" />
+    <path
+       class="cls-66"
+       d="m2316 1051 0.47-3.58s-4.82-6.2-8.31-10.7c-1.98-2.55-3.54-4.54-3.54-4.54s0.34 2.62 0.78 5.98c0.78 6.03 1.86 14.45 1.86 14.45l5 2.56 3.74-4.17"
+       data-name="Shape 162 copy"
+       id="path6848" />
+    <path
+       class="cls-67"
+       d="m2307.5 1040.2-1.98 0.22-0.77-6.96 4.59 5.13z"
+       data-name="Shape 163 copy"
+       id="path6850" />
+    <path
+       class="cls-68"
+       d="m2311.7 996.77 31.47-5.789 25.33 137.69-31.47 5.79z"
+       id="path6852" />
+    <path
+       class="cls-69"
+       d="m2320 1017 9-1"
+       id="path6854" />
+    <path
+       class="cls-69"
+       d="m2327 1042 8-1"
+       id="path6856" />
+    <path
+       class="cls-69"
+       d="m2330 1065 9-1"
+       id="path6858" />
+    <rect
+       class="cls-70"
+       x="2319"
+       y="1089"
+       width="72"
+       height="87"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 19"
+       id="rect6860" />
+    <path
+       class="cls-69"
+       d="m2337 1084h7"
+       id="path6862" />
+    <path
+       class="cls-28"
+       d="m2383.8 1136.2s-10.54 26.87-24.35 25.62-2.72 16.42 18.03 6.01c0 0 6.17-0.39 6.32-31.63z"
+       id="path6864" />
+    <rect
+       class="cls-71"
+       x="1717"
+       y="840"
+       width="424"
+       height="262"
+       id="rect6866" />
+    <rect
+       class="cls-72"
+       x="1738"
+       y="860"
+       width="382"
+       height="216"
+       id="rect6868" />
+    <rect
+       class="cls-73"
+       x="2023"
+       y="886"
+       width="77"
+       height="77"
+       id="rect6870" />
+    <rect
+       class="cls-73"
+       x="1966"
+       y="977"
+       width="136"
+       height="23"
+       id="rect6872" />
+    <rect
+       class="cls-73"
+       x="1966"
+       y="1019"
+       width="136"
+       height="23"
+       data-name="Rectangle 9 copy"
+       id="rect6874" />
+    <rect
+       class="cls-74"
+       x="2109"
+       y="863"
+       width="8"
+       height="8"
+       id="rect6876" />
+    <rect
+       class="cls-74"
+       x="2097"
+       y="863"
+       width="8"
+       height="8"
+       data-name="Rectangle 10 copy"
+       id="rect6878" />
+    <rect
+       class="cls-74"
+       x="2085"
+       y="863"
+       width="8"
+       height="8"
+       data-name="Rectangle 10 copy 2"
+       id="rect6880" />
+    <path
+       class="cls-7"
+       d="m1762 900h140"
+       id="path6882" />
+    <path
+       class="cls-7"
+       d="m1762 920h140"
+       data-name="Shape 169 copy"
+       id="path6884" />
+    <path
+       class="cls-7"
+       d="m1762 945h140"
+       data-name="Shape 169 copy 2"
+       id="path6886" />
+    <path
+       class="cls-7"
+       d="m1762 963h140"
+       data-name="Shape 169 copy 3"
+       id="path6888" />
+    <path
+       class="cls-7"
+       d="m1762 989h140"
+       data-name="Shape 169 copy 4"
+       id="path6890" />
+    <path
+       class="cls-7"
+       d="m1796 1006h49v61h-49v-61z"
+       id="path6892" />
+    <path
+       class="cls-55"
+       d="m1808 1066s-0.68-24.71 8.52-25.62 19.02-2.15 19.48 25.62h-28z"
+       id="path6894" />
+    <circle
+       class="cls-54"
+       cx="1821"
+       cy="1033"
+       r="10"
+       id="circle6896" />
+    <rect
+       class="cls-71"
+       x="1878"
+       y="1095"
+       width="96"
+       height="62"
+       id="rect6898" />
+    <rect
+       class="cls-71"
+       x="1831"
+       y="1150"
+       width="191"
+       height="25"
+       rx="10"
+       ry="10"
+       data-name="Rounded Rectangle 20"
+       id="rect6900" />
+    <path
+       class="cls-75"
+       d="m2181.7 1175.2c7.92-5.88 21.28-1.3 29.83 10.23s9.08 25.64 1.16 31.52-21.27 1.3-29.83-10.23-9.08-25.65-1.16-31.52z"
+       id="path6902" />
+    <path
+       class="cls-76"
+       d="m2185 1176a10.845 10.845 0 0 1 8 8"
+       id="path6904" />
+    <path
+       class="cls-76"
+       d="m2182 1189s17.26-10.22 20-8"
+       id="path6906" />
+    <path
+       class="cls-77"
+       d="m2187 1176.8c0.84-0.65 2.39-0.05 3.47 1.34s1.28 3.05 0.45 3.7-2.39 0.05-3.47-1.34-1.28-3.04-0.45-3.7z"
+       id="path6908" />
+    <path
+       class="cls-28"
+       d="m2208.9 1194s1.88 12.33-1.94 13.73 4.53 11.86 5.81-1.31-3.87-12.42-3.87-12.42z"
+       id="path6910" />
+    <rect
+       class="cls-78"
+       x="1722"
+       y="1209"
+       width="400"
+       height="12"
+       rx="6"
+       ry="6"
+       data-name="Rounded Rectangle 21"
+       id="rect6912" />
+    <path
+       class="cls-75"
+       d="m1722 1214 45-46h316l39 44z"
+       id="path6914" />
+    <path
+       class="cls-79"
+       d="m1772 1176h17"
+       id="path6916" />
+    <path
+       class="cls-79"
+       d="m1766 1184h17"
+       data-name="Shape 175 copy"
+       id="path6918" />
+    <path
+       class="cls-79"
+       d="m1759 1194h17"
+       data-name="Shape 175 copy 2"
+       id="path6920" />
+    <path
+       class="cls-79"
+       d="m1751 1203h17"
+       data-name="Shape 175 copy 3"
+       id="path6922" />
+    <path
+       class="cls-79"
+       d="m1810 1176h17"
+       data-name="Shape 175 copy 4"
+       id="path6924" />
+    <path
+       class="cls-79"
+       d="m1804 1184h17"
+       data-name="Shape 175 copy 4"
+       id="path6926" />
+    <path
+       class="cls-79"
+       d="m1797 1194h17"
+       data-name="Shape 175 copy 4"
+       id="path6928" />
+    <path
+       class="cls-79"
+       d="m1789 1203h17"
+       data-name="Shape 175 copy 4"
+       id="path6930" />
+    <path
+       class="cls-79"
+       d="m1842 1176h17"
+       data-name="Shape 175 copy 5"
+       id="path6932" />
+    <path
+       class="cls-79"
+       d="m1836 1184h17"
+       data-name="Shape 175 copy 5"
+       id="path6934" />
+    <path
+       class="cls-79"
+       d="m1829 1194h17"
+       data-name="Shape 175 copy 5"
+       id="path6936" />
+    <path
+       class="cls-79"
+       d="m1821 1203h17"
+       data-name="Shape 175 copy 5"
+       id="path6938" />
+    <path
+       class="cls-79"
+       d="m1877 1176h17"
+       data-name="Shape 175 copy 6"
+       id="path6940" />
+    <path
+       class="cls-79"
+       d="m1871 1184h17"
+       data-name="Shape 175 copy 6"
+       id="path6942" />
+    <path
+       class="cls-79"
+       d="m1864 1194h17"
+       data-name="Shape 175 copy 6"
+       id="path6944" />
+    <path
+       class="cls-79"
+       d="m1856 1203h17"
+       data-name="Shape 175 copy 6"
+       id="path6946" />
+    <path
+       class="cls-79"
+       d="m1912 1176h17"
+       data-name="Shape 175 copy 7"
+       id="path6948" />
+    <path
+       class="cls-79"
+       d="m1906 1184h17"
+       data-name="Shape 175 copy 7"
+       id="path6950" />
+    <path
+       class="cls-79"
+       d="m1899 1194h17"
+       data-name="Shape 175 copy 7"
+       id="path6952" />
+    <path
+       class="cls-79"
+       d="m1950 1176h17"
+       data-name="Shape 175 copy 8"
+       id="path6954" />
+    <path
+       class="cls-79"
+       d="m1944 1184h17"
+       data-name="Shape 175 copy 8"
+       id="path6956" />
+    <path
+       class="cls-79"
+       d="m1937 1194h17"
+       data-name="Shape 175 copy 8"
+       id="path6958" />
+    <path
+       class="cls-79"
+       d="m1894 1203h52"
+       data-name="Shape 175 copy 8"
+       id="path6960" />
+    <path
+       class="cls-79"
+       d="m1987 1176h17"
+       data-name="Shape 175 copy 9"
+       id="path6962" />
+    <path
+       class="cls-79"
+       d="m1981 1184h17"
+       data-name="Shape 175 copy 9"
+       id="path6964" />
+    <path
+       class="cls-79"
+       d="m1974 1194h17"
+       data-name="Shape 175 copy 9"
+       id="path6966" />
+    <path
+       class="cls-79"
+       d="m1966 1203h17"
+       data-name="Shape 175 copy 9"
+       id="path6968" />
+    <path
+       class="cls-79"
+       d="m2026 1176h17"
+       data-name="Shape 175 copy 10"
+       id="path6970" />
+    <path
+       class="cls-79"
+       d="m2020 1184h17"
+       data-name="Shape 175 copy 10"
+       id="path6972" />
+    <path
+       class="cls-79"
+       d="m2013 1194h17"
+       data-name="Shape 175 copy 10"
+       id="path6974" />
+    <path
+       class="cls-79"
+       d="m2005 1203h17"
+       data-name="Shape 175 copy 10"
+       id="path6976" />
+    <path
+       class="cls-79"
+       d="m2064 1176h17"
+       data-name="Shape 175 copy 11"
+       id="path6978" />
+    <path
+       class="cls-79"
+       d="m2058 1184h17"
+       data-name="Shape 175 copy 11"
+       id="path6980" />
+    <path
+       class="cls-79"
+       d="m2051 1194h17"
+       data-name="Shape 175 copy 11"
+       id="path6982" />
+    <path
+       class="cls-79"
+       d="m2043 1203h17"
+       data-name="Shape 175 copy 11"
+       id="path6984" />
+    <path
+       class="cls-79"
+       d="m1838 1167h175"
+       id="path6986" />
+    <path
+       class="cls-81"
+       d="m1129.7 786.97h52.27"
+       data-name="Shape 180 copy"
+       id="path7020" />
+    <path
+       class="cls-86"
+       d="m1608 1149s-10.06-9.26-9-22 11.99-5.62 14-18-11-17-11-17 6.13-7.22 13-4 17.51 23.45-3 36c0 0-7.5 9.36 4 21s10.16 30.17-8 4z"
+       id="path7054" />
+    <path
+       class="cls-86"
+       d="m1633.4 1152.4s-4.81-4.56-4.31-10.83 5.75-2.77 6.71-8.87-5.27-8.37-5.27-8.37 2.94-3.55 6.23-1.96 8.38 11.54-1.44 17.72c0 0-3.59 4.61 1.91 10.34s4.87 14.85-3.83 1.97z"
+       data-name="Shape 190 copy"
+       id="path7056" />
+    <path
+       class="cls-87"
+       d="m1582.1 1154.2 84.53-1.2s10.62 53.38-38.64 53-46.12-21.57-45.89-51.8z"
+       id="path7058" />
+    <path
+       class="cls-87"
+       d="m1664.2 1156.6c1.41 0.3 17.02 4.89 15.69 20.48s-15.59 18.74-26.56 18.07 1.21-7.23 1.21-7.23 30.57-1.56 10.86-24.09c0 0-2.61-7.52-1.2-7.23z"
+       id="path7060" />
+    <path
+       class="cls-28"
+       d="m1656 1165a32.809 32.809 0 0 1-20 21c-16.41 6.27-1.73 12.22 6 9s16.97-7.87 14-30z"
+       id="path7062" />
+  </g>
+  <g
+     id="clock"
+     transform="matrix(2.120449,0,0,2.120449,1578.4995,380.19078)"
+     style="stroke:#0030e4;stroke-opacity:1">
+    <circle
+       cx="0"
+       cy="0"
+       r="80"
+       fill="none"
+       stroke="#000000"
+       stroke-width="10"
+       id="circle22059"
+       style="stroke:#0030e4;stroke-opacity:1" />
+    <line
+       id="hour"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="-40"
+       stroke="#000000"
+       stroke-width="8"
+       stroke-linecap="round"
+       style="stroke:#0030e4;stroke-opacity:1" />
+    <line
+       id="minute"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="-60"
+       stroke="#000000"
+       stroke-width="6"
+       stroke-linecap="round"
+       style="stroke:#0030e4;stroke-opacity:1" />
+    <line
+       id="second"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="-70"
+       stroke="#ff0000"
+       stroke-width="4"
+       stroke-linecap="round"
+       style="stroke:#0030e4;stroke-opacity:1" />
+  </g>
+  <script
+     id="script22065">
+    const clockGroup = document.getElementById(&quot;clock&quot;);
+    const centerX = 100; // X-Koordinate des Uhrenmittelpunkts
+    const centerY = 100; // Y-Koordinate des Uhrenmittelpunkts
+
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      const hourAngle = (hours % 12 + minutes / 60) * 30;
+      const minuteAngle = (minutes + seconds / 60) * 6;
+      const secondAngle = seconds * 6;
+
+      document.getElementById(&quot;hour&quot;).setAttribute(&quot;transform&quot;, `rotate(${hourAngle})`);
+      document.getElementById(&quot;minute&quot;).setAttribute(&quot;transform&quot;, `rotate(${minuteAngle})`);
+      document.getElementById(&quot;second&quot;).setAttribute(&quot;transform&quot;, `rotate(${secondAngle})`);
+      
+      requestAnimationFrame(updateClock);
+    }
+
+    updateClock();
+  </script>
+  <path
+     style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 1579.1065,525.95874 c 0,16.256 0.3407,16.6563 0.3407,16.6563"
+     id="path23835-1" />
+  <path
+     style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 1578.1588,215.10305 c 0,16.256 0.3407,16.6563 0.3407,16.6563"
+     id="path23835-1-0" />
+  <path
+     style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 1723.7224,384.2793 c 16.256,0 16.6563,-0.3407 16.6563,-0.3407"
+     id="path23835-2" />
+  <path
+     style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 1412.0689,384.2793 c 16.256,0 16.6563,-0.3407 16.6563,-0.3407"
+     id="path23835-7" />
+</svg>

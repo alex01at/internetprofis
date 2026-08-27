@@ -1,0 +1,11 @@
+<div class="card card-box border-1">
+							<h5 class="card-header weight-500">Featured *Advertisment*</h5>
+							<div class="card-body">
+								<h5 class="card-title">Get your new hosting!</h5>
+								<p class="card-text">Only 30$/m and you get <br>unlimited Space<br>unlimited traffic<br>unlimited database<br>and much more</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+							<div class="card-footer text-muted">
+								
+							</div>
+						</div>

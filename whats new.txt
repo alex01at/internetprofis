@@ -1,0 +1,7 @@
+complete new designed adminarea
+
+New Features:
+Copyrightfooter optional
+Admin login time 
+more color options for sections 
+massive improved translation options
