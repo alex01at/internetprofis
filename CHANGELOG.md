@@ -43,6 +43,30 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Behoben (Bugs)
+
+- **4 Upload-Verzeichnisse hätten nach einem frischen `git clone` gar nicht
+  existiert.** Git verfolgt keine leeren Verzeichnisse – von den 5 über
+  `.gitignore` von echten Nutzerinhalten befreiten Ordnern hatte nur
+  `order_files/` eine getrackte Platzhalter-Datei (`.htaccess`). Die
+  anderen vier (`conversations/conversations_files`,
+  `proposals/proposal_files`, `requests/request_files`, `ticket_files`)
+  wären nach dem Klonen schlicht nicht vorhanden gewesen – jeder Upload
+  dorthin (Bilder, Chat-Anhänge, Anfrage-/Ticket-Dateien) wäre
+  fehlgeschlagen. `.gitkeep`-Platzhalter ergänzt.
+  Dabei einen eigenen Fehler gefunden und korrigiert: Zuerst versehentlich
+  `conversations_files` mit „Deny from all" gesperrt, in der Annahme, es
+  bräuchte denselben Schutz wie `order_files`. Vor dem Commit im Code
+  geprüft: `getImageUrl()` verlinkt Proposal-Bilder, Chat-Anhänge,
+  Anfrage- und Ticket-Dateien überall direkt öffentlich (Schutz nur durch
+  unerratbare Dateinamen, keine echte Zugriffskontrolle) – nur
+  `order_files` läuft tatsächlich über einen authentifizierten
+  Download-Pfad. Eine pauschale Sperre hätte Proposal-Bilder,
+  Chat-Vorschauen und Anfrage-/Ticket-Downloads auf der Live-Seite
+  kaputt gemacht. Stattdessen ein harmloses `.gitkeep` verwendet;
+  `order_files/.htaccess` selbst auf eine Apache-2.2-und-2.4-kompatible
+  Syntax modernisiert.
+
 ### Hinzugefügt
 
 - **Alle Fremd-CDN-Assets lokal eingebunden.** Projektweit alle
