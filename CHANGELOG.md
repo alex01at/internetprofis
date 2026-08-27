@@ -7,6 +7,37 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Hinzugefügt
 
+- **Plugin-Update-Funktion wiederhergestellt, gehärtet** (`admin/update_plugin.php`).
+  Gleiche Behandlung wie beim Installer: Zip-Slip-Schutz auf beide
+  Entpack-Schritte, `files.zip` muss unter dem in der DB hinterlegten
+  Plugin-Ordner bleiben, `update.sql` läuft über die bestehende
+  DB-Verbindung mit derselben Blockliste. Dabei zwei zusätzliche Bugs
+  gefunden und behoben: Der Plugin-Lookup baute rohes SQL aus dem
+  unvalidierten `update_plugin`-GET-Parameter zusammen (`... where
+  id='$plugin_id'`) – eine klassische SQL-Injection, jetzt über die
+  parametrisierte `$db->select()`-Methode gelöst. Und
+  `delete_files.txt` (optionale Lösch-Liste im Update-Paket) wurde ganz
+  ohne Pfad-Prüfung per `unlink()` abgearbeitet – ein präpariertes
+  Update-Paket hätte beliebige Dateien löschen können, für die der
+  Webserver-Nutzer Schreibrechte hat. Jetzt wird jede Zeile gegen den
+  Plugin-Ordner geprüft (`realpath`-Check), mit einer präparierten
+  Test-Datei gegen einen Path-Traversal-Versuch verifiziert. Außerdem
+  wurde die `version`-Spalte nach einem Update vorher nie in der
+  Datenbank aktualisiert – jetzt behoben.
+  [plugins/README.md](plugins/README.md) um das Update-Paket-Format
+  ergänzt.
+- **Admin-Passwort-Reset wiederhergestellt** (`admin/change_password.php`).
+  Beim Check, ob `admin_old` entbehrlich ist, aufgefallen: Der
+  „Passwort vergessen"-Ablauf war komplett kaputt – die E-Mail wird
+  korrekt verschickt, aber der enthaltene Link
+  (`admin/change_password?code=...`) zeigte ins Leere, da diese Datei
+  beim Admin-Redesign nie übernommen wurde. Ohne diese Seite hätte sich
+  ein Admin bei vergessenem Passwort komplett ausgesperrt. Logik
+  unverändert aus `admin_old` übernommen (die Lookup-Query war bereits
+  sicher parametrisiert), an das neue Login-Seiten-Design angepasst
+  (die alte Version verwies auf einen inzwischen nicht mehr
+  existierenden Asset-Pfad) und um eine Mindestlänge fürs neue Passwort
+  ergänzt.
 - **Plugin-Installer gehärtet statt entfernt** (`admin/add_plugin.php`).
   Anders als bei `app_update.php`/`update_plugin.php` wird diese Funktion
   weiterhin gebraucht, deshalb bleibt sie erhalten, aber mit denselben
