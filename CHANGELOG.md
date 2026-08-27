@@ -7,6 +7,25 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Behoben (Bugs)
 
+- **14 fehlende Admin-Seiten aus `admin_old` nach `admin` portiert.**
+  Betroffen: `activate_plugin`, `deactivate_plugin`, `cancel_order`,
+  `approve_referral`, `approve_proposal_referral`, `get_provider_id`,
+  `remove_feature_proposal`, `submit_modification`, `unapprove_request`,
+  `view_withdrawals`, `customer_support_settings`, `order_reports`,
+  `proposal_reports`, `completed_transactions`. Vor dem Kopieren jede
+  Datei einzeln geprüft (keine unparametrisierten SQL-Stellen, keine
+  unsicheren Dateizugriffe); `completed_transactions.php` bekam
+  zusätzlich einen expliziten `(int)`-Cast auf den Pagination-Parameter.
+- **Bewusst nicht portiert: `app_update.php` und `update_plugin.php`.**
+  Beide nehmen einen ZIP-Upload entgegen, entpacken ihn ohne Schutz vor
+  Path Traversal/Zip Slip und führen die darin enthaltene `update.sql`
+  als rohe Mehrfach-Query über eine eigene, ungeschützte
+  `new PDO(...)`-Verbindung aus – am Ende der Kette also potenziell
+  beliebiges Schreiben/Löschen von Dateien plus beliebige SQL-Ausführung,
+  nur durch eine aktive Admin-Session abgesichert. Das war für den
+  Download signierter Update-Pakete vom ursprünglichen Codester-Angebot
+  gedacht, was auf diesen GitHub-verwalteten Fork nicht mehr zutrifft.
+  Nicht wiederhergestellt, um dieses Risiko nicht erneut einzuführen.
 - **Kaputte Sidebar-Links im Admin-Panel.** Systematischer Abgleich von
   `admin/includes/sidebar.php` gegen die Router-Tabelle in
   `admin/includes/body.php` und die tatsächlich vorhandenen Dateien ergab:
