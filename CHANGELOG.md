@@ -7,6 +7,26 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Hinzugefügt
 
+- **Plugin-Installer gehärtet statt entfernt** (`admin/add_plugin.php`).
+  Anders als bei `app_update.php`/`update_plugin.php` wird diese Funktion
+  weiterhin gebraucht, deshalb bleibt sie erhalten, aber mit denselben
+  Schutzmaßnahmen: jeder ZIP-Eintrag wird vor dem Entpacken einzeln geprüft
+  (kein Path Traversal, keine Absolut-Pfade, keine versteckten Dateien),
+  alle Dateien aus `files.zip` müssen unter dem im Manifest deklarierten
+  Ordnernamen liegen (validiert gegen `^[a-zA-Z0-9_-]+$`) und einer
+  erlaubten Dateityp-Liste entsprechen, und `plugin.sql` wird auf eine
+  kleine Blockliste gefährlicher Statements geprüft (`DROP DATABASE`,
+  `GRANT`, `LOAD_FILE`, `INTO OUTFILE`/`DUMPFILE`, `LOAD DATA`). Schlägt
+  der DB-Schritt fehl, wird ein bereits entpackter Plugin-Ordner jetzt
+  wieder zurückgerollt statt halb installiert liegen zu bleiben. Die
+  Zip-Slip-Erkennung wurde standalone gegen eine präparierte Test-ZIP mit
+  Path-Traversal-Eintrag getestet – korrekt abgelehnt, nichts geschrieben.
+  Dazu neu: [plugins/README.md](plugins/README.md) dokumentiert das
+  geforderte Paket-Format, das `plugins`-Tabellenschema, den
+  `checkPlugin()`-Aktivierungsmechanismus – und explizit die Grenze, dass
+  der Installer ein Plugin nicht automatisch in Seiten einbindet, die noch
+  keinen passenden, durch `checkPlugin()` abgesicherten `include()`-Aufruf
+  dafür haben; das bleibt eine Core-Code-Änderung.
 - **Sicherer, rein lesender Update-Checker als Ersatz für `app_update.php`.**
   Liest den lokal deployten Git-Commit direkt aus `.git/HEAD` (nur
   Datei-Lesezugriffe, kein `exec`/`shell_exec`) und vergleicht ihn über
