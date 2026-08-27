@@ -43,6 +43,45 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Hinzugefügt
+
+- **Echte, sichere Auto-Update-Funktion** in `admin/app_update.php` (ersetzt
+  den bisherigen reinen Status-Checker). Der entscheidende Unterschied zur
+  ursprünglich entfernten, gefährlichen Version: die Quelle ist fest auf
+  euer eigenes GitHub-Repo per HTTPS begrenzt – kein Upload-Weg für ein
+  präpariertes Paket, keine SQL-Ausführung aus einer Fremdquelle.
+  - Verfolgt den deployten Stand über `admin/.deployed_version`
+    (server-lokal, nicht im Repo) und fällt auf `.git/HEAD` zurück, falls
+    vorhanden – funktioniert also sowohl bei SSH+Git-Deployment als auch
+    bei reinem FTP-Upload ohne `.git`-Ordner.
+  - Ohne bekannten Ausgangspunkt: ein Button markiert den aktuellen
+    GitHub-Stand als Basis (ändert keine Dateien) – gedacht für direkt
+    nach einem manuellen Sync.
+  - Fürs eigentliche Update: holt die Datei-Diff-Liste über die
+    GitHub-Compare-API zwischen deploytem und aktuellem Commit, lädt
+    jede geänderte Datei einzeln über `raw.githubusercontent.com` und
+    schreibt sie direkt, entfernte Dateien werden gelöscht.
+  - Jeder Pfad läuft durch dieselbe Zip-Slip-Absicherung wie beim
+    Plugin-Installer, plus eine explizite Sperrliste für `config.php`,
+    `admin/.deployed_version`, `.git/` und alle fünf Ordner mit echten
+    Nutzerinhalten.
+  - Bricht ab, wenn der Diff zu groß ist, um ihn sicher aufzulisten
+    (GitHub-Compare-API deckelt bei 300 Dateien).
+  - Der Versions-Marker wird nur aktualisiert, wenn wirklich jede Datei
+    erfolgreich war – bei einem Teilausfall bleibt er stehen, ein
+    erneuter Versuch wiederholt genau dieselben Dateien statt still aus
+    dem Takt zu geraten.
+  - Verlangt eine explizite Bestätigung (JS-Dialog) vor der Ausführung.
+  - **Gegen das echte Repo getestet**, nicht simuliert: eigener
+    Test-Harness mit einer vor-Fix-Version von `home.php` auf der
+    Festplatte, Update-Logik gegen die echte GitHub-API für zwei reale
+    Commit-Bereiche laufen lassen – einmal eine Datei-Änderung
+    (Byte-für-Byte-Ergebnis verifiziert), einmal eine Datei-Löschung
+    (tatsächliches Verschwinden von der Festplatte verifiziert). Die
+    Pfad-Absicherung direkt gegen `config.php`, `order_files/*` und
+    `../`-Traversal getestet – korrekt abgelehnt, normale Datei
+    korrekt akzeptiert.
+
 ### Behoben (Bugs)
 
 - **Doppelt kodiertes HTML in der "Warum wir"-Sektion der Startseite.**
