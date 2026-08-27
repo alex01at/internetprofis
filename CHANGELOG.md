@@ -5,6 +5,21 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-08-27
 
+### Hinzugefügt
+
+- **Sicherer, rein lesender Update-Checker als Ersatz für `app_update.php`.**
+  Liest den lokal deployten Git-Commit direkt aus `.git/HEAD` (nur
+  Datei-Lesezugriffe, kein `exec`/`shell_exec`) und vergleicht ihn über
+  die GitHub-Compare-API mit `alex01at/internetprofis` – zeigt an, wie
+  viele Commits das Deployment hinterherhängt, mit Links zu den
+  einzelnen Änderungen. Es wird nichts heruntergeladen, entpackt oder
+  ausgeführt; ein Update bleibt ein bewusstes `git pull` auf dem Server.
+  Bei nicht erreichbarem GitHub oder fehlendem `.git`-Ordner (z. B. bei
+  FTP-Deployment) zeigt die Seite eine freundliche Fallback-Meldung statt
+  zu crashen. Gegen das echte Repo getestet – meldet korrekt „identical"
+  auf dem aktuellen HEAD. Sidebar-Link „Application Update" wieder
+  hergestellt.
+
 ### Behoben (Bugs)
 
 - **14 fehlende Admin-Seiten aus `admin_old` nach `admin` portiert.**
