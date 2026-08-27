@@ -3,109 +3,7 @@
 if(!isset($_SESSION['admin_email'])){
 echo "<script>window.open('login','_self');</script>";
 }else{
-
-
-$count_sellers = $db->count("sellers");
-$count_notifications = $db->count("admin_notifications",array("status" => "unread"));
-$count_orders = $db->count("orders",array("order_active" => "yes"));
-$count_proposals = $db->count("proposals",array("proposal_status" => "pending"));
-$count_support_tickets = $db->count("support_tickets",array("status" => "open"));
-$count_requests = $db->count("buyer_requests",array("request_status" => "pending"));
-$count_referrals = $db->count("referrals",array("status" => "pending"));
-$count_proposals_referrals = $db->count("proposal_referrals",array("status" => "pending"));
-
-function autoLoader($className){
-  require_once("../functions/$className.php");
-}
-spl_autoload_register('autoLoader');
-
-$core = new Core;
-$paymentGateway = $core->checkPlugin("paymentGateway");
-$videoPlugin = $core->checkPlugin("videoPlugin");;
-
 ?>
-    <script>
-    
-    function alert_error(text){
-        Swal('',text,'error');
-    }
-
-    function alert_success(text,url){
-      swal({
-      type: 'success',
-      timer : 3000,
-      text: text,
-      onOpen: function(){
-        swal.showLoading()
-      }
-      }).then(function(){
-        if(url != ""){
-            window.open(url,'_self');
-        }
-      });
-    }
-    
-    function alert_error(text,url){
-      swal({
-      type: 'error',
-      timer: 3000,
-      text: text,
-      onOpen: function(){
-        swal.showLoading()
-      }
-      }).then(function(){
-        if(url != ""){
-            window.open(url,'_self');
-        }
-      });
-    }
-    
-    function alert_confirm(text,url){
-    swal({
-      text: text,
-      type: 'warning',
-      showCancelButton: true 
-    }).then((result) => {
-        if(result.value){ 
-            if(url != ""){
-                window.open(url,'_self');
-            }
-        }
-    });
-    }
-
-</script>
-</head>
-<body>
-  <script src="assets/js/secret.js"></script>
-  <!-- Left Panel -->
-  <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-          <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index?dashboard">
-            <?= $site_name; ?> <span class="badge badge-success p-2 font-weight-bold">ADMIN</span>
-            </a>
-            <a class="navbar-brand hidden" href="./"><span class="badge badge-success pt-2 pb-2">A</span></a>
-          </div>
-          <div id="main-menu" class="main-menu collapse navbar-collapse">
-              <?php include("includes/sidebar.php"); ?>
-          </div>
-        </nav>
-  </aside>
-  <!-- Left Panel -->
-<!-- Right Panel -->
-<div id="right-panel" class="right-panel">
-    <!-- Header-->
-    <header id="header" class="header">
-        <div class="header-menu">
-            <?php include("includes/admin_header.php"); ?>
-        </div>
-    </header>
-    <!-- Header-->
-        
 
 <div class="breadcrumbs">
   <div class="col-sm-4">
@@ -128,7 +26,7 @@ $videoPlugin = $core->checkPlugin("videoPlugin");;
 
 
 <div class="main-container">
-        
+
 <div class="row"><!--- 1 row Starts --->
 
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
@@ -137,7 +35,9 @@ $videoPlugin = $core->checkPlugin("videoPlugin");;
 
 <h2 class="pb-4">Filter Proposals</h2>
 
-<form class="form-inline pb-2" method="get" action="filter_proposals.php">
+<form class="form-inline pb-2" method="get" action="index">
+
+<input type="hidden" name="filter_proposals" value="1">
 
 <div class="form-group">
 
@@ -153,13 +53,13 @@ $get_cat_id = $input->get('cat_id');
 $get_categories = $db->select("categories");
 
 while($row_categories = $get_categories->fetch()){
-    
+
 $cat_id = $row_categories->cat_id;
 
 $get_meta = $db->select("cats_meta",array("cat_id" => $cat_id, "language_id" => $adminLanguage));
 
 $cat_title = $get_meta->fetch()->cat_title;
-    
+
 echo "<option ".($get_cat_id == $cat_id ? "selected" : "")." value='$cat_id'>$cat_title</option>";
 
 }
@@ -190,9 +90,9 @@ while($row_delivery_times = $get_delivery_times->fetch()){
 $delivery_id = $row_delivery_times->delivery_id;
 
 $delivery_title = $row_delivery_times->delivery_title;
-    
+
 echo "<option ".($get_delivery_id == $delivery_id ? "selected" : "")." value='$delivery_id'>$delivery_title</option>";
-    
+
 }
 
 
@@ -215,13 +115,13 @@ $get_level_id = $input->get('level_id');
 $get_seller_levels = $db->select("seller_levels");
 
 while($row_seller_levels = $get_seller_levels->fetch()){
-    
+
 $level_id = $row_seller_levels->level_id;
 
 $level_title = $db->select("seller_levels_meta",array("level_id"=>$level_id,"language_id"=>$adminLanguage))->fetch()->title;
-    
+
 echo "<option ".($get_level_id == $level_id ? "selected" : "")." value='$level_id'>$level_title</option>";
-    
+
 }
 
 
@@ -390,7 +290,7 @@ $cat_title = $get_meta->fetch()->cat_title;
 
 <a title="View Proposal" href="../proposals/<?= $seller_user_name; ?>/<?= $proposal_url; ?>" target="_blank">
 
-<i class="fa fa-eye"></i> 
+<i class="fa fa-eye"></i>
 
 </a>
 
@@ -422,7 +322,7 @@ $cat_title = $get_meta->fetch()->cat_title;
 
 <a title="Pause/Deactivate Proposal" href="index?pause_proposal=<?= $proposal_id; ?>">
 
-<i class="fa fa-pause-circle"></i> 
+<i class="fa fa-pause-circle"></i>
 
 </a>
 
@@ -450,10 +350,10 @@ $cat_title = $get_meta->fetch()->cat_title;
 
 <a href="index?unpause_proposal=<?= $proposal_id; ?>" >
 
-<i class="fa fa-refresh"></i> Unpause 
+<i class="fa fa-refresh"></i> Unpause
 
 </a>
-    
+
 <br>
 
 <a href="index?move_to_trash=<?= $proposal_id; ?>">
@@ -483,7 +383,7 @@ $cat_title = $get_meta->fetch()->cat_title;
 </a>
 
 <br/>
-    
+
 <a title="View Proposal" href="../proposals/<?= $seller_user_name; ?>/<?= $proposal_url; ?>" target="_blank">
 
 <i class="fa fa-eye"></i> Preview
@@ -519,7 +419,7 @@ $cat_title = $get_meta->fetch()->cat_title;
 </a>
 
 <br>
-    
+
 <a title="View Proposal" href="../proposals/<?= $seller_user_name; ?>/<?= $proposal_url; ?>" target="_blank">
 
 <i class="fa fa-eye"></i> Preview
@@ -570,7 +470,7 @@ $cat_title = $get_meta->fetch()->cat_title;
 </div><!--- card Ends --->
 </div><!--- col-lg-12 Ends --->
 </div><!--- 2 row mt-3 Ends --->
-</div>       
+</div>
 
 <div class="container clearfix">
 <div class="row">

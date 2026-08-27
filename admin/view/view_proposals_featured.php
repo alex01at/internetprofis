@@ -18,7 +18,8 @@ $count_trash_proposals = $db->count("proposals",array("proposal_status" => "tras
             <div class="p-3 mb-3  ">
                 <!--- p-3 mb-3 filter-form Starts --->
                 <h2 class="pb-4">Filter Proposals/Services</h2>
-                <form class="form-inline pb-2" method="get" action="includes/filter_proposals.php">
+                <form class="form-inline pb-2" method="get" action="../index">
+                    <input type="hidden" name="filter_proposals" value="1">
                     <div class="form-group">
                         <label> Delivery Time: </label>
                         <select name="delivery_id" required class="form-control mb-2 mr-sm-2 mb-sm-0">
