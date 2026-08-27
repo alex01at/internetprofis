@@ -45,6 +45,24 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Hinzugefügt
 
+- **Alle Fremd-CDN-Assets lokal eingebunden.** Projektweit alle
+  `http(s)`-Ressourcen durchsucht und in zwei Gruppen sortiert:
+  - **Jetzt lokal:** Google Fonts (Roboto, Open Sans – Latin/Latin-Ext
+    als woff2 unter `fonts/roboto/` bzw. `fonts/opensans/`),
+    Summernote-Editor-CSS inkl. Icon-Font (beide im Einsatz befindlichen
+    Versionen 0.8.16 und 0.8.18 unter `styles/summernote-0.8.16/` bzw.
+    `-0.8.18/`, betraf 11 Frontend- und Admin-Seiten), Chosen.js
+    (`js/chosen.jquery.min.js`, in `user.php`).
+  - **Bewusst extern gelassen** (sind keine Assets, sondern
+    Pflicht-Live-Dienste): Stripe.js/`checkout.stripe.com` (Stripe
+    schreibt das Laden von der eigenen Domain als Teil der
+    PCI-DSS-Compliance zwingend vor – selbst hosten würde Stripes
+    Betrugserkennung aushebeln und deren Nutzungsbedingungen
+    verletzen), das PayPal-SDK (gleicher Grund), Google reCAPTCHA
+    (ein Live-Challenge-Dienst, kein statisches Skript) sowie Google
+    Tag Manager/Google Translate. Reine `<a href>`-Doku-/Credit-Links
+    (GitHub, Währungscode-Referenzen, Font-Awesome-Icon-Browser etc.)
+    unangetastet, da keine geladenen Ressourcen.
 - **Plugin-Update-Funktion wiederhergestellt, gehärtet** (`admin/update_plugin.php`).
   Gleiche Behandlung wie beim Installer: Zip-Slip-Schutz auf beide
   Entpack-Schritte, `files.zip` muss unter dem in der DB hinterlegten
