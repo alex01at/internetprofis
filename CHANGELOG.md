@@ -43,6 +43,32 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Geändert (PHP 8.5)
+
+- **PHP-8.5-Kompatibilität geprüft.** Eigenen Code (nicht `vendor/`) gegen
+  jede Deprecation und jeden Breaking Change aus dem offiziellen
+  PHP-8.5-Migrationsleitfaden abgeglichen. Die meisten Kategorien: null
+  Treffer (keine nicht-kanonischen Casts, kein Backtick-Shell-Exec,
+  keine `__sleep()`/`__wakeup()`, kein `mysqli_execute()`, keine
+  problematische `PDO::FETCH_CLASS`-Nutzung). Zwei echte Funde,
+  beide behoben:
+  - `libs/database.php`: `PDO::MYSQL_ATTR_INIT_COMMAND` ist ab 8.5
+    deprecated (Ersatz: `Pdo\Mysql::ATTR_INIT_COMMAND`, existiert aber
+    erst ab PHP 8.4). Da ihr weiterhin PHP 8.2+ als Ziel habt, direkt
+    umstellen hätte auf 8.2/8.3 einen Fatal Error verursacht (Klasse
+    existiert dort nicht) – stattdessen mit `class_exists()`-Prüfung
+    versionssicher gemacht, lokal auf PHP 8.3 verifiziert (fällt korrekt
+    auf die alte Konstante zurück).
+  - 11 überflüssige `curl_close()`/`imagedestroy()`-Aufrufe in 10
+    Dateien entfernt – beide Ressourcentypen werden seit PHP 8.0
+    automatisch freigegeben, der explizite Aufruf ist seit 8.5 als
+    deprecated markiert und war ohnehin nur ein No-op.
+  - Composer-Abhängigkeiten (Stripe, Guzzle, AWS SDK, PHPMailer etc.)
+    haben alle offene `php`-Versionsangaben (`>=X.Y`, keine
+    Obergrenze) – blockieren die Installation auf 8.5 also nicht.
+  - **Fazit: nichts gefunden, das auf PHP 8.5 tatsächlich brechen würde**
+    – nur die zwei genannten Deprecation-Warnquellen, beide behoben.
+
 ### Behoben (Bugs)
 
 - **4 Upload-Verzeichnisse hätten nach einem frischen `git clone` gar nicht
