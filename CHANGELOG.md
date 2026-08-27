@@ -5,6 +5,33 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-08-27
 
+### Behoben (Bugs)
+
+- **Kaputte Sidebar-Links im Admin-Panel.** Systematischer Abgleich von
+  `admin/includes/sidebar.php` gegen die Router-Tabelle in
+  `admin/includes/body.php` und die tatsächlich vorhandenen Dateien ergab:
+  7 Sidebar-Links nutzten alte Parameter-Namen von vor dem Admin-Redesign,
+  obwohl die jeweilige Funktion unter einem neuen Namen längst
+  funktioniert – u. a. **Allgemeine Einstellungen, Zahlungseinstellungen
+  und Mail-Server-Einstellungen waren über die Sidebar gar nicht
+  erreichbar**. Korrigiert: `general_settings`→`general`,
+  `payment_settings`→`payment`, `mail_settings`→`mail-server`,
+  `email_templates`→`mail-templates`, `posts`→`blog`,
+  `post_categories`→`blog_categories`, `post_comments`→`blog_comments`.
+  Zusätzlich zwei tote Links entfernt: „Application License" (Lizenz-Check
+  ist im Code bewusst auskommentiert – folgerichtig für den Open-Source-
+  Fork) und „Layout Settings" (ersetzt durch die separaten Theme/Color/
+  Logo-Settings-Seiten, über das obere Menü erreichbar).
+- **Noch offen, nicht versteckt:** „Application Update", „Customer Support
+  Settings", „Order Reports" und „Proposal Reports" sind weiterhin in der
+  Sidebar verlinkt, die Zieldateien existieren im neuen `admin/` aber
+  nicht – diese vier (plus rund ein Dutzend weiterer Aktionen wie
+  Plugin-Aktivierung, Bestellung stornieren, Referral genehmigen,
+  Auszahlungs-Übersicht) wurden beim Admin-Redesign nicht aus
+  `admin_old/` übernommen. Bewusst nicht automatisch entfernt oder
+  portiert, da echte fehlende Funktionalität, keine kaputten Links –
+  siehe Konversation für die vollständige Liste.
+
 ### Sicherheit
 
 - **Fehlerausgabe global abgeschaltet.** `.user.ini` setzte
