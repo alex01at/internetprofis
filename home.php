@@ -133,13 +133,13 @@ $all_featured_cats = $get_categories->fetchAll();
       ?>
       <div class="col-md-4 pad0">
         <div class="box">
-          <h5><?= htmlspecialchars($row_boxes->box_title); ?></h5>
-          <p><?= htmlspecialchars($row_boxes->box_desc); ?></p>
+          <h5><?= $row_boxes->box_title; ?></h5>
+          <p><?= $row_boxes->box_desc; ?></p>
         </div>
       </div>
       <div class="col-md-4 pad0">
         <div class="blu_box <?= $bg_class; ?>">
-          <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block" alt="<?= htmlspecialchars($row_boxes->box_title); ?>">
+          <img src="<?= $box_image; ?>" class="img-fluid mx-auto d-block" alt="<?= $row_boxes->box_title; ?>">
         </div>
       </div>
       <?php $i++; endwhile; ?>
