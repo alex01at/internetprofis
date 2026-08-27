@@ -1,6 +1,9 @@
 # Contains live DB credentials
 config.php
 
+# Local working screenshots, not part of the script
+/screenshots/
+
 # Private, user-submitted content (order deliverables, chat attachments,
 # support tickets) -- not part of the script itself, must never be public
 /order_files/*
