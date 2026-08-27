@@ -43,6 +43,24 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   wurde vorher wiederhergestellt. Der Link „Old Admincenter" im
   Admin-Menü ist ebenfalls weg.
 
+### Behoben (Bugs)
+
+- **Doppelt kodiertes HTML in der "Warum wir"-Sektion der Startseite.**
+  Live-Review der Seite zeigte `no&lt;br&gt; matter your budget` statt
+  eines Zeilenumbruchs im Text der "Your Terms"-Box. Ursache:
+  `libs/input.php`'s `Input::post()` wendet bereits beim Speichern
+  `htmlspecialchars()` auf jeden Textwert an (Admin-Formulare
+  `insert_box.php`/`edit_box.php`), `home.php` hat beim Ausgeben
+  zusätzlich noch mal escaped – macht aus einem eingegebenen `<br>`
+  sichtbar `&lt;br&gt;`. Behoben, indem `home.php` den bereits sicher
+  gespeicherten Wert unverändert ausgibt statt doppelt zu escapen.
+  **Wichtig:** Dasselbe Muster (Escaping beim Speichern *und* beim
+  Anzeigen) betrifft vermutlich weitere Felder im Projekt – z. B. im
+  Footer sichtbar als "Graphics &amp; Design" statt "Graphics &
+  Design". Nur die konkret gemeldete Stelle gefixt, nicht
+  projektweit durchgezogen, da das viele Dateien betrifft und
+  einzeln geprüft werden sollte.
+
 ### Geändert (PHP 8.5)
 
 - **PHP-8.5-Kompatibilität geprüft.** Eigenen Code (nicht `vendor/`) gegen
