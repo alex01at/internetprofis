@@ -7,6 +7,35 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ### Sicherheit
 
+- **Fehlerausgabe global abgeschaltet.** `.user.ini` setzte
+  `display_errors = on` für die ganze Seite; nur `config.php` hat es lokal
+  wieder deaktiviert. Viele Einstiegspunkte (`admin/`, `admin_old/,
+  Direktaufrufe) binden `config.php` aber nie ein und hätten PHP-Fehler
+  inkl. Dateipfaden an anonyme Besucher ausgegeben. Jetzt zusätzlich
+  `log_errors = on`, damit Fehler weiterhin im Server-Log landen.
+- **Session-Cookies gehärtet.** `session.cookie_httponly`,
+  `session.cookie_secure` und `session.cookie_samesite=Lax` zentral über
+  `.user.ini` gesetzt (nötig, da `session_start()` an über 600 Stellen ohne
+  gemeinsamen Bootstrap aufgerufen wird). `Secure` ist unbedenklich, da
+  `.htaccess` bereits auf HTTPS erzwingt; `Lax` statt `Strict`, damit der
+  Facebook-/Google-OAuth-Redirect zurück auf `fb-callback.php`/
+  `g-callback.php` das Cookie noch mitbekommt.
+- **Session Fixation behoben.** An jedem Punkt, an dem eine neue
+  authentifizierte Identität entsteht, wird jetzt vorher
+  `session_regenerate_id(true)` aufgerufen: normaler Login/Registrierung
+  (`login.php`, `includes/register_login_forgot.php`), Google-/Facebook-
+  Login (`g-register.php`, `fb-register.php`), Admin-Login (`admin/login.php`,
+  `admin_old/login.php`) und die Admin-Funktion „als Verkäufer einloggen"
+  (`admin/seller_login.php`, `admin_old/seller_login.php`). Vorher blieb
+  eine vor dem Login bestehende Session-ID nach dem Login gültig.
+- `plugins/` überprüft (einziges vorhandenes Plugin: 2Checkout-Zahlungs-
+  gateway, ~200 KB) – keine Auffälligkeiten, alle scheinbar ungeschützten
+  Dateien sind Fragmente, die nur aus bereits abgesicherten Seiten
+  eingebunden werden.
+- Nebenbei entdeckt: `route.php` + `sites/login.php` sind ein komplett
+  unerreichbares, totes Alt-Routing/Login-Duplikat (kein Verweis darauf in
+  `.htaccess` oder irgendeiner anderen Datei). Nicht entfernt, da ohne
+  echtes Risiko – aber als Aufräum-Kandidat notiert.
 - **Kritisch – unbenutzte `apis/`-REST-API entfernt (Auth-Bypass).** `apis/`
   war eine über CodeIgniter 3 gebaute REST-API für eine Mobile App, die nie
   gebaut/eingesetzt wurde (keine einzige Referenz darauf sonst irgendwo im
