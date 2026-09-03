@@ -129,7 +129,7 @@ $lang['req_title'] ="Tell your buyer what you need to get started (Optional) ";
 $lang['req_hint'] ="Structure your Buyer Instructions as free text.";
 $lang['req_placeholder'] = "If you need to obtain information, files or other items from the buyer prior to starting your work, please add your instructions here. For example: Please send me your company name or Please send me the photo you need me to edit.";
 $lang['publish']['grat'] ="Congrats! you're almost done submitting this proposal.";
-$lang['publish']['all_ok'] ="You can go back and check if you entered all the details for this proposal correctly. If all looks good and you agree with <a href='<?= $site_url; ?>/terms_and_conditions' target='_black' class='text-primary'>all our policies</a>, please click on the “Save & Submit For Approval” button.";
+$lang['publish']['all_ok'] ="You can go back and check if you entered all the details for this proposal correctly. If all looks good and you agree with <a href='".$site_url."/terms_and_conditions' target='_black' class='text-primary'>all our policies</a>, please click on the “Save & Submit For Approval” button.";
 $lang['publish']['draft'] ="If you do not wish to submit this proposal for approval at this time, please exit this page. You can easily retrieve this proposal by clicking on Selling => My Proposals => Drafts";
 $lang['publish']['features'] ="Make Proposal Featured (Optional)";
 $lang['publish']['features_text'] ="Let your proposal appear on several places on ". $site_name; "<br>
@@ -1093,7 +1093,7 @@ $lang['settings']['reason']['4'] = "I can’t find what I am looking for";
 $lang['settings']['reason']['5'] = "I had a bad experience with a seller / buyer";
 $lang['settings']['reason']['6'] = "I found the site difficult to use";
 $lang['settings']['reason']['7'] = "The level of customer service was less than expected";
-$lang['settings']['reason']['8'] = "I have another <?= $site_name; ?> account";
+$lang['settings']['reason']['8'] = "I have another ".$site_name." account";
 $lang['settings']['reason']['9'] = "I'm not receiving enough orders";
 $lang['settings']['reason']['10'] = "Other";
 

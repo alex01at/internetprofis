@@ -727,7 +727,7 @@ $lang['settings']['reason']['4'] = "Ich kann nicht finden, was ich suche";
 $lang['settings']['reason']['5'] = "Ich hatte eine schlechte Erfahrung mit einem Verkäufer /Käufer";
 $lang['settings']['reason']['6'] = "Die Website ist schwer zu nutzen";
 $lang['settings']['reason']['7'] = "Die Qualität des Kundendienstes ist geringer als erwartet";
-$lang['settings']['reason']['8'] = "Ich habe eine <?= $site_name; ?> Konto";
+$lang['settings']['reason']['8'] = "Ich habe noch ein weiteres ".$site_name."-Konto";
 $lang['settings']['reason']['9'] = "Ich bekomme nicht genug Bestellungen";
 $lang['settings']['reason']['10'] = "Anderes";
 $lang['cart']['your_cart'] = "Ihr Warenkorb";
@@ -1177,7 +1177,7 @@ $lang['req_hint'] ="Strukturieren Sie Ihre Hinweise als Freitext.";
 $lang['req_title'] ="Teilen Sie Ihrem Käufer mit, was Sie für den Einstieg benötigen (optional) ";
 $lang['req_placeholder'] ="Wenn Sie vor Beginn Ihrer Arbeiten Informationen, Dateien oder andere Gegenstände vom Käufer einholen müssen, fügen Sie bitte hier Ihre Anweisungen hinzu. Zum Beispiel: Bitte senden Sie mir Ihren Firmennamen oder senden Sie mir bitte das Foto, das ich bearbeiten soll.";
 $lang['publish']['grat'] ="Glückwunsch! Sie sind fast fertig mit der Einreichung dieses Angebotes."; 
-$lang['publish']['all_ok'] ="Sie können zurückgehen und überprüfen, ob Sie alle Details für dieses Angebot korrekt eingegeben haben. Wenn alles gut aussieht und Sie damit einverstanden sind und nicht gegen unsere <a href='<?= $site_url; ?>/terms_and_conditions' target='_black' class='text-primary'>Richtlinien</a> verstößt, klicken Sie bitte auf die Schaltfläche „Speichern und zur Genehmigung einreichen“.";
+$lang['publish']['all_ok'] ="Sie können zurückgehen und überprüfen, ob Sie alle Details für dieses Angebot korrekt eingegeben haben. Wenn alles gut aussieht und Sie damit einverstanden sind und nicht gegen unsere <a href='".$site_url."/terms_and_conditions' target='_black' class='text-primary'>Richtlinien</a> verstößt, klicken Sie bitte auf die Schaltfläche „Speichern und zur Genehmigung einreichen“.";
 $lang['publish']['draft'] ="Wenn Sie diesen Vorschlag zu diesem Zeitpunkt nicht zur Genehmigung einreichen möchten, verlassen Sie bitte diese Seite. Sie können dieses Angebot ganz einfach abrufen, indem Sie auf Verkaufen => Meine Angebote => Entwürfe klicken.";
 $lang['publish']['features'] ="Angebot kostenpflichtig bewerben (Optional)";
 $lang['publish']['features_text'] ="Lassen Sie Ihren Vorschlag an mehreren Stellen auf <strong>". $site_name ." </strong> erscheinen. <br>

@@ -672,7 +672,7 @@ $lang['settings']['reason']['4'] = "I can’t find what I am looking for";
 $lang['settings']['reason']['5'] = "I had a bad experience with a seller / buyer";
 $lang['settings']['reason']['6'] = "I found the site difficult to use";
 $lang['settings']['reason']['7'] = "The level of customer service was less than expected";
-$lang['settings']['reason']['8'] = "I have another <?= $site_name; ?> account";
+$lang['settings']['reason']['8'] = "I have another ".$site_name." account";
 $lang['settings']['reason']['9'] = "I'm not receiving enough orders";
 $lang['settings']['reason']['10'] = "Other";
 

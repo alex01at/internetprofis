@@ -19,6 +19,16 @@ php tests/check-lang-keys.php
 if [ $? -ne 0 ]; then status=1; fi
 
 echo ""
+echo "=== Embedded-tag check ==="
+php tests/check-embedded-tags.php
+if [ $? -ne 0 ]; then status=1; fi
+
+echo ""
+echo "=== Stray backslash check ==="
+php tests/check-stray-backslashes.php
+if [ $? -ne 0 ]; then status=1; fi
+
+echo ""
 if [ $status -eq 0 ]; then
     echo "All checks passed."
 else
