@@ -26,7 +26,7 @@
           </div>
           <div class="flex-md-1 pr-md-2">
             <button class="btn-link text-right overlay-close flex-xs-1 justify-self-flex-end border-0 p-md-0" data-overlay-close="">
-              <span class="screen-reader-only">Close Menu</span>
+              <span class="screen-reader-only"><?= $lang['mobile_menu']['close_menu']; ?></span>
               <span class="gigtodo-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z"></path>
@@ -38,7 +38,7 @@
 
         <div data-ui="mobile-catnav-header" class="mobile-catnav-header bb-xs-1 align-items-center bg-white display-flex-xs flex-nowrap position-relative height-50px">
           <button class="mobile-catnav-back-btn btn-link overlay-back p-xs-2 text-left display-none flex-xs-1 align-self-flex-start z-index-1 position-absolute" data-subnav-id="0" data-ternav-id="0" data-topnav-name="" data-subnav-name="">
-            <span class="screen-reader-only">Go Back</span>
+            <span class="screen-reader-only"><?= $lang['mobile_menu']['go_back']; ?></span>
             <span class="gigtodo-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M16,21a0.994,0.994,0,0,1-.664-0.253L5.5,12l9.841-8.747a1,1,0,0,1,1.328,1.494L8.5,12l8.159,7.253A1,1,0,0,1,16,21Z"></path>
@@ -52,7 +52,7 @@
           </div>
           <div class="flex-xs-1 width-full">
             <button class="show-xs show-sm btn-link p-xs-2 overlay-close border-0 float-right" data-overlay-close="">
-              <span class="screen-reader-only">Close Menu</span>
+              <span class="screen-reader-only"><?= $lang['mobile_menu']['close_menu']; ?></span>
               <span class="gigtodo-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z"></path>
@@ -157,7 +157,7 @@
           </div>
           <div class="flex-md-1 pr-md-2">
             <button class="btn-link text-right overlay-close flex-xs-1 justify-self-flex-end border-0 p-md-0" data-overlay-close="">
-              <span class="screen-reader-only">Close Menu</span>
+              <span class="screen-reader-only"><?= $lang['mobile_menu']['close_menu']; ?></span>
               <span class="gigtodo-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z"></path>
@@ -175,13 +175,13 @@
             </span>
           </button>
           <div class="flex-xs-4 width-full pt-md-4 pb-md-4 pl-xs-2">
-            <h6 id="mobile-catnav-header-title" class="text-left position-absolute vertical-center">User Menu</h6>
+            <h6 id="mobile-catnav-header-title" class="text-left position-absolute vertical-center"><?= $lang['mobile_menu']['user_menu']; ?></h6>
             <h6 id="mobile-sub-catnav-header-title" class="text-center position-absolute position-left position-right vertical-center pl-md-8 pr-md-8"></h6>
             <h6 id="mobile-tertiary-catnav-header-title" class="text-center position-absolute position-left position-right vertical-center pl-md-8 pr-md-8 display-none"></h6>
           </div>
           <div class="flex-xs-1 width-full">
             <button class="show-xs show-sm btn-link p-xs-2 overlay-close border-0 float-right" data-overlay-close="">
-              <span class="screen-reader-only">Close Menu</span>
+              <span class="screen-reader-only"><?= $lang['mobile_menu']['close_menu']; ?></span>
               <span class="gigtodo-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M13.414,12l6.293-6.293a1,1,0,0,0-1.414-1.414L12,10.586,5.707,4.293A1,1,0,0,0,4.293,5.707L10.586,12,4.293,18.293a1,1,0,1,0,1.414,1.414L12,13.414l6.293,6.293a1,1,0,0,0,1.414-1.414Z"></path>
