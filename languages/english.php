@@ -138,12 +138,8 @@ with ". $site_name; " feature, your proposal already has a 50% chance of getting
 $lang['publish']['save_approve'] ="Save & Submit For Approval";
 $lang['publish']['save_publish'] ="Save & Publish";
 $lang['affiliate'] ="Support the seller and earn {proposal_referral_money}% of each sale made using link below. <a href='$site_url/terms_and_conditions' class='strike'>Terms apply.</a>";
-$lang['no_cat'] ="missing category?";
-$lang['no_cat_desc'] ="You miss a acategory?<br>Please let us know it.";
-$lang['report']= "report";
 $lang['no_ideas'] ="There are currently no ideas in feedback.";
 $lang['no_ideas_search'] = "We couldn't find any results for your search.";
-$lang['placeholder']['no_cat'] ="suggest a category";
 $lang['greetings']['morning'] = "Good Morning";
 $lang['greetings']['afternoon'] = "Good Afternoon";
 $lang['greetings']['evening'] = "Good Evening";
@@ -178,12 +174,9 @@ $lang['notification']['ticket_reply'] = "just responded to your ticket.";
 
 // User Logged In Menu Items
 $lang["menu"]["dashboard"] = "Dashboard";
-$lang["menu"]["notifications"] = "Notifications";
 $lang["menu"]["messages"] = "Messages";
-$lang["menu"]["favorites"] = "Favorites";
 $lang["menu"]["cart"] = "Cart";
 $lang["menu"]["selling"] = "Selling";
-$lang["menu"]["orders"] = "Orders";   
 $lang["menu"]["my_proposals"] = "My Proposals";
 $lang["menu"]["create_coupon"] = "Create A Coupon";
 $lang["menu"]["buyer_requests"] = "Buyer Requests";
@@ -734,7 +727,6 @@ $lang['button']['apply'] = "Apply";
 $lang['button']['submit_request'] = "Submit Your Request";
 $lang['button']['crop_image'] = "Crop Image";
 
-$lang['button']['edit'] = "Edit";
 $lang['button']['add_new'] = "Add New";
 $lang['button']['add'] = "Add";
 $lang['button']['cancel'] = "Cancel";
@@ -817,7 +809,7 @@ $lang['resolution_center']['buyer_requested_cancel'] = "Buyer requested that I c
 $lang['resolution_center']['buyer_expects_more'] = "Buyer expects more than what this proposal can offer.";
 $lang['resolution_center']['seller_not_responding'] = "Seller is not responding.";
 $lang['resolution_center']['seller_extremely_rude'] = "Seller is extremely rude.";
-$lang['resolution_center']['order_does_meet_requirements'] = "Order does meet requirements.";
+$lang['resolution_center']['order_does_meet_requirements'] = "Order does not meet requirements.";
 $lang['resolution_center']['seller_asked_cancel'] = "Seller asked me to cancel.";
 $lang['resolution_center']['seller_cannot_do_task'] = "Seller cannot do required task.";
 $lang['resolution_center']['submit_cancellation_request'] = "Submit Cancellation Request";
@@ -895,11 +887,9 @@ $lang['th']['seller_names'] = "Seller Names";
 
 $lang['th']['no'] = "No";
 $lang['th']['ref_no'] = "Ref No";
-$lang['th']['date'] = "Date";
 $lang['th']['for'] = "For";
 $lang['th']['amount'] = "Amount";
 $lang['th']['method'] = "Amount";
-$lang['th']['status'] = "Status";
 
 $lang['th']['order_summary'] = "ORDER SUMMARY";
 $lang['th']['order_date'] = "ORDER DATE";
@@ -921,7 +911,6 @@ $lang['th']['offers'] = "Offers";
 $lang['th']['budget'] = "Budget";
 
 $lang['th']['sender'] = "Sender";
-$lang['th']['message'] = "Message";
 $lang['th']['date'] = "Date";
 $lang['th']['delete'] = "Delete";
 
@@ -1333,7 +1322,6 @@ $lang['edit_proposal']['pricing']['warning3'] = "Please select 1 day if this is 
 
 /// Order Details
 $lang["order_details"]["desc"] = "Order Setails";
-$lang['order_details']['revisions'] = "Revisions";
 $lang['order_details']['number'] = "Order Number";
 $lang['order_details']['view_proposal'] = "View Proposal/Service";
 $lang['order_details']['buyer'] = "Buyer";
@@ -1363,7 +1351,6 @@ $lang['order_details']['tip_given'] = "You have given {amount} tip to seller. ";
 $lang['order_details']['seller_tip']['title'] = "Your buyer has given you a tip";
 $lang['order_details']['seller_tip']['desc'] = "Congrats! You've just received a tip of";
 $lang['add_to_cart'] = "Add to Cart";
-$lang['by_now']="by now";
 
 
 /// Inbox Page
