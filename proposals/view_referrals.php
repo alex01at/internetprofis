@@ -95,7 +95,7 @@ echo $total > 0 || $total!==null ? $total : "0";
 
 </div>
 
-<div class="font-weight-bold">Approved <small>Earnings</small></div>
+<div class="font-weight-bold"><?= $lang['referrals']['approved']; ?></div>
 
 
 </div>
@@ -124,7 +124,7 @@ echo $total > 0 || $total!==null ? $total : "0";
 
 </div>
 
-<div class="font-weight-bold">Pending</div>
+<div class="font-weight-bold"><?= $lang['referrals']['pending']; ?></div>
 
 
 </div>
@@ -153,7 +153,7 @@ echo $total > 0 || $total!==null ? $total : "0";
 
 </div>
 
-<div class="font-weight-bold">Declined</div>
+<div class="font-weight-bold"><?= $lang['referrals']['declined']; ?></div>
 
 
 </div>
@@ -172,17 +172,17 @@ echo $total > 0 || $total!==null ? $total : "0";
 
 <tr class="card-header">
 
-<th>Referrer Username</th>
+<th><?= $lang['referrals']['referrer_username']; ?></th>
 
-<th>Buyer Username</th>
+<th><?= $lang['referrals']['buyer_username']; ?></th>
 
-<th>Order No</th>
+<th><?= $lang['referrals']['order_no']; ?></th>
 
-<th>Purcahse Date</th>
+<th><?= $lang['th']['purchase_date']; ?></th>
 
-<th>Referrer Commision</th>
+<th><?= $lang['referrals']['referrer_commission']; ?></th>
 
-<th>Status</th>
+<th><?= $lang['th']['status']; ?></th>
 
 </tr>
 

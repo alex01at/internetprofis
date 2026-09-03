@@ -944,6 +944,14 @@ $lang['history']['purchases_from'] = "Purchases From";
 $lang['history']['results_found'] = "Results Found";
 $lang['revenue']['add_mobile_money_prefix'] = "For Withdraw Payments To Your Mobile Money Account Please Add Your Mobile Money Account Details In";
 $lang['revenue']['account_settings_tab'] = "Account Settings Tab";
+$lang['th']['request'] = "Request";
+$lang['th']['duration'] = "Duration";
+$lang['requests']['offers_submitted'] = "OFFERS SUBMITTED";
+$lang['requests']['your_request'] = "Your Request";
+$lang['referrals']['referrer_username'] = "Referrer Username";
+$lang['referrals']['buyer_username'] = "Buyer Username";
+$lang['referrals']['order_no'] = "Order No";
+$lang['referrals']['referrer_commission'] = "Referrer Commission";
 
 
 /// Change Password Page

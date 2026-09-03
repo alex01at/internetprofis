@@ -133,11 +133,11 @@
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Request</th>
-                    <th>Offers</th>
-                    <th>Date</th>
-                    <th>Duration</th>
-                    <th>Budget</th>
+                    <th><?= $lang['th']['request']; ?></th>
+                    <th><?= $lang['th']['offers']; ?></th>
+                    <th><?= $lang['th']['date']; ?></th>
+                    <th><?= $lang['th']['duration']; ?></th>
+                    <th><?= $lang['th']['budget']; ?></th>
                   </tr>
                 </thead>
                 <tbody id="load-data">
@@ -253,14 +253,14 @@
           </div>
           <div id="sent-offers" class="tab-pane fade">
             <div class="table-responsive box-table">
-              <h3 class="ml-2 mt-3 mb-3"> OFFERS SUBMITTED </h3>
+              <h3 class="ml-2 mt-3 mb-3"> <?= $lang['requests']['offers_submitted']; ?> </h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Request</th>
-                    <th>Duration</th>
-                    <th>Price</th>
-                    <th>Your Request</th>
+                    <th><?= $lang['th']['request']; ?></th>
+                    <th><?= $lang['th']['duration']; ?></th>
+                    <th><?= $lang['proposal']['price']; ?></th>
+                    <th><?= $lang['requests']['your_request']; ?></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -360,7 +360,7 @@
             </center>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-success" data-dismiss="modal">Close</button>
+            <button class="btn btn-success" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
           </div>
         </div>
       </div>
