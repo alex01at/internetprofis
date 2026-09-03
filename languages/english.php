@@ -35,6 +35,27 @@ $lang["day"] = "Day(s)";
 $lang['unlimited'] ="unlimited";
 $lang["yes"] ="Yes";
 $lang["no"] ="No";
+$lang['continue'] = "Continue";
+
+/// Dusupay payment modal
+$lang['dusupay']['pay_with_dusupay'] = "Pay With Dusupay";
+$lang['dusupay']['select_country'] = "Select Your Country";
+$lang['dusupay']['payment_method'] = "Payment Method";
+$lang['dusupay']['card'] = "Card";
+$lang['dusupay']['bank'] = "Bank";
+$lang['dusupay']['crypto'] = "Crypto";
+$lang['dusupay']['country_not_supported'] = "Your Selected Country Does Not Support This Payment Method Please Select Another One.";
+$lang['dusupay']['select_provider'] = "Select Your Payment Provider";
+$lang['dusupay']['account_number'] = "Mobile Money Account Number";
+$lang['dusupay']['account_number_placeholder'] = "Enter Your Mobile Money Account Number";
+$lang['dusupay']['voucher'] = "Mobile Money Voucher";
+$lang['dusupay']['voucher_placeholder'] = "Enter Your Mobile Money Voucher";
+$lang['dusupay']['countries'] = [
+	'UG' => 'Uganda', 'KE' => 'Kenya', 'RW' => 'Rwanda', 'BI' => 'Burundi',
+	'GH' => 'Ghana', 'CM' => 'Cameroon', 'ZA' => 'South Africa', 'NG' => 'Nigeria',
+	'ZM' => 'Zambia', 'CI' => 'Ivory Coast', 'SN' => 'Senegal', 'TZ' => 'Tanzania',
+	'US' => 'U.S.A', 'GB' => 'United Kingdom', 'EU' => 'Europe',
+];
 $lang["promote_proposal"] ="If enabled, other users can promote your proposal by sharing it on different platforms.";
 $lang["promote_proposal_desc_1"] = "Figure should be in percentage. E.g 20 is the same as 20% from the sale of this proposal.";
 $lang["promote_proposal_desc_2"] = "When another user promotes your proposal, how much would you like that user to get from the sale? (in euro)";

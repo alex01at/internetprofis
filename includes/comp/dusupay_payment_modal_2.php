@@ -52,7 +52,7 @@
    <div class="modal-header"><!-- modal-header Starts -->
       
       <h5 class="modal-title"> 
-         <span class="float-left">Pay With Dusupay</span>
+         <span class="float-left"><?= $lang['dusupay']['pay_with_dusupay']; ?></span>
       </h5>
 
       <button class="closeExtendTimePayment close" data-dismiss="modal">
@@ -69,7 +69,7 @@
          <input type="hidden" name="method" value="<?= $method; ?>">
 
          <div class="form-group"><!--- form-group Starts --->
-            <label>Select Your Payment Provider </label>
+            <label><?= $lang['dusupay']['select_provider']; ?> </label>
             <select name="provider_id" class="form-control" required="">
 
                <?php 
@@ -85,21 +85,21 @@
 
          <?php if($method == "MOBILE_MONEY"){ ?>
          <div class="form-group">
-            <label>Mobile Money Account Number</label>
-            <input type="text" name="account_number" placeholder="Enter Your Mobile Money Account Number" class="form-control" required=""/>
+            <label><?= $lang['dusupay']['account_number']; ?></label>
+            <input type="text" name="account_number" placeholder="<?= $lang['dusupay']['account_number_placeholder']; ?>" class="form-control" required=""/>
          </div>
       	<?php } ?>
 
          <div class="form-group voucher d-none">
-            <label>Mobile Money Voucher</label>
-            <input type="text" name="voucher" placeholder="Enter Your Mobile Money Voucher" class="form-control"/>
+            <label><?= $lang['dusupay']['voucher']; ?></label>
+            <input type="text" name="voucher" placeholder="<?= $lang['dusupay']['voucher_placeholder']; ?>" class="form-control"/>
          </div>
 
          <hr>
 
          <div class="form-group mb-0 text-center"><!--- form-group Starts --->
 
-            <button class="btn btn-success" name="dusupay" type="submit">Pay With Dusupay</button>
+            <button class="btn btn-success" name="dusupay" type="submit"><?= $lang['dusupay']['pay_with_dusupay']; ?></button>
 
          </div><!--- form-group Ends --->
 

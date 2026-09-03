@@ -6,7 +6,7 @@
          <div class="modal-header"><!-- modal-header Starts -->
             
             <h5 class="modal-title"> 
-               <span class="float-left">Pay With Dusupay</span>
+               <span class="float-left"><?= $lang['dusupay']['pay_with_dusupay']; ?></span>
             </h5>
 
             <button class="closeExtendTimePayment close" data-dismiss="modal">
@@ -22,33 +22,33 @@
                <input type="hidden" name="action" value="<?= $form_action; ?>">
 
                <div class="form-group"><!--- form-group Starts --->
-                  <label>Select Your Country </label>
+                  <label><?= $lang['dusupay']['select_country']; ?> </label>
                   <select name="country" class="form-control" required="">
-                     <option value="UG">Uganda</option>
-                     <option value="KE">Kenya</option>
-                     <option value="RW">Rwanda</option>
-                     <option value="BI">Burundi</option>
-                     <option value="GH">Ghana</option>
-                     <option value="CM">Cameroon</option>
-                     <option value="ZA">South Africa</option>
-                     <option value="NG">Nigeria</option>
-                     <option value="ZM">Zambia</option>
-                     <option value="CI">Ivory Coast</option>
-                     <option value="SN">Senegal</option>
-                     <option value="TZ">Tanzania</option>
-                     <option value="US">U.S.A</option>
-                     <option value="GB">United Kingdom</option>
-                     <option value="EU">Europe</option>
+                     <option value="UG"><?= $lang['dusupay']['countries']['UG']; ?></option>
+                     <option value="KE"><?= $lang['dusupay']['countries']['KE']; ?></option>
+                     <option value="RW"><?= $lang['dusupay']['countries']['RW']; ?></option>
+                     <option value="BI"><?= $lang['dusupay']['countries']['BI']; ?></option>
+                     <option value="GH"><?= $lang['dusupay']['countries']['GH']; ?></option>
+                     <option value="CM"><?= $lang['dusupay']['countries']['CM']; ?></option>
+                     <option value="ZA"><?= $lang['dusupay']['countries']['ZA']; ?></option>
+                     <option value="NG"><?= $lang['dusupay']['countries']['NG']; ?></option>
+                     <option value="ZM"><?= $lang['dusupay']['countries']['ZM']; ?></option>
+                     <option value="CI"><?= $lang['dusupay']['countries']['CI']; ?></option>
+                     <option value="SN"><?= $lang['dusupay']['countries']['SN']; ?></option>
+                     <option value="TZ"><?= $lang['dusupay']['countries']['TZ']; ?></option>
+                     <option value="US"><?= $lang['dusupay']['countries']['US']; ?></option>
+                     <option value="GB"><?= $lang['dusupay']['countries']['GB']; ?></option>
+                     <option value="EU"><?= $lang['dusupay']['countries']['EU']; ?></option>
                   </select>
                </div><!--- form-group Ends --->
 
                <div class="form-group"><!--- form-group Starts --->
-                  <label> Payment Method </label>
+                  <label> <?= $lang['dusupay']['payment_method']; ?> </label>
                   <select name="method" class="form-control" required="">
                      <option value="MOBILE_MONEY"> Mobile Money </option>
-                     <option value="CARD"> Card </option>
-                     <option value="BANK"> Bank </option>
-                     <option value="CRYPTO">Crypto</option>
+                     <option value="CARD"> <?= $lang['dusupay']['card']; ?> </option>
+                     <option value="BANK"> <?= $lang['dusupay']['bank']; ?> </option>
+                     <option value="CRYPTO"><?= $lang['dusupay']['crypto']; ?></option>
                   </select>
                </div><!--- form-group Ends --->
 
@@ -56,7 +56,7 @@
 
                <div class="form-group mb-0 text-center"><!--- form-group Starts --->
 
-                  <button class="btn btn-success" type="submit">Continue</button>
+                  <button class="btn btn-success" type="submit"><?= $lang['continue']; ?></button>
 
                   <!-- <input type="submit" name="dusupay" value="Contine" class="btn btn-success" /> -->
                   <!-- <button type="submit" id="contine" data-toggle="modal" data-dismiss="modal" data-target="#payment-modal-2" class="btn btn-success">Contine</button> -->
@@ -117,7 +117,7 @@ $(document).ready(function(){
             $("#wait").removeClass("loader");
 
             if(data == "There are no options found for "+method+" collections in "+country){
-               alert("Your Selected Country Does Not Support This Payment Method Please Select Another One.")
+               alert(<?= json_encode($lang['dusupay']['country_not_supported']); ?>)
             }else{
                alert(data);
             }

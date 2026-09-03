@@ -749,6 +749,27 @@ $lang["day"] ="Tag(e)";
 $lang['unlimited'] = "unlimitierte";
 $lang["yes"] ="Ja";
 $lang["no"] = "Nein";
+$lang['continue'] = "Weiter";
+
+/// Dusupay-Zahlungsmodal
+$lang['dusupay']['pay_with_dusupay'] = "Mit Dusupay bezahlen";
+$lang['dusupay']['select_country'] = "Land auswählen";
+$lang['dusupay']['payment_method'] = "Zahlungsmethode";
+$lang['dusupay']['card'] = "Karte";
+$lang['dusupay']['bank'] = "Bank";
+$lang['dusupay']['crypto'] = "Krypto";
+$lang['dusupay']['country_not_supported'] = "Das ausgewählte Land unterstützt diese Zahlungsmethode nicht. Bitte wählen Sie eine andere aus.";
+$lang['dusupay']['select_provider'] = "Zahlungsanbieter auswählen";
+$lang['dusupay']['account_number'] = "Mobile-Money-Kontonummer";
+$lang['dusupay']['account_number_placeholder'] = "Mobile-Money-Kontonummer eingeben";
+$lang['dusupay']['voucher'] = "Mobile-Money-Gutschein";
+$lang['dusupay']['voucher_placeholder'] = "Mobile-Money-Gutschein eingeben";
+$lang['dusupay']['countries'] = [
+	'UG' => 'Uganda', 'KE' => 'Kenia', 'RW' => 'Ruanda', 'BI' => 'Burundi',
+	'GH' => 'Ghana', 'CM' => 'Kamerun', 'ZA' => 'Südafrika', 'NG' => 'Nigeria',
+	'ZM' => 'Sambia', 'CI' => 'Elfenbeinküste', 'SN' => 'Senegal', 'TZ' => 'Tansania',
+	'US' => 'USA', 'GB' => 'Vereinigtes Königreich', 'EU' => 'Europa',
+];
 $lang["promote_proposal"] = "Wenn aktiviert, können andere Benutzer Ihren Vorschlag bewerben, indem sie ihn auf verschiedenen Plattformen teilen.";
 $lang["promote_proposal_desc_1"] ="Die Zahl sollte in Prozent angegeben werden. Z. B. 20 entspricht 20 % vom Verkauf dieses Angebots.";
 $lang["promote_proposal_desc_2"] ="Wenn ein anderer Benutzer Ihr Angebot bewirbt, wie viel möchten Sie, dass dieser Benutzer vom Verkauf profitiert? (in Euro)";
