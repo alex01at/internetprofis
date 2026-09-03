@@ -284,15 +284,12 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
         </form>
 
       <?php }elseif($compareData['status'] === 'identical' || $compareData['status'] === 'behind'){ ?>
-        <div class="alert alert-success mb-0">You're running the latest published release (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>).</div>
+        <div class="alert alert-success mb-0">You're running the latest published release (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>)<?php if($compareData['status'] === 'behind'){ ?> or newer<?php } ?>.</div>
 
-      <?php }elseif($compareData['status'] === 'ahead'){ ?>
-        <div class="alert alert-info mb-0">This deployment is <?= (int) $compareData['ahead_by']; ?> commit(s) ahead of the latest release (<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>) on GitHub.</div>
-
-      <?php }else{ ?>
+      <?php }elseif($compareData['status'] === 'ahead' || $compareData['status'] === 'diverged'){ ?>
         <div class="alert alert-warning mb-3">
           A newer release is available: <strong><?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?></strong>
-          &mdash; <?= (int) $compareData['behind_by']; ?> commit(s), <?= count($compareData['files'] ?? []); ?> file(s) changed.
+          &mdash; <?= (int) $compareData['ahead_by']; ?> commit(s), <?= count($compareData['files'] ?? []); ?> file(s) changed.
         </div>
         <?php if(!empty($latestRelease['body'])){ ?>
           <div class="mb-3"><strong>Release notes:</strong><br><?= nl2br(htmlspecialchars($latestRelease['body'], ENT_QUOTES, 'UTF-8')); ?></div>
