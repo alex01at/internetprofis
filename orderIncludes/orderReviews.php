@@ -46,7 +46,7 @@ if ($count_all_reviews == "00") {
         <div class="card-header bg-fivGrey">
 
             <h5 class="text-center mt-2">
-                <img src="images/svg/reviews.svg" class="mr-1 order-icon"/> Order Reviews
+                <img src="images/svg/reviews.svg" class="mr-1 order-icon"/> <?= $lang['order_details']['order_reviews']; ?>
             </h5>
 
         </div>
@@ -173,7 +173,7 @@ if ($count_all_reviews == "00") {
 
         <div class="order-review-box mb-3 p-3">
 
-            <h3 class="text-center text-white"> Please Submit a Review For Your Buyer</h3>
+            <h3 class="text-center text-white"> <?= $lang['order_details']['submit_review_buyer']; ?></h3>
 
             <div class="row">
 
@@ -273,7 +273,7 @@ if ($count_all_reviews == "00") {
 
         <div class="order-review-box mb-3 p-3">
 
-            <h3 class="text-center text-white"> Please Submit a Review For Your Seller</h3>
+            <h3 class="text-center text-white"> <?= $lang['order_details']['submit_review_seller']; ?></h3>
 
             <div class="row">
 
