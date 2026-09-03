@@ -39,3 +39,23 @@ Since he didn't want to develop the original codebase further, I took full owner
 *Removal of unnecessary code.
 
 *Fixing over 200 known bugs.
+
+**Testing:**
+
+There's no SSH access to the live host, so changes are also verified locally before every FTP upload or GitHub release. Run the local test suite from the project root:
+
+```
+bash tests/run.sh
+```
+
+It runs four checks, none of which need a database connection:
+
+-`tests/check-syntax.php` - runs `php -l` across the whole codebase (excluding vendored third-party libraries) to catch fatal syntax errors before upload.
+
+-`tests/check-lang-keys.php` - loads both `languages/english.php` and `languages/deutsch.php` as real PHP and checks that every `$lang[]` key referenced anywhere in the code actually exists in both files, and flags duplicate or unused key definitions.
+
+-`tests/check-embedded-tags.php` - uses PHP's tokenizer to find a `<?=` or `<?php` tag accidentally typed inside an already-open string literal, where it silently never evaluates instead of throwing an error.
+
+-`tests/check-stray-backslashes.php` - catches a `\$lang` artifact left behind by a scripted find-and-replace.
+
+These same checks also run automatically on every push and pull request via GitHub Actions (`.github/workflows/tests.yml`).
