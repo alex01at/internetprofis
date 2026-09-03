@@ -22,6 +22,7 @@ All notable changes to this project are documented here.
 - Consolidated two duplicate legacy implementations of the proposal filter feature that produced invalid nested page markup.
 - Removed a handful of confirmed-unused PHP files.
 - Fixed upload directories that would not have existed after a fresh checkout, since empty directories aren't tracked by git.
+- Fixed the dashboard showing a raw commit hash instead of a release name for deployments tracked before release-name storage existed; the name is now resolved automatically.
 
 ## 2026-08-27
 
