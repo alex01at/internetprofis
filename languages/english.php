@@ -115,12 +115,16 @@ Proposal will always be at the top section of search results <br>
 with ". $site_name; " feature, your proposal already has a 50% chance of getting ordered by potential buyers";
 $lang['publish']['save_approve'] ="Save & Submit For Approval";
 $lang['publish']['save_publish'] ="Save & Publish";
-$lang['affiliate'] ="Support the seller and earn <?= $proposal_referral_money; ?>% of each sale made using link below. <a href='<?= $site_url; ?>/terms_and_conditions' class='strike'>Terms apply.</a>";
+$lang['affiliate'] ="Support the seller and earn {proposal_referral_money}% of each sale made using link below. <a href='$site_url/terms_and_conditions' class='strike'>Terms apply.</a>";
 $lang['no_cat'] ="missing category?";
 $lang['no_cat_desc'] ="You miss a acategory?<br>Please let us know it.";
 $lang['report']= "report";
 $lang['no_ideas'] ="There are currently no ideas in feedback.";
+$lang['no_ideas_search'] = "We couldn't find any results for your search.";
 $lang['placeholder']['no_cat'] ="suggest a category";
+$lang['greetings']['morning'] = "Good Morning";
+$lang['greetings']['afternoon'] = "Good Afternoon";
+$lang['greetings']['evening'] = "Good Evening";
 // new notification messages
 $lang['notification']['order_complete'] = "Completed your order.";
 $lang['notification']['approved_referral'] = "Has approved your user referral. you have got the commission.";
@@ -524,6 +528,7 @@ $lang["titles"]["settings"]["profile_settings"] = "Profile Settings";
 $lang["titles"]["settings"]["account_settings"] = "Account Settings";
 $lang["titles"]["knowledge_bank"] = "Knowledge Bank";
 $lang["titles"]["customer_support"] = "Customer Support";
+$lang["titles"]["search_articles"] = "Search Articles";
 
 /// Cookies Box
 $lang["cookie_box"]['title'] = "Our site uses cookies";
@@ -1068,8 +1073,9 @@ $lang['post_request']['column_4']['desc'] = "Enter an amount you are willing to 
 
 /// Knowledge Bank Page
 
-$lang['knowledge_bank']['title'] = "KNOWLEDGE BANK FOR GIGTODO";
+$lang['knowledge_bank']['title'] = "KNOWLEDGE BANK FOR ".strtoupper($site_name);
 $lang['knowledge_bank']['desc'] = "Everything you need to know";
+$lang['knowledge_bank']['no_articles'] = "No articles to display at the moment.";
 
 /// Single Article Page
 

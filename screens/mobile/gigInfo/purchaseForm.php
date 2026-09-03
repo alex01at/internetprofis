@@ -7,9 +7,9 @@
 
 	<?php
 		if($proposal_revisions != "unlimited"){
-		  echo $proposal_revisions.' Revisions';
+		  echo $proposal_revisions.'&nbsp; '.$lang['order_details']['revisions'];
 		}else{
-		  echo "Unlimited Revisions";
+		  echo $lang['unlimited'].'&nbsp; '.$lang['order_details']['revisions'];
 		}
 	?>
 

@@ -26,6 +26,7 @@ All notable changes to this project are documented here.
 - Fixed upload directories that would not have existed after a fresh checkout, since empty directories aren't tracked by git.
 - Fixed the dashboard showing a raw commit hash instead of a release name for deployments tracked before release-name storage existed; the name is now resolved automatically.
 - Fixed missing icons across 25 pages (checkout, cart, login, dashboard, knowledge bank, and others) caused by a missing Font Awesome stylesheet link.
+- Translated several hardcoded English strings that ignored the site language (knowledge bank empty state, dashboard greeting, mobile purchase form, feedback empty state), and translated the referral/affiliate text, which had never been localized. Also fixed the "Knowledge Bank" page title showing the old script's brand name, and a broken link in the referral text caused by invalid syntax inside the translation string.
 
 ## 2026-08-27
 

@@ -39,9 +39,9 @@ if(isset($_GET['search'])){
 		<?php if(empty($ideas->rowCount())){ ?>
 		<h3 class="text-center">
 			<?php if(isset($_GET['search'])){ ?>
-				We couldn't find any results for your search.
+				<?= $lang['no_ideas_search']; ?>
 			<?php }else{ ?>
-				There are currently no ideas in feedback.
+				<?= $lang['no_ideas']; ?>
 			<?php } ?>
 		</h3>
 		<?php } ?>

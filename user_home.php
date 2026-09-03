@@ -43,11 +43,11 @@
                 <?php
                 $hour = date("H");
                 if($hour < 12){
-                echo "Good Morning";
+                echo $lang['greetings']['morning'];
                 }elseif($hour < 18){
-                echo "Good Afternoon";
+                echo $lang['greetings']['afternoon'];
                 }else{
-                echo "Good Evening";
+                echo $lang['greetings']['evening'];
                 }
                 ?>, <?= $login_seller_name; ?>!
                 </h3>

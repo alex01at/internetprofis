@@ -11,7 +11,7 @@ require_once("includes/db.php");
 
 <head>
 
-<title> <?= $site_name; ?> - Search Articles </title>
+<title> <?= $site_name; ?> - <?= $lang["titles"]["search_articles"]; ?> </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="<?= $site_desc; ?>">
@@ -85,9 +85,9 @@ width: 200px;
 
 <div class="text-center">
 
-<h2 class="text-white mt-5">KNOWLEDGE BANK FOR <?= strtoupper($site_name);?></h2>
+<h2 class="text-white mt-5"><?= $lang['knowledge_bank']['title']; ?></h2>
 
-<h4 class="text-white">Everything you need to know</h4>
+<h4 class="text-white"><?= $lang['knowledge_bank']['desc']; ?></h4>
 
 </div>
 
@@ -97,7 +97,7 @@ width: 200px;
 
 <div class="input-group space50">
 
-<input type="text" name="search_query" required class="form-control" value="<?= $input->get('search'); ?>"  placeholder="Search Questions">
+<input type="text" name="search_query" required class="form-control" value="<?= $input->get('search'); ?>"  placeholder="<?= $lang['placeholder']['search_questions']; ?>">
 
 <div class="input-group-append move-icon-up" style="cursor:pointer;">
 
@@ -137,7 +137,7 @@ echo "<script>window.open('$site_url/search_articles.php?search=$search_query','
 
 <div class="col-md-6">
 
-<h3 class="make-black pb-1"><i class="fa fa-bars"></i> Search Results For <?= $input->get('search'); ?> </h3> <!-- Category -->
+<h3 class="make-black pb-1"><i class="fa fa-bars"></i> <?= $lang["popup"]['knowledge_bank']['search']; ?><?= $input->get('search'); ?> </h3> <!-- Category -->
 
 <?php 
 
@@ -148,8 +148,8 @@ $get_articles = $db->query("select * from knowledge_bank where article_heading l
 $count_articles = $get_articles->rowCount();
     
 if($count_articles == 0){
-    
-    echo "No articles to display at the moment.";
+
+    echo $lang['knowledge_bank']['no_articles'];
 }
 
 while($row_articles = $get_articles->fetch()){

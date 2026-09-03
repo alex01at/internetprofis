@@ -87,7 +87,7 @@
             $get_articles = $db->select("knowledge_bank",array("cat_id" => $article_cat_id,"language_id" => $siteLanguage));
             $count_articles = $get_articles->rowCount();
             if($count_articles == 0){
-              echo "No articles to display at the moment.";
+              echo $lang['knowledge_bank']['no_articles'];
             }
             while($row_articles = $get_articles->fetch()){
             $article_id = $row_articles->article_id;

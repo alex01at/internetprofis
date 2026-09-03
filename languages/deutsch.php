@@ -281,6 +281,7 @@ $lang["titles"]["settings"]["profile_settings"] = "Profileinstellungen";
 $lang["titles"]["settings"]["account_settings"] = "Accounteinstellungen";
 $lang["titles"]["knowledge_bank"] = "Information";
 $lang["titles"]["customer_support"] = "Kundensupport";
+$lang["titles"]["search_articles"] = "Artikel durchsuchen";
 $lang["cookie_box"]['title'] = "Unsere Website verwendet Cookies";
 $lang["cookie_box"]['desc'] = "Wir verwenden Cookies, um sicherzustellen, dass Sie das Beste erhalten. Durch die Nutzung unserer Website stimmen <br>Sie unseren <a href='{link}'> Datenschutzbestimmungen zu </a>."; 
 $lang["cookie_box"]['button'] = "Ich habe verstanden.";
@@ -672,8 +673,9 @@ $lang['post_request']['column_1']['example'] = "<b>Beispiel: </ b> Wenn Sie ein 
     $lang['post_request']['column_4']['title'] = "Geben Sie ein Budget";
     $lang['post_request']['column_4']['desc'] = "Geben Sie einen Betrag ein, den Sie bereit sind für diesen Service
     bezahlen";
-    $lang['knowledge_bank']['title'] = "Informationen über gigtodo";
+    $lang['knowledge_bank']['title'] = "WISSENSDATENBANK FÜR ".strtoupper($site_name);
     $lang['knowledge_bank']['desc'] = "Alles, was Sie wissen müssen:";
+    $lang['knowledge_bank']['no_articles'] = "Aktuell sind keine Artikel vorhanden.";
     $lang['single_artilce']['bottom']['title'] = "Haben Sie weitere Fragen?";
     $lang['single_artilce']['bottom']['desc'] = "Unsere Administratoren stehen Ihnen zur Verfügung!";
     $lang['single_ticket']['ticket_details'] = "Ticketdetails";
@@ -864,7 +866,12 @@ $lang['notification']['extendTimeDeclined'] = "Hat Ihre Verlängerung abgelehnt.
 $lang['notification']['extendTimeAccepted'] = "Hat Ihre Verlängerung akzeptiert. Die Zeit wurde erfolgreich verlängert.";
 $lang['notification']['buyerExtendTimeAccepted'] = "Zeit erfolgreich erhöht.";
 $lang['notification']['ticket_reply'] = "habe gerade auf dein Ticket geantwortet.";
-$lang['affiliate'] ="Support the seller and earn {proposal_referral_money} % of each sale made using link below. <a href='<?= $site_url; ?>/terms_and_conditions' class='strike'>Terms apply.</a>";
+$lang['affiliate'] ="Unterstützen Sie den Anbieter und verdienen Sie {proposal_referral_money}% bei jedem Verkauf über den unten stehenden Link. <a href='$site_url/terms_and_conditions' class='strike'>Es gelten die AGB.</a>";
 $lang['buy_now'] = "Jetzt kaufen";
+$lang['no_ideas'] = "Aktuell gibt es keine Ideen im Feedback-Bereich.";
+$lang['no_ideas_search'] = "Für Ihre Suche wurden keine Ergebnisse gefunden.";
+$lang['greetings']['morning'] = "Guten Morgen";
+$lang['greetings']['afternoon'] = "Guten Tag";
+$lang['greetings']['evening'] = "Guten Abend";
 
 
