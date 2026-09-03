@@ -560,7 +560,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title h5"><i class="fa fa-frown-o fa-move-up"></i> Request Quota Reached</h5>
+        <h5 class="modal-title h5"><i class="fa fa-frown-o fa-move-up"></i> <?= $lang['requests']['quota_reached']; ?></h5>
         <button class="close" data-dismiss="modal"> &times; </button>
       </div>
       <div class="modal-body">

@@ -76,7 +76,7 @@
       </div>
       <div class="col-md-12 mt-4">
         <h5 class="text-right mr-3">
-          <i class="fa fa-list-alt"></i> <?= $login_seller_offers; ?> Offers Left Today
+          <i class="fa fa-list-alt"></i> <?= $login_seller_offers; ?> <?= $lang['requests']['offers_left_today']; ?>
         </h5>
         <div class="clearfix"></div>
         <ul class="nav nav-tabs mt-3">
@@ -114,9 +114,9 @@
         <div class="tab-content mt-4">
           <div id="active-requests" class="tab-pane fade show active">
             <div class="table-responsive box-table">
-              <h3 class="float-left ml-2 mt-3 mb-3"> Buyer Requests </h3>
+              <h3 class="float-left ml-2 mt-3 mb-3"> <?= $lang['requests']['buyer_requests_title']; ?> </h3>
               <select id="sub-category" class="form-control float-right sort-by mt-3 mb-3 mr-3">
-                <option value="all"> All Subcategories </option>
+                <option value="all"> <?= $lang['requests']['all_subcategories']; ?> </option>
                 <?php
                   if(count($where_child_id) > 0){
                   $get_c_cats = $db->query("select * from categories_children where ".$child_cats_query);
@@ -207,7 +207,7 @@
                     <td> <?= $request_date; ?> </td>
                     <td> 
                       <?= $delivery_time; ?> 
-                      <a href="#" class="remove-link text-danger remove_request_<?= $request_id; ?>"> Remove Request </a>
+                      <a href="#" class="remove-link text-danger remove_request_<?= $request_id; ?>"> <?= $lang['requests']['remove_request']; ?> </a>
                     </td>
                     <td class="text-success font-weight-bold">
                       <?php if(!empty($request_budget)){ ?> 
@@ -246,7 +246,7 @@
               </table>
               <?php
                 if(empty($count_requests)){
-                echo"<center><h3 class='pb-4 pt-4'><i class='fa fa-frown-o'></i> No requests that matches any of your proposals/services yet!</h3></center>";
+                echo "<center><h3 class='pb-4 pt-4'><i class='fa fa-frown-o'></i> ".$lang['requests']['no_matching_requests']."</h3></center>";
                 }
               ?>
             </div>
@@ -338,7 +338,7 @@
               </table>
               <?php
                 if($count_offers == 0){
-                echo"<center><h3 class='pb-4 pt-4'><i class='fa fa-meh-o'></i> You've sent no offers yet!</h3></center>";
+                echo "<center><h3 class='pb-4 pt-4'><i class='fa fa-meh-o'></i> ".$lang['requests']['no_offers_sent']."</h3></center>";
                 }
                 ?>
             </div>
@@ -351,7 +351,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title h5"><i class="fa fa-frown-o fa-move-up"></i> Request Quota Reached</h5>
+            <h5 class="modal-title h5"><i class="fa fa-frown-o fa-move-up"></i> <?= $lang['requests']['quota_reached']; ?></h5>
             <button class="close" data-dismiss="modal"> &times; </button>
           </div>
           <div class="modal-body">

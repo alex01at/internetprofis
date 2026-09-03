@@ -1017,6 +1017,13 @@ $lang['settings']['what_happens']['4'] = "You won't be able to restore your acco
 
 
 $lang['settings']['why_leaving'] = "Why Are You Leaving?";
+$lang['requests']['offers_left_today'] = "Offers Left Today";
+$lang['requests']['buyer_requests_title'] = "Buyer Requests";
+$lang['requests']['all_subcategories'] = "All Subcategories";
+$lang['requests']['remove_request'] = "Remove Request";
+$lang['requests']['no_matching_requests'] = "No requests that matches any of your proposals/services yet!";
+$lang['requests']['no_offers_sent'] = "You've sent no offers yet!";
+$lang['requests']['quota_reached'] = "Request Quota Reached";
 $lang['settings']['reason']['1'] = "Choose A Reason";
 $lang['settings']['reason']['2'] = "The quality of service was less than expected";
 $lang['settings']['reason']['3'] = "I just don't have the time";
