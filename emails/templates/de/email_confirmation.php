@@ -4,7 +4,7 @@
          <tr>
             <td width="100%" align="center" style="vertical-align: top; background-color: #FAFAFA">
                <a href="<?= $site_url; ?>" target="_blank">
-                  <img src="<?= $site_logo; ?>" border="0" alt="GigToDo" class="logo">
+                  <img src="<?= $site_logo; ?>" border="0" alt="<?= $site_name; ?>" class="logo">
                </a>
             </td>
          </tr>
@@ -25,7 +25,7 @@
                      <tr>
                         <td width="100%" align="left" style="vertical-align:top">
                            <p class="heading">
-                              Welcome to <?= $site_name; ?>! Confirm your email to release all functions.
+                              Willkommen bei <?= $site_name; ?>! Bestätigen Sie Ihre E-Mail-Adresse, um alle Funktionen freizuschalten.
                            </p>
                            <table width="390" cellpadding="0" cellspacing="0" border="0">
                               <tbody>
@@ -39,8 +39,8 @@
                                     <td width="20"></td>
                                     <td align="left" style="vertical-align:middle" width="316">
                                        <p style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:21px;font-weight:700;color:#333333;margin:0px!important;padding:0px!important;line-height:20px">
-                                          Contract Services<br>
-                                          <span style="font-size:16px;color:#888888;font-weight:300">Hire talented freelancers to start your professional project your way.</span>
+                                          Dienstleistungen beauftragen<br>
+                                          <span style="font-size:16px;color:#888888;font-weight:300">Engagieren Sie talentierte Freelancer und starten Sie Ihr Projekt ganz nach Ihren Vorstellungen.</span>
                                        </p>
                                     </td>
                                  </tr>
@@ -54,9 +54,9 @@
                                     <td width="20"></td>
                                     <td align="left" style="vertical-align:middle" width="316">
                                        <p style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:21px;font-weight:700;color:#333333;margin:0px!important;padding:0px!important;line-height:20px">
-                                          Start Selling
+                                          Verkaufen starten
                                           <br>
-                                          <span style="font-size:16px;color:#888888;font-weight:300">Publish and start offering your services on the platform and I made money.</span>
+                                          <span style="font-size:16px;color:#888888;font-weight:300">Veröffentlichen Sie Ihre Dienstleistungen auf der Plattform und verdienen Sie Geld.</span>
                                        </p>
                                     </td>
                                  </tr>
@@ -70,8 +70,8 @@
                                     <td width="20"></td>
                                     <td align="left" style="vertical-align:middle" width="316">
                                        <p style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:21px;font-weight:700;color:#333333;margin:0px!important;padding:0px!important;line-height:20px">
-                                          Become an Affiliate<br>
-                                          <span style="font-size:16px;color:#888888;font-weight:300">Earn money by reselling and advertising freelance platform services.</span>
+                                          Partner werden<br>
+                                          <span style="font-size:16px;color:#888888;font-weight:300">Verdienen Sie Geld, indem Sie Dienstleistungen der Plattform weiterempfehlen und bewerben.</span>
                                        </p>
                                     </td>
                                  </tr>
@@ -93,14 +93,14 @@
                      <tr>
                         <td width="100%" align="center" style="vertical-align:top">
                            <a href="<?= $data['verification_link']; ?>" target="_blank">
-                              <img src="<?= img_url("confirm.jpg"); ?>" border="0" alt="Confirm Now" width="180" style="display:block;padding-bottom:20px">
+                              <img src="<?= img_url("confirm.jpg"); ?>" border="0" alt="Jetzt bestätigen" width="180" style="display:block;padding-bottom:20px">
                            </a>
                            <p style="font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:18px;font-weight:400;color:#333333;margin:0px!important;padding:0px!important;line-height:21px">
-                              Click the button to continue<br>
+                              Klicken Sie auf die Schaltfläche, um fortzufahren<br>
                               <font style="color:#8b8b8b;font-size:13px;text-decoration:underline">
                                  <?= $data['verification_link']; ?>
                               </font><br>
-                              <font style="color:#8b8b8b;font-size:13px">* If the button doesn't work copy to the URL and paste it in your browser.</font>
+                              <font style="color:#8b8b8b;font-size:13px">* Falls die Schaltfläche nicht funktioniert, kopieren Sie den Link und fügen Sie ihn in Ihren Browser ein.</font>
                            </p>
                         </td>
                      </tr>
@@ -113,7 +113,7 @@
          </tr>
          <tr>
             <td width="100%" align="left" style="vertical-align:top" bgcolor="#fafafa">
-               <p class="footer-p">© <?= date("Y"); ?> <?= $site_name; ?> Inc. All rights reserved.<br></p>
+               <p class="footer-p">© <?= date("Y"); ?> <?= $site_name; ?>. Alle Rechte vorbehalten.<br></p>
             </td>
          </tr>
          <tr>

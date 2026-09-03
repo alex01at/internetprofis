@@ -16,12 +16,12 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Necessary Modification </h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Admin Has Sent Modification To Your Proposal. </p>
+                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Änderung erforderlich </h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Der Administrator hat eine Änderung an Ihrem Angebot angefordert. </p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/proposals/view_proposals?modification" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">View Modification</a></td>
+                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/proposals/view_proposals?modification" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Änderung ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

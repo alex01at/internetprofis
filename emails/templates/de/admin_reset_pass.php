@@ -8,13 +8,13 @@
         </div>
       </div>
 
-      <h2 class="o_heading o_mb-xxs">Password Reset</h2>
+      <h2 class="o_heading o_mb-xxs">Passwort zurücksetzen</h2>
 
-      <p class="o_mb-md">You requested the password reset I put to chase</p>
+      <p class="o_mb-md">Sie haben das Zurücksetzen Ihres Passworts angefordert. Klicken Sie unten, um ein neues Passwort zu vergeben.</p>
 
       <div class="btn btn-white o_heading o_text" >
         <a class="o_text-primary" style="color: <?= $site_color;?>" href='<?= $site_url; ?>/admin/change_password?code=<?= $data['admin_pass']; ?>'>
-          Change Password
+          Passwort ändern
         </a>
       </div>
 

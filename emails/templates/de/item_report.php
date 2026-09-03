@@ -16,8 +16,8 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Reported Item</h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">An item on <?= $site_name; ?> has just been reported.</p></td>
+                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Gemeldeter Inhalt</h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Ein Inhalt auf <?= $site_name; ?> wurde soeben gemeldet.</p></td>
             </tr>
           </tbody>
         </table>
@@ -33,16 +33,16 @@
         <table class="o_block" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="max-width: 632px;margin: 0 auto;">
           <tbody>
             <tr>
-              <td class="o_bg-white o_px-md o_py-md o_sans o_text o_text-secondary" align="left" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;background-color: #ffffff;color: #424651;padding-left: 24px;padding-right: 24px;padding-top: 24px;padding-bottom: 24px;"><h3 class="o_heading o_text-dark" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;color: #242b3d;font-size: 24px;line-height: 31px;">Details of reported item below:</h3>
+              <td class="o_bg-white o_px-md o_py-md o_sans o_text o_text-secondary" align="left" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;background-color: #ffffff;color: #424651;padding-left: 24px;padding-right: 24px;padding-top: 24px;padding-bottom: 24px;"><h3 class="o_heading o_text-dark" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;color: #242b3d;font-size: 24px;line-height: 31px;">Details zum gemeldeten Inhalt:</h3>
                 <p class="o_text-xxs o_text-light o_mb" style="font-size: 12px;line-height: 19px;color: #82899a;margin-top: 0px;margin-bottom: 16px;">
-                  Item reported by: <strong><?= $data['seller_user_name']; ?></strong>
+                  Gemeldet von: <strong><?= $data['seller_user_name']; ?></strong>
                 </p>
                 <p class="o_mb" style="margin-top: 0px;margin-bottom: 16px;">
-                  <strong>Item Type: </strong><?= $data['item_type']; ?><br>
-                  <strong>Item Author:</strong> <?= $data['author']; ?><br>
+                  <strong>Art: </strong><?= $data['item_type']; ?><br>
+                  <strong>Ersteller:</strong> <?= $data['author']; ?><br>
                 </p>
-                <p style="margin-top: 0px;margin-bottom: 0px;"><strong>Date Reported:</strong> <?= $data['date']; ?></p>                    
-                <p style="margin-top: 0px;margin-bottom: 0px;"> <a class="o_text-secondary" href="<?= $data['item_link']; ?>" style="text-decoration: none;outline: none;color: #424651;"><strong>Item:</strong> <?= $data['item_link']; ?></a></p>
+                <p style="margin-top: 0px;margin-bottom: 0px;"><strong>Gemeldet am:</strong> <?= $data['date']; ?></p>
+                <p style="margin-top: 0px;margin-bottom: 0px;"> <a class="o_text-secondary" href="<?= $data['item_link']; ?>" style="text-decoration: none;outline: none;color: #424651;"><strong>Inhalt:</strong> <?= $data['item_link']; ?></a></p>
               </td>
             </tr>
           </tbody>

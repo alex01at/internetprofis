@@ -17,8 +17,8 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">New User Registered.</h2>
-                <p style="margin-top: 0px;margin-bottom: 0px;"><?= $data['seller_user_name']; ?> has just Registered on <?= $site_name; ?>.</p></td>
+                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Neuer Benutzer registriert.</h2>
+                <p style="margin-top: 0px;margin-bottom: 0px;"><?= $data['seller_user_name']; ?> hat sich gerade bei <?= $site_name; ?> registriert.</p></td>
               </tr>
             </tbody>
           </table>
@@ -39,7 +39,7 @@
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #0ec06e;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/<?= $data['seller_user_name']; ?>" style="background-color:<?=$site_color;?>;text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">View User Profile</a></td>
+                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #0ec06e;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/<?= $data['seller_user_name']; ?>" style="background-color:<?=$site_color;?>;text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Benutzerprofil ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

@@ -16,7 +16,7 @@
                   </tr>
                 </tbody>
               </table>
-                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hello, <?= $data['user_name']; ?></h4>
+                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hallo, <?= $data['user_name']; ?></h4>
                 
                 <p class="o_mb-md text-left" style="margin-top: 0px;margin-bottom: 24px;">
                   
@@ -27,13 +27,13 @@
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color; ?>;border-radius: 4px;"><a class="o_text-white" href="<?= $data['link_url']; ?>" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Complete Order</a></td>
+                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color; ?>;border-radius: 4px;"><a class="o_text-white" href="<?= $data['link_url']; ?>" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Bestellung abschließen</a></td>
                     </tr>
                   </tbody>
                 </table>
-                
+
                 <p class="o_mb" style="margin-top: 16px;margin-bottom: 16px;">
-                  If the button doesn't work, copy that link
+                  Falls die Schaltfläche nicht funktioniert, kopieren Sie diesen Link
                 </p>
 
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0">

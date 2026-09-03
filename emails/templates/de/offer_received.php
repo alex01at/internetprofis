@@ -17,12 +17,12 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">New Offer Received!</h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">You just received an offer from <?= $data['seller_user_name']; ?> for your request.</p>
+                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Neues Angebot erhalten!</h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Sie haben gerade ein Angebot von <?= $data['seller_user_name']; ?> zu Ihrer Anfrage erhalten.</p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-white o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #ffffff;border-radius: 4px;"><a class="o_text-primary" href="<?= $site_url; ?>/requests/view_offers?request_id=<?= $data['request_id']; ?>" style="text-decoration: none;outline: none;color: <?=$site_color;?>;;display: block;padding: 12px 24px;mso-text-raise: 3px;">View Offer</a></td>
+                      <td width="300" class="o_btn o_bg-white o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #ffffff;border-radius: 4px;"><a class="o_text-primary" href="<?= $site_url; ?>/requests/view_offers?request_id=<?= $data['request_id']; ?>" style="text-decoration: none;outline: none;color: <?=$site_color;?>;;display: block;padding: 12px 24px;mso-text-raise: 3px;">Angebot ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

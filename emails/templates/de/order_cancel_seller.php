@@ -16,12 +16,12 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Order Canceled</h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Your Order Has Been Cancelled And All Funds Returned To Buyer.</p>
+                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Bestellung storniert</h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Die Bestellung wurde storniert und das Guthaben vollständig an den Käufer zurückerstattet.</p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-white o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #ffffff;border-radius: 4px;"><a class="o_text-primary" href="<?= $site_url; ?>/order_details?order_id=<?= $data['order_id']; ?>" style="text-decoration: none;outline: none;color: <?= $site_color;?>;display: block;padding: 12px 24px;mso-text-raise: 3px;">View Order Details</a></td>
+                      <td width="300" class="o_btn o_bg-white o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #ffffff;border-radius: 4px;"><a class="o_text-primary" href="<?= $site_url; ?>/order_details?order_id=<?= $data['order_id']; ?>" style="text-decoration: none;outline: none;color: <?= $site_color;?>;display: block;padding: 12px 24px;mso-text-raise: 3px;">Bestelldetails ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

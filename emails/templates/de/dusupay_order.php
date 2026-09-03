@@ -16,7 +16,7 @@
                   </tr>
                 </tbody>
               </table>
-                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hello, <?= $data['user_name']; ?></h4>
+                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hallo, <?= $data['user_name']; ?></h4>
                 
                 <p class="o_mb-md text-left" style="margin-top: 0px;margin-bottom: 24px;">
                   

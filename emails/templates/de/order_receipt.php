@@ -16,12 +16,12 @@
                   </tr>
                 </tbody>
               </table>
-                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hello, <?= $data['user_name']; ?></h4>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Thank you for ordering from <?= $site_name; ?>.</p>
+                <h4 class="o_heading o_text-dark o_mb-xs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 8px;color: #242b3d;font-size: 18px;line-height: 23px;">Hallo, <?= $data['user_name']; ?></h4>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Vielen Dank für Ihre Bestellung bei <?= $site_name; ?>.</p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/order_details?order_id=<?= $data['order_id']; ?>" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">View Order Details</a></td>
+                      <td width="300" class="o_btn o_bg-success o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href="<?= $site_url; ?>/order_details?order_id=<?= $data['order_id']; ?>" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Bestelldetails ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -39,7 +39,7 @@
     <tbody>
       <tr>
         <td class="o_bg-white o_sans o_text-xs o_text-light o_px-md o_pt-xs" align="center">
-          <p><br data-mce-bogus="1"></p><h4 class="o_heading o_text-dark selected-element" data-color="Dark" data-size="Heading 4" data-min="10" data-max="26">Order Summary</h4><p></p>
+          <p><br data-mce-bogus="1"></p><h4 class="o_heading o_text-dark selected-element" data-color="Dark" data-size="Heading 4" data-min="10" data-max="26">Bestellübersicht</h4><p></p>
           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
             <tbody>
               <tr>
@@ -65,10 +65,10 @@
               <h4 class="o_heading o_text-dark"><strong><?= $data['proposal_title']; ?></strong></h4>
 
               <p class="o_text-xs o_mb-xs">
-                Quantity: <?= $data['qty']; ?><br>
-                Duration: <?= $data['duration']; ?><br>
-                Seller: <?= $data['seller_user_name']; ?><br>
-                <strong class="selected-element">Amount: </strong><?= showPrice($data['amount']); ?>
+                Menge: <?= $data['qty']; ?><br>
+                Laufzeit: <?= $data['duration']; ?><br>
+                Verkäufer: <?= $data['seller_user_name']; ?><br>
+                <strong class="selected-element">Betrag: </strong><?= showPrice($data['amount']); ?>
                 <br>
               </p>
 

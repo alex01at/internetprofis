@@ -22,12 +22,12 @@
                     </tr>
                 </tbody>
                 </table>
-                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Payout Request </h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Hello admin, the customer <?= $data['seller_user_name']; ?> just requested a payment for your services.</p>
+                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Auszahlungsanfrage </h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Hallo Admin, der Anbieter <?= $data['seller_user_name']; ?> hat gerade eine Auszahlung beantragt.</p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?=$site_color;?>;;border-radius: 4px;"><a class="o_text-white" href='<?= $site_url; ?>/admin/index?pending_payouts' style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">View Request Details</a></td>
+                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?=$site_color;?>;;border-radius: 4px;"><a class="o_text-white" href='<?= $site_url; ?>/admin/index?pending_payouts' style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Anfragedetails ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

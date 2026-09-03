@@ -9,7 +9,7 @@
             <div style="font-size: 32px; line-height: 32px; height: 32px;">  </div>
             <div class="o_px-xs o_sans o_text-xs o_text-light o_left o_xs-center" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 14px;line-height: 21px;color: #82899a;text-align: left;padding-left: 8px;padding-right: 8px;">
               
-              <p class="o_mb-xs" style="margin-top: 0px;margin-bottom: 8px;">©<?= date("Y"); ?>. All rights reserved.</p>
+              <p class="o_mb-xs" style="margin-top: 0px;margin-bottom: 8px;">©<?= date("Y"); ?>. Alle Rechte vorbehalten.</p>
               <p class="o_mb-xs" style="margin-top: 0px;margin-bottom: 0px;"><?= $site_name; ?></p>
 
             </div>

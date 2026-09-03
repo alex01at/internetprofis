@@ -9,15 +9,15 @@
         </div>
       </div>
 
-      <h2 class="o_heading">Dear <?= $data['user_name']; ?></h2>
+      <h2 class="o_heading">Hallo <?= $data['user_name']; ?></h2>
 
       <p class="text-left text-muted" style="margin-bottom: 5px; margin-top: 15px;">
-        We have just closed your ticket. If your issue still hasn't been resolved, please contact us by either replying to this email, or using the customer support channel on our website.
+        Wir haben Ihr Ticket soeben geschlossen. Sollte Ihr Anliegen noch nicht gelöst sein, kontaktieren Sie uns bitte, indem Sie auf diese E-Mail antworten oder unseren Kundensupport auf der Website nutzen.
       </p>
 
-      <p class="text-left text-muted" style="margin-bottom: 5px;">Best Regards,</p>
+      <p class="text-left text-muted" style="margin-bottom: 5px;">Mit freundlichen Grüßen,</p>
 
-      <p class="text-left text-muted" style="margin-bottom: 0px;"><?= $site_name; ?> Team.</p>
+      <p class="text-left text-muted" style="margin-bottom: 0px;">Ihr <?= $site_name; ?>-Team.</p>
 
     </div>
   </div>

@@ -17,8 +17,8 @@
                     </tr>
                   </tbody>
                 </table>
-                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Cancellation Request</h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;"><?= $data['sender_user_name']; ?> has requested to cancel this order. </p></td>
+                <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Stornierungsanfrage</h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;"><?= $data['sender_user_name']; ?> hat die Stornierung dieser Bestellung beantragt. </p></td>
             </tr>
           </tbody>
         </table>
@@ -35,13 +35,13 @@
        <table class="o_block" width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="max-width: 632px;margin: 0 auto;">
          <tbody>
            <tr>
-             <td class="o_bg-white o_px-md o_py-md o_sans o_text o_text-secondary" align="left" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;background-color: #ffffff;color: #424651;padding-left: 24px;padding-right: 24px;padding-top: 24px;padding-bottom: 24px;"><h3 class="o_heading o_text-dark" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;color: #242b3d;font-size: 24px;line-height: 31px;"><strong>Order Number</strong> #<?= $data['order_number']; ?></h3>
-               <p class="o_text-xxs o_text-light o_mb" style="font-size: 12px;line-height: 19px;color: #82899a;margin-top: 0px;margin-bottom: 16px;">Order details for cancellation</p>
+             <td class="o_bg-white o_px-md o_py-md o_sans o_text o_text-secondary" align="left" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;background-color: #ffffff;color: #424651;padding-left: 24px;padding-right: 24px;padding-top: 24px;padding-bottom: 24px;"><h3 class="o_heading o_text-dark" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;color: #242b3d;font-size: 24px;line-height: 31px;"><strong>Bestellnummer</strong> #<?= $data['order_number']; ?></h3>
+               <p class="o_text-xxs o_text-light o_mb" style="font-size: 12px;line-height: 19px;color: #82899a;margin-top: 0px;margin-bottom: 16px;">Bestelldetails zur Stornierung</p>
                <p class="o_mb" style="margin-top: 0px;margin-bottom: 16px;"><strong><?= $data['proposal_title']; ?></strong><br>
-                 <strong>Order Seller:</strong> <?= $data['seller_user_name']; ?><br>
-                 <strong>Order Buyer:</strong> <?= $data['buyer_user_name']; ?> </p>
+                 <strong>Verkäufer:</strong> <?= $data['seller_user_name']; ?><br>
+                 <strong>Käufer:</strong> <?= $data['buyer_user_name']; ?> </p>
                <p style="margin-top: 0px;margin-bottom: 0px;">
-                  <strong>Date of Cancellation Request:</strong>
+                  <strong>Datum der Stornierungsanfrage:</strong>
                   <?= $data['date']; ?> 
                </p>
              </td>

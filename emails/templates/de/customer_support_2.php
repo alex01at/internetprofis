@@ -13,8 +13,8 @@
               </tr>
             </tbody>
           </table>
-          <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Thank you for contacting us.</h2>
-        <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">A customer representative will be in touch with you shortly.</p></td>
+          <h2 class="o_heading o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;font-size: 30px;line-height: 39px;">Vielen Dank für Ihre Kontaktaufnahme.</h2>
+        <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Ein Mitarbeiter unseres Kundenservice wird sich in Kürze bei Ihnen melden.</p></td>
       </tr>
     </tbody>
   </table>

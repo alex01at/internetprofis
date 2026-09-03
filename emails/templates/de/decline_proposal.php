@@ -15,12 +15,12 @@
                   </tr>
                 </tbody>
               </table>
-                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Publication Declined </h2>
-                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">We are sorry for the inconvenience, but your Proposal / Service was declined because it does not comply with our terms. Please correct and resubmit, we will be happy to publish your material.</p>
+                <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Veröffentlichung abgelehnt </h2>
+                <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Es tut uns leid, aber Ihr Angebot / Ihre Dienstleistung wurde abgelehnt, da es/sie nicht unseren Richtlinien entspricht. Bitte korrigieren Sie es und reichen Sie es erneut ein — wir veröffentlichen Ihr Material gerne.</p>
                 <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                   <tbody>
                     <tr>
-                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href='<?= $site_url; ?>/proposals/view_proposals?declined' style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">See More Details</a></td>
+                      <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: <?= $site_color;?>;border-radius: 4px;"><a class="o_text-white" href='<?= $site_url; ?>/proposals/view_proposals?declined' style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Weitere Details ansehen</a></td>
                     </tr>
                   </tbody>
                 </table>

@@ -715,7 +715,7 @@
                 <tr>
                     <td class="o_bg-white o_px-md o_pt" align="center">
                         <h3 class="o_heading o_text-dark"></h3>
-                        <h3 class="o_heading o_text-dark">New Notification</h3>
+                        <h3 class="o_heading o_text-dark">Neue Benachrichtigung</h3>
                     </td>
                 </tr>
                 </tbody>
@@ -743,19 +743,19 @@
                                 </td>
                                 <td class="o_bb-light o_text o_text-secondary o_sans o_px o_py" align="left"
                                     style="vertical-align:top;">
-                                    <p><strong class="o_text-dark">User: <?= $data['seller_user_name']; ?></strong>&nbsp;<span
+                                    <p><strong class="o_text-dark">Benutzer: <?= $data['seller_user_name']; ?></strong>&nbsp;<span
                                                 class="o_text-default o_text-xs">&nbsp; <span
                                                     class="o_text-light"> •</span> <?= $data['seller_email']; ?></span>
                                     </p>
-                                    <p class="o_text-xxs o_text-light">Notification email</p></td>
+                                    <p class="o_text-xxs o_text-light">Benachrichtigungs-E-Mail</p></td>
                             </tr>
                             </tbody>
                         </table>
                         <div style="font-size: 24px; line-height: 24px; height: 24px;">&nbsp;</div>
                         <p class="o_mb-xs">
-                            <strong>Enquiry Type:</strong> <?= $data['enquiry_title']; ?><br>
-                            <strong>Subject:</strong> <?= $data['subject']; ?><br>
-                            <br><strong>Message:</strong><br><?= $data['message']; ?>
+                            <strong>Anfragetyp:</strong> <?= $data['enquiry_title']; ?><br>
+                            <strong>Betreff:</strong> <?= $data['subject']; ?><br>
+                            <br><strong>Nachricht:</strong><br><?= $data['message']; ?>
                         </p>
 
                         <?php if (!empty($data['attachment'])) { ?>
@@ -792,8 +792,8 @@
                                          style="max-width: 24px; position: relative;" class="">
                                 </td>
                                 <td class="o_bg-dark o_br-r o_text-xs o_text-white o_sans o_px o_py-xs" align="left"
-                                    style="vertical-align:top;"><p><strong>Information.</strong> This message has been
-                                        sent from the customer support form.</p></td>
+                                    style="vertical-align:top;"><p><strong>Hinweis.</strong> Diese Nachricht wurde
+                                        über das Kundensupport-Formular gesendet.</p></td>
                             </tr>
                             </tbody>
                         </table>
