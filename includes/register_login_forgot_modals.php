@@ -96,7 +96,7 @@
           <div class="form-group">
             <label class="form-control-label font-weight-bold"> <?= $lang['label']['password_confirm']; ?> </label>
             <input type="password" class="form-control" name="con_pass" placeholder="<?= $lang['placeholder']['password_confirm']; ?>" required="">
-            <?php if(in_array("Passwords don't match. Please try again.", $error_array)) echo "<span style='color:red;'>{$lang['label']['dont_match']}</span> <br>"; ?>
+            <?php if(in_array("Passwords don't match. Please try again.", $error_array)) echo "<span style='color:red;'>{$lang['warning']['dont_match']}</span> <br>"; ?>
           </div>
 
           <div class="form-group">

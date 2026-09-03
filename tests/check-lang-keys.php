@@ -55,8 +55,12 @@ function findDuplicateAssignments($file) {
     $pattern = '/^\$lang((?:\s*\[\s*(?:\'[^\']*\'|"[^"]*")\s*\])+)\s*=/';
     foreach ($lines as $i => $line) {
         if (preg_match($pattern, trim($line), $m)) {
-            preg_match_all('/\[\s*[\'"]([^\'"]*)[\'"]\s*\]/', $m[1], $parts);
-            $path = implode('.', $parts[1]);
+            preg_match_all('/\[\s*(?:\'([^\']*)\'|"([^"]*)")\s*\]/', $m[1], $parts);
+            $keyParts = [];
+            foreach ($parts[1] as $j => $single) {
+                $keyParts[] = $single !== '' ? $single : $parts[2][$j];
+            }
+            $path = implode('.', $keyParts);
             if ($path === '') continue;
             if (isset($seen[$path])) {
                 $duplicates[] = [$path, $seen[$path], $i + 1];
@@ -110,10 +114,24 @@ $chainPattern = '/\$lang((?:\s*\[\s*(?:\'[^\']*\'|"[^"]*")\s*\])+)/';
 
 foreach ($files as $file) {
     $content = file_get_contents($file);
-    if (!preg_match_all($chainPattern, $content, $matches)) continue;
-    foreach ($matches[1] as $chain) {
-        preg_match_all('/\[\s*[\'"]([^\'"]*)[\'"]\s*\]/', $chain, $parts);
-        $path = implode('.', $parts[1]);
+    if (!preg_match_all($chainPattern, $content, $matches, PREG_OFFSET_CAPTURE)) continue;
+    foreach ($matches[0] as $idx => $fullMatch) {
+        // If the chain is immediately followed by another '[', it continues
+        // with a dynamic key (e.g. $lang['packages'][$variable]) that we
+        // can't statically verify - skip the whole reference rather than
+        // report the truncated static prefix as if it were the real key.
+        $endPos = $fullMatch[1] + strlen($fullMatch[0]);
+        $following = ltrim(substr($content, $endPos, 20));
+        if ($following !== '' && $following[0] === '[') {
+            continue;
+        }
+        $chain = $matches[1][$idx][0];
+        preg_match_all('/\[\s*(?:\'([^\']*)\'|"([^"]*)")\s*\]/', $chain, $parts);
+        $keyParts = [];
+        foreach ($parts[1] as $i => $single) {
+            $keyParts[] = $single !== '' ? $single : $parts[2][$i];
+        }
+        $path = implode('.', $keyParts);
         if ($path === '') continue;
         $referenced[$path][] = substr($file, strlen($root) + 1);
     }

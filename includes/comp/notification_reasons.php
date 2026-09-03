@@ -1,7 +1,7 @@
 <?php
 
 if($reason == "referral_approved"){
-	return $lang['notification']['approved_prposal'];
+	return $lang['notification']['approved_referral'];
 }
 if($reason == "proposal_referral_approved"){
 	return $lang['notification']['approved_referral_proposal'];
