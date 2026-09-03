@@ -1,8 +1,21 @@
 <?php
 $get_app = $db->select("app_info");
 $row_app = $get_app->fetch();
-$current_version = $row_app->version;
 $r_date = $row_app->r_date;
+
+require_once __DIR__.'/includes/update_check.php';
+$githubRepo = 'alex01at/internetprofis';
+$updateStatus = getUpdateStatus($githubRepo, $dir, $dir.'admin/.deployed_version');
+
+if($updateStatus['deployedTag']){
+	$current_version = $updateStatus['deployedTag'];
+}elseif($updateStatus['deployedSha']){
+	$current_version = substr($updateStatus['deployedSha'], 0, 10);
+}else{
+	// Nothing tracked yet on this server -- fall back to the old,
+	// manually-maintained value rather than showing nothing.
+	$current_version = $row_app->version;
+}
 ?>
 <div class="main-container">
 	<div class="row">
@@ -61,6 +74,11 @@ $r_date = $row_app->r_date;
           <label class="col-md-5">Current Version : </label>
           <div class="col-md-7 text-right">
           <?= $current_version; ?>
+          <?php if($updateStatus['updateAvailable']){ ?>
+            <a href="index?app_update" class="badge badge-warning ml-1" title="A newer release is available">
+              <i class="fa fa-arrow-circle-up"></i> Update
+            </a>
+          <?php } ?>
           </div>
           </div><!--- form-group row Ends --->
           <hr class="mt-0 mb-0">

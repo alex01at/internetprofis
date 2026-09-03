@@ -4,54 +4,10 @@ if(!isset($_SESSION['admin_email'])){
 echo "<script>window.open('login','_self');</script>";
 }else{
 
+require_once __DIR__.'/includes/update_check.php';
+
 $githubRepo = 'alex01at/internetprofis';
 $versionFile = $dir.'admin/.deployed_version';
-
-function readLocalGitHead($rootDir){
-	$rootDir = rtrim($rootDir, '/\\');
-	$headFile = $rootDir.'/.git/HEAD';
-	if(!is_file($headFile)){ return null; }
-	$head = trim(file_get_contents($headFile));
-	if(strpos($head, 'ref:') === 0){
-		$ref = trim(substr($head, 4));
-		$refFile = $rootDir.'/.git/'.$ref;
-		if(is_file($refFile)){
-			return trim(file_get_contents($refFile));
-		}
-		$packedRefs = $rootDir.'/.git/packed-refs';
-		if(is_file($packedRefs)){
-			foreach(file($packedRefs) as $line){
-				if(strpos($line, $ref) !== false){
-					return substr($line, 0, 40);
-				}
-			}
-		}
-		return null;
-	}
-	return preg_match('/^[0-9a-f]{40}$/', $head) ? $head : null;
-}
-
-function readDeployedVersion($versionFile, $rootDir){
-	if(is_file($versionFile)){
-		$sha = trim(file_get_contents($versionFile));
-		if(preg_match('/^[0-9a-f]{40}$/', $sha)){ return $sha; }
-	}
-	return readLocalGitHead($rootDir);
-}
-
-function githubApiGet($url){
-	$context = stream_context_create([
-		'http' => [
-			'method'  => 'GET',
-			'header'  => "User-Agent: internetprofis-admin\r\nAccept: application/vnd.github+json\r\n",
-			'timeout' => 8,
-		],
-	]);
-	$response = @file_get_contents($url, false, $context);
-	if($response === false){ return null; }
-	$data = json_decode($response, true);
-	return is_array($data) ? $data : null;
-}
 
 function githubRawGet($repo, $sha, $path){
 	$url = "https://raw.githubusercontent.com/$repo/$sha/".implode('/', array_map('rawurlencode', explode('/', $path)));
@@ -105,7 +61,7 @@ function isSafeRelativePath($relativePath, $rootDir){
 	return true;
 }
 
-function applyUpdate($githubRepo, $fromSha, $toSha, $rootDir, $versionFile){
+function applyUpdate($githubRepo, $fromSha, $toSha, $toTag, $rootDir, $versionFile){
 	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$fromSha...$toSha");
 	if($compareData === null){
 		return ['ok' => false, 'message' => 'Could not reach GitHub to fetch the file list. Nothing was changed.'];
@@ -163,7 +119,7 @@ function applyUpdate($githubRepo, $fromSha, $toSha, $rootDir, $versionFile){
 		];
 	}
 
-	@file_put_contents($versionFile, $toSha);
+	writeDeployedVersion($versionFile, $toSha, $toTag);
 
 	return [
 		'ok' => true,
@@ -172,43 +128,36 @@ function applyUpdate($githubRepo, $fromSha, $toSha, $rootDir, $versionFile){
 	];
 }
 
-$deployedSha = readDeployedVersion($versionFile, $dir);
-$compareData = null;
 $updateResult = null;
 
-// Updates are keyed off published GitHub Releases, not raw commits -- so an
-// update only appears here once someone deliberately tags a checkpoint as
-// ready, rather than after every single push to main.
-$latestRelease = githubApiGet("https://api.github.com/repos/$githubRepo/releases/latest");
-$noReleases = ($latestRelease === null);
-$latestCommit = null;
-$apiError = false;
-
-if(!$noReleases){
-	$latestCommit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/".rawurlencode($latestRelease['tag_name']));
-	$apiError = ($latestCommit === null);
-}
-
-if(!$apiError && !$noReleases && $deployedSha){
-	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/$deployedSha...".$latestCommit['sha']);
-	if($compareData === null){ $apiError = true; }
-}
-
-if(isset($_POST['init_version']) && $latestCommit){
-	@file_put_contents($versionFile, $latestCommit['sha']);
+if(isset($_POST['init_version'])){
+	$precheck = getUpdateStatus($githubRepo, $dir, $versionFile);
+	if($precheck['latestCommit']){
+		writeDeployedVersion($versionFile, $precheck['latestCommit']['sha'], $precheck['latestRelease']['tag_name']);
+	}
 	echo "<script>window.open('index?app_update','_self');</script>";
 }
 
-if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])){
+$status = getUpdateStatus($githubRepo, $dir, $versionFile);
+
+if(isset($_POST['apply_update']) && $status['deployedSha'] && !empty($_POST['target_sha'])){
 	$targetSha = preg_replace('/[^0-9a-f]/', '', $_POST['target_sha']);
+	$targetTag = $_POST['target_tag'] ?? '';
 	if(preg_match('/^[0-9a-f]{40}$/', $targetSha)){
-		$updateResult = applyUpdate($githubRepo, $deployedSha, $targetSha, rtrim($dir, '/\\'), $versionFile);
+		$updateResult = applyUpdate($githubRepo, $status['deployedSha'], $targetSha, $targetTag, rtrim($dir, '/\\'), $versionFile);
 		if($updateResult['ok']){
-			$deployedSha = $targetSha;
-			$compareData = null;
+			$status = getUpdateStatus($githubRepo, $dir, $versionFile);
 		}
 	}
 }
+
+$deployedSha = $status['deployedSha'];
+$deployedTag = $status['deployedTag'];
+$latestRelease = $status['latestRelease'];
+$latestCommit = $status['latestCommit'];
+$compareData = $status['compareData'];
+$noReleases = $status['noReleases'];
+$apiError = $status['apiError'];
 
 ?>
 <div class="main-container">
@@ -235,10 +184,12 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
           </div><!--- form-group row Ends --->
           <hr class="mt-0 mb-2">
           <div class="form-group row mb-0 pl-3 pr-3 pb-2 pt-2"><!--- form-group row Starts --->
-          <label class="col-md-3 control-label"> Deployed Commit : </label>
+          <label class="col-md-3 control-label"> Deployed Version : </label>
           <div class="col-md-9 text-right">
           <?php if($deployedSha){ ?>
-            <a href="https://github.com/<?= $githubRepo; ?>/commit/<?= $deployedSha; ?>" target="_blank"><code><?= substr($deployedSha, 0, 10); ?></code></a>
+            <a href="https://github.com/<?= $githubRepo; ?>/commit/<?= $deployedSha; ?>" target="_blank">
+              <code><?= $deployedTag ? htmlspecialchars($deployedTag, ENT_QUOTES, 'UTF-8') : substr($deployedSha, 0, 10); ?></code>
+            </a>
           <?php }else{ ?>
             <span class="text-muted">Unknown -- not tracked yet on this server</span>
           <?php } ?>
@@ -308,6 +259,7 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
         <form method="post" class="d-inline" onsubmit="return confirm('This will fetch and overwrite <?= count($compareData['files']); ?> file(s) on this server directly from GitHub release <?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>, and delete files that were removed upstream. Make sure you have a backup. Continue?');">
           <input type="hidden" name="apply_update" value="1">
           <input type="hidden" name="target_sha" value="<?= htmlspecialchars($latestCommit['sha'], ENT_QUOTES, 'UTF-8'); ?>">
+          <input type="hidden" name="target_tag" value="<?= htmlspecialchars($latestRelease['tag_name'], ENT_QUOTES, 'UTF-8'); ?>">
           <button type="submit" class="btn btn-success">Update now</button>
         </form>
       <?php } ?>
