@@ -8,24 +8,24 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> Deliver Your Order Now </h5>
+        <h5 class="modal-title"> <?= $lang['order_details']['deliver_order_now']; ?> </h5>
         <button class="close" data-dismiss="modal"> <span>&times;</span> </button>
       </div>
       <div class="modal-body">
         <form method="post" enctype="multipart/form-data">
           <div class="form-group">
-            <label class="font-weight-bold" > Message </label>
-            <textarea name="delivered_message" placeholder="Type Your Message Here..." class="form-control mb-2" required="" rows="3"></textarea>
+            <label class="font-weight-bold" > <?= $lang['th']['message']; ?> </label>
+            <textarea name="delivered_message" placeholder="<?= $lang['placeholder']['type_message']; ?>" class="form-control mb-2" required="" rows="3"></textarea>
           </div>
           <?php if($enable_watermark == 1){ ?>
           <div class="form-group">
-            <label for="">Enable Watermark : </label>
+            <label for=""><?= $lang['enable_watermark']; ?>: </label>
             <input type="checkbox" name="enable_watermark" value="1" style="position: relative; top: 2px;">
           </div>
           <?php } ?>
           <div class="form-group mb-0">
             <input type="file" name="delivered_file" class="mt-1 mb-2"> 
-            <input type="submit" name="submit_delivered" value="Deliver Order" class="btn btn-success float-right">
+            <input type="submit" name="submit_delivered" value="<?= $lang['order_details']['deliver_order']; ?>" class="btn btn-success float-right">
           </div>
 
         </form>
@@ -117,7 +117,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> Submit Your Revision Request Here </h5>
+        <h5 class="modal-title"> <?= $lang['order_details']['submit_revision_request_here']; ?> </h5>
         <button class="close" data-dismiss="modal"> <span>&times;</span> </button>
       </div>
       <div class="modal-body">
@@ -134,8 +134,8 @@
 
         <form method="post" enctype="multipart/form-data">
           <div class="form-group">
-            <label class="font-weight-bold" > Request Message </label>
-            <textarea name="revison_message" placeholder="Type Your Message Here..." class="form-control mb-2" required=""></textarea>
+            <label class="font-weight-bold" > <?= $lang['requests']['request_message']; ?> </label>
+            <textarea name="revison_message" placeholder="<?= $lang['placeholder']['type_message']; ?>" class="form-control mb-2" required=""></textarea>
           </div>
           <div class="form-group clearfix">
             <input type="file" name="revison_file" class="mt-1">
