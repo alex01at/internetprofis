@@ -100,7 +100,7 @@ $withdrawLimitText = "";
 		<?php }else if($seller_payouts > 0 And empty($payout_anyday)){ ?>
 		<div class="alert alert-success mt-2 text-center h6"> <!-- Alert starts -->
 		<i class="fa fa-exclamation-circle"></i>
-		You will be able to withdraw or send next payout request of (<?= $s_currency.$current_balance; ?>) on the 
+		<?= $lang['revenue']['next_payout_prefix']; ?> (<?= $s_currency.$current_balance; ?>) <?= $lang['revenue']['next_payout_suffix']; ?> 
 		<?php
 		$interval = new DateInterval('P1M');
 		$payout_date->add($interval);
@@ -113,19 +113,19 @@ $withdrawLimitText = "";
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-3 text-center border-box">
-							<p> Withdrawals </p>
+							<p> <?= $lang['revenue']['withdrawals']; ?> </p>
 							<h2> <?= showPrice($withdrawn); ?></h2>
 						</div>
 						<div class="col-md-3 text-center border-box">
-							<p> Used To Order Proposals/Services </p>
+							<p> <?= $lang['revenue']['used_to_order']; ?> </p>
 							<h2> <?= showPrice($used_purchases); ?></h2>
 						</div>
 						<div class="col-md-3 text-center border-box">
-							<p> Pending Clearance </p>
+							<p> <?= $lang['revenue']['pending_clearance']; ?> </p>
 							<h2> <?= showPrice($pending_clearance); ?></h2>
 						</div>
 						<div class="col-md-3 text-center border-box">
-							<p> Available Income </p>
+							<p> <?= $lang['revenue']['available_income']; ?> </p>
 							<h2> <?= showPrice($current_balance); ?></h2>
 						</div>
 					</div>
@@ -134,25 +134,25 @@ $withdrawLimitText = "";
 
 			<?php if(($current_balance >= $withdrawal_limit AND !empty($payout_anyday)) OR ($current_balance >= $withdrawal_limit AND empty($payout_anyday) AND $seller_payouts == 0 & date("d") >= $payout_day)){ ?>
 
-			<label class="lead pull-left mt-1"> Withdraw To: </label>
+			<label class="lead pull-left mt-1"> <?= $lang['revenue']['withdraw_to']; ?> </label>
 			<?php if($enable_paypal == "yes"){ ?>
 			<button class="btn btn-success ml-2" data-toggle="modal" data-target="#paypal_withdraw_modal">
-				<i class="fa fa-paypal"></i> Paypal Account
+				<i class="fa fa-paypal"></i> <?= $lang['revenue']['paypal_account']; ?>
 			</button>
 			<?php } ?>
 			<?php if($enable_payoneer == 1) { ?>
 			<button class="btn btn-success ml-2" data-toggle="modal" data-target="#payoneer_withdraw_modal">
-				<i class="fa fa-paper-plane-o"></i> Payoneer Account
+				<i class="fa fa-paper-plane-o"></i> <?= $lang['revenue']['payoneer_account']; ?>
 			</button>
 			<?php } ?>
 			<?php if($enable_bank_transfer == "yes"){ ?>
 			<button class="btn btn-success ml-2" data-toggle="modal" data-target="#bank_account_modal">
-				<i class="fa fa-university"></i> Bank Account
+				<i class="fa fa-university"></i> <?= $lang['revenue']['bank_account']; ?>
 			</button>
 			<?php } ?>
 			<?php if($enable_moneygram == "yes"){ ?>
 			<button class="btn btn-success ml-2" data-toggle="modal" data-target="#moneygram_modal">
-				<i class="fa fa-credit-card"></i> Moneygram
+				<i class="fa fa-credit-card"></i> <?= $lang['revenue']['moneygram']; ?>
 			</button>
 			<?php } ?>
 			<?php if($enable_dusupay == "yes"){ ?>
@@ -162,33 +162,33 @@ $withdrawLimitText = "";
 			<?php } ?>
 			<?php if($enable_coinpayments == "yes"){ ?>
 			<button class="btn btn-success ml-2" data-toggle="modal" data-target="#trx_wallet_modal">
-				<i class="fa fa-bitcoin"></i> Bitcoin Wallet 
+				<i class="fa fa-bitcoin"></i> <?= $lang['revenue']['bitcoin_wallet']; ?> 
 			</button>
 			<?php } ?>
 
 			<?php }else{ ?>
 
-			<label class="lead pull-left mt-1"> Withdraw To: </label>
+			<label class="lead pull-left mt-1"> <?= $lang['revenue']['withdraw_to']; ?> </label>
 			<?php if($enable_paypal == "yes"){ ?>
 			<button class="btn btn-default ml-2" <?= $withdrawLimitText; ?>>
-			<i class="fa fa-paypal"></i> Paypal Account
+			<i class="fa fa-paypal"></i> <?= $lang['revenue']['paypal_account']; ?>
 			</button>
 			<?php } ?>
 			<?php if($wish_do_manual_payouts == 1 & $enable_payoneer == 1) { ?>
 			<button class="btn btn-default ml-2" <?= $withdrawLimitText; ?>>
-			<i class="fa fa-paypal"></i> Payoneer Account
+			<i class="fa fa-paypal"></i> <?= $lang['revenue']['payoneer_account']; ?>
 			</button>
 			<?php } ?>
 			
 			<?php if($enable_bank_transfer == "yes"){ ?>
 			<button class="btn btn-default ml-2" <?= $withdrawLimitText; ?>>
-				<i class="fa fa-university"></i> Bank Account
+				<i class="fa fa-university"></i> <?= $lang['revenue']['bank_account']; ?>
 			</button>
 			<?php } ?>
 
 			<?php if($enable_moneygram == "yes"){ ?>
 			<button class="btn btn-default ml-2" <?= $withdrawLimitText; ?>>
-				<i class="fa fa-credit-card"></i> Moneygram
+				<i class="fa fa-credit-card"></i> <?= $lang['revenue']['moneygram']; ?>
 			</button>
 			<?php } ?>
 
@@ -199,7 +199,7 @@ $withdrawLimitText = "";
 			<?php } ?>
 			<?php if($enable_coinpayments == "yes"){ ?>
 			<button class="btn btn-default ml-2" <?= $withdrawLimitText; ?>>
-				<i class="fa fa-bitcoin"></i> Bitcoin Wallet 
+				<i class="fa fa-bitcoin"></i> <?= $lang['revenue']['bitcoin_wallet']; ?> 
 			</button>
 			<?php } ?>
 
@@ -236,9 +236,9 @@ $withdrawLimitText = "";
 						<td><?= $date; ?></td>
 						<td> 
 							<?php if($status == "pending"){ ?>
-								<?= $text; ?> Pending Clearance (<a href="order_details?order_id=<?= $order_id; ?>" target="blank" class="text-success"> View Order </a>)
+								<?= $text; ?> <?= $lang['revenue']['pending_clearance']; ?> (<a href="order_details?order_id=<?= $order_id; ?>" target="blank" class="text-success"> <?= $lang['button']['view_order']; ?> </a>)
 							<?php }else{ ?>                             
-								<?= $text; ?> (<a href="order_details?order_id=<?= $order_id; ?>" target="blank" class="text-success"> View Order </a>)
+								<?= $text; ?> (<a href="order_details?order_id=<?= $order_id; ?>" target="blank" class="text-success"> <?= $lang['button']['view_order']; ?> </a>)
 							<?php } ?>
 						</td>
 						<td class="text-success"> +<?= showPrice($amount); ?> </td>
@@ -255,19 +255,18 @@ $withdrawLimitText = "";
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title"> Withdraw/Transfer Funds To PayPal </h5>
+						<h5 class="modal-title"> <?= $lang['revenue']['withdraw_paypal_title']; ?> </h5>
 						<button class="close" data-dismiss="modal"><span> &times; </span></button>
 					</div>
 					<div class="modal-body"><!-- modal-body Starts -->
 						<center><!-- center Starts -->
                      <?php if(empty($login_seller_paypal_email)){ ?>
 							<p class="lead">
-								In order to transfer funds to your PayPal account, you will need to add your PayPal email in your
-								<a href="<?= $site_url; ?>/settings?account_settings" class="text-success">account settings</a> tab.
+								<?= $lang['revenue']['add_paypal_email']; ?> <a href="<?= $site_url; ?>/settings?account_settings" class="text-success"><?= $lang['revenue']['account_settings_link']; ?></a> <?= $lang['revenue']['tab_suffix']; ?>
 							</p>
                      <?php }else{ ?>
 							<p class="lead">
-								Your revenue funds will be transferred to: 
+								<?= $lang['revenue']['funds_transferred_to']; ?>
 								<br> <strong> <?= $login_seller_paypal_email; ?> </strong>
 							</p>
 							<form action="withdraw_manual" method="post">
@@ -277,13 +276,13 @@ $withdrawLimitText = "";
 									<div class="col-md-8">
 										<div class="input-group">
 											<span class="input-group-addon font-weight-bold"> $ </span>
-											<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> Minimum" required >
+											<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> <?= $lang['th']['minimum']; ?>" required >
 										</div>
 								    </div>
 								</div>
 								<div class="form-group row">
 									<div class="col-md-8 offset-md-3">
-									  <input type="submit" name="withdraw" value="Transfer" class="btn btn-success form-control" >
+									  <input type="submit" name="withdraw" value="<?= $lang['revenue']['transfer']; ?>" class="btn btn-success form-control" >
 									</div>
 								</div>
 							</form>
@@ -301,19 +300,18 @@ $withdrawLimitText = "";
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title"> Withdraw/Transfer Funds To Payoneer </h5>
+						<h5 class="modal-title"> <?= $lang['revenue']['withdraw_payoneer_title']; ?> </h5>
 						<button class="close" data-dismiss="modal"><span>&times;</span></button>
 					</div>
 					<div class="modal-body"><!-- modal-body Starts -->
 						<center><!-- center Starts -->
                         <?php if(empty($login_seller_payoneer_email)){ ?>
 							<p class="lead">
-								In order to transfer funds to your Payoneer account, you will need to add your payoneer email in your
-								<a href="<?= $site_url; ?>/settings?account_settings" class="text-success">account settings</a> tab.
+								<?= $lang['revenue']['add_payoneer_email']; ?> <a href="<?= $site_url; ?>/settings?account_settings" class="text-success"><?= $lang['revenue']['account_settings_link']; ?></a> <?= $lang['revenue']['tab_suffix']; ?>
 							</p>
                             <?php }else{ ?>
 							<p class="lead">
-								Your revenue funds will be transferred to : <br> <strong><?= $login_seller_payoneer_email; ?></strong>
+								<?= $lang['revenue']['funds_transferred_to']; ?> <br> <strong><?= $login_seller_payoneer_email; ?></strong>
 							</p>
 							<form action="withdraw_manual" method="post">
 								<input type="hidden" name="method" value="payoneer">
@@ -322,13 +320,13 @@ $withdrawLimitText = "";
 									<div class="col-md-8">
 										<div class="input-group">
 											<span class="input-group-addon font-weight-bold"> $ </span>
-											<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> Minimum" required >
+											<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> <?= $lang['th']['minimum']; ?>" required >
 										</div>
 								    </div>
 								</div>
 								<div class="form-group row">
 									<div class="col-md-8 offset-md-3">
-									  <input type="submit" name="withdraw" value="Transfer" class="btn btn-success form-control" >
+									  <input type="submit" name="withdraw" value="<?= $lang['revenue']['transfer']; ?>" class="btn btn-success form-control" >
 									</div>
 								</div>
 							</form>
@@ -352,7 +350,7 @@ $withdrawLimitText = "";
 		<div class="modal-dialog"><!-- modal-dialog Starts -->
 		<div class="modal-content"><!-- modal-content Starts -->
 		<div class="modal-header"><!-- modal-header Starts -->
-		<h5 class="modal-title"> Withdraw To Mobile Money Account </h5>
+		<h5 class="modal-title"> <?= $lang['revenue']['withdraw_mobile_money_title']; ?> </h5>
 		<button type="button" class="close" data-dismiss="modal">
 		<span>&times;</span>
 		</button>
@@ -364,25 +362,25 @@ $withdrawLimitText = "";
 		</p>
 		<?php }else{ ?>
 		<p class="modal-lead">
-		Your Payments Will Be Sent To Following Mobile Money Account:
-		<p class="mb-1"> <strong> Account Number: </strong> <?= $login_seller_account_number; ?> </p>
-		<p> <strong> Account/Owner Name: </strong> <?= $login_seller_account_name; ?> </p>
+		<?= $lang['revenue']['payments_sent_to_mobile_money']; ?>
+		<p class="mb-1"> <strong> <?= $lang['revenue']['account_number']; ?> </strong> <?= $login_seller_account_number; ?> </p>
+		<p> <strong> <?= $lang['revenue']['account_owner_name']; ?> </strong> <?= $login_seller_account_name; ?> </p>
 		</p>
 		<form action="<?= ($wish_do_manual_payouts == 1)?"withdraw_manual":"withdraw"; ?>" method="post"><!-- withdraw form Starts -->
 		<input type="hidden" name="method" value="dusupay">
 		<div class="form-group row"><!-- form-group Starts -->
-		<label class="col-md-3 col-form-label"> Amount: </label>
+		<label class="col-md-3 col-form-label"> <?= $lang['th']['amount']; ?>: </label>
 		<div class="col-md-8">
 		<div class="input-group">
 		<span class="input-group-addon font-weight-bold"> $ </span>
-		<input type="number" name="amount" class="form-control" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> Minimum" required>
+		<input type="number" name="amount" class="form-control" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> <?= $lang['th']['minimum']; ?>" required>
 		<input type="hidden" name="withdraw_method" value="mobile_money">
 		</div>
 		</div>
 		</div><!-- form-group Ends -->
 		<div class="form-group row"><!-- form-group Starts -->
 		<div class="col-md-8 offset-md-3">
-		<input type="submit" name="withdraw" value="Withdraw" class="btn btn-success form-control">
+		<input type="submit" name="withdraw" value="<?= $lang['revenue']['withdraw']; ?>" class="btn btn-success form-control">
 		</div>
 		</div><!-- form-group Ends -->
 		</form><!-- withdraw form Ends -->
@@ -397,22 +395,22 @@ $withdrawLimitText = "";
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-			<h5 class="modal-title"> Withdraw/Transfer Funds To Bitcoin Wallet </h5>
+			<h5 class="modal-title"> <?= $lang['revenue']['withdraw_bitcoin_title']; ?> </h5>
 			<button class="close" data-dismiss="modal"><span>&times;</span></button>
 			</div>
 			<div class="modal-body"><!-- modal-body Starts -->
 			<center><!-- center Starts -->
 				<?php if(empty($login_seller_wallet)){ ?>
 				<p class="lead">
-				In order to transfer funds to your bitcoin wallet, you will need to add your wallet address in your
+				<?= $lang['revenue']['add_wallet_address']; ?>
 				<a href="<?= $site_url; ?>/settings?account_settings" class="text-success">
-				account settings 
+				<?= $lang['revenue']['account_settings_link']; ?>
 				</a>
-				tab.
+				<?= $lang['revenue']['tab_suffix']; ?>
 				</p>
 				<?php }else{ ?>
 				<p class="lead">
-				Your revenue funds will be transferred to:
+				<?= $lang['revenue']['funds_transferred_to']; ?>
 				<br> <strong> <?= $login_seller_wallet; ?> </strong>
 				</p>
 				<form action="<?= ($wish_do_manual_payouts == 1)?"withdraw_manual":"withdraw_wallet"; ?>" method="post">
@@ -422,13 +420,13 @@ $withdrawLimitText = "";
 						<div class="col-md-8">
 							<div class="input-group">
 							<span class="input-group-addon font-weight-bold"> $ </span>
-							<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> Minimum" required >
+							<input type="number" name="amount" class="form-control input-lg" min="<?= $withdrawal_limit; ?>" max="<?= $current_balance; ?>" placeholder="<?= $withdrawal_limit; ?> <?= $lang['th']['minimum']; ?>" required >
 							</div>
 					    </div>
 					</div>
 					<div class="form-group row">
 						<div class="col-md-8 offset-md-3">
-						 <input type="submit" name="withdraw" value="Transfer" class="btn btn-success form-control">
+						 <input type="submit" name="withdraw" value="<?= $lang['revenue']['transfer']; ?>" class="btn btn-success form-control">
 						</div>
 					</div>
 			 	</form>
