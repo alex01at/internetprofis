@@ -82,7 +82,7 @@ if($status == "COMPLETED" or $status == "accepted" OR $status == "PENDING"){
 
       <div class="col-lg-5 col-md-7"><!--- col-lg-5 Starts --->
 
-         <h2 class="text-center">Payment <?= ucfirst(strtolower($status)); ?></h2>
+         <h2 class="text-center"><?= $lang['payment']['payment']; ?> <?= ucfirst(strtolower($status)); ?></h2>
 
          <div class="card mt-4 mb-5"><!--- car Starts --->
 

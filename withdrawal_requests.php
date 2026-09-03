@@ -123,12 +123,12 @@ $i++;
 <?= ucfirst($status); ?>
 
 <?php if($method == "moneygram" and $status == "completed" and $paymentGateway == 1){ ?>
-<a href="#" data-toggle="modal" data-target="#ref-<?= $id; ?>" class="float-right small">View Ref No</a>
+<a href="#" data-toggle="modal" data-target="#ref-<?= $id; ?>" class="float-right small"><?= $lang['withdrawal_requests']['view_ref_no']; ?></a>
 <?php } ?>
 
 <?php if($status == "declined"){ ?>
 
-<a href="#" data-toggle="modal" data-target="#reason-<?= $id; ?>" class="float-right small">View Reason</a>
+<a href="#" data-toggle="modal" data-target="#reason-<?= $id; ?>" class="float-right small"><?= $lang['withdrawal_requests']['view_reason']; ?></a>
 
 <?php } ?>
 

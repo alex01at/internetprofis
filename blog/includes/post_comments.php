@@ -23,7 +23,7 @@
       <div class="alert alert-info rounded-0">
           
       <p class="mt-1 mb-1 text-center">
-         <strong>Sorry!</strong> You can't submit a comment without logging in first. If you have a general question, please email us at <?= $site_email_address; ?>
+         <strong><?= $lang['sorry']; ?></strong> <?= $lang['blog']['login_to_comment']; ?> <?= $site_email_address; ?>
       </p>
 
       </div>

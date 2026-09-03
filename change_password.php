@@ -257,7 +257,7 @@ $("#meter").animate({width:'50px'},300);
 
 meter.style.backgroundColor="red";
 
-document.getElementById("pass_type").innerHTML="<span class='move-up-js'>Very Weak </span>";
+document.getElementById("pass_type").innerHTML="<span class='move-up-js'>"+<?= json_encode($lang["password_strength"]["very_weak"]); ?>+"</span>";
 
 }
 
@@ -267,7 +267,7 @@ $("#meter").animate({width:'100px'},300);
 
 meter.style.backgroundColor="#F5BCA9";
 
-document.getElementById("pass_type").innerHTML="<span class='move-up-js'> Weak </span>";
+document.getElementById("pass_type").innerHTML="<span class='move-up-js'> "+<?= json_encode($lang["password_strength"]["weak"]); ?>+" </span>";
 
 
 }
@@ -278,7 +278,7 @@ $("#meter").animate({width:'150px'},300);
 
 meter.style.backgroundColor="#FF8000";
 
-document.getElementById("pass_type").innerHTML="<span class='move-up-js'> Good </span>";
+document.getElementById("pass_type").innerHTML="<span class='move-up-js'> "+<?= json_encode($lang["password_strength"]["good"]); ?>+" </span>";
 
 
 }
@@ -289,7 +289,7 @@ $("#meter").animate({width:'200px'},300);
 
 meter.style.backgroundColor="#00FF40";
 
-document.getElementById("pass_type").innerHTML="<span class='move-up-js'>Strong</span>";
+document.getElementById("pass_type").innerHTML="<span class='move-up-js'>"+<?= json_encode($lang["password_strength"]["strong"]); ?>+"</span>";
 
 
 }

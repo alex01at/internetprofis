@@ -71,7 +71,7 @@
         <?php if(!isset($_SESSION['seller_user_name'])){ ?>
         <div class="alert alert-warning rounded-0">
           <p class="lead mt-1 mb-1 text-center">
-            <strong>Sorry!</strong> <?=$lang['support']['error_sub_req']; ?>
+            <strong><?= $lang['sorry']; ?></strong> <?=$lang['support']['error_sub_req']; ?>
           </p>
         </div>
         <?php } ?>

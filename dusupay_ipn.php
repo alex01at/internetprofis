@@ -106,9 +106,9 @@ if($count_order != 0){
          $data = [];
          $data['template'] = "dusupay_order";
          $data['to'] = $buyer_email;
-         $data['subject'] = "$site_name: You Have Not Paid The Full Amount.";
+         $data['subject'] = "$site_name: ".$lang['dusupay']['not_paid_full_amount_subject'];
          $data['user_name'] = $buyer_user_name;
-         $data['message'] = 'Thank you for shopping with us.Your payment was successful, but the amount paid is not the same as the total order amount.<br/>Your order is currently on-hold.<br/>Kindly contact us for more information regarding your order and payment status.';
+         $data['message'] = $lang['dusupay']['not_paid_full_amount_message'];
 
          send_mail($data);
 

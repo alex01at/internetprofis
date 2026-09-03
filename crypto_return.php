@@ -52,7 +52,7 @@ if(!isset($_SESSION['seller_user_name'])){
 
       <div class="col-lg-5 col-md-7"><!--- col-lg-5 Starts --->
 
-         <h2 class="text-center">Payment Completed</h2>
+         <h2 class="text-center"><?= $lang['crypto_return']['payment_completed']; ?></h2>
 
          <div class="card mt-4 mb-5"><!--- car Starts --->
 

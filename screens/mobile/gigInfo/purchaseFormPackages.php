@@ -48,7 +48,7 @@
 	<input type="hidden" name="proposal_id" value="<?= $proposal_id; ?>">
   <?php if($countcart == 1){ ?>
 	<button type="button" class="btn btn-order primary added mb-3">
-	<i class="fa fa-shopping-cart"></i> &nbsp;<strong>Already Added</strong>
+	<i class="fa fa-shopping-cart"></i> &nbsp;<strong><?= $lang['cart']['already_added']; ?></strong>
 	</button>
   <?php }else{ ?>
 	<button type="submit" name="add_cart" class="btn btn-order primary mb-3">
