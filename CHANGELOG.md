@@ -5,7 +5,13 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-09-03
 
-### Entfernt
+### Rückgängig gemacht
+
+- Die 9 im vorigen Punkt entfernten Dateien auf Wunsch wiederhergestellt.
+  Statt sie zu löschen, sollen die noch sinnvollen darunter stattdessen
+  ordentlich in die Navigation (`menu.php`) eingebunden werden.
+
+### Entfernt (zwischenzeitlich, siehe oben)
 
 - **9 weitere, bestätigt tote PHP-Dateien entfernt** — gefunden durch
   systematische Prüfung aller "Fragment"-Verzeichnisse (Dateien, die nur
