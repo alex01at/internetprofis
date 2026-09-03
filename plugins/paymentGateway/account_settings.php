@@ -28,7 +28,7 @@ $swift_code = escape($row_settings->swift_code);
 
 ?>
 <hr>
-<h5 class="mb-4"> Moneygram For Withdrawing Revenue </h5>
+<h5 class="mb-4"> <?= $lang['payment_settings']['moneygram_heading']; ?> </h5>
 <?php 
 $form_errors = Flash::render("moneygram_errors");
 if(is_array($form_errors)){
@@ -43,7 +43,7 @@ if(is_array($form_errors)){
 <?php } ?>
 <form method="post" enctype="multipart/form-data" class="clearfix mb-3">
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Id Type </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['id_type']; ?> </label>
     <div class="col-md-8">
       <select name="id_type" class="form-control" required="">
         <?php
@@ -64,25 +64,25 @@ if(is_array($form_errors)){
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Full Name </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['full_name']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="full_name" value="<?= $full_name; ?>" class="form-control" placeholder="Full Name" required="">
+      <input type="text" name="full_name" value="<?= $full_name; ?>" class="form-control" placeholder="<?= $lang['payment_settings']['full_name']; ?>" required="">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Address/Location </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['address']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="address" class="form-control" value="<?= $address; ?>" placeholder="Address" required="">
+      <input type="text" name="address" class="form-control" value="<?= $address; ?>" placeholder="<?= $lang['payment_settings']['address']; ?>" required="">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Mobile No </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['mobile_no']; ?> </label>
     <div class="col-md-8">
-      <input type="number" name="mobile_no" class="form-control" value="<?= $mobile_no; ?>" placeholder="Mobile No" required="">
+      <input type="number" name="mobile_no" class="form-control" value="<?= $mobile_no; ?>" placeholder="<?= $lang['payment_settings']['mobile_no']; ?>" required="">
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Preferred Currency </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['preferred_currency']; ?> </label>
     <div class="col-md-8">
       <input type="text" name="preferred_currency" class="form-control" value="<?= $preferred_currency; ?>" required="">
     </div>
@@ -105,13 +105,13 @@ if(is_array($form_errors)){
 <?php } ?>
 <form method="post" class="clearfix mb-3">
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Bank Name </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['bank_name']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="bank_name" value="<?= $bank_name; ?>" placeholder="Enter Your Bank Name" class="form-control" required>
+      <input type="text" name="bank_name" value="<?= $bank_name; ?>" placeholder="<?= $lang['payment_settings']['enter_bank_name']; ?>" class="form-control" required>
     </div>
   </div>
   <div class="form-group row"><!-- form-group row Starts --> 
-    <label class="col-md-4 col-form-label"> Bank Country </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['bank_country']; ?> </label>
     <div class="col-md-8">
       <select name="bank_country" class="form-control" required>
       <?php
@@ -126,44 +126,44 @@ if(is_array($form_errors)){
   </div>
   <!-- form-group row Ends -->
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Bank State/Province/Region </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['bank_state']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="bank_state_province_region" value="<?= $bank_state_province_region; ?>" placeholder="Enter Your Bank State/Province/Region" class="form-control" required>
+      <input type="text" name="bank_state_province_region" value="<?= $bank_state_province_region; ?>" placeholder="<?= $lang['payment_settings']['enter_bank_state']; ?>" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Bank City </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['bank_city']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="bank_city" value="<?= $bank_city; ?>" placeholder="Enter Your Bank City" class="form-control" required>
+      <input type="text" name="bank_city" value="<?= $bank_city; ?>" placeholder="<?= $lang['payment_settings']['enter_bank_city']; ?>" class="form-control" required>
     </div>
   </div>
   <div class="form-group row">
     <!-- form-group row Starts -->
-    <label class="col-md-4 col-form-label"> Account Holder Name </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['account_holder_name']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="account_name" value="<?php echo $account_name; ?>" placeholder="Enter Your Account Holder Name" class="form-control" required>
+      <input type="text" name="account_name" value="<?php echo $account_name; ?>" placeholder="<?= $lang['payment_settings']['enter_account_holder_name']; ?>" class="form-control" required>
     </div>
   </div>
   <!-- form-group row Ends -->
   <div class="form-group row">
     <!-- form-group row Starts -->
-    <label class="col-md-4 col-form-label"> Account No </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['account_no']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="account_no" value="<?php echo $account_no; ?>" placeholder="Enter Your Account No" class="form-control" required>
+      <input type="text" name="account_no" value="<?php echo $account_no; ?>" placeholder="<?= $lang['payment_settings']['enter_account_no']; ?>" class="form-control" required>
     </div>
   </div>
   <!-- form-group row Ends -->
   <div class="form-group row">
     <!-- form-group row Starts -->
-    <label class="col-md-4 col-form-label"> Iban Number (optional) </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['iban_number']; ?> </label>
     <div class="col-md-8">
-      <input type="text" name="iban_number" value="<?php echo $iban_number; ?>" placeholder="Enter Your Iban Number" class="form-control">
+      <input type="text" name="iban_number" value="<?php echo $iban_number; ?>" placeholder="<?= $lang['payment_settings']['enter_iban_number']; ?>" class="form-control">
     </div>
   </div>
   <!-- form-group row Ends -->
   <div class="form-group row">
     <!-- form-group row Starts -->
-    <label class="col-md-4 col-form-label"> Swift Code (optional) </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['swift_code_optional']; ?> </label>
     <div class="col-md-8">
       <input type="text" name="swift_code" value="<?php echo $swift_code; ?>" placeholder="<?= $lang['payment_settings']['enter_swift_code']; ?>" class="form-control">
     </div>
