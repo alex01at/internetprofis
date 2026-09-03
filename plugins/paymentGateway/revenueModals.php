@@ -45,11 +45,11 @@ $row_settings = $select_settings->fetch();
 					<form action="withdraw_manual" method="post">
 						<input type="hidden" name="method" value="bank_transfer">
 						<div class="form-group row">
-							<label class="col-md-3 col-form-label font-weight-bold">Amount</label>
+							<label class="col-md-3 col-form-label font-weight-bold"><?= $lang['th']['amount']; ?></label>
 							<div class="col-md-8">
 								<div class="input-group">
 									<span class="input-group-addon font-weight-bold"> $ </span>
-									<input type="number" name="amount" class="form-control input-lg" min="<?= escape($withdrawal_limit); ?>" max="<?= escape($current_balance); ?>"placeholder="<?= escape($withdrawal_limit); ?> Minimum" required>
+									<input type="number" name="amount" class="form-control input-lg" min="<?= escape($withdrawal_limit); ?>" max="<?= escape($current_balance); ?>"placeholder="<?= escape($withdrawal_limit); ?> <?= $lang["th"]["minimum"]; ?>" required>
 								</div>
 						  </div>
 						</div>
@@ -63,7 +63,7 @@ $row_settings = $select_settings->fetch();
 				</center>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 			</div>
 		</div>
 	</div>
@@ -96,11 +96,11 @@ $row_settings = $select_settings->fetch();
 					<form action="withdraw_manual" method="post">
 						<input type="hidden" name="method" value="moneygram">
 						<div class="form-group row">
-							<label class="col-md-3 col-form-label font-weight-bold">Amount</label>
+							<label class="col-md-3 col-form-label font-weight-bold"><?= $lang['th']['amount']; ?></label>
 							<div class="col-md-8">
 								<div class="input-group">
 									<span class="input-group-addon font-weight-bold"> $ </span>
-									<input type="number" name="amount" class="form-control input-lg" min="<?= escape($withdrawal_limit); ?>" max="<?= escape($current_balance); ?>"placeholder="<?= escape($withdrawal_limit); ?> Minimum" required>
+									<input type="number" name="amount" class="form-control input-lg" min="<?= escape($withdrawal_limit); ?>" max="<?= escape($current_balance); ?>"placeholder="<?= escape($withdrawal_limit); ?> <?= $lang["th"]["minimum"]; ?>" required>
 								</div>
 						  </div>
 						</div>
@@ -114,7 +114,7 @@ $row_settings = $select_settings->fetch();
 				</center>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 			</div>
 		</div>
 	</div>

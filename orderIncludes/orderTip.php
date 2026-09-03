@@ -4,14 +4,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Do You Want To Give a Tip To Seller?</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><?= $lang['order_tip']['ask_give_tip']; ?></h5>
         <button type="button" class="close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
-        <button class="btn btn-success btn-lg mr-2" data-toggle="modal" data-target="#tipModal2" data-dismiss="modal">Yes, Add Tip</button>
-        <button class="btn btn-success btn-lg" data-dismiss="modal">No, Thanks</button>
+        <button class="btn btn-success btn-lg mr-2" data-toggle="modal" data-target="#tipModal2" data-dismiss="modal"><?= $lang['order_tip']['yes_add_tip']; ?></button>
+        <button class="btn btn-success btn-lg" data-dismiss="modal"><?= $lang['order_tip']['no_thanks']; ?></button>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Give a Tip Seller.</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><?= $lang['order_tip']['give_tip_to_seller']; ?></h5>
         <button type="button" class="close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -36,14 +36,14 @@
                   <span class="input-group-addon">
                      <b><i class="fa fa-dollar"></i></b>
                   </span>
-                  <input type="number" name="amount" class="form-control" placeholder="Amount" min="1" required=""/>
+                  <input type="number" name="amount" class="form-control" placeholder="<?= $lang['th']['amount']; ?>" min="1" required=""/>
                </div>
 
             </div>
 
-            <textarea name="message" class="form-control mb-3" rows="4" placeholder="Leave Your Seller A Message."></textarea>
+            <textarea name="message" class="form-control mb-3" rows="4" placeholder="<?= $lang['order_tip']['leave_message']; ?>"></textarea>
 
-            <input type="submit" name="submit_tip" class="btn btn-success" value="Submit Tip">
+            <input type="submit" name="submit_tip" class="btn btn-success" value="<?= $lang['order_tip']['submit_tip']; ?>">
 
          </form><!--- form Ends --->
 
@@ -54,7 +54,7 @@
 
 <div class="order-review-box mb-3 p-3 d-none"><!--- order-review-box Starts --->
 
-   <h3 class="text-center text-white mb-3 mt-2"> Give A Tip To Seller </h3>
+   <h3 class="text-center text-white mb-3 mt-2"> <?= $lang['order_tip']['give_tip_to_seller']; ?> </h3>
 
    <div class="row justify-content-center"><!--- row Starts --->
 
@@ -68,14 +68,14 @@
                   <span class="input-group-addon">
                      <b><i class="fa fa-dollar"></i></b>
                   </span>
-                  <input type="number" name="amount" class="form-control" placeholder="Amount" min="5" required=""/>
+                  <input type="number" name="amount" class="form-control" placeholder="<?= $lang['th']['amount']; ?>" min="5" required=""/>
                </div>
 
             </div>
 
-            <textarea name="message" class="form-control mb-3" rows="4" placeholder="Leave Your Seller A Message."></textarea>
+            <textarea name="message" class="form-control mb-3" rows="4" placeholder="<?= $lang['order_tip']['leave_message']; ?>"></textarea>
 
-            <input type="submit" name="submit_tip" class="btn btn-success" value="Submit Tip">
+            <input type="submit" name="submit_tip" class="btn btn-success" value="<?= $lang['order_tip']['submit_tip']; ?>">
 
          </form><!--- form Ends --->
 

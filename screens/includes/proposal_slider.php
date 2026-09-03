@@ -85,7 +85,7 @@
 		<?php } ?>
 		<div class="carousel-item <?php if(empty($proposal_video)){ echo "active"; }?>">
 			<img class="d-block w-100" src="<?= $show_img1; ?>">
-			<div data-action="img-1" class="slide-fullscreen">Full Screen</div>
+			<div data-action="img-1" class="slide-fullscreen"><?= $lang['proposal']['full_screen']; ?></div>
 		</div>
 		<?php if(!empty($proposal_img2)){ ?>
 		<div class="carousel-item">
@@ -102,7 +102,7 @@
 
             <?php }else{ ?>
                 <img class="d-block w-100" src="<?= $show_img2; ?>" />
-                <div data-action="img-2" class="slide-fullscreen">Full Screen</div>
+                <div data-action="img-2" class="slide-fullscreen"><?= $lang['proposal']['full_screen']; ?></div>
             <?php } ?>
 
 		</div>
@@ -122,7 +122,7 @@
 
             <?php }else{ ?>
                 <img class="d-block w-100" src="<?= $show_img3; ?>">
-                <div data-action="img-3" class="slide-fullscreen">Full Screen</div>
+                <div data-action="img-3" class="slide-fullscreen"><?= $lang['proposal']['full_screen']; ?></div>
             <?php } ?>
 
 		</div><!-- carousel-item Ends -->
@@ -142,7 +142,7 @@
 
             <?php }else{ ?>
                 <img class="d-block w-100" src="<?= $show_img4; ?>">
-                <div data-action="img-4" class="slide-fullscreen">Full Screen</div>
+                <div data-action="img-4" class="slide-fullscreen"><?= $lang['proposal']['full_screen']; ?></div>
             <?php } ?>
 
 		</div><!-- carousel-item Ends -->

@@ -40,10 +40,10 @@ $login_seller_id = $input->post('seller_id');
 
                   <select class="form-control float-right" name="seller_vacation_reason">
 
-                     <option value="">Select</option>
-                     <option>I'm going on vacation</option>
-                     <option>I'm overbooked</option>
-                     <option>Other</option>
+                     <option value=""><?= $lang['select']; ?></option>
+                     <option><?= $lang['seller_vacation']['going_on_vacation']; ?></option>
+                     <option><?= $lang['seller_vacation']['overbooked']; ?></option>
+                     <option><?= ucfirst($lang['other']); ?></option>
 
                   </select>
 
