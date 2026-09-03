@@ -5,6 +5,16 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-09-03
 
+### Geändert
+
+- **`app_update.php`-Layout an die tatsächliche Mehrheits-Konvention
+  angepasst.** Nutzer-Hinweis: Die Seite verwendete noch die alte
+  `<div class="breadcrumbs">`-Kopfzeile. Nachgeprüft: von 140
+  Admin-Fragment-Seiten nutzen das nur noch 27, die übrigen 113 –
+  inklusive `dashboard.php`, `view_orders.php`, `view_sellers.php` –
+  verwenden stattdessen ein einfaches `main-container`-Wrapper-Div mit
+  Titel direkt in der Karte. `app_update.php` entsprechend angepasst.
+
 ### Rückgängig gemacht
 
 - Die 9 im vorigen Punkt entfernten Dateien auf Wunsch wiederhergestellt.
