@@ -115,7 +115,7 @@
         <span class="chose"><i class="fa fa-video-camera fa-2x mb-2"></i><br><?= $lang['proposals']['add_video']; ?></span>
         <?php }else{ ?>
         <span>
-          <i class="fa fa-video-camera fa-2x mb-2"></i> <br> <span class="text-success font-weight-bold">Video Added</span>
+          <i class="fa fa-video-camera fa-2x mb-2"></i> <br> <span class="text-success font-weight-bold"><?= $lang['proposals']['video_added']; ?></span>
           <br>
           <span class="delete-video text-danger text-underline"><?= $lang['proposals']['remove_video']; ?></span>
           <i class="fa fa-trash fa-2x delete-video" title="<?= $lang['proposals']['remove_video']; ?>"></i>
@@ -141,7 +141,7 @@
 
 <input class="btn btn-success float-right" type="submit" form="gallery_form" value="<?= $lang['button']['save_continue']; ?>" />
 
-<a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3 d-none">Preview Proposal</a>
+<a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3 d-none"><?= $lang['proposals']['preview_proposal']; ?></a>
 
 <!-- <?php if($d_proposal_status == "modification"){ ?>
   
@@ -159,12 +159,12 @@
 
   <input class="btn btn-success float-right" type="submit" form="gallery_form" value="Save Changes">
   
-  <a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3">Preview Proposal</a>
+  <a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3"><?= $lang['proposals']['preview_proposal']; ?></a>
 
 <?php }else{ ?>
 
   <input class="btn btn-success float-right" type="submit" form="gallery_form" value="<?= $lang['button']['save_continue']; ?>">
-  <a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3 d-none">Preview Proposal</a>
+  <a href="<?= $_SESSION["seller_user_name"]; ?>/<?= $d_proposal_url; ?>" id="previewProposal" class="btn btn-success float-right mr-3 d-none"><?= $lang['proposals']['preview_proposal']; ?></a>
 
 <?php } ?> -->
 

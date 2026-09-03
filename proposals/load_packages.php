@@ -84,7 +84,7 @@ $attribute_value = $row_a->attribute_value;
 
 <td>
 
-<small>Delivery Time</small>
+<small><?= $lang['sidebar']['delivery_time']; ?></small>
  
 <div class="input-group">
 
@@ -100,7 +100,7 @@ $attribute_value = $row_a->attribute_value;
 
 <td>
 
-<small>Price</small>
+<small><?= $lang['proposal']['price']; ?></small>
  
 <div class="input-group">
 

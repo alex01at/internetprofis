@@ -196,14 +196,14 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> Preview </a>
+										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> <?= $lang['proposals']['preview']; ?> </a>
                               <?php if($proposal_featured == "no"){ ?>
-										<a href="#" class="dropdown-item" id="featured-button-<?= $proposal_id; ?>">Make Proposal Featured</a>
+										<a href="#" class="dropdown-item" id="featured-button-<?= $proposal_id; ?>"><?= $lang['proposals']['make_featured']; ?></a>
                               <?php }else{ ?>
-                              <a href="#" class="dropdown-item text-success">Already Featured </a>
+                              <a href="#" class="dropdown-item text-success"><?= $lang['proposals']['already_featured']; ?> </a>
                               <?php } ?>
-										<a href="pause_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Deactivate Proposal</a>
-                              <a href="view_coupons?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> View Coupons</a>
+										<a href="pause_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['proposals']['deactivate_proposal']; ?></a>
+                              <a href="view_coupons?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['coupons']['view_coupons']; ?></a>
                               <a href="view_referrals?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> View Referrals</a>
 										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
 										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>

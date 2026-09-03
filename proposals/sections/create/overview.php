@@ -37,7 +37,7 @@ if (empty($form_data)) {
       <small class="form-text text-danger"><?= ucfirst(@$form_errors['proposal_cat_id']); ?></small>
       
       <select name="proposal_child_id" id="sub-category" class="form-control" required>
-        <option value="" class="d-none">Select A Sub Category</option>
+        <option value="" class="d-none"><?= $lang['proposals']['select_sub_category']; ?></option>
         <?php if(@$form_data['proposal_child_id']): ?>
           <?php
             $get_c_cats = $db->select("categories_children", ["child_parent_id" => $form_data['proposal_cat_id']]);

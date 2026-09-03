@@ -50,22 +50,22 @@
 }
 </style>
 <div class="sendMessage pl-3 pr-3 pb-3">
-  <p class="bg-danger p-2 text-white mv-0 d-none"><i class="fa fa-warning"></i> You seem to have typed word(s) that are in violation of our policy. No direct payments or emails allowed.</p>
+  <p class="bg-danger p-2 text-white mv-0 d-none"><i class="fa fa-warning"></i> <?= $lang['conversations']['policy_violation']; ?></p>
   <?php if($seller_vacation == "on" AND $seller_status != "block-ban"){ ?>
   <div class="alert alert-info mt-2">
     <div id="seller-vacation-div" class="mb-0">
-      <p class="lead mb-0"><strong>Opps! </strong> This seller is on vacation and is not receiving messages at the momment. Please try again later.</p>
+      <p class="lead mb-0"><strong><?= $lang['oops']; ?> </strong> <?= $lang['conversations']['seller_on_vacation']; ?></p>
     </div>
   </div>
   <?php } ?>
   <?php if($seller_status == "block-ban"){ ?>
   <div class="alert alert-danger mt-2">
-  <p class="lead mb-0">This seller has been blocked so you can't send him messages anymore.</p>
+  <p class="lead mb-0"><?= $lang['conversations']['seller_blocked']; ?></p>
   </div>
-  <?php } ?> 
+  <?php } ?>
   <?php if($seller_status != "block-ban" AND $seller_vacation == "off"){ ?>
   <form id="insert-message-form">
-  <p class="typing-status mb-1 invisible">Dummy Text</p>
+  <p class="typing-status mb-1 invisible"><?= $lang['conversations']['dummy_text']; ?></p>
   <textarea class="form-control mb-2 text" rows="2" id="message" placeholder="<?= $lang['placeholder']['type_message']; ?>"></textarea>
   <p class="mb-2 mt-2 d-none files"></p>
   <div class="custom-file float-left"><!--- custom-file float-left Starts --->

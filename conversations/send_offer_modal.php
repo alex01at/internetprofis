@@ -41,8 +41,8 @@ $proposal_img1 = getImageUrl2("proposals","proposal_img1",$row_proposals->propos
 </div><!--- request-proposals-list Ends --->
 </div><!-- modal-body p-0 Ends -->
 <div class="modal-footer"><!--- modal-footer Starts --->
-<button class="btn btn-secondary" data-dismiss="modal"> Close </button>
-<button id="submit-proposal" class="btn btn-success" data-toggle="modal" data-dismiss="modal" data-target="#submit-proposal-details">Go Next</button>
+<button class="btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?> </button>
+<button id="submit-proposal" class="btn btn-success" data-toggle="modal" data-dismiss="modal" data-target="#submit-proposal-details"><?= $lang['requests']['go_next']; ?></button>
 </div><!--- modal-footer Ends --->
 </div><!-- modal-content Ends -->
 </div><!-- modal-dialog Ends -->

@@ -7,7 +7,7 @@ $days_within_scheduled = $proposal_videosettings->days_within_scheduled;
 $video_schedules = $db->select("video_schedules");
 
 ?>
-<h4 class="font-weight-normal">Video</h4>
+<h4 class="font-weight-normal"><?= $lang['proposals']['video_heading']; ?></h4>
 <hr>
 
 <form action="#" method="post" class="video-form"><!--- form Starts -->

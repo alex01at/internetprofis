@@ -158,7 +158,7 @@ echo "<option value='$delivery_proposal_title'> $delivery_proposal_title </optio
 
 <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#send-offer-modal"><?= $lang['button']['back']; ?></button>
 
-<button type="submit" class="btn btn-success">Submit Offer</button>
+<button type="submit" class="btn btn-success"><?= $lang['requests']['submit_offer']; ?></button>
 
 </div><!--- modal-footer Ends --->
 

@@ -54,7 +54,7 @@ $count_active_proposals = $db->count("proposals",array("proposal_seller_id"=>$lo
 	<?php require_once("sendMessageJs.php"); ?>
 </div>
 <div class="col-md-4 <?=($lang_dir == "right" ? 'order-1 order-sm-2 pr-0 border-right':'pl-0 border-left')?>" id="msgSidebar">
-	<h5 class="pt-3 p-2">Orders</h5>
+	<h5 class="pt-3 p-2"><?= $lang['th']['orders']; ?></h5>
 	<div class="dropdown">
 		<a class="lead text-muted p-2 pt-0" href="#" role="button" data-toggle="dropdown"><?=$lang['_past_orders'];?> (<?= $count_orders; ?>)</a>
 		<div class="dropdown-menu pt-1 pb-1">

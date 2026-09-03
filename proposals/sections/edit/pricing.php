@@ -85,7 +85,7 @@ $d_delivery_id = $row_proposal->delivery_id;
   <div class="col-md-7">
     <label><?= $lang['label']['delivery_time']; ?></label>
     <select name="delivery_id" form="pricing-form" class="form-control" required="">
-    <option value="">Select Delivery Time</option>
+    <option value=""><?= $lang['proposals']['select_delivery_time']; ?></option>
     <?php 
       $get_delivery_times = $db->query("select * from delivery_times");
       while($row_delivery_times = $get_delivery_times->fetch()){
