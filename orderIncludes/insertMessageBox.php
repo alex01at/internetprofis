@@ -2,7 +2,7 @@
 <div class="insert-message-box">
   <?php if($buyer_id == $login_seller_id AND $order_status == "pending" ){ ?>
   <div class="float-left pt-2">
-    <span class="font-weight-bold text-danger"> RESPOND SO THAT SELLER CAN START YOUR ORDER. </span>
+    <span class="font-weight-bold text-danger"> <?= $lang['order_details']['respond_so_seller_can_start']; ?> </span>
   </div>
   <?php } ?>
 
@@ -65,7 +65,7 @@
     <div class="clearfix"></div>
     <p></p>
     <div class="form-row align-items-center message-attacment"><!-- form-row align-items-center message-attacment Starts -->
-      <label class="h6 ml-2 mt-1"> Attach File (optional) </label>
+      <label class="h6 ml-2 mt-1"> <?= $lang['order_details']['attach_file_optional']; ?> </label>
       <input type="file" name="file" class="form-control-file p-1 mb-2 mb-sm-0">
     </div><!-- form-row align-items-center message-attacment Ends -->
   </form>

@@ -50,7 +50,7 @@
 	                    
 	                    <?php if($count_unread_notifications > 0){ ?>
 	                    
-	       				<span class="badge badge-pill badge-danger"><?= $count_unread_notifications; ?> New</span>
+	       				<span class="badge badge-pill badge-danger"><?= $count_unread_notifications; ?> <?= $lang['new']; ?></span>
 	                    
 	                    <?php } ?>
 					 			
@@ -78,7 +78,7 @@
                             
                         <?php if($count_unread_inbox_messages > 0 ){ ?>
                             
-                         <span class="badge badge-pill badge-danger"><?= $count_unread_inbox_messages; ?> New</span>
+                         <span class="badge badge-pill badge-danger"><?= $count_unread_inbox_messages; ?> <?= $lang['new']; ?></span>
                             
                         <?php } ?>
 

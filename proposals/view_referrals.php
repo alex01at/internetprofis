@@ -71,7 +71,7 @@ echo "<script>window.open('view_proposals','_self');</script>";
 
 <div class="card-body">
 
-<h1> View Proposals Referrals </h1>
+<h1> <?= $lang['proposals']['view_proposals_referrals']; ?> </h1>
 
 <div class="row">
 
@@ -204,7 +204,7 @@ echo "
 
 <td class='text-center' colspan='6'>
 
-<h3 class='pb-2 pt-2'><i class='fa fa-meh-o'></i> No One Have Not Refered Anyone Yet.</h3>
+<h3 class='pb-2 pt-2'><i class='fa fa-meh-o'></i> ".$lang['proposals']['no_referrals_yet']."</h3>
 
 </td>
 

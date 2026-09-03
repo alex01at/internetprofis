@@ -174,7 +174,7 @@ echo "<center><h5 class='pb-4 pt-4 text-muted $rtl'>{$lang['proposal']['no_other
 $select_recent = $db->query("select * from recent_proposals where seller_id='$login_seller_id' order by 1 DESC LIMIT 0,4");
 $count_recent = $select_recent->rowCount();
 if($count_recent == 0){
-echo "<center><h5 class='pb-4 pt-4 text-muted'><i class='fa fa-meh-o '></i> This seller has no other proposals. </h5></center>";
+echo "<center><h5 class='pb-4 pt-4 text-muted'><i class='fa fa-meh-o '></i> ".$lang['proposals']['no_other_proposals']." </h5></center>";
 }
 ?>
 <?php } ?>
@@ -197,7 +197,7 @@ echo "<center><h5 class='pb-4 pt-4 text-muted'><i class='fa fa-meh-o '></i> This
 	<div class="col-md-12">
 		<div class="mb-5 text-center copyright-box"><!--- copyright-box Starts --->
 		<p class="mb-2 <?=($lang_dir == "right" ? 'text-right':'')?>">
-		Copyright © <a href="#" class="text-primary strike"><?= ucfirst($proposal_seller_user_name); ?></a> All Rights Reversed.
+		<?= $lang['copyright_symbol']; ?> <a href="#" class="text-primary strike"><?= ucfirst($proposal_seller_user_name); ?></a> <?= $lang['all_rights_reserved']; ?>
 		</p>
 		<?php
 		if(isset($_SESSION['seller_user_name'])){

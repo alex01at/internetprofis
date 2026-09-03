@@ -26,7 +26,7 @@ $row_settings = $select_settings->fetch();
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title"> Withdraw/Transfer Funds To Bank Account </h5>
+				<h5 class="modal-title"> <?= $lang['revenue']['withdraw_bank_title']; ?> </h5>
 				<button class="close" data-dismiss="modal"><span> &times; </span></button>
 			</div>
 			<div class="modal-body"><!-- modal-body Starts -->
@@ -73,7 +73,7 @@ $row_settings = $select_settings->fetch();
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title"> Withdraw/Transfer Funds To Moneygram </h5>
+				<h5 class="modal-title"> <?= $lang['revenue']['withdraw_moneygram_title']; ?> </h5>
 				<button class="close" data-dismiss="modal"><span> &times; </span></button>
 			</div>
 			<div class="modal-body"><!-- modal-body Starts -->

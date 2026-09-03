@@ -2,18 +2,18 @@
 
    <div class="card-body <?= $textRight; ?>"><!--- card-body Starts --->
 
-      <h4 class="mb-3"><?= $count_comments; ?> comments</h4>
+      <h4 class="mb-3"><?= $count_comments; ?> <?= $lang['blog']['comments']; ?></h4>
 
       <?php if(isset($_SESSION["seller_user_name"])){ ?>
 
       <form action="" method="post">
 
         <div class="form-group"><!--- form-group Starts --->
-         <textarea name="comment" class="form-control <?= $textRight; ?>" placeholder="Add A Comment..."></textarea>
+         <textarea name="comment" class="form-control <?= $textRight; ?>" placeholder="<?= $lang['blog']['add_comment']; ?>"></textarea>
         </div><!--- form-group Ends --->
 
         <div class="form-group"><!--- form-group Starts --->
-         <button class="btn btn-success" name="submit" type="submit"> Post Comment </button>
+         <button class="btn btn-success" name="submit" type="submit"> <?= $lang['blog']['post_comment']; ?> </button>
         </div><!--- form-group Ends --->
 
       </form>
@@ -45,10 +45,10 @@
             <h5 class="mt-0 mb-1">
              <?= $seller->seller_user_name; ?>
              <small>
-              commented - <?= $comment->date; ?>
+              <?= $lang['blog']['commented_on']; ?> <?= $comment->date; ?>
               <?php if($comment->seller_id == @$login_seller_id){ ?>
               <a href="index?delete_comment=<?= $comment->id; ?>&post_id=<?= $id; ?>" class="btn btn-sm btn-success"style="font-size: 13px;">
-                <i class="fa fa-trash-o"></i> Delete
+                <i class="fa fa-trash-o"></i> <?= $lang['button']['delete']; ?>
               </a>
               <?php } ?>
             </small>

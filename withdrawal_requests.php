@@ -53,7 +53,7 @@ $login_seller_id = $row_login_seller->seller_id;
 
 <div class="col-md-12 mt-5"><!-- col-md-12 mt-5 Starts -->
 
-<h1 class="mb-4"> Withdrawal Requests </h1>
+<h1 class="mb-4"> <?= $lang['withdrawal_requests']['title']; ?> </h1>
 
 <div class="table-responsive box-table"><!-- table-responsive box-table Starts -->
 
@@ -150,7 +150,7 @@ if($paymentGateway == 1){
 
 <div class="modal-header"><!-- modal-header Starts -->
 
-<h5 class="modal-title"> Reason </h5> 
+<h5 class="modal-title"> <?= $lang['withdrawal_requests']['reason']; ?> </h5> 
 
 <button class="close" data-dismiss="modal"> <span> &times; </span> </button>
 

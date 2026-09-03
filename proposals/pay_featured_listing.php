@@ -56,7 +56,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 <div class="modal-dialog">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title"> Make Your Proposal/Service Featured</h5>
+			<h5 class="modal-title"> <?= $lang['proposals']['make_featured_title']; ?></h5>
 			<button class="close" data-dismiss="modal"><span>&times;</span></button>
 		</div>
 		<div class="modal-body p-0">
@@ -72,7 +72,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 					<p><b>Proposal Title:</b> <?= $proposal_title; ?></p>
 					<p><b>Feature Listing Fee:</b> <?= showPrice($featured_fee); ?></p>
 					<p class="processing-fee"><b>Processing Fee:</b> <?= showPrice($processing_fee); ?></p>
-					<p><b>Listing Duration:</b> <?= $featured_duration; ?> Days.</p>
+					<p><b><?= $lang['proposals']['listing_duration']; ?></b> <?= $featured_duration; ?> <?= $lang['proposals']['days_suffix']; ?></p>
 				</div>
 			</div>
 			<div class="payment-options-list">

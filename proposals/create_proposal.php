@@ -77,7 +77,7 @@ require_once("../includes/user_header.php");
 
 if($seller_verification != "ok"): ?>
     <div class="alert alert-danger rounded-0 mt-0 text-center shadow-sm">
-        <i class="fa fa-envelope-o"></i> Please confirm your email address to create a proposal.
+        <i class="fa fa-envelope-o"></i> <?= $lang['proposals']['confirm_email_to_create']; ?>
     </div>
 <?php else: ?>
 
@@ -109,7 +109,7 @@ if($seller_verification != "ok"): ?>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="img_type" value="">
-                    <button class="btn btn-success crop_image">Crop & Save</button>
+                    <button class="btn btn-success crop_image"><?= $lang['button']['crop_save']; ?></button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
                 </div>
             </div>

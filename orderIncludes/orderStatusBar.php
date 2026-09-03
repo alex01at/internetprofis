@@ -39,14 +39,14 @@
         <div class="col-md-10 offset-md-1"> 
           <?php if($seller_id == $login_seller_id){ ?>
           <h5 class="float-left mt-2">
-            <i class="fa fa-lg fa-check-circle"></i> Order Delivered. You Earned <?= showPrice($seller_price); ?>
+            <i class="fa fa-lg fa-check-circle"></i> <?= $lang['order_details']['order_delivered_earned']; ?> <?= showPrice($seller_price); ?>
           </h5>
-          <h5 class="float-right mt-2">Status: Completed</h5>
+          <h5 class="float-right mt-2"><?= $lang['th']['status']; ?>: <?= $lang['order_details']['completed']; ?></h5>
           <?php }elseif($buyer_id == $login_seller_id){ ?>
           <h5 class="float-left mt-2">
-            <i class="fa fa-lg fa-check-circle"></i> Delivery Submitted
+            <i class="fa fa-lg fa-check-circle"></i> <?= $lang['order_details']['delivery_submitted']; ?>
           </h5>
-          <h5 class="float-right mt-2">Status: Completed</h5>
+          <h5 class="float-right mt-2"><?= $lang['th']['status']; ?>: <?= $lang['order_details']['completed']; ?></h5>
           <?php } ?>
         </div>
       </div>

@@ -46,7 +46,7 @@
             </span>
           </button>
           <div class="flex-xs-4 width-full pt-md-4 pb-md-4 pl-xs-2">
-            <h6 id="mobile-catnav-header-title" class="text-left position-absolute vertical-center"><!--  <a href="<?= $site_url; ?>"><img src="images/<?= $site_favicon; ?>" class="rounded" title='Home' alt='Home'/></a> --> Browse Categories</h6>
+            <h6 id="mobile-catnav-header-title" class="text-left position-absolute vertical-center"><!--  <a href="<?= $site_url; ?>"><img src="images/<?= $site_favicon; ?>" class="rounded" title='Home' alt='Home'/></a> --> <?= $lang['mobile_menu']['browse_categories']; ?></h6>
             <h6 id="mobile-sub-catnav-header-title" class="text-center position-absolute position-left position-right vertical-center pl-md-8 pr-md-8"></h6>
             <h6 id="mobile-tertiary-catnav-header-title" class="text-center position-absolute position-left position-right vertical-center pl-md-8 pr-md-8 display-none"></h6>
           </div>
@@ -110,7 +110,7 @@
             <ul class="mobile-sub-catnav-container list-unstyled mobile-catnav-margin display-none">
               <li class="p-xs-1 bb-xs-1 text-body-larger strong subnav-item a11y-focus-only">
                 <a class="p-xs-1 text-gray display-inline-block width-full text-underline" href="<?= $site_url; ?>/categories/<?= $cat_url; ?>">
-                View All <?= $cat_title; ?>
+                <?= $lang['mobile_menu']['view_all']; ?> <?= $cat_title; ?>
                 </a>
               </li>
               <?php 

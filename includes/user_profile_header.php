@@ -62,7 +62,7 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
     <?php } ?>
   </div>
   <div class="content-bar mt-3">
-    <h1> Hi, I'm <?= ucfirst($seller_user_name); ?> </h1>
+    <h1> <?= $lang['profile']['hi_im']; ?> <?= ucfirst($seller_user_name); ?> </h1>
     <span class="headline">
       <?= $seller_headline; ?>
     </span>
@@ -91,7 +91,7 @@ $count_proposals = $db->count("proposals",["proposal_seller_id" => $seller_id,"p
   </div> 
   <?php if($count_proposals != 0){ ?>
     <?php if(!isset($_SESSION['seller_user_name'])){ ?>
-    <a class="btn btn-success mt-3" href="login.php"> Contact <small>(<?= $seller_user_name; ?>)</small></a>
+    <a class="btn btn-success mt-3" href="login.php"> <?= $lang['profile']['contact']; ?> <small>(<?= $seller_user_name; ?>)</small></a>
     <?php }else{ ?>
     <?php if($_SESSION['seller_user_name'] != $seller_user_name){ ?>
     <a class="btn btn-success mt-3" href="<?= $site_url; ?>/conversations/message?seller_id=<?= $seller_id ?>"> 
