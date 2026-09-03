@@ -128,7 +128,96 @@ function applyUpdate($githubRepo, $fromSha, $toSha, $toTag, $rootDir, $versionFi
 	];
 }
 
+// A migration only ever needs to create/alter its own tables or adjust its
+// own data -- never any of these, so block them as a safety net on top of
+// the fact that migration files only ever arrive through the same trusted
+// GitHub repo as the rest of the code (never an upload).
+function containsDangerousSql($sql){
+	$blocked = ['DROP DATABASE', 'GRANT ', 'LOAD_FILE', 'INTO OUTFILE', 'INTO DUMPFILE', 'LOAD DATA'];
+	$upper = strtoupper($sql);
+	foreach($blocked as $needle){
+		if(strpos($upper, $needle) !== false){ return true; }
+	}
+	return false;
+}
+
+function ensureMigrationsTable($db){
+	$db->con->exec("CREATE TABLE IF NOT EXISTS schema_migrations (
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		filename VARCHAR(255) NOT NULL UNIQUE,
+		applied_at DATETIME NOT NULL
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+}
+
+// Returns a list of ['filename' => ..., 'sql' => ...] for .sql files in
+// migrations/ that aren't yet recorded in schema_migrations, in filename
+// (i.e. chronological) order.
+function getPendingMigrations($rootDir, $db){
+	$migrationsDir = $rootDir.'/migrations';
+	if(!is_dir($migrationsDir)){ return []; }
+
+	ensureMigrationsTable($db);
+
+	$applied = [];
+	$rows = $db->con->query("SELECT filename FROM schema_migrations");
+	foreach($rows as $row){ $applied[$row->filename] = true; }
+
+	$files = glob($migrationsDir.'/*.sql');
+	sort($files, SORT_STRING);
+
+	$pending = [];
+	foreach($files as $file){
+		$name = basename($file);
+		if(!isset($applied[$name])){
+			$pending[] = ['filename' => $name, 'sql' => file_get_contents($file)];
+		}
+	}
+	return $pending;
+}
+
+// Applies pending migrations in order, stopping at the first failure. Each
+// one runs in its own try/catch so a later migration never runs on top of
+// an earlier one that didn't actually succeed.
+function applyMigrations($rootDir, $db){
+	$migrationsDir = $rootDir.'/migrations';
+	$pending = getPendingMigrations($rootDir, $db);
+	$applied = [];
+	$failed = null;
+
+	foreach($pending as $migration){
+		$filename = $migration['filename'];
+
+		if(!preg_match('/^[A-Za-z0-9_\-]+\.sql$/', $filename)){
+			$failed = ['filename' => $filename, 'error' => 'Invalid migration filename.'];
+			break;
+		}
+		$real = realpath($migrationsDir.'/'.$filename);
+		$migrationsReal = realpath($migrationsDir);
+		if($real === false || $migrationsReal === false || strpos($real, $migrationsReal) !== 0){
+			$failed = ['filename' => $filename, 'error' => 'Invalid migration path.'];
+			break;
+		}
+		if(containsDangerousSql($migration['sql'])){
+			$failed = ['filename' => $filename, 'error' => 'Contains a disallowed SQL statement.'];
+			break;
+		}
+
+		try{
+			$db->con->exec($migration['sql']);
+			$db->con->prepare("INSERT INTO schema_migrations (filename, applied_at) VALUES (:filename, NOW())")
+				->execute(['filename' => $filename]);
+			$applied[] = $filename;
+		}catch(PDOException $ex){
+			$failed = ['filename' => $filename, 'error' => $ex->getMessage()];
+			break;
+		}
+	}
+
+	return ['applied' => $applied, 'failed' => $failed];
+}
+
 $updateResult = null;
+$migrationResult = null;
 
 if(isset($_POST['init_version'])){
 	$precheck = getUpdateStatus($githubRepo, $dir, $versionFile);
@@ -150,6 +239,12 @@ if(isset($_POST['apply_update']) && $status['deployedSha'] && !empty($_POST['tar
 		}
 	}
 }
+
+if(isset($_POST['run_migrations'])){
+	$migrationResult = applyMigrations(rtrim($dir, '/\\'), $db);
+}
+
+$pendingMigrations = getPendingMigrations(rtrim($dir, '/\\'), $db);
 
 $deployedSha = $status['deployedSha'];
 $deployedTag = $status['deployedTag'];
@@ -267,13 +362,72 @@ $apiError = $status['apiError'];
       <p class="text-muted mt-3 mb-0">
         Only offers updates for published <a href="https://github.com/<?= $githubRepo; ?>/releases" target="_blank">GitHub Releases</a>,
         not every commit. Fetches only the changed files directly from <code>github.com/<?= $githubRepo; ?></code> over HTTPS and writes them
-        in place -- no ZIP upload, no arbitrary source, no SQL execution. <code>config.php</code> and all folders holding real
-        user-submitted content are always left untouched.
+        in place -- no ZIP upload, no arbitrary source. <code>config.php</code> and all folders holding real
+        user-submitted content are always left untouched. Database changes are never applied automatically; see
+        "Database Migrations" below.
       </p>
 
       </div><!--- card-body Ends --->
     </div><!--- card mb-5 Ends --->
   </div><!--- col-lg-12 Ends --->
 </div><!--- 2 row Ends --->
+
+<?php if(!empty($pendingMigrations)){ ?>
+<div class="row mb-4"><!--- 2 row Starts --->
+  <div class="col-lg-12"><!--- col-lg-12 Starts --->
+    <div class="card mb-5"><!--- card mb-5 Starts --->
+      <div class="card-header"><!--- card-header Starts --->
+      <h4 class="h4 mb-0">
+      <i class="fa fa-database fa-fw"></i> Database Migrations
+      </h4>
+      </div><!--- card-header Ends --->
+      <div class="card-body"><!--- card-body Starts --->
+
+      <?php if($migrationResult){ ?>
+        <?php if($migrationResult['failed'] === null){ ?>
+          <div class="alert alert-success">
+            Applied <?= count($migrationResult['applied']); ?> migration(s) successfully.
+          </div>
+        <?php }else{ ?>
+          <div class="alert alert-danger">
+            Stopped at <code><?= htmlspecialchars($migrationResult['failed']['filename'], ENT_QUOTES, 'UTF-8'); ?></code>:
+            <?= htmlspecialchars($migrationResult['failed']['error'], ENT_QUOTES, 'UTF-8'); ?>
+            <?php if(!empty($migrationResult['applied'])){ ?>
+              (<?= count($migrationResult['applied']); ?> earlier migration(s) were applied successfully before this one failed.)
+            <?php } ?>
+          </div>
+        <?php } ?>
+      <?php } ?>
+
+      <p>
+        <?= count($pendingMigrations); ?> migration(s) from the <code>migrations/</code> folder have not been applied to this
+        server's database yet. Review the SQL below before running them -- this cannot be undone automatically.
+      </p>
+
+      <?php foreach($pendingMigrations as $migration){ ?>
+        <div class="mb-3">
+          <strong><code><?= htmlspecialchars($migration['filename'], ENT_QUOTES, 'UTF-8'); ?></code></strong>
+          <pre class="bg-light p-2 mt-1 mb-0" style="white-space: pre-wrap;"><?= htmlspecialchars($migration['sql'], ENT_QUOTES, 'UTF-8'); ?></pre>
+        </div>
+      <?php } ?>
+
+      <form method="post" onsubmit="return confirm('This will run <?= count($pendingMigrations); ?> pending migration(s) directly against the live database. Make sure you have a backup. Continue?');">
+        <input type="hidden" name="run_migrations" value="1">
+        <button type="submit" class="btn btn-success">Run pending migrations</button>
+      </form>
+
+      <p class="text-muted mt-3 mb-0">
+        Migrations run in filename order and stop at the first failure. Each one is recorded in <code>schema_migrations</code>
+        once applied, so it only ever runs once, and a retry after a failure only picks up where it left off. Statements
+        such as <code>DROP DATABASE</code>, <code>GRANT</code>, <code>LOAD_FILE</code>, <code>INTO OUTFILE</code>/<code>DUMPFILE</code>,
+        or <code>LOAD DATA</code> are rejected.
+      </p>
+
+      </div><!--- card-body Ends --->
+    </div><!--- card mb-5 Ends --->
+  </div><!--- col-lg-12 Ends --->
+</div><!--- 2 row Ends --->
+<?php } ?>
+
 </div>
 <?php } ?>

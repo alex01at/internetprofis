@@ -6,6 +6,7 @@ All notable changes to this project are documented here.
 
 ### Added
 
+- Added database migration support to the application updater. SQL files placed in `migrations/` are shown for review and applied only on explicit confirmation, tracked in a `schema_migrations` table so each one runs once. Same statement blocklist as the plugin installer.
 - `dashboard.php` now shows the actual deployed release instead of a manually maintained value, with an update indicator when a newer release is available.
 
 ### Changed
