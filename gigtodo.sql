@@ -151,7 +151,8 @@ CREATE TABLE `announcement_bar` (
 --
 
 INSERT INTO `announcement_bar` (`id`, `enable_bar`, `bg_color`, `text_color`, `bar_text`, `last_updated`, `language_id`) VALUES
-(1, 0, '#2ca35b', '#ffffff', '', '', 1);
+(1, 0, '#2ca35b', '#ffffff', '', '', 1),
+(2, 0, '#2ca35b', '#ffffff', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -474,14 +475,14 @@ INSERT INTO `cats_meta` (`id`, `cat_id`, `language_id`, `cat_title`, `cat_desc`)
 (7, 7, 1, 'Fun & Lifestyle\r\n', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. '),
 (8, 8, 1, 'Music & Audio', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. '),
 
-(200, 1, 2, 'Grafik & Design', 'Entdecken Sie die Welt der visuellen Ästhetik und gestalterischen Kreativität. Von Grafikdesign bis zu ansprechenden Layouts, hier finden Sie Inspiration und Werkzeuge, um Ihre künstlerischen Visionen zu realisieren.'),
-(201, 2, 2, 'Digitales Marketing', 'Erfahren Sie, wie Sie in der digitalen Welt erfolgreich vermarkten. Von Strategien für Social Media bis hin zu effektiven Online-Kampagnen – hier erhalten Sie Einblicke und Tipps, um Ihre Zielgruppe zu erreichen.'),
-(203, 3, 2, 'Schreiben & Übersetzen', 'Tauchen Sie ein in die Welt von Worten und Sprache. Ob kreatives Schreiben, professionelle Übersetzungen oder Redaktionsarbeit – hier finden Sie Ressourcen, um Ihre schriftlichen Fähigkeiten zu perfektionieren.'),
-(204, 4, 2, 'Video & Animation', 'Erwecken Sie Ihre Ideen zum Leben durch beeindruckende Videos und Animationen. Von Storyboarding bis zur postproduktiven Bearbeitung – hier entdecken Sie Werkzeuge und Techniken, um visuelle Meisterwerke zu schaffen.'),
-(205, 5, 2, 'Programmierung & Technik', 'Erforschen Sie die Welt der Codes und Technologien. Von Programmiersprachen bis zu innovativen Technologien – hier finden Sie Ressourcen, um Ihre Fähigkeiten im Bereich der Softwareentwicklung und Technik zu vertiefen.'),
-(206, 6, 2, 'Business', 'Entwickeln Sie Ihre unternehmerischen Fähigkeiten und strategischen Kenntnisse. Von Unternehmensführung bis zu Marketingstrategien – hier erhalten Sie Einblicke und Ratschläge, um erfolgreich im Geschäftsbereich zu agieren.'),
-(207, 7, 2, 'Spaß & Lifestyle', 'Entdecken Sie eine Vielfalt von Inhalten, die Ihr Leben bereichern. Von Freizeitaktivitäten bis hin zu Lifestyle-Tipps – hier finden Sie Inspiration und Informationen, um Ihr Leben mit Spaß und Freude zu gestalten.'),
-(208, 8, 2, 'Musik & Audio', 'Tauchen Sie ein in die Welt der Klänge und Musik. Von Komposition bis zu Audioproduktion – hier erhalten Sie Einblicke und Tools, um Ihre künstlerische Seite im Bereich Musik und Audio zu entfalten.');
+(200, 1, 2, 'Grafik & Design', 'Entdecke die Welt der visuellen Ästhetik und gestalterischen Kreativität. Von Grafikdesign bis zu ansprechenden Layouts findest du hier Inspiration und Werkzeuge, um deine künstlerischen Visionen zu verwirklichen.'),
+(201, 2, 2, 'Digitales Marketing', 'Erfahre, wie du in der digitalen Welt erfolgreich vermarktest. Von Strategien für Social Media bis hin zu effektiven Online-Kampagnen – hier bekommst du Einblicke und Tipps, um deine Zielgruppe zu erreichen.'),
+(202, 3, 2, 'Schreiben & Übersetzen', 'Tauche ein in die Welt von Worten und Sprache. Ob kreatives Schreiben, professionelle Übersetzungen oder Redaktionsarbeit – hier findest du Ressourcen, um deine schriftlichen Fähigkeiten zu perfektionieren.'),
+(203, 4, 2, 'Video & Animation', 'Erwecke deine Ideen zum Leben mit beeindruckenden Videos und Animationen. Von Storyboarding bis zur postproduktiven Bearbeitung – hier entdeckst du Werkzeuge und Techniken, um visuelle Meisterwerke zu schaffen.'),
+(204, 5, 2, 'Programmierung & Technik', 'Erforsche die Welt der Codes und Technologien. Von Programmiersprachen bis zu innovativen Technologien – hier findest du Ressourcen, um deine Fähigkeiten in der Softwareentwicklung und Technik zu vertiefen.'),
+(205, 6, 2, 'Business', 'Entwickle deine unternehmerischen Fähigkeiten und strategischen Kenntnisse weiter. Von Unternehmensführung bis zu Marketingstrategien – hier bekommst du Einblicke und Ratschläge, um im Geschäftsbereich erfolgreich zu sein.'),
+(206, 7, 2, 'Spaß & Lifestyle', 'Entdecke eine Vielfalt von Inhalten, die dein Leben bereichern. Von Freizeitaktivitäten bis hin zu Lifestyle-Tipps – hier findest du Inspiration und Informationen, um dein Leben mit Spaß und Freude zu gestalten.'),
+(207, 8, 2, 'Musik & Audio', 'Tauche ein in die Welt der Klänge und Musik. Von Komposition bis zu Audioproduktion – hier bekommst du Einblicke und Tools, um deine künstlerische Seite im Bereich Musik und Audio zu entfalten.');
 
 
 -- --------------------------------------------------------
@@ -596,95 +597,96 @@ INSERT INTO `child_cats_meta` (`id`, `child_id`, `child_parent_id`, `language_id
 (90, 94, 8, 1, 'Other', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'),
 
 
-(201, 1, 1, 2, 'Logo-Design', 'Unser Logo-Design-Service bietet maßgeschneiderte und professionelle Logos, die Ihre Marke effektiv repräsentieren. Lassen Sie sich von unserem talentierten Team kreativer Designer inspirieren und stärken Sie Ihren visuellen Auftritt.'),
-(202, 2, 1, 2, 'Geschäftskarten & Briefpapier', 'Entdecken Sie die Kunst der geschäftlichen Kommunikation mit individuellen Geschäftskarten und Briefpapier. Unsere Designer gestalten einzigartige visuelle Identitäten, die einen bleibenden Eindruck hinterlassen.'),
-(203, 3, 1, 2, 'Illustration', 'Tauchen Sie ein in die Welt der Illustration mit unseren kreativen und einzigartigen Designs. Unsere Illustratoren verwandeln Ideen in visuelle Meisterwerke, die Geschichten erzählen und Emotionen wecken.'),
-(204, 4, 1, 2, 'Cartoons & Karikaturen', 'Bringen Sie Ihre Botschaft mit Humor zum Ausdruck! Unsere Cartoons und Karikaturen verleihen Ihrer Marke eine spielerische Note. Entdecken Sie, wie unser Team von Künstlern Ihre Ideen lebendig werden lässt.'),
-(205, 5, 1, 2, 'Flyer & Poster', 'Verleihen Sie Ihren Werbebotschaften Flügel mit unseren ansprechenden Flyern und Postern. Wir bieten Designs, die Aufmerksamkeit erregen und Ihre Veranstaltungen, Produkte oder Dienstleistungen optimal präsentieren.'),
-(206, 6, 1, 2, 'Buchcover & Verpackungen', 'Gestalten Sie beeindruckende Buchcover und Verpackungen, die Ihre Werke effektiv präsentieren. Unsere Designer verstehen die Kunst, mit visuellen Elementen die Essenz Ihrer Geschichte oder Ihres Produkts einzufangen.'),
-(207, 7, 1, 2, 'Web- & Mobile-Design', 'Erforschen Sie innovative Designs für Webseiten und mobile Anwendungen, die Benutzer begeistern. Unsere Designer kombinieren Ästhetik und Funktionalität, um digitale Erlebnisse zu schaffen, die im Gedächtnis bleiben.'),
-(208, 8, 1, 2, 'Social-Media-Design', 'Optimieren Sie Ihre Präsenz in sozialen Medien mit ansprechenden Designs. Unsere kreativen Lösungen helfen dabei, eine konsistente und ansprechende Markenidentität zu schaffen, die in den sozialen Netzwerken hervorsticht.'),
-(209, 9, 1, 2, 'Bannerwerbung', 'Maximieren Sie Ihre Online-Sichtbarkeit mit auffälligen Bannerwerbungen. Unsere Designer entwickeln Banner, die Aufmerksamkeit erregen und Ihre Zielgruppe dazu inspirieren, auf Ihre Botschaft zu reagieren.'),
-(210, 10, 2, 2, 'Social-Media-Marketing', 'Entdecken Sie die Kraft des Social-Media-Marketings mit maßgeschneiderten Strategien. Wir helfen Ihnen, Ihre Marke auf Plattformen wie Facebook, Instagram und Twitter effektiv zu präsentieren und Ihre Zielgruppe zu erreichen.'),
-(211, 11, 6, 2, 'WordPress', 'Erweitern Sie die Möglichkeiten Ihrer Website mit professionellem WordPress-Design. Unsere Experten optimieren die Benutzerfreundlichkeit und Ästhetik Ihrer Website, um einen nachhaltigen Eindruck zu hinterlassen.'),
-(212, 12, 1, 2, 'Photoshop-Bearbeitung', 'Verwandeln Sie Ihre Fotos mit unserer Photoshop-Bearbeitung in beeindruckende Kunstwerke. Unsere Experten beherrschen die Feinheiten der Bildbearbeitung, um Bilder zu verbessern und visuelle Geschichten zu erzählen.'),
-(213, 13, 1, 2, '3D- & 2D-Modelle', 'Erleben Sie beeindruckende 3D- und 2D-Modelle, die Ihre Visionen zum Leben erwecken. Unsere Designer setzen fortschrittliche Techniken ein, um realistische Modelle zu schaffen, die beeindrucken und begeistern.'),
-(214, 14, 1, 2, 'T-Shirts', 'Gestalten Sie individuelle T-Shirts mit unseren kreativen Designs. Wir bieten einzigartige Grafiken und Botschaften, um sicherzustellen, dass Ihre T-Shirts nicht nur getragen, sondern auch als Ausdruck Ihrer Persönlichkeit wahrgenommen werden.'),
-(215, 15, 1, 2, 'Präsentationsdesign', 'Machen Sie einen bleibenden Eindruck mit ansprechendem Präsentationsdesign. Unsere Designer entwickeln visuell ansprechende Präsentationen, die Inhalte effektiv vermitteln und Ihr Publikum beeindrucken.'),
-(216, 16, 1, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Dienstleistungen, die Ihre kreativen Bedürfnisse erfüllen. Unser Team steht bereit, um auch Ihre individuellen Anforderungen zu erfüllen und einzigartige Lösungen für Ihre Projekte zu entwickeln.'),
-(217, 17, 2, 2, 'Suchmaschinenoptimierung (SEO)', 'Steigern Sie die Sichtbarkeit Ihrer Website mit unserer professionellen SEO-Expertise. Wir optimieren Ihre Inhalte und Struktur, um sicherzustellen, dass Ihre Website von Suchmaschinen gut gerankt wird und von Ihrer Zielgruppe gefunden wird.'),
-(218, 18, 2, 2, 'Web-Traffic', 'Generieren Sie gezielten Web-Traffic mit effektiven Strategien. Unsere Experten helfen Ihnen, die richtigen Kanäle zu nutzen und qualitativ hochwertigen Traffic zu gewinnen, um die Sichtbarkeit Ihrer Website zu steigern.'),
-(219, 19, 2, 2, 'Content-Marketing', 'Nutzen Sie die Kraft des Content-Marketings, um Ihre Zielgruppe zu erreichen. Wir entwickeln überzeugende Inhalte, die Ihre Botschaft vermitteln und Ihr Publikum dazu inspirieren, sich mit Ihrer Marke zu beschäftigen.'),
-(220, 20, 2, 2, 'Video-Marketing', 'Erzählen Sie Ihre Geschichte mit packendem Video-Marketing. Unsere Experten produzieren hochwertige Videos, die Ihre Botschaft effektiv vermitteln und Ihr Publikum ansprechen.'),
-(221, 21, 2, 2, 'E-Mail-Marketing', 'Entdecken Sie die Wirksamkeit unseres E-Mail-Marketing-Services. Unsere Experten entwickeln maßgeschneiderte Strategien, um Ihre Zielgruppe effektiv anzusprechen und Ihre Marketingziele zu erreichen.'),
-(222, 22, 2, 2, 'Such- und Display-Marketing', 'Optimieren Sie Ihre Online-Sichtbarkeit mit unserer Such- und Display-Marketing-Expertise. Wir entwickeln gezielte Kampagnen, um potenzielle Kunden anzusprechen und Ihre Markenbekanntheit zu steigern.'),
-(223, 23, 2, 2, 'Marketingstrategie', 'Erforschen Sie innovative Marketingstrategien, um Ihre Geschäftsziele zu erreichen. Unsere Berater entwickeln maßgeschneiderte Pläne, die auf Ihre einzigartigen Anforderungen zugeschnitten sind.'),
-(224, 24, 2, 2, 'Webanalyse', 'Verstehen Sie das Verhalten Ihrer Website-Besucher mit unserer Webanalyse. Unsere Experten liefern Ihnen wertvolle Einblicke, um die Leistung Ihrer Online-Präsenz zu verbessern.'),
-(225, 25, 2, 2, 'Influencer-Marketing', 'Nutzen Sie die Reichweite von Influencern, um Ihre Zielgruppe zu erreichen. Unsere Experten helfen Ihnen bei der Identifizierung und Zusammenarbeit mit passenden Influencern.'),
-(226, 26, 2, 2, 'Lokale Einträge', 'Optimieren Sie Ihre lokale Präsenz mit unseren lokalen Eintragsdiensten. Erscheinen Sie in den relevanten Suchergebnissen und ziehen Sie lokale Kunden an.'),
-(227, 27, 2, 2, 'Domain-Forschung', 'Finden Sie die perfekte Domain für Ihr Online-Geschäft mit unserer Domain-Forschung. Unsere Experten unterstützen Sie bei der Auswahl einer aussagekräftigen und leicht merkbaren Domain.'),
-(228, 28, 2, 2, 'E-Commerce-Marketing', 'Steigern Sie Ihre Umsätze mit unserem E-Commerce-Marketing. Wir entwickeln maßgeschneiderte Strategien, um Ihre Produkte online erfolgreich zu vermarkten.'),
-(229, 29, 2, 2, 'Mobile Werbung', 'Erreichen Sie Ihre Zielgruppe auch unterwegs mit unserer mobilen Werbung. Unsere Kampagnen sind darauf ausgerichtet, mobile Nutzer anzusprechen und Ihre Botschaft effektiv zu vermitteln.'),
-(230, 30, 3, 2, 'Lebensläufe & Anschreiben', 'Präsentieren Sie sich professionell mit unseren erstklassigen Lebenslauf- und Anschreiben-Services. Unsere Experten helfen Ihnen dabei, sich von der besten Seite zu zeigen und potenzielle Arbeitgeber zu beeindrucken.'),
-(231, 31, 3, 2, 'Lektorat & Bearbeitung', 'Verleihen Sie Ihren Texten Klarheit und Präzision mit unserem Lektorat- und Bearbeitungsservice. Unsere Experten sorgen dafür, dass Ihre Inhalte fehlerfrei und wirkungsvoll sind.'),
-(232, 32, 3, 2, 'Übersetzung', 'Beseitigen Sie Sprachbarrieren mit unserem professionellen Übersetzungsservice. Unsere muttersprachlichen Übersetzer garantieren präzise und treffende Übersetzungen.'),
-(233, 33, 3, 2, 'Kreatives Schreiben', 'Erwecken Sie Ihre kreativen Ideen zum Leben mit unserem kreativen Schreibservice. Unsere Autoren helfen Ihnen dabei, packende Geschichten zu entwickeln und innovative Inhalte zu erstellen.'),
-(234, 34, 3, 2, 'Business Copywriting', 'Überzeugen Sie mit professionellem Business Copywriting. Unsere Experten entwickeln wirkungsvolle Texte, die Ihre Geschäftsziele unterstützen und Ihre Zielgruppe ansprechen.'),
-(235, 35, 3, 2, 'Recherche & Zusammenfassungen', 'Erschließen Sie umfassende Informationen mit unseren Recherche- und Zusammenfassungsdiensten. Unsere Experten liefern prägnante Zusammenfassungen zu verschiedenen Themen.'),
-(236, 36, 3, 2, 'Artikel & Blog-Beiträge', 'Bereichern Sie Ihre Website mit ansprechenden Artikeln und Blog-Beiträgen. Unsere Autoren erstellen hochwertige Inhalte, die Ihre Leser informieren und begeistern.'),
-(237, 37, 3, 2, 'Pressemitteilungen', 'Verbreiten Sie wichtige Nachrichten und Ereignisse mit unseren Press Release Services. Unsere Experten helfen Ihnen dabei, Aufmerksamkeit in den Medien zu erlangen und Ihre Botschaft zu verbreiten.'),
-(238, 38, 3, 2, 'Transkription', 'Verwandeln Sie gesprochene Worte in schriftliche Texte mit unserem Transkriptionsservice. Unsere Experten bieten genaue und zuverlässige Transkriptionsdienste für verschiedene Medien.'),
-(239, 39, 3, 2, 'Juristisches Schreiben', 'Setzen Sie auf präzise und professionelle juristische Texte mit unserem juristischen Schreibservice. Unsere Experten unterstützen Sie bei der Erstellung rechtlich fundierter Dokumente.'),
-(240, 40, 3, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Dienstleistungen, die Ihre kreativen Bedürfnisse erfüllen. Unser Team steht bereit, um auch Ihre individuellen Anforderungen zu erfüllen und einzigartige Lösungen für Ihre Projekte zu entwickeln.'),
-(241, 41, 4, 2, 'Whiteboard & Erklärungsvideos', 'Präsentieren Sie Ihre Ideen mit animierten Whiteboard- und Erklärungsvideos. Unsere Videokünstler erstellen ansprechende Visualisierungen, um komplexe Konzepte einfach und verständlich zu erklären.'),
-(242, 42, 4, 2, 'Intros & Animierte Logos', 'Machen Sie einen starken Eindruck mit individuellen Intros und animierten Logos. Unsere Designer entwickeln visuell beeindruckende Animationen, die Ihr Markenimage stärken.'),
-(243, 43, 4, 2, 'Werbe- & Markenvideos', 'Steigern Sie die Bekanntheit Ihrer Marke mit überzeugenden Werbe- und Markenvideos. Unsere Experten entwickeln maßgeschneiderte Inhalte, die Ihr Unternehmen effektiv präsentieren.'),
-(244, 44, 4, 2, 'Bearbeitung & Postproduktion', 'Verleihen Sie Ihren Videos den letzten Schliff mit professioneller Bearbeitung und Postproduktion. Unsere Videografen sorgen für nahtlose Übergänge und visuelle Brillanz.'),
-(245, 45, 4, 2, 'Lyrik- & Musikvideos', 'Bringen Sie Ihre Musik zum Leben mit beeindruckenden Lyrik- und Musikvideos. Unsere Videoproduzenten setzen Ihre kreativen Visionen in bewegende visuelle Erlebnisse um.'),
-(246, 46, 4, 2, 'Sprecher & Testimonials', 'Bauen Sie Vertrauen auf und überzeugen Sie Ihr Publikum mit authentischen Sprechern und Testimonials. Unsere Sprecher verleihen Ihren Botschaften Glaubwürdigkeit und Emotionalität.'),
-(247, 48, 4, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Video- und Audioproduktionen, die Ihre kreativen Anforderungen erfüllen. Unser Team steht bereit, um auch Ihre individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.'),
-(248, 49, 9, 2, 'Voice-Over', 'Verleihen Sie Ihrem Projekt eine professionelle Stimme mit unseren Voice-Over-Dienstleistungen. Unsere Sprecher liefern klare und überzeugende Sprachaufnahmen.'),
-(249, 50, 9, 2, 'Mixing & Mastering', 'Veredeln Sie Ihren Sound mit erstklassigem Mixing und Mastering. Unsere Toningenieure optimieren den Klang Ihrer Aufnahmen für ein beeindruckendes Hörerlebnis.'),
-(250, 51, 9, 2, 'Produzenten & Komponisten', 'Erschaffen Sie beeindruckende Musik mit erfahrenen Produzenten und Komponisten. Unsere Musikexperten unterstützen Sie bei der Realisierung Ihrer kreativen Vision.'),
-(251, 52, 9, 2, 'Singer-Songwriter', 'Erzählen Sie Ihre Geschichten mit emotionalen Singer-Songwriter-Performances. Unsere Musiker schaffen authentische und berührende musikalische Erlebnisse.'),
-(252, 53, 9, 2, 'Sessionmusiker & Sänger', 'Verleihen Sie Ihren Aufnahmen Professionalität mit erfahrenen Sessionmusikern und Sängern. Unsere Musiker tragen dazu bei, den gewünschten Klang zu erreichen.'),
-(253, 54, 9, 2, 'Jingles & Drops', 'Prägen Sie sich im Gedächtnis Ihrer Zielgruppe ein mit individuellen Jingles und Drops. Unsere Audioprofis entwickeln einprägsame Klänge, die Ihre Marke unverwechselbar machen.'),
-(254, 55, 6, 2, 'Webprogrammierung', 'Gestalten Sie dynamische und funktionale Websites mit unserer Webprogrammierung. Unsere Entwickler setzen innovative Technologien ein, um maßgeschneiderte Lösungen für Ihre Online-Präsenz zu schaffen.'),
-(256, 58, 6, 2, 'Website-Baukästen & CMS', 'Erstellen Sie Ihre Website mühelos mit Website-Baukästen und Content Management Systemen. Unsere Experten unterstützen Sie bei der Auswahl und Anpassung der besten Plattform für Ihre Bedürfnisse.'),
-(257, 60, 6, 2, 'E-Commerce', 'Starten Sie erfolgreich in den E-Commerce mit unseren spezialisierten Dienstleistungen. Unsere E-Commerce-Experten helfen Ihnen beim Aufbau und der Optimierung Ihres Online-Shops.'),
-(258, 61, 6, 2, 'Mobile Apps & Web', 'Erobern Sie die mobile Welt mit ansprechenden Apps und responsiven Websites. Unsere Entwickler gestalten benutzerfreundliche Lösungen für mobile Endgeräte.'),
-(259, 62, 6, 2, 'Desktopanwendungen', 'Entwickeln Sie leistungsstarke Desktopanwendungen für verschiedene Plattformen. Unsere Programmierer setzen innovative Technologien ein, um maßgeschneiderte Softwarelösungen zu schaffen.'),
-(260, 63, 6, 2, 'Support & IT', 'Sichern Sie sich zuverlässigen Support und IT-Dienstleistungen für Ihre digitale Infrastruktur. Unsere Experten stehen Ihnen mit Rat und Tat zur Seite, um reibungslose Abläufe zu gewährleisten.'),
-(261, 64, 6, 2, 'Chatbots', 'Optimieren Sie die Interaktion mit Ihren Kunden durch intelligente Chatbots. Unsere Entwickler erstellen maßgeschneiderte Lösungen für automatisierte Kommunikation und Support.'),
-(262, 65, 6, 2, 'Datenanalyse & Berichte', 'Gewinnen Sie wertvolle Erkenntnisse aus Ihren Daten mit professioneller Datenanalyse und Berichterstellung. Unsere Experten unterstützen Sie bei der Auswertung und Interpretation Ihrer Informationen.'),
-(263, 66, 6, 2, 'Dateikonvertierung', 'Konvertieren Sie Dateien mühelos in verschiedene Formate mit unseren Konvertierungsdiensten. Unsere Techniker sorgen für reibungslose und präzise Umwandlungen.'),
-(264, 67, 6, 2, 'Datenbanken', 'Entwickeln Sie leistungsstarke Datenbanklösungen für Ihr Unternehmen. Unsere Datenbankexperten gestalten effiziente Systeme, die Ihre Daten sicher verwalten und zugänglich machen.'),
-(265, 68, 6, 2, 'Nutzertests', 'Optimieren Sie die Benutzerfreundlichkeit Ihrer Plattform mit umfassenden Nutzertests. Unsere Tester liefern wertvolles Feedback, um ein herausragendes Benutzererlebnis zu gewährleisten.'),
-(266, 69, 6, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Dienstleistungen im Bereich Technologie und Daten. Unser Team bietet individuelle Lösungen für Ihre spezifischen Anforderungen.'),
-(267, 70, 7, 2, 'Virtueller Assistent', 'Ermöglichen Sie sich effizientes Arbeiten mit einem virtuellen Assistenten. Unsere Assistenten unterstützen Sie bei alltäglichen Aufgaben, damit Sie sich auf das Wesentliche konzentrieren können.'),
-(268, 71, 7, 2, 'Marktforschung', 'Erfahren Sie mehr über Ihren Markt mit umfassender Marktforschung. Unsere Analysten liefern fundierte Einblicke, um strategische Entscheidungen für Ihr Unternehmen zu erleichtern.'),
-(269, 72, 7, 2, 'Businesspläne', 'Entwickeln Sie solide Geschäftspläne für Ihren Erfolg. Unsere Berater helfen Ihnen bei der Erstellung von Geschäftsplänen, die Ihre Ziele und Visionen widerspiegeln.'),
-(270, 73, 7, 2, 'Markenbildungsdienstleistungen', 'Stärken Sie Ihre Marke mit professionellen Dienstleistungen zur Markenbildung. Unsere Experten unterstützen Sie bei der Entwicklung einer starken und einprägsamen Markenidentität.'),
-(271, 74, 7, 2, 'Rechtsberatung', 'Erhalten Sie rechtliche Unterstützung für Ihr Unternehmen. Unsere Anwälte bieten Beratungsdienstleistungen, um sicherzustellen, dass Ihr Unternehmen rechtlich geschützt ist.'),
-(272, 75, 7, 2, 'Finanzberatung', 'Optimieren Sie Ihre Finanzstrategie mit professioneller Finanzberatung. Unsere Berater helfen Ihnen bei der Planung und Steuerung Ihrer finanziellen Ressourcen.'),
-(273, 76, 7, 2, 'Business-Tipps', 'Erfahren Sie wertvolle Tipps und Ratschläge für Ihr Unternehmen. Unsere Experten teilen ihr Wissen, um Ihnen dabei zu helfen, erfolgreich zu wachsen und zu agieren.'),
-(274, 77, 7, 2, 'Präsentationen', 'Beeindrucken Sie Ihr Publikum mit überzeugenden Präsentationen. Unsere Designer und Redner arbeiten zusammen, um Inhalte visuell ansprechend und informativ zu präsentieren.'),
-(275, 78, 7, 2, 'Karrieretipps', 'Gestalten Sie Ihre berufliche Laufbahn mit hilfreichen Karrieretipps. Unsere Berater unterstützen Sie bei der Entwicklung Ihrer Fähigkeiten und der Planung Ihrer beruflichen Entwicklung.'),
-(276, 79, 7, 2, 'Flyer-Verteilung', 'Erreichen Sie Ihre Zielgruppe mit effektiver Flyer-Verteilung. Unsere Vertriebsexperten helfen Ihnen dabei, Ihre Botschaften gezielt zu verbreiten.'),
-(277, 80, 7, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Dienstleistungen im Bereich Unternehmensberatung. Unser Team steht bereit, um auch Ihre individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.'),
-(278, 81, 8, 2, 'Online-Unterricht', 'Bilden Sie sich online weiter mit unseren qualifizierten Lehrern. Unsere Online-Lektionen bieten eine flexible und individuelle Lernumgebung für verschiedene Fachgebiete.'),
-(279, 82, 8, 2, 'Kunst & Handwerk', 'Entdecken Sie Ihre kreative Seite mit Kunst- und Handwerksunterricht. Unsere Lehrer führen Sie durch verschiedene Techniken und Projekte, um Ihre künstlerischen Fähigkeiten zu entwickeln.'),
-(280, 83, 8, 2, 'Beziehungstipps', 'Stärken Sie Ihre Beziehungen mit professionellen Beziehungstipps. Unsere Berater helfen Ihnen dabei, eine gesunde und erfüllende Beziehung aufzubauen und zu pflegen.'),
-(281, 84, 8, 2, 'Gesundheit, Ernährung & Fitness', 'Investieren Sie in Ihre Gesundheit mit professionellen Dienstleistungen im Bereich Gesundheit, Ernährung und Fitness. Unsere Experten unterstützen Sie bei der Erreichung Ihrer persönlichen Ziele.'),
-(282, 85, 8, 2, 'Astrologie & Lesungen', 'Erhalten Sie Einblicke in Ihre Zukunft und Persönlichkeit mit astrologischen Dienstleistungen und Lesungen. Unsere Astrologen bieten individuelle Analysen und Beratungen an.'),
-(283, 86, 8, 2, 'Spiritualität & Heilung', 'Entdecken Sie spirituelle Wege zur inneren Balance und Heilung. Unsere spirituellen Berater bieten Unterstützung bei der Entwicklung Ihrer spirituellen Praxis.'),
-(284, 87, 8, 2, 'Familie & Genealogie', 'Erforschen Sie Ihre familiäre Herkunft und Geschichte mit Dienstleistungen im Bereich Familie und Genealogie. Unsere Experten helfen Ihnen dabei, Ihre Wurzeln zu verstehen und zu dokumentieren.'),
-(285, 88, 8, 2, 'Sammlerstücke', 'Entdecken Sie einzigartige Sammlerstücke und Raritäten. Unsere Anbieter bieten eine vielfältige Auswahl an Sammlerobjekten für passionierte Sammler.'),
-(286, 89, 8, 2, 'Grußkarten & Videos', 'Überraschen Sie Ihre Lieben mit individuellen Grußkarten und Videos. Unsere Künstler gestalten personalisierte Botschaften, um besondere Momente unvergesslich zu machen.'),
-(287, 91, 8, 2, 'Viralvideos', 'Entdecken Sie unterhaltsame und virale Videos, die die Aufmerksamkeit auf sich ziehen. Unsere Videokünstler kreieren Inhalte, die im Internet für Furore sorgen.'),
-(288, 92, 8, 2, 'Streiche & Stunts', 'Erleben Sie Spaß und Nervenkitzel mit Streichen und Stunts. Unsere Entertainer sorgen für unvergessliche Momente voller Lachen und Staunen.'),
-(289, 93, 8, 2, 'Promi-Imitatoren', 'Genießen Sie beeindruckende Imitationen von Prominenten. Unsere Künstler beherrschen die Kunst des Celebrity-Impersonation und bieten unterhaltsame Darbietungen.'),
-(290, 94, 8, 2, 'Sonstiges', 'Entdecken Sie eine Vielfalt von Dienstleistungen und Unterhaltung. Unser Team steht bereit, um auch Ihre individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.');
+(201, 1, 1, 2, 'Logo Design', 'Unser Logo-Design-Service bietet maßgeschneiderte und professionelle Logos, die deine Marke effektiv repräsentieren. Lass dich von unserem talentierten Team kreativer Designer inspirieren und stärke deinen visuellen Auftritt.'),
+(202, 2, 1, 2, 'Geschäftskarten & Briefpapier', 'Entdecke die Kunst der geschäftlichen Kommunikation mit individuellen Geschäftskarten und Briefpapier. Unsere Designer gestalten einzigartige visuelle Identitäten, die einen bleibenden Eindruck hinterlassen.'),
+(203, 3, 1, 2, 'Illustration', 'Tauche ein in die Welt der Illustration mit unseren kreativen und einzigartigen Designs. Unsere Illustratoren verwandeln Ideen in visuelle Meisterwerke, die Geschichten erzählen und Emotionen wecken.'),
+(204, 4, 1, 2, 'Cartoons & Karikaturen', 'Bring deine Botschaft mit Humor zum Ausdruck! Unsere Cartoons und Karikaturen verleihen deiner Marke eine spielerische Note. Entdecke, wie unser Team von Künstlern deine Ideen lebendig werden lässt.'),
+(205, 5, 1, 2, 'Flyer & Poster', 'Verleih deinen Werbebotschaften Flügel mit unseren ansprechenden Flyern und Postern. Wir bieten Designs, die Aufmerksamkeit erregen und deine Veranstaltungen, Produkte oder Dienstleistungen optimal präsentieren.'),
+(206, 6, 1, 2, 'Buchcover & Verpackungen', 'Gestalte beeindruckende Buchcover und Verpackungen, die deine Werke effektiv präsentieren. Unsere Designer verstehen die Kunst, mit visuellen Elementen die Essenz deiner Geschichte oder deines Produkts einzufangen.'),
+(207, 7, 1, 2, 'Web- & Mobile-Design', 'Erforsche innovative Designs für Webseiten und mobile Anwendungen, die Benutzer begeistern. Unsere Designer kombinieren Ästhetik und Funktionalität, um digitale Erlebnisse zu schaffen, die im Gedächtnis bleiben.'),
+(208, 8, 1, 2, 'Social-Media-Design', 'Optimiere deine Präsenz in sozialen Medien mit ansprechenden Designs. Unsere kreativen Lösungen helfen dabei, eine konsistente und ansprechende Markenidentität zu schaffen, die in den sozialen Netzwerken hervorsticht.'),
+(209, 9, 1, 2, 'Bannerwerbung', 'Maximiere deine Online-Sichtbarkeit mit auffälligen Bannerwerbungen. Unsere Designer entwickeln Banner, die Aufmerksamkeit erregen und deine Zielgruppe dazu inspirieren, auf deine Botschaft zu reagieren.'),
+(210, 10, 2, 2, 'Social-Media-Marketing', 'Entdecke die Kraft des Social-Media-Marketings mit maßgeschneiderten Strategien. Wir helfen dir, deine Marke auf Plattformen wie Facebook, Instagram und Twitter effektiv zu präsentieren und deine Zielgruppe zu erreichen.'),
+(211, 11, 6, 2, 'WordPress', 'Erweitere die Möglichkeiten deiner Website mit professionellem WordPress-Design. Unsere Experten optimieren die Benutzerfreundlichkeit und Ästhetik deiner Website, um einen nachhaltigen Eindruck zu hinterlassen.'),
+(212, 12, 1, 2, 'Photoshop-Bearbeitung', 'Verwandle deine Fotos mit unserer Photoshop-Bearbeitung in beeindruckende Kunstwerke. Unsere Experten beherrschen die Feinheiten der Bildbearbeitung, um Bilder zu verbessern und visuelle Geschichten zu erzählen.'),
+(213, 13, 1, 2, '3D- & 2D-Modelle', 'Erlebe beeindruckende 3D- und 2D-Modelle, die deine Visionen zum Leben erwecken. Unsere Designer setzen fortschrittliche Techniken ein, um realistische Modelle zu schaffen, die beeindrucken und begeistern.'),
+(214, 14, 1, 2, 'T-Shirts', 'Gestalte individuelle T-Shirts mit unseren kreativen Designs. Wir bieten einzigartige Grafiken und Botschaften, damit deine T-Shirts nicht nur getragen, sondern auch als Ausdruck deiner Persönlichkeit wahrgenommen werden.'),
+(215, 15, 1, 2, 'Präsentationsdesign', 'Mach einen bleibenden Eindruck mit ansprechendem Präsentationsdesign. Unsere Designer entwickeln visuell ansprechende Präsentationen, die Inhalte effektiv vermitteln und dein Publikum beeindrucken.'),
+(216, 16, 1, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Dienstleistungen, die deine kreativen Bedürfnisse erfüllen. Unser Team steht bereit, um auch deine individuellen Anforderungen zu erfüllen und einzigartige Lösungen für deine Projekte zu entwickeln.'),
+(217, 17, 2, 2, 'Suchmaschinenoptimierung (SEO)', 'Steigere die Sichtbarkeit deiner Website mit unserer professionellen SEO-Expertise. Wir optimieren deine Inhalte und Struktur, damit deine Website von Suchmaschinen gut gerankt und von deiner Zielgruppe gefunden wird.'),
+(218, 18, 2, 2, 'Web-Traffic', 'Generiere gezielten Web-Traffic mit effektiven Strategien. Unsere Experten helfen dir, die richtigen Kanäle zu nutzen und qualitativ hochwertigen Traffic zu gewinnen, um die Sichtbarkeit deiner Website zu steigern.'),
+(219, 19, 2, 2, 'Content-Marketing', 'Nutze die Kraft des Content-Marketings, um deine Zielgruppe zu erreichen. Wir entwickeln überzeugende Inhalte, die deine Botschaft vermitteln und dein Publikum dazu inspirieren, sich mit deiner Marke zu beschäftigen.'),
+(220, 20, 2, 2, 'Video-Marketing', 'Erzähl deine Geschichte mit packendem Video-Marketing. Unsere Experten produzieren hochwertige Videos, die deine Botschaft effektiv vermitteln und dein Publikum ansprechen.'),
+(221, 21, 2, 2, 'E-Mail-Marketing', 'Entdecke die Wirksamkeit unseres E-Mail-Marketing-Services. Unsere Experten entwickeln maßgeschneiderte Strategien, um deine Zielgruppe effektiv anzusprechen und deine Marketingziele zu erreichen.'),
+(222, 22, 2, 2, 'Such- und Display-Marketing', 'Optimiere deine Online-Sichtbarkeit mit unserer Such- und Display-Marketing-Expertise. Wir entwickeln gezielte Kampagnen, um potenzielle Kunden anzusprechen und deine Markenbekanntheit zu steigern.'),
+(223, 23, 2, 2, 'Marketingstrategie', 'Erforsche innovative Marketingstrategien, um deine Geschäftsziele zu erreichen. Unsere Berater entwickeln maßgeschneiderte Pläne, die auf deine einzigartigen Anforderungen zugeschnitten sind.'),
+(224, 24, 2, 2, 'Webanalyse', 'Versteh das Verhalten deiner Website-Besucher mit unserer Webanalyse. Unsere Experten liefern dir wertvolle Einblicke, um die Leistung deiner Online-Präsenz zu verbessern.'),
+(225, 25, 2, 2, 'Influencer-Marketing', 'Nutze die Reichweite von Influencern, um deine Zielgruppe zu erreichen. Unsere Experten helfen dir bei der Identifizierung und Zusammenarbeit mit passenden Influencern.'),
+(226, 26, 2, 2, 'Lokale Einträge', 'Optimiere deine lokale Präsenz mit unseren lokalen Eintragsdiensten. Erscheine in den relevanten Suchergebnissen und zieh lokale Kunden an.'),
+(227, 27, 2, 2, 'Domain-Forschung', 'Finde die perfekte Domain für dein Online-Geschäft mit unserer Domain-Forschung. Unsere Experten unterstützen dich bei der Auswahl einer aussagekräftigen und leicht merkbaren Domain.'),
+(228, 28, 2, 2, 'E-Commerce-Marketing', 'Steigere deine Umsätze mit unserem E-Commerce-Marketing. Wir entwickeln maßgeschneiderte Strategien, um deine Produkte online erfolgreich zu vermarkten.'),
+(229, 29, 2, 2, 'Mobile Werbung', 'Erreiche deine Zielgruppe auch unterwegs mit unserer mobilen Werbung. Unsere Kampagnen sind darauf ausgerichtet, mobile Nutzer anzusprechen und deine Botschaft effektiv zu vermitteln.'),
+(230, 30, 3, 2, 'Lebensläufe & Anschreiben', 'Präsentier dich professionell mit unseren erstklassigen Lebenslauf- und Anschreiben-Services. Unsere Experten helfen dir dabei, dich von der besten Seite zu zeigen und potenzielle Arbeitgeber zu beeindrucken.'),
+(231, 31, 3, 2, 'Lektorat & Bearbeitung', 'Verleih deinen Texten Klarheit und Präzision mit unserem Lektorat- und Bearbeitungsservice. Unsere Experten sorgen dafür, dass deine Inhalte fehlerfrei und wirkungsvoll sind.'),
+(232, 32, 3, 2, 'Übersetzung', 'Beseitige Sprachbarrieren mit unserem professionellen Übersetzungsservice. Unsere muttersprachlichen Übersetzer garantieren präzise und treffende Übersetzungen.'),
+(233, 33, 3, 2, 'Kreatives Schreiben', 'Erwecke deine kreativen Ideen zum Leben mit unserem kreativen Schreibservice. Unsere Autoren helfen dir dabei, packende Geschichten zu entwickeln und innovative Inhalte zu erstellen.'),
+(234, 34, 3, 2, 'Business Copywriting', 'Überzeug mit professionellem Business Copywriting. Unsere Experten entwickeln wirkungsvolle Texte, die deine Geschäftsziele unterstützen und deine Zielgruppe ansprechen.'),
+(235, 35, 3, 2, 'Recherche & Zusammenfassungen', 'Erschließ dir umfassende Informationen mit unseren Recherche- und Zusammenfassungsdiensten. Unsere Experten liefern prägnante Zusammenfassungen zu verschiedenen Themen.'),
+(236, 36, 3, 2, 'Artikel & Blog-Beiträge', 'Bereichere deine Website mit ansprechenden Artikeln und Blog-Beiträgen. Unsere Autoren erstellen hochwertige Inhalte, die deine Leser informieren und begeistern.'),
+(237, 37, 3, 2, 'Pressemitteilungen', 'Verbreite wichtige Nachrichten und Ereignisse mit unseren Press Release Services. Unsere Experten helfen dir dabei, Aufmerksamkeit in den Medien zu erlangen und deine Botschaft zu verbreiten.'),
+(238, 38, 3, 2, 'Transkription', 'Verwandle gesprochene Worte in schriftliche Texte mit unserem Transkriptionsservice. Unsere Experten bieten genaue und zuverlässige Transkriptionsdienste für verschiedene Medien.'),
+(239, 39, 3, 2, 'Juristisches Schreiben', 'Setz auf präzise und professionelle juristische Texte mit unserem juristischen Schreibservice. Unsere Experten unterstützen dich bei der Erstellung rechtlich fundierter Dokumente.'),
+(240, 40, 3, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Dienstleistungen, die deine kreativen Bedürfnisse erfüllen. Unser Team steht bereit, um auch deine individuellen Anforderungen zu erfüllen und einzigartige Lösungen für deine Projekte zu entwickeln.'),
+(241, 41, 4, 2, 'Whiteboard & Erklärungsvideos', 'Präsentier deine Ideen mit animierten Whiteboard- und Erklärungsvideos. Unsere Videokünstler erstellen ansprechende Visualisierungen, um komplexe Konzepte einfach und verständlich zu erklären.'),
+(242, 42, 4, 2, 'Intros & Animierte Logos', 'Mach einen starken Eindruck mit individuellen Intros und animierten Logos. Unsere Designer entwickeln visuell beeindruckende Animationen, die dein Markenimage stärken.'),
+(243, 43, 4, 2, 'Werbe- & Markenvideos', 'Steigere die Bekanntheit deiner Marke mit überzeugenden Werbe- und Markenvideos. Unsere Experten entwickeln maßgeschneiderte Inhalte, die dein Unternehmen effektiv präsentieren.'),
+(244, 44, 4, 2, 'Bearbeitung & Postproduktion', 'Verleih deinen Videos den letzten Schliff mit professioneller Bearbeitung und Postproduktion. Unsere Videografen sorgen für nahtlose Übergänge und visuelle Brillanz.'),
+(245, 45, 4, 2, 'Lyrik- & Musikvideos', 'Bring deine Musik zum Leben mit beeindruckenden Lyrik- und Musikvideos. Unsere Videoproduzenten setzen deine kreativen Visionen in bewegende visuelle Erlebnisse um.'),
+(246, 46, 4, 2, 'Sprecher & Testimonials', 'Bau Vertrauen auf und überzeuge dein Publikum mit authentischen Sprechern und Testimonials. Unsere Sprecher verleihen deinen Botschaften Glaubwürdigkeit und Emotionalität.'),
+(247, 48, 4, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Video- und Audioproduktionen, die deine kreativen Anforderungen erfüllen. Unser Team steht bereit, um auch deine individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.'),
+(248, 49, 9, 2, 'Voice-Over', 'Verleih deinem Projekt eine professionelle Stimme mit unseren Voice-Over-Dienstleistungen. Unsere Sprecher liefern klare und überzeugende Sprachaufnahmen.'),
+(249, 50, 9, 2, 'Mixing & Mastering', 'Veredle deinen Sound mit erstklassigem Mixing und Mastering. Unsere Toningenieure optimieren den Klang deiner Aufnahmen für ein beeindruckendes Hörerlebnis.'),
+(250, 51, 9, 2, 'Produzenten & Komponisten', 'Erschaffe beeindruckende Musik mit erfahrenen Produzenten und Komponisten. Unsere Musikexperten unterstützen dich bei der Realisierung deiner kreativen Vision.'),
+(251, 52, 9, 2, 'Singer-Songwriter', 'Erzähl deine Geschichten mit emotionalen Singer-Songwriter-Performances. Unsere Musiker schaffen authentische und berührende musikalische Erlebnisse.'),
+(252, 53, 9, 2, 'Sessionmusiker & Sänger', 'Verleih deinen Aufnahmen Professionalität mit erfahrenen Sessionmusikern und Sängern. Unsere Musiker tragen dazu bei, den gewünschten Klang zu erreichen.'),
+(253, 54, 9, 2, 'Jingles & Drops', 'Präg dich im Gedächtnis deiner Zielgruppe ein mit individuellen Jingles und Drops. Unsere Audioprofis entwickeln einprägsame Klänge, die deine Marke unverwechselbar machen.'),
+(254, 55, 9, 2, 'Sound Effects', 'Verleih deinen Projekten Tiefe mit passgenauen Sound-Effekten. Unsere Audioprofis erstellen und bearbeiten Klänge, die deine Videos, Spiele oder Präsentationen lebendig wirken lassen.'),
+(255, 56, 6, 2, 'Webprogrammierung', 'Gestalte dynamische und funktionale Websites mit unserer Webprogrammierung. Unsere Entwickler setzen innovative Technologien ein, um maßgeschneiderte Lösungen für deine Online-Präsenz zu schaffen.'),
+(256, 58, 6, 2, 'Website-Baukästen & CMS', 'Erstelle deine Website mühelos mit Website-Baukästen und Content-Management-Systemen. Unsere Experten unterstützen dich bei der Auswahl und Anpassung der besten Plattform für deine Bedürfnisse.'),
+(257, 60, 6, 2, 'E-Commerce', 'Starte erfolgreich in den E-Commerce mit unseren spezialisierten Dienstleistungen. Unsere E-Commerce-Experten helfen dir beim Aufbau und der Optimierung deines Online-Shops.'),
+(258, 61, 6, 2, 'Mobile Apps & Web', 'Erobere die mobile Welt mit ansprechenden Apps und responsiven Websites. Unsere Entwickler gestalten benutzerfreundliche Lösungen für mobile Endgeräte.'),
+(259, 62, 6, 2, 'Desktopanwendungen', 'Entwickle leistungsstarke Desktopanwendungen für verschiedene Plattformen. Unsere Programmierer setzen innovative Technologien ein, um maßgeschneiderte Softwarelösungen zu schaffen.'),
+(260, 63, 6, 2, 'Support & IT', 'Sicher dir zuverlässigen Support und IT-Dienstleistungen für deine digitale Infrastruktur. Unsere Experten stehen dir mit Rat und Tat zur Seite, um reibungslose Abläufe zu gewährleisten.'),
+(261, 64, 6, 2, 'Chatbots', 'Optimiere die Interaktion mit deinen Kunden durch intelligente Chatbots. Unsere Entwickler erstellen maßgeschneiderte Lösungen für automatisierte Kommunikation und Support.'),
+(262, 65, 6, 2, 'Datenanalyse & Berichte', 'Gewinne wertvolle Erkenntnisse aus deinen Daten mit professioneller Datenanalyse und Berichterstellung. Unsere Experten unterstützen dich bei der Auswertung und Interpretation deiner Informationen.'),
+(263, 66, 6, 2, 'Dateikonvertierung', 'Konvertiere Dateien mühelos in verschiedene Formate mit unseren Konvertierungsdiensten. Unsere Techniker sorgen für reibungslose und präzise Umwandlungen.'),
+(264, 67, 6, 2, 'Datenbanken', 'Entwickle leistungsstarke Datenbanklösungen für dein Unternehmen. Unsere Datenbankexperten gestalten effiziente Systeme, die deine Daten sicher verwalten und zugänglich machen.'),
+(265, 68, 6, 2, 'Nutzertests', 'Optimiere die Benutzerfreundlichkeit deiner Plattform mit umfassenden Nutzertests. Unsere Tester liefern wertvolles Feedback, um ein herausragendes Benutzererlebnis zu gewährleisten.'),
+(266, 69, 6, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Dienstleistungen im Bereich Technologie und Daten. Unser Team bietet individuelle Lösungen für deine spezifischen Anforderungen.'),
+(267, 70, 7, 2, 'Virtueller Assistent', 'Ermögliche dir effizientes Arbeiten mit einem virtuellen Assistenten. Unsere Assistenten unterstützen dich bei alltäglichen Aufgaben, damit du dich auf das Wesentliche konzentrieren kannst.'),
+(268, 71, 7, 2, 'Marktforschung', 'Erfahre mehr über deinen Markt mit umfassender Marktforschung. Unsere Analysten liefern fundierte Einblicke, um strategische Entscheidungen für dein Unternehmen zu erleichtern.'),
+(269, 72, 7, 2, 'Businesspläne', 'Entwickle solide Geschäftspläne für deinen Erfolg. Unsere Berater helfen dir bei der Erstellung von Geschäftsplänen, die deine Ziele und Visionen widerspiegeln.'),
+(270, 73, 7, 2, 'Markenbildungsdienstleistungen', 'Stärke deine Marke mit professionellen Dienstleistungen zur Markenbildung. Unsere Experten unterstützen dich bei der Entwicklung einer starken und einprägsamen Markenidentität.'),
+(271, 74, 7, 2, 'Rechtsberatung', 'Hol dir rechtliche Unterstützung für dein Unternehmen. Unsere Anwälte bieten Beratungsdienstleistungen, damit dein Unternehmen rechtlich geschützt ist.'),
+(272, 75, 7, 2, 'Finanzberatung', 'Optimiere deine Finanzstrategie mit professioneller Finanzberatung. Unsere Berater helfen dir bei der Planung und Steuerung deiner finanziellen Ressourcen.'),
+(273, 76, 7, 2, 'Business-Tipps', 'Erfahre wertvolle Tipps und Ratschläge für dein Unternehmen. Unsere Experten teilen ihr Wissen, um dir dabei zu helfen, erfolgreich zu wachsen und zu agieren.'),
+(274, 77, 7, 2, 'Präsentationen', 'Beeindrucke dein Publikum mit überzeugenden Präsentationen. Unsere Designer und Redner arbeiten zusammen, um Inhalte visuell ansprechend und informativ zu präsentieren.'),
+(275, 78, 7, 2, 'Karrieretipps', 'Gestalte deine berufliche Laufbahn mit hilfreichen Karrieretipps. Unsere Berater unterstützen dich bei der Entwicklung deiner Fähigkeiten und der Planung deiner beruflichen Entwicklung.'),
+(276, 79, 7, 2, 'Flyer-Verteilung', 'Erreiche deine Zielgruppe mit effektiver Flyer-Verteilung. Unsere Vertriebsexperten helfen dir dabei, deine Botschaften gezielt zu verbreiten.'),
+(277, 80, 7, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Dienstleistungen im Bereich Unternehmensberatung. Unser Team steht bereit, um auch deine individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.'),
+(278, 81, 8, 2, 'Online-Unterricht', 'Bild dich online weiter mit unseren qualifizierten Lehrern. Unsere Online-Lektionen bieten eine flexible und individuelle Lernumgebung für verschiedene Fachgebiete.'),
+(279, 82, 8, 2, 'Kunst & Handwerk', 'Entdecke deine kreative Seite mit Kunst- und Handwerksunterricht. Unsere Lehrer führen dich durch verschiedene Techniken und Projekte, um deine künstlerischen Fähigkeiten zu entwickeln.'),
+(280, 83, 8, 2, 'Beziehungstipps', 'Stärke deine Beziehungen mit professionellen Beziehungstipps. Unsere Berater helfen dir dabei, eine gesunde und erfüllende Beziehung aufzubauen und zu pflegen.'),
+(281, 84, 8, 2, 'Gesundheit, Ernährung & Fitness', 'Investiere in deine Gesundheit mit professionellen Dienstleistungen im Bereich Gesundheit, Ernährung und Fitness. Unsere Experten unterstützen dich bei der Erreichung deiner persönlichen Ziele.'),
+(282, 85, 8, 2, 'Astrologie & Lesungen', 'Erhalte Einblicke in deine Zukunft und Persönlichkeit mit astrologischen Dienstleistungen und Lesungen. Unsere Astrologen bieten individuelle Analysen und Beratungen an.'),
+(283, 86, 8, 2, 'Spiritualität & Heilung', 'Entdecke spirituelle Wege zur inneren Balance und Heilung. Unsere spirituellen Berater bieten Unterstützung bei der Entwicklung deiner spirituellen Praxis.'),
+(284, 87, 8, 2, 'Familie & Genealogie', 'Erforsche deine familiäre Herkunft und Geschichte mit Dienstleistungen im Bereich Familie und Genealogie. Unsere Experten helfen dir dabei, deine Wurzeln zu verstehen und zu dokumentieren.'),
+(285, 88, 8, 2, 'Sammlerstücke', 'Entdecke einzigartige Sammlerstücke und Raritäten. Unsere Anbieter bieten eine vielfältige Auswahl an Sammlerobjekten für passionierte Sammler.'),
+(286, 89, 8, 2, 'Grußkarten & Videos', 'Überrasche deine Lieben mit individuellen Grußkarten und Videos. Unsere Künstler gestalten personalisierte Botschaften, um besondere Momente unvergesslich zu machen.'),
+(287, 91, 8, 2, 'Viralvideos', 'Entdecke unterhaltsame und virale Videos, die die Aufmerksamkeit auf sich ziehen. Unsere Videokünstler kreieren Inhalte, die im Internet für Furore sorgen.'),
+(288, 92, 8, 2, 'Streiche & Stunts', 'Erlebe Spaß und Nervenkitzel mit Streichen und Stunts. Unsere Entertainer sorgen für unvergessliche Momente voller Lachen und Staunen.'),
+(289, 93, 8, 2, 'Promi-Imitatoren', 'Genieß beeindruckende Imitationen von Prominenten. Unsere Künstler beherrschen die Kunst der Celebrity-Impersonation und bieten unterhaltsame Darbietungen.'),
+(290, 94, 8, 2, 'Sonstiges', 'Entdecke eine Vielfalt von Dienstleistungen und Unterhaltung. Unser Team steht bereit, um auch deine individuellen Projekte zu realisieren und einzigartige Lösungen zu entwickeln.');
 	
 -- --------------------------------------------------------
 
@@ -736,7 +738,8 @@ CREATE TABLE `contact_support_meta` (
 --
 
 INSERT INTO `contact_support_meta` (`id`, `language_id`, `contact_heading`, `contact_desc`) VALUES
-(1, 1, 'Submit A Support Request', 'If you have any questions, please feel free to contact us, Our customer service center is online 24/7.\r\n\r\n');
+(1, 1, 'Submit A Support Request', 'If you have any questions, please feel free to contact us, Our customer service center is online 24/7.\r\n\r\n'),
+(2, 2, 'Support-Anfrage senden', 'Wenn du Fragen hast, kontaktiere uns gerne. Unser Kundenservice ist rund um die Uhr für dich da.\r\n\r\n');
 
 -- --------------------------------------------------------
 
@@ -1376,7 +1379,26 @@ INSERT INTO `footer_links` (`link_id`, `language_id`, `icon_class`, `link_title`
 (16, 1, 'fa-question-circle', 'How It Works', '/how-it-works', 'about'),
 (17, 1, 'fa-book', 'Knowledge Bank', '/knowledge_bank/', 'about'),
 (18, 1, 'fa-rss', 'Blog', '/blog/', 'about'),
-(19, 1, 'fa fa-comments-o', 'Feedback', '/feedback/', 'about');
+(19, 1, 'fa fa-comments-o', 'Feedback', '/feedback/', 'about'),
+(20, 2, '', 'Grafik & Design', '/categories/graphics-design', 'categories'),
+(21, 2, '', 'Digitales Marketing', '/categories/digital-marketing', 'categories'),
+(22, 2, '', 'Schreiben & Übersetzen', '/categories/writing-translation', 'categories'),
+(23, 2, '', 'Video & Animation', '/categories/video-animation', 'categories'),
+(24, 2, '', 'Musik & Audio', '/categories/music-audio', 'categories'),
+(25, 2, '', 'Programmierung & Technik', '/categories/programming-tech', 'categories'),
+(26, 2, '', 'Business', '/categories/business', 'categories'),
+(27, 2, '', 'Spaß & Lifestyle', '/categories/fun-lifestyle', 'categories'),
+(28, 2, 'fa-file-text-o', 'Allgemeine Geschäftsbedingungen', '/terms_and_conditions', 'about'),
+(29, 2, 'fa-google-plus-official', 'fa-google-plus-official', '#', 'follow'),
+(30, 2, 'fa-twitter', '', '#', 'follow'),
+(31, 2, 'fa-facebook', '', '#', 'follow'),
+(32, 2, 'fa-linkedin', '', '#', 'follow'),
+(33, 2, 'fa-pinterest', '', '#', 'follow'),
+(34, 2, 'fa fa-life-ring', 'Kundensupport', '/customer_support', 'about'),
+(35, 2, 'fa-question-circle', 'Wie es funktioniert', '/how-it-works', 'about'),
+(36, 2, 'fa-book', 'Wissensdatenbank', '/knowledge_bank/', 'about'),
+(37, 2, 'fa-rss', 'Blog', '/blog/', 'about'),
+(38, 2, 'fa fa-comments-o', 'Feedback', '/feedback/', 'about');
 
 -- --------------------------------------------------------
 
@@ -1524,7 +1546,13 @@ INSERT INTO `home_cards` (`card_id`, `language_id`, `card_title`, `card_desc`, `
 (3, 1, 'Voice Talent', 'The Perfect Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0),
 (4, 1, 'Translation', 'Go Global.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0),
 (5, 1, 'Illustration', 'Color Your Dreams', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0),
-(6, 1, 'Photoshop Expert', 'Hire A Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0);
+(6, 1, 'Photoshop Expert', 'Hire A Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0),
+(7, 2, 'Logo-Design', 'Baue deine Marke auf', 'https://www.gigtodo.com/categories/graphics-design/logo-design', '1.jpg', 0),
+(8, 2, 'Social Media', 'Erreiche mehr Kunden', 'https://www.gigtodo.com/categories/digital-marketing/social-media-marketing', '2.jpg', 0),
+(9, 2, 'Sprechertalent', 'Der perfekte Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0),
+(10, 2, 'Übersetzung', 'Werde international.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0),
+(11, 2, 'Illustration', 'Verleih deinen Träumen Farbe', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0),
+(12, 2, 'Photoshop-Experte', 'Engagiere einen Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -1544,7 +1572,8 @@ CREATE TABLE `home_section` (
 --
 
 INSERT INTO `home_section` (`section_id`, `language_id`, `section_heading`, `section_short_heading`) VALUES
-(1, 1, 'DON\'T JUST DREAM, DO.', 'Freelance Services. On Demand.');
+(1, 1, 'DON\'T JUST DREAM, DO.', 'Freelance Services. On Demand.'),
+(2, 2, 'TRÄUM NICHT NUR, LEG LOS.', 'Freelance-Services. Auf Abruf.');
 
 -- --------------------------------------------------------
 
@@ -1683,7 +1712,8 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `title`, `image`, `default_lang`, `direction`, `template_folder`, `isS3`) VALUES
-(1, 'English', 'english.png', 1, 'left', 'en', 0);
+(1, 'English', 'english.png', 1, 'left', 'en', 0),
+(2, 'Deutsch', 'german.png', 0, 'left', 'de', 0);
 
 -- --------------------------------------------------------
 
@@ -2281,7 +2311,10 @@ CREATE TABLE `section_boxes` (
 INSERT INTO `section_boxes` (`box_id`, `language_id`, `box_title`, `box_desc`, `box_image`, `isS3`) VALUES
 (4, 1, 'Your Terms', 'Whatever you need to simplify your to do list, no&lt;br&gt; matter your budget.\r\n', 'time.png', 0),
 (5, 1, 'Your Timeline', 'Find services based on your goals and deadlines,&lt;br&gt; its that simple.', 'desk.png', 0),
-(6, 1, 'Your Safety', 'Your payment is always secure, GigToDo is built to protect your peace of mind.', 'tv.png', 0);
+(6, 1, 'Your Safety', 'Your payment is always secure, GigToDo is built to protect your peace of mind.', 'tv.png', 0),
+(7, 2, 'Deine Bedingungen', 'Was auch immer du brauchst, um deine To-do-Liste zu vereinfachen&lt;br&gt; ganz gleich, welches Budget du hast.', 'time.png', 0),
+(8, 2, 'Dein Zeitplan', 'Finde Dienstleistungen passend zu deinen Zielen und Deadlines&lt;br&gt; so einfach ist das.', 'desk.png', 0),
+(9, 2, 'Deine Sicherheit', 'Deine Zahlung ist immer sicher, für ein gutes Gefühl bei jeder Bestellung.', 'tv.png', 0);
 
 -- --------------------------------------------------------
 
@@ -2405,7 +2438,11 @@ INSERT INTO `seller_levels_meta` (`id`, `language_id`, `level_id`, `title`) VALU
 (1, 1, 1, 'New Seller'),
 (2, 1, 2, 'Level One'),
 (3, 1, 3, 'Level Two'),
-(4, 1, 4, 'Top Rated A');
+(4, 1, 4, 'Top Rated A'),
+(5, 2, 1, 'Neuer Anbieter'),
+(6, 2, 2, 'Level Eins'),
+(7, 2, 3, 'Level Zwei'),
+(8, 2, 4, 'Top Bewertet A');
 
 -- --------------------------------------------------------
 
@@ -2711,7 +2748,9 @@ CREATE TABLE `terms` (
 
 INSERT INTO `terms` (`term_id`, `language_id`, `term_title`, `term_link`, `term_description`) VALUES
 (1, 1, 'Terms And Conditions', 'Legal-Notice', '\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</p><p><br></p><p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p><p><br></p><p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p><p><br></p><p>The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>\r\n\r\n\r\n\r\n\n'),
-(2, 1, 'Refunds Policy', 'refund', '\n<p><span style=\"color: rgb(0, 0, 0);\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"color: rgb(0, 0, 0);\">Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"color: rgb(0, 0, 0);\">Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</span><br></p>\r\n\r\n\r\n\n');
+(2, 1, 'Refunds Policy', 'refund', '\n<p><span style=\"color: rgb(0, 0, 0);\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"color: rgb(0, 0, 0);\">Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"color: rgb(0, 0, 0);\">Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</span><br></p>\r\n\r\n\r\n\n'),
+(3, 2, 'Allgemeine Geschäftsbedingungen', 'AGB', '\nEs ist eine seit langem etablierte Tatsache, dass ein Leser vom lesbaren Inhalt einer Seite abgelenkt wird, wenn er deren Layout betrachtet. Der Sinn der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Buchstabenverteilung aufweist, im Gegensatz zu „Hier Text, hier Text“, wodurch es wie lesbarer, echter Text wirkt.<p><br></p><p>Viele Desktop-Publishing-Programme und Webseiten-Editoren verwenden Lorem Ipsum inzwischen als Standard-Blindtext, und eine Suche nach „lorem ipsum“ fördert zahlreiche Websites zutage, die sich noch im Aufbau befinden. Im Laufe der Jahre haben sich verschiedene Versionen entwickelt, teils durch Zufall, teils absichtlich. Warum verwenden wir es? Es ist eine seit langem etablierte Tatsache, dass ein Leser vom lesbaren Inhalt einer Seite abgelenkt wird, wenn er deren Layout betrachtet.</p><p><br></p><p>Woher kommt es? Entgegen der landläufigen Meinung ist Lorem Ipsum kein reiner Zufallstext. Es hat seine Wurzeln in einem Stück klassischer lateinischer Literatur aus dem Jahr 45 v. Chr. und ist damit über 2000 Jahre alt. Richard McClintock, ein Lateinprofessor am Hampden-Sydney College in Virginia, untersuchte eines der weniger gebräuchlichen lateinischen Wörter, consectetur, aus einer Lorem-Ipsum-Passage und entdeckte bei der Recherche nach dessen Verwendung in der klassischen Literatur die zweifelsfreie Quelle: die Abschnitte 1.10.32 und 1.10.33 von „de Finibus Bonorum et Malorum“ (Von den Grenzen des Guten und Bösen) von Cicero, geschrieben im Jahr 45 v. Chr. Dieses Buch ist eine Abhandlung über die Ethiktheorie und war während der Renaissance sehr beliebt.</p>\r\n\r\n\r\n\r\n\n'),
+(4, 2, 'Rückerstattungsrichtlinie', 'rueckerstattung', '\n<p><span style=\"color: rgb(0, 0, 0);\">Es ist eine seit langem etablierte Tatsache, dass ein Leser vom lesbaren Inhalt einer Seite abgelenkt wird, wenn er deren Layout betrachtet. Der Sinn der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Buchstabenverteilung aufweist, im Gegensatz zu „Hier Text, hier Text“, wodurch es wie lesbarer, echter Text wirkt.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Viele Desktop-Publishing-Programme und Webseiten-Editoren verwenden Lorem Ipsum inzwischen als Standard-Blindtext, und eine Suche nach „lorem ipsum“ fördert zahlreiche Websites zutage, die sich noch im Aufbau befinden.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Warum verwenden wir es? Es ist eine seit langem etablierte Tatsache, dass ein Leser vom lesbaren Inhalt einer Seite abgelenkt wird, wenn er deren Layout betrachtet.</span></p><p><span style=\"color: rgb(0, 0, 0);\">Woher kommt es? Entgegen der landläufigen Meinung ist Lorem Ipsum kein reiner Zufallstext. Es hat seine Wurzeln in einem Stück klassischer lateinischer Literatur aus dem Jahr 45 v. Chr. und ist damit über 2000 Jahre alt.</span><br></p>\r\n\r\n\r\n\n');
 
 -- --------------------------------------------------------
 
@@ -3488,7 +3527,7 @@ ALTER TABLE `contact_support`
 -- AUTO_INCREMENT for table `contact_support_meta`
 --
 ALTER TABLE `contact_support_meta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `countries`
@@ -3560,7 +3599,7 @@ ALTER TABLE `featured_proposals`
 -- AUTO_INCREMENT for table `footer_links`
 --
 ALTER TABLE `footer_links`
-  MODIFY `link_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `link_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `general_settings`
@@ -3578,13 +3617,13 @@ ALTER TABLE `hide_seller_messages`
 -- AUTO_INCREMENT for table `home_cards`
 --
 ALTER TABLE `home_cards`
-  MODIFY `card_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `card_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `home_section`
 --
 ALTER TABLE `home_section`
-  MODIFY `section_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `section_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `home_section_slider`
@@ -3626,7 +3665,7 @@ ALTER TABLE `knowledge_bank`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `languages_relation`
@@ -3824,7 +3863,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `section_boxes`
 --
 ALTER TABLE `section_boxes`
-  MODIFY `box_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `box_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sellers`
@@ -3854,7 +3893,7 @@ ALTER TABLE `seller_levels`
 -- AUTO_INCREMENT for table `seller_levels_meta`
 --
 ALTER TABLE `seller_levels_meta`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `seller_payment_settings`
@@ -3950,7 +3989,7 @@ ALTER TABLE `temp_orders`
 -- AUTO_INCREMENT for table `terms`
 --
 ALTER TABLE `terms`
-  MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `top_proposals`

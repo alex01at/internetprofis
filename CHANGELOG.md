@@ -8,6 +8,7 @@ All notable changes to this project are documented here.
 
 - Added database migration support to the application updater. SQL files placed in `migrations/` are shown for review and applied only on explicit confirmation, tracked in a `schema_migrations` table so each one runs once. Same statement blocklist as the plugin installer.
 - `dashboard.php` now shows the actual deployed release instead of a manually maintained value, with an update indicator when a newer release is available.
+- Added German as a selectable site language, with translated categories, subcategories, terms, support text, seller level badges, footer links, and homepage sections. Included a migration for sites that already have data.
 
 ### Changed
 
