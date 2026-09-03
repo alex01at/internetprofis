@@ -9,6 +9,7 @@ All notable changes to this project are documented here.
 - Added database migration support to the application updater. SQL files placed in `migrations/` are shown for review and applied only on explicit confirmation, tracked in a `schema_migrations` table so each one runs once. Same statement blocklist as the plugin installer.
 - `dashboard.php` now shows the actual deployed release instead of a manually maintained value, with an update indicator when a newer release is available.
 - Added German as a selectable site language, with translated categories, subcategories, terms, support text, seller level badges, footer links, and homepage sections. Included a migration for sites that already have data.
+- Added a local test suite (`tests/`) that runs without a database: PHP syntax check, `$lang[]` key consistency check, and two checks for recurring bug patterns (PHP tags embedded inside string literals, stray escaped `$lang` references). Wired into GitHub Actions to run on every push and pull request.
 
 ### Changed
 
@@ -28,6 +29,9 @@ All notable changes to this project are documented here.
 - Fixed missing icons across 25 pages (checkout, cart, login, dashboard, knowledge bank, and others) caused by a missing Font Awesome stylesheet link.
 - Translated several hardcoded English strings that ignored the site language (knowledge bank empty state, dashboard greeting, mobile purchase form, feedback empty state), and translated the referral/affiliate text, which had never been localized. Also fixed the "Knowledge Bank" page title showing the old script's brand name, and a broken link in the referral text caused by invalid syntax inside the translation string.
 - Completed a site-wide sweep of hardcoded English strings across the frontend (checkout, orders, proposals, conversations, requests, payments, tickets, feedback, blog): several hundred strings across roughly 90 files now go through the site's language system instead of always showing English. Also translated the German transactional email templates, which had been an unmodified copy of the English ones.
+- Extended the translation sweep to strings the initial pass missed: text containing a colon, and strings inside `alert()`/`confirm()`/`swal()`/`.text()` calls and PHP validator message arrays. Uncovered and fixed two long-standing bugs along the way: the mobile navigation menu referenced undefined `$lang[]` keys and showed blank labels sitewide, and two strings in the language files themselves had an unevaluated `<?= ?>` baked in, displaying literally instead of the site name/URL.
+- Fixed the order resolution center's "order does not meet requirements" option, which was missing the "not" in both languages and said the opposite of what it meant.
+- Removed 20 duplicate and 13 unused key definitions from the language files.
 
 ## 2026-08-27
 
