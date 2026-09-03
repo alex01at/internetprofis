@@ -37,8 +37,8 @@ $all_featured_cats = $get_categories->fetchAll();
       <div class="col-md-7 col-lg-6 mt-5 text-center text-md-start">
         <h1><?= htmlspecialchars($section_heading); ?></h1>
         <p class="mt-3 mb-4"><?= htmlspecialchars($section_short_heading); ?></p>
-        <a class="btn btn-lg btn-danger hover-top btn-glow" href="how-it-works-de">
-            <i class="fa fa-question-circle mr-1"></i> Wie funktioniert es?
+        <a class="btn btn-lg btn-danger hover-top btn-glow" href="<?= ($siteLanguage == 2 ? 'how-it-works-de' : 'how-it-works'); ?>">
+            <i class="fa fa-question-circle mr-1"></i> <?= $lang['titles']['how_it_works']; ?>
         </a>
       </div>
     </div>
