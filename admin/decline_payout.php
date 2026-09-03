@@ -10,26 +10,8 @@ echo "<script>window.open('login.php','_self');</script>";
 
 ?>
 
-<div class="breadcrumbs">
-  <div class="col-sm-4">
-  <div class="page-header float-left">
-    <div class="page-title">
-      <h1><i class="menu-icon fa fa-table"></i> Payouts</h1>
-    </div>
-  </div>
-  </div>
-  <div class="col-sm-8">
-    <div class="page-header float-right">
-      <div class="page-title">
-        <ol class="breadcrumb text-right">
-        <li class="active">Decline Payout</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-table"></i> Decline Payout</h4>
 
 <div class="row"><!--- 2 row Starts --->
 

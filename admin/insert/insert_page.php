@@ -47,17 +47,8 @@ function sanitizeUrl($string, $space="-") {
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="../js/summernote.js"></script>
 
-<div class="breadcrumbs">
-    <div class="col-sm-4">
-        <div class="page-header float-left">
-            <div class="page-title">
-                <h1><i class="fa fa-file-text-o"></i> Pages</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="main-container">
+    <h4 class="mb-4"><i class="fa fa-file-text-o"></i> Add Page</h4>
     <div class="row">
         <div class="col-lg-12">
             <div class="card border-0 shadow-sm">

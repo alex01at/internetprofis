@@ -5,10 +5,7 @@ if(!isset($_SESSION['admin_email'])){
 }else{
 ?>
 <div class="main-container">
-    <div class="breadcrumbs">
-        <div class="col-sm-8">
-        </div>
-    </div>
+    <h4 class="mb-4"><i class="fa fa-table"></i> Add Category</h4>
     <div class="row">
         <!--- 2 row Starts --->
         <div class="col-lg-12">

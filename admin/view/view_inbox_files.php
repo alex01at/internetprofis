@@ -23,24 +23,8 @@ if (!isset($_GET['page']) || intval($_GET['page']) <= 0) {
 $start = ($page - 1) * $limit;
 
 ?>
-    <!-- <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1><i class="menu-icon fa fa-file"></i> Order Files</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-            <select id="fileSelect" class="form-control mt-2">
-            <option data-url="index?view_inbox_files" selected="">Local Server</option>
-             <option data-url="index?view_s3_inbox_files">AWS S3</option> 
-            </select>
-            </div>
-        </div>
-    </div> -->
     <div class="main-container">
+    <h4 class="mb-4"><i class="fa fa-file"></i> Inbox Files</h4>
 <div class="row"><!--- 2 row Starts --->
     <?php
     for($i = $start; $i < count($files_array); $i++){

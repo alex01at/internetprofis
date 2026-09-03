@@ -45,25 +45,8 @@ if(!isset($_SESSION['admin_email'])){
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="../js/summernote.js"></script>
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1><i class="menu-icon fa fa-book"></i> Knowledge Bank</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Insert Article</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-    </div>
 <div class="main-container">
+<h4 class="mb-4"><i class="fa fa-book"></i> Edit Article</h4>
 <div class="row">
   <div class="col-md-12">
   <?php 

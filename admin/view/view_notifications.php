@@ -4,17 +4,8 @@ if(!isset($_SESSION['admin_email']) & !isset($_SESSION['helper_email'])){
 echo "<script>window.open('login.php','_self');</script>";
 }else{
 ?>
-<div class="breadcrumbs">
-<div class="col-sm-4">
-<div class="page-header float-left">
-    <div class="page-title">
-        <h1><i class="menu-icon fa fa-bell"></i> Alerts </h1>
-    </div>
-</div>
-</div>
-</div>
-
 <div class="main-container">
+<h4 class="mb-4"><i class="fa fa-bell"></i> Alerts</h4>
 <div class="row"><!--- 2 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
 <div class="card"><!--- card Starts --->

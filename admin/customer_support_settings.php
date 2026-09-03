@@ -22,28 +22,8 @@ $contact_desc = $row_meta->contact_desc;
 ?>
 
 
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1><i class="menu-icon fa fa-phone-square"></i> Support Settings</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Customer Support Settings</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-    
-    </div>
-
-
-<div class="container">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-phone-square"></i> Customer Support Settings</h4>
 
     <div class="row">
         <!--- 2 row Starts --->

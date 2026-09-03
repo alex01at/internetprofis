@@ -12,16 +12,8 @@ $folder = $plugin->folder;
 $current_version = $plugin->version;
 
 ?>
-<div class="breadcrumbs">
-  <div class="col-sm-6">
-    <div class="page-header float-left">
-      <div class="page-title">
-        <h1><i class="menu-icon fa fa-cog"></i> Update Plugin / <?= $pluginName; ?> </h1>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container pt-3">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-cog"></i> Update Plugin / <?= $pluginName; ?></h4>
 <div class="row mb-4"><!--- 2 row Starts --->
   <div class="col-lg-12"><!--- col-lg-12 Starts --->
   <div class="card mb-5"><!--- card mb-5 Starts --->

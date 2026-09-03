@@ -4,18 +4,8 @@ if(!isset($_SESSION['admin_email'])){
 echo "<script>window.open('login','_self');</script>";
 }else{
 ?>
-<div class="breadcrumbs">
-    <div class="col-sm-4">
-        <div class="page-header float-left">
-            <div class="page-title">
-                <h1><i class="menu-icon fa fa-flash"></i> Seller levels </h1>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-8">
-    </div>
-</div>
 <div class="main-container">
+    <h4 class="mb-4"><i class="fa fa-flash"></i> Seller Levels</h4>
     <div class="row">
         <!--- 2 row Starts --->
         <div class="col-lg-12">

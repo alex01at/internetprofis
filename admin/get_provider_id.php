@@ -20,26 +20,8 @@ $method = @$input->post('method');
 
 ?>
 
-  <div class="breadcrumbs">
-      <div class="col-sm-4">
-          <div class="page-header float-left">
-            <div class="page-title">
-              <h1><i class="menu-icon fa fa-cog"></i> Settings / Payment Settings</h1>
-            </div>
-          </div>
-      </div>
-      <div class="col-sm-8">
-          <div class="page-header float-right">
-              <div class="page-title">
-                  <ol class="breadcrumb text-right">
-                      <li class="active">View Dusupay Provider Ids</li>
-                  </ol>
-              </div>
-          </div>
-      </div>
-  </div>
-
-<div class="container pt-3">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-cog"></i> View Dusupay Provider Ids</h4>
 
    <div class="row"><!--- 2 row Starts --->
 

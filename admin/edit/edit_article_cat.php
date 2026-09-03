@@ -32,28 +32,8 @@ echo "<script>window.open('login','_self');</script>";
 
 ?>
 
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1><i class="menu-icon fa fa-book"></i> Article Category</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Edit Article Category</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-    </div>
-
-
 <div class="main-container">
+<h4 class="mb-4"><i class="fa fa-book"></i> Edit Article Category</h4>
 
 
     <div class="row">

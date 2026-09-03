@@ -11,20 +11,8 @@ echo "<script>window.open('login','_self');</script>";
 
 ?>
 
-<div class="breadcrumbs">
-
-<div class="col-sm-4">
-<div class="page-header float-left">
-<div class="page-title">
-<h1><i class="menu-icon fa fa-flag"></i> Reports / Proposals Reports </h1>
-</div>
-</div>
-</div>
-
-</div>
-
-
-<div class="container">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-flag"></i> Proposal Reports</h4>
 
 <div class="row"><!--- 3 row Starts --->
 

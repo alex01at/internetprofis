@@ -4,26 +4,8 @@ if(!isset($_SESSION['admin_email'])){
 echo "<script>window.open('login','_self');</script>";
 }else{
 ?>
-<div class="breadcrumbs">
-  <div class="col-sm-4">
-    <div class="page-header float-left">
-    <div class="page-title">
-      <h1><i class="menu-icon fa fa-universal-access"></i> Completed Transactions</h1>
-    </div>
-    </div>
-  </div>
-  <div class="col-sm-8">
-    <div class="page-header float-right">
-    <div class="page-title">
-    <ol class="breadcrumb text-right">
-        <li class="active">All Completed Transactions</li>
-    </ol>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-universal-access"></i> Completed Transactions</h4>
 <div class="row"><!--- 2 row Starts --->
 <div class="col-lg-12">
   <div class="card">

@@ -16,27 +16,8 @@ echo "<script>window.open('login','_self');</script>";
 <link rel="stylesheet" href="assets/css/css-stars.css">
 
 
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1><i class="menu-icon fa fa-star"></i> Reviews / Insert Review</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Insert Review</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-    
-    </div>
-
 <div class="main-container">
+<h4 class="mb-4"><i class="fa fa-star"></i> Insert Review</h4>
 
     <div class="row">
         <!--- 2 row Starts --->

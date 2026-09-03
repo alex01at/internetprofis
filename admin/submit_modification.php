@@ -26,29 +26,8 @@ $last_update_date = date("F d, Y");
 ?>
 
 
-<div class="breadcrumbs">
-
-<div class="col-sm-4">
-<div class="page-header float-left">
-<div class="page-title">
-<h1><i class="menu-icon fa fa-table"></i> Proposal / Modification Request</h1>
-</div>
-</div>
-</div>
-
-<div class="col-sm-8">
-<div class="page-header float-right">
-<div class="page-title">
-<ol class="breadcrumb text-right">
-<li class="active">Submit Proposal/Service For Modification</li>
-</ol>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="container">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-table"></i> Submit Proposal For Modification</h4>
     
     <div class="row pt-2">
         

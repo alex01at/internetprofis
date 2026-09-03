@@ -5,30 +5,13 @@ if(!isset($_SESSION['admin_email'])){
 }else{
 ?>
 
-<div class="breadcrumbs">
-	<div class="col-sm-4">
-		<div class="page-header float-left">
-		  <div class="page-title">
-		    <h1><i class="menu-icon fa fa-table"></i> Pages</h1>
-		  </div>
-		</div>
-	</div>
-	<div class="col-sm-8">
-		<div class="page-header float-right">
-		   <div class="page-title">
-				<ol class="breadcrumb text-right">
-					<li class="active">
-					   <a href="index?insert_page" class="btn btn-success">
-					   	<i class="fa fa-plus-circle text-white"></i> <span class="text-white">Add Page</span>
-					   </a>
-					</li>
-				</ol>
-		   </div>
-		</div>
-	</div>
-</div>
-
 <div class="main-container"><!--- container Starts --->
+<div class="d-flex justify-content-between align-items-center mb-4">
+	<h4 class="mb-0"><i class="fa fa-table"></i> Pages</h4>
+	<a href="index?insert_page" class="btn btn-success">
+		<i class="fa fa-plus-circle text-white"></i> <span class="text-white">Add Page</span>
+	</a>
+</div>
 <div class="row"><!--- 2 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
 <div class="card"><!--- card Starts --->
