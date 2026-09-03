@@ -73,13 +73,13 @@ $login_seller_id = $row_login_seller->seller_id;
 
         if($reason == "order"){
           $text = "Proposal/Service purchased with <b>".ucwords(str_replace("_"," ",$method))."</b>";
-          $link = "(<a target='_blank' href='order_details?order_id=$order_id' class='text-success'>View Order</a>)";
+          $link = "(<a target='_blank' href='order_details?order_id=$order_id' class='text-success'>".$lang['button']['view_order']."</a>)";
         }elseif($reason == "order_tip"){
           $text = "Order Tip Payment with <b>".ucwords(str_replace("_"," ",$method))."</b>";
-          $link = "(<a target='_blank' href='order_details?order_id=$order_id' class='text-success'>View Order</a>)";
+          $link = "(<a target='_blank' href='order_details?order_id=$order_id' class='text-success'>".$lang['button']['view_order']."</a>)";
         }elseif($reason == "featured_listing"){
           $text = "Featured Listing Payment with <b>".ucwords(str_replace("_"," ",$method))."</b>";
-          $link = "(<a target='_blank' href='proposals/$login_seller_user_name/$proposal_url' class='text-success'>View Proposal</a>)";
+          $link = "(<a target='_blank' href='proposals/$login_seller_user_name/$proposal_url' class='text-success'>".$lang['order_details']['view_proposal']."</a>)";
         }
 
         ?>
@@ -88,12 +88,12 @@ $login_seller_id = $row_login_seller->seller_id;
           <td> 
             <?php if($method == "featured_proposal_declined"){ ?>
             
-              Your featured proposal is declined so its feature listing fee is refunded to your shopping balance.
-              (<a href="<?= $site_url; ?>/view_proposals.php" class="text-success"> View Proposals </a>)
-            
+              <?= $lang['purchases']['featured_proposal_declined']; ?>
+              (<a href="<?= $site_url; ?>/view_proposals.php" class="text-success"> <?= $lang['titles']['view_proposals']; ?> </a>)
+
             <?php }elseif($method == "order_cancellation"){ ?>
-            
-              Canceled order payment refunded to your shopping  balance
+
+              <?= $lang['purchases']['order_cancellation_refunded']; ?>
             
             <?php }else{ ?>
               

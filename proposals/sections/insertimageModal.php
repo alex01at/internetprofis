@@ -22,7 +22,7 @@
 
         <input type="hidden" name="img_type" value="">
 
-        <button class="btn btn-success crop_image">Crop Image</button>
+        <button class="btn btn-success crop_image"><?= $lang['button']['crop_image']; ?></button>
 
         <button type="button" class="btn btn-default" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 
