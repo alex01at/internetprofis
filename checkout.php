@@ -481,7 +481,7 @@ if(isset($_POST['code'])){
 					<h6><?= $lang['order_details']['quantity']; ?>: <span class="float-right"><?= $proposal_qty; ?></span></h6>
 					<?php if(isset($_SESSION['c_proposal_minutes'])){ ?>
 					<hr>
-					<h6><?= $lang['proposal_video_call'];?>: <span class="float-right"><?= $_SESSION['c_proposal_minutes']; ?> Minutes</span></h6>
+					<h6><?= $lang['proposal_video_call'];?>: <span class="float-right"><?= $_SESSION['c_proposal_minutes']; ?> <?= $lang['order_details']['minutes']; ?></span></h6>
 					<?php } ?>
 					<?php if($disable_processing_fee == 1) { ?>
 					<hr class="processing-fee">

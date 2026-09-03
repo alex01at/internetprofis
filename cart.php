@@ -150,7 +150,7 @@ if(isset($_GET['remove_proposal'])){
 			</div>
 			<?php
 				if($count_cart == 0){
-					echo "<center><h3 class='pt-5'><i class='fa fa-meh-o'></i> Your cart is empty</h3></center>";
+					echo "<center><h3 class='pt-5'><i class='fa fa-meh-o'></i> ".$lang['cart']['empty']."</h3></center>";
 				}
 			?>
 		</div>

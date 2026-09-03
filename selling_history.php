@@ -164,7 +164,7 @@ $count_orders = $sel_orders->rowCount();
             
       if($count_orders == 0){
                 
-         echo "<center><h3 class='pb-4 pt-4'><i class='fa fa-meh-o'></i> No proposals/services sold at the momment.</h3></center>";
+         echo "<center><h3 class='pb-4 pt-4'><i class='fa fa-meh-o'></i> ".$lang['history']['no_proposals_sold']."</h3></center>";
       }
             
    ?>

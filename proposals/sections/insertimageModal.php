@@ -6,7 +6,7 @@
       
       <div class="modal-header">
        
-       Crop & Insert Image <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <?= $lang['crop_insert_image']; ?> <button type="button" class="close" data-dismiss="modal">&times;</button>
 
       </div>
 

@@ -123,17 +123,16 @@ if($count_order != 0){
          $data = [];
          $data['template'] = "dusupay_order";
          $data['to'] = $buyer_email;
-         $data['subject'] = "$site_name: You Payment Currency Is Different.";
+         $data['subject'] = "$site_name: ".$lang['dusupay']['currency_different_subject'];
          $data['user_name'] = $buyer_user_name;
-         $data['message'] = '
-         Your dusupay payment is currently on hold.<br />
-         Reason: Order currency is different from the your sent payment currency.
-         <br/> Order Currency is 
+         $data['message'] = $lang['dusupay']['payment_on_hold'].'<br />
+         '.$lang['dusupay']['currency_mismatch_reason'].'
+         <br/> '.$lang['dusupay']['order_currency_is'].'
          <strong>'.$currency.'
-         </strong> while the your sent payment currency is 
+         </strong> '.$lang['dusupay']['while_sent_currency_is'].'
          <strong>'.$ipn->request_currency.' </strong><br />
-         <strong>Transaction ID:</strong> '.$ipn->id.' | 
-         <strong>Payment Reference:</strong>'.$ipn->internal_reference;
+         <strong>'.$lang['dusupay']['transaction_id'].'</strong> '.$ipn->id.' |
+         <strong>'.$lang['dusupay']['payment_reference'].'</strong>'.$ipn->internal_reference;
 
          send_mail($data);
 

@@ -110,7 +110,7 @@
     <div class="col-md-8">
       <select name="seller_language" class="form-control" required="">
         <?php if($login_seller_language == 0){ ?>
-        <option class="hidden" value=""> Select Language </option>
+        <option class="hidden" value=""> <?= $lang['label']['select_language']; ?> </option>
         <?php 
           $get_languages = $db->select("seller_languages");
           while($row_languages = $get_languages->fetch()){

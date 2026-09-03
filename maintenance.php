@@ -29,7 +29,7 @@ if($enable_maintenance_mode == "no"){
 
 <head>
 
-    <title><?= $site_name; ?> In Maintenance Mode</title>
+    <title><?= $site_name; ?> <?= $lang['in_maintenance_mode']; ?></title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="fonts/roboto.css" rel="stylesheet">

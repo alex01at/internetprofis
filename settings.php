@@ -136,7 +136,7 @@ if($lang_dir == "right"){
   <div class="modal-dialog modal-sm">
   <div class="modal-content">
     <div class="modal-header">
-     Crop & Insert Image <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <?= $lang['crop_insert_image']; ?> <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
     <div class="modal-body">
       <div id="image_demo" style="width:100% !important;"></div>

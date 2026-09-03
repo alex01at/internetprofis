@@ -49,7 +49,7 @@ require_once("includes/db.php");
 
    <div class="container mt-4 mb-4 pb-4"><!-- container mt-5 Starts -->
 
-     <h2 class="text-center mb-4"> <?= $site_name; ?> Categories </h2>
+     <h2 class="text-center mb-4"> <?= $site_name; ?> <?= $lang['sidebar']['categories']; ?> </h2>
 
      <div class="row flex-wrap"><!-- row flex-wrap Starts -->
 

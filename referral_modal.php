@@ -25,7 +25,7 @@ $proposal_referral_code = $row_proposal->proposal_referral_code;
 	
 <div class="modal-header">
 
-Referral Link <button class="close" data-dismiss="modal"> <span> &times;</span></button>
+<?= $lang['referral_link']; ?> <button class="close" data-dismiss="modal"> <span> &times;</span></button>
 
 </div>
 
