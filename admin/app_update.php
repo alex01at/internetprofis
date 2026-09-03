@@ -211,16 +211,8 @@ if(isset($_POST['apply_update']) && $deployedSha && !empty($_POST['target_sha'])
 }
 
 ?>
-<div class="breadcrumbs">
-<div class="col-sm-6">
-  <div class="page-header float-left">
-  <div class="page-title">
-      <h1><i class="menu-icon fa fa-cog"></i> Settings / Application Updater</h1>
-  </div>
-  </div>
-</div>
-</div>
-<div class="container pt-3">
+<div class="main-container">
+<h4 class="mb-4"><i class="fa fa-cog"></i> Application Updater</h4>
 <div class="row"><!--- 2 row Starts --->
   <div class="col-lg-12"><!--- col-lg-12 Starts --->
     <div class="card mb-5"><!--- card mb-5 Starts --->
