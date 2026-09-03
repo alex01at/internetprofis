@@ -305,7 +305,7 @@ if($seller_verification != "ok"){
 					<hr>
 					<?php if($current_balance >= $sub_total){ ?>
 					<form action="shopping_balance" method="post" id="shopping-balance-form">
-					<button type="submit" name="cart_submit_order" class="btn btn-lg btn-success btn-block" onclick="return confirm('Do you really want to order proposal/services from your shopping balance?')">
+					<button type="submit" name="cart_submit_order" class="btn btn-lg btn-success btn-block" onclick="return confirm(<?= json_encode($lang['confirm']['order_from_shopping_balance']); ?>)">
 					<?= $lang['button']['pay_with_shopping']; ?>
 					</button>
 					</form>

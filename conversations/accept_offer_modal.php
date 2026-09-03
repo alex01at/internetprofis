@@ -92,14 +92,14 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 				<div class="order-details">
 					<div class="request-div">
 						<h4 class="mb-3">
-							THIS ORDER IS RELATED TO THE FOLLOWING OFFER:
+							<?= $lang['order_conversations']['order_related_to_offer']; ?>
 							<span class="total-price float-right d-sm-block d-none"> <?= showPrice($amount); ?> </span>
 						</h4>
 						<p> "<?= $description; ?>" </p>
-						<p> <b> Proposal: </b> <?= $proposal_title; ?> </p>
-						<p> <b> Price: </b> <?= showPrice($amount); ?> </p>
-						<p class="processing-fee"> <b> Processing Fee: </b> <?= showPrice($processing_fee); ?> </p>
-						<p> <b> Delivery Time: </b> <?= $delivery_time; ?> </p>
+						<p> <b> <?= $lang['th']['proposal']; ?>: </b> <?= $proposal_title; ?> </p>
+						<p> <b> <?= $lang['proposal']['price']; ?>: </b> <?= showPrice($amount); ?> </p>
+						<p class="processing-fee"> <b> <?= $lang['order_details']['processing_fee']; ?>: </b> <?= showPrice($processing_fee); ?> </p>
+						<p> <b> <?= $lang['label']['delivery_time']; ?>: </b> <?= $delivery_time; ?> </p>
 					</div>
 				</div>
 				<div class="payment-options-list">
@@ -230,7 +230,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 			<button class="btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?> </button>
             <?php if($current_balance >= $amount){ ?>
 		    <form action="../shopping_balance" method="post" id="shopping-balance-form">
-				  <button class="btn btn-success" type="submit" name="message_offer_submit_order" onclick="return confirm('Are you sure you want to pay the featured listing fee with your shopping balance ?')">
+				  <button class="btn btn-success" type="submit" name="message_offer_submit_order" onclick="return confirm(<?= json_encode($lang['confirm']['pay_featured_listing_with_shopping_balance']); ?>)">
 					 <?= $lang['button']['pay_with_shopping']; ?>
 				  </button>
 			   </form>

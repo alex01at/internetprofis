@@ -48,7 +48,7 @@ $insert_notification = $db->insert("admin_notifications",array("seller_id" => $l
 
 if($insert){
 send_report_email("message","No Author",$message_group_id,$date);
-echo "<script>alert('Your Report Has Been Successfully Submitted.')</script>";
+echo "<script>alert(".json_encode($lang['report_modal']['report_submitted']).")</script>";
 echo "<script>window.open('inbox?single_message_id=$message_group_id','_self')</script>";
 }
 }

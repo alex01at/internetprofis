@@ -190,7 +190,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
         <button class="closeExtendTimePayment btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?> </button>
         <?php if($current_balance >= $amount){ ?>
         <form action="orderIncludes/charge/shoppingBalance" method="post" id="shopping-balance-form">
-          <button class="btn btn-success" type="submit" name="orderTip" onclick="return confirm('Are you sure you want to pay for this with your shopping balance?')">
+          <button class="btn btn-success" type="submit" name="orderTip" onclick="return confirm(<?= json_encode($lang['confirm']['pay_with_shopping_balance']); ?>)">
           <?= $lang['button']['pay_with_shopping']; ?>
           </button>
         </form>

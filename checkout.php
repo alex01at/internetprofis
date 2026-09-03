@@ -737,7 +737,7 @@ $('#mercadopago').click(function(){
 	$count_cart = $db->count("cart",array("seller_id"=>$login_seller_id,"proposal_id"=>$proposal_id));
 	if($count_cart == 1){
 		echo "<script>
-		alert('This proposal/service is already in your cart.');
+		alert(".json_encode($lang['warning']['already_in_cart']).");
 		window.open('proposals/$seller_user_name/$proposal_url','_self');
 		</script>";
 	}else{

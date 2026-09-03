@@ -62,7 +62,7 @@
     $delete_id = $input->get('delete_notification');
     $delete_notification = $db->delete("notifications",['notification_id' => $delete_id,"receiver_id" => $login_seller_id]); 
     if($delete_notification->rowCount() == 1){
-      echo "<script>alert('One notification has been deleted.')</script>";
+      echo "<script>alert(".json_encode($lang['alert']['notification_deleted']).")</script>";
       echo "<script>window.open('dashboard','_self')</script>";
     }else{ 
       echo "<script>window.open('dashboard','_self')</script>"; 

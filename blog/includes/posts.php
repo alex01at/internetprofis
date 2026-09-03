@@ -59,10 +59,10 @@ $cat_name = !empty($row_cat->cat_name) ? $row_cat->cat_name:'' ;
 	   <div class="col-lg-8 col-md-12 <?=($lang_dir == "right" ? 'order-lg-1 order-md-2':'')?>">
 		   <h5 class="mt-0 mb-2 <?= $textRight; ?>"><?= $post_meta->title; ?></h5>
 		   <p class="small mb-1 <?= $textRight; ?>">
-		   	<span class="text-muted">Published on:</span> <?= $post->date_time; ?> | 
-		   	<span class="text-muted">Category:</span> 
+		   	<span class="text-muted"><?= $lang['blog']['published_on']; ?></span> <?= $post->date_time; ?> | 
+		   	<span class="text-muted"><?= $lang['blog']['category']; ?></span> 
 		   	<a href="index?cat_id=<?= $post->cat_id; ?>"><?= $cat_name; ?></a> | 
-		   	<span class="text-muted">Author:</span> 
+		   	<span class="text-muted"><?= $lang['blog']['author']; ?></span> 
 		   	<a href="#"><?= $post_meta->author; ?></a> 
 		   </p>
 		   <p class="post-content <?= $textRight; ?>"><?= $content; ?>...</p>

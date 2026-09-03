@@ -1,7 +1,7 @@
 
 <?php if($current_balance >= $sub_total){ ?>
 <form action="shopping_balance" method="post" id="shopping-balance-form">
-<button class="btn btn-lg btn-success btn-block" type="submit" name="checkout_submit_order" onclick="return confirm('Are you sure you want to pay for this with your shopping balance?')">
+<button class="btn btn-lg btn-success btn-block" type="submit" name="checkout_submit_order" onclick="return confirm(<?= json_encode($lang['confirm']['pay_with_shopping_balance']); ?>)">
 	<?= $lang['button']['pay_with_shopping']; ?>
 </button>
 </form>

@@ -110,8 +110,8 @@
 			  </div>
 			<div class="card-body p-2"><!--- card-body Starts --->
 			<p> <?= $description; ?> </p>
-			<p class="d-block d-sm-none"> <b> Price / Amount : </b> <?= showPrice($amount); ?> </p>
-			<p> <b> <i class="fa fa-calendar"></i> Delivery Time : </b> <?= $delivery_time; ?> </p>
+			<p class="d-block d-sm-none"> <b> <?= $lang['order_conversations']['price_amount']; ?> </b> <?= showPrice($amount); ?> </p>
+			<p> <b> <i class="fa fa-calendar"></i> <?= $lang['label']['delivery_time']; ?> : </b> <?= $delivery_time; ?> </p>
 			<?php if($offer_status == "active"){ ?>
 			<?php if($login_seller_id == $sender_id){ ?>
 			<?php }else{ ?>

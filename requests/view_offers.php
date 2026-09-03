@@ -127,8 +127,8 @@ $count_offers = $get_offers->rowCount();
 								<?= $description; ?>
 							</p>
 							<p class="offer-p">
-								<i class="fa fa-money"></i> Offer Budget: <span class="font-weight-normal text-muted"> <?= showPrice($amount); ?> </span><br>
-								<i class="fa fa-calendar"></i> Offer Duration: <span class="font-weight-normal text-muted"> <?= $delivery_time; ?> </span>
+								<i class="fa fa-money"></i> <?= $lang['requests']['offer_budget']; ?>: <span class="font-weight-normal text-muted"> <?= showPrice($amount); ?> </span><br>
+								<i class="fa fa-calendar"></i> <?= $lang['requests']['offer_duration']; ?>: <span class="font-weight-normal text-muted"> <?= $delivery_time; ?> </span>
 							</p>
 						</div>
 						<div class="col-md-3 responsive-border pt-md-0 pt-3">

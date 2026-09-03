@@ -1256,5 +1256,22 @@ $lang['validation']['new_password_again_required'] = "Wiederholung des neuen Pas
 $lang['warning']['old_password_invalid'] = "Ihr altes Passwort ist ungültig, bitte versuchen Sie es erneut!";
 $lang['warning']['new_password_no_match'] = "Ihr neues Passwort stimmt nicht überein.";
 $lang['alert']['password_updated_relogin'] = "Passwort erfolgreich aktualisiert, melden Sie sich mit Ihrem neuen Passwort an.";
+$lang['blog']['published_on'] = "Veröffentlicht am:";
+$lang['blog']['category'] = "Kategorie:";
+$lang['blog']['author'] = "Autor:";
+$lang['order_conversations']['order_related_to_offer'] = "DIESE BESTELLUNG BEZIEHT SICH AUF FOLGENDES ANGEBOT:";
+$lang['order_conversations']['price_amount'] = "Preis / Betrag :";
+$lang['order_conversations']['total_offer_amount'] = "Gesamtbetrag des Angebots";
+$lang['confirm']['pay_featured_listing_with_shopping_balance'] = "Möchten Sie die Gebühr für die hervorgehobene Anzeige wirklich mit Ihrem Einkaufsguthaben bezahlen?";
+$lang['confirm']['order_from_shopping_balance'] = "Möchten Sie den Auftrag/die Dienstleistung wirklich mit Ihrem Einkaufsguthaben bestellen?";
+$lang['warning']['change_password_link_invalid'] = "Ihr Link zum Ändern des Passworts ist ungültig.";
+$lang['warning']['already_in_cart'] = "Dieser Auftrag/diese Dienstleistung befindet sich bereits in Ihrem Warenkorb.";
+$lang['confirm']['pay_with_shopping_balance'] = "Möchten Sie dies wirklich mit Ihrem Einkaufsguthaben bezahlen?";
+$lang['alert']['notification_deleted'] = "Eine Benachrichtigung wurde gelöscht.";
+$lang['order_conversations']['order_related_to_request'] = "DIESE BESTELLUNG BEZIEHT SICH AUF FOLGENDE ANFRAGE:";
+$lang['order_conversations']['view_offer'] = "Angebot ansehen";
+$lang['confirm']['pay_for_order_with_shopping_balance'] = "Möchten Sie diese Bestellung wirklich mit Ihrem Einkaufsguthaben bezahlen?";
+$lang['requests']['offer_budget'] = "Angebotsbudget";
+$lang['requests']['offer_duration'] = "Angebotsdauer";
 
 

@@ -102,14 +102,14 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
             <div class="order-details">
                <div class="request-div">
                   <h4>
-                     THIS ORDER IS RELATED TO THE FOLLOWING REQUEST:
+                     <?= $lang['order_conversations']['order_related_to_request']; ?>
                      <span class="btn-close float-right">x</span>
                   </h4>
                   <p>
                      "<?= $request_description; ?>"
                   </p>
                   <span class="arrow">
-                     View Offer  &nbsp; <i class="fa fa-caret-down"></i>
+                     <?= $lang['order_conversations']['view_offer']; ?>  &nbsp; <i class="fa fa-caret-down"></i>
                   </span>
                </div>
                <div class="offer-div"><!-- offer-div Starts -->
@@ -121,7 +121,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
                      <?= $description; ?>
                   </p>
                   <p>
-                  <strong> <i class="fa fa-calendar"></i> Delivery Time: </strong>
+                  <strong> <i class="fa fa-calendar"></i> <?= $lang['label']['delivery_time']; ?>: </strong>
                   <?= $delivery_time; ?>
                   </p>
                </div>
@@ -251,7 +251,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 
             <?php if($current_balance >= $amount){ ?>
                <form action="../shopping_balance" method="post" id="shopping-balance-form">
-                 <button class="btn btn-success" type="submit" name="view_offers_submit_order" onclick="return confirm('Are you sure you want to pay for this order with your shopping balance ?')">
+                 <button class="btn btn-success" type="submit" name="view_offers_submit_order" onclick="return confirm(<?= json_encode($lang['confirm']['pay_for_order_with_shopping_balance']); ?>)">
                   <?= $lang['button']['pay_with_shopping']; ?>
                  </button>
                </form>

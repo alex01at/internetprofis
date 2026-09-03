@@ -102,7 +102,7 @@ $proposal_title = $row_proposals->proposal_title;
 
 <div class="form-group"><!--- form-group Starts --->
 
-<label class="font-weight-bold"> Description :  </label>
+<label class="font-weight-bold"> <?= $lang['label']['description']; ?> :  </label>
 
 <textarea name="description" class="form-control" required=""></textarea>
 
@@ -112,7 +112,7 @@ $proposal_title = $row_proposals->proposal_title;
 
 <div class="form-group"><!--- form-group Starts --->
 
-<label class="font-weight-bold"> Delivery Time :  </label>
+<label class="font-weight-bold"> <?= $lang['label']['delivery_time']; ?> :  </label>
 
 <select class="form-control float-right" name="delivery_time">
 
@@ -139,7 +139,7 @@ echo "<option value='$delivery_proposal_title'> $delivery_proposal_title </optio
 
 <div class="form-group"><!--- form-group Starts --->
 
-<label class="font-weight-bold"> Total Offer Amount :  </label>
+<label class="font-weight-bold"> <?= $lang['order_conversations']['total_offer_amount']; ?> :  </label>
 
 <div class="input-group float-right">
 

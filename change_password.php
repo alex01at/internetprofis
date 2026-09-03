@@ -16,7 +16,7 @@ if($count_seller == 0){
 	// exit();
 	echo "
 		<script>
-			alert('Your Change-Password Link Is Invalid.');
+			alert(".json_encode($lang['warning']['change_password_link_invalid']).");
 			window.open('index.php','_self');
 		</script>
 	";

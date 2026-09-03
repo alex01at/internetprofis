@@ -27,9 +27,9 @@
 		<h1 class="h3"><?= $title; ?></h1>
 		<hr>
 	   <p>
-	   	Published on: <span class="text-muted"><?= $post->date_time; ?></span> | 
-	   	Category: <a href="index?cat_id=<?= $post->cat_id; ?>" class="text-muted"><?= $cat_name; ?></a> |
-	   	Author: <a href="#" class="text-muted"><?= $author; ?></a> 
+	   	<?= $lang['blog']['published_on']; ?> <span class="text-muted"><?= $post->date_time; ?></span> | 
+	   	<?= $lang['blog']['category']; ?> <a href="index?cat_id=<?= $post->cat_id; ?>" class="text-muted"><?= $cat_name; ?></a> |
+	   	<?= $lang['blog']['author']; ?> <a href="#" class="text-muted"><?= $author; ?></a> 
 	   </p>
 
 		<img src="<?= getImageUrl("posts",$post->image); ?>" class="img-fluid mb-3"/>
