@@ -71,7 +71,7 @@
           <div class="form-group">
             <label class="form-control-label font-weight-bold"> <?= $lang['label']['email']; ?> </label>
             <input type="email" class="form-control" name="email" placeholder="<?= $lang['placeholder']['email']; ?>" value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email']; ?>" required="">
-            <?php if(in_array("Email has already been taken. Try logging in instead.", $error_array)) echo "<span style='color:red;'>Email has already been taken. Try logging in instead.</span> <br>"; ?>
+            <?php if(in_array("Email has already been taken. Try logging in instead.", $error_array)) echo "<span style='color:red;'>".$lang['warning']['email_already_taken']."</span> <br>"; ?>
           </div>
 
           <div class="form-group phoneNo">

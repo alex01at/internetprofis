@@ -9,7 +9,7 @@
   <div class="modal-dialog"><!-- modal-dialog Starts -->
     <div class="modal-content"><!-- modal-content Starts -->
       <div class="modal-header"><!-- modal-header Starts -->
-        <h5 class="modal-title"> Add Video In Proposal </h5> 
+        <h5 class="modal-title"> <?= $lang['proposals']['add_video_in_proposal']; ?> </h5>
         <button class="close" data-dismiss="modal"> <span> &times; </span> </button>
       </div><!-- modal-header Ends -->
       <div class="modal-body"><!-- modal-body Starts -->

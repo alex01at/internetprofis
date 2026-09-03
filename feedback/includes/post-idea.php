@@ -50,7 +50,7 @@ if (!isset($_GET['id'])) {
 				<i class="fa fa-plus-circle"></i> <?php if(empty($idea)){ ?> <?=$lang['post_new_idea'];?> <?php }else{ ?> <?=$lang['update_idea']; } ?>
 			</button>
 
-			<a href="index" class="btn btn-danger"><i class="fa fa-times-circle"></i> Cancel</a>
+			<a href="index" class="btn btn-danger"><i class="fa fa-times-circle"></i> <?= $lang['button']['cancel']; ?></a>
 
 			</div><!--- form-group Ends --->
 

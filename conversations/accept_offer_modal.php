@@ -85,7 +85,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5> Select A Payment Method To Order </h5>
+				<h5> <?= $lang['payment']['select_payment_method_to_order']; ?> </h5>
 				<button type="button" class="close" data-dismiss="modal"> <span> &times; </span> </button>
 			</div>
 			<div class="modal-body p-0">

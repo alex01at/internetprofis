@@ -155,14 +155,14 @@ $count_offers = $get_offers->rowCount();
 								<?= $sender_user_name; ?>  <small class="text-success"> <?= $sender_status; ?>  </small>
 								</p>
 								<p class="user-link">
-									<a href="../<?= $sender_user_name; ?>" class="text-success" target="blank"> User Profile </a>
+									<a href="../<?= $sender_user_name; ?>" class="text-success" target="blank"> <?= $lang['requests']['user_profile']; ?> </a>
 								</p>
 							</div>
 							<a href="../conversations/message?seller_id=<?= $sender_id; ?>&offer_id=<?= $offer_id; ?>" class="btn btn-sm btn-success rounded-0">
-								Contact Now
+								<?= $lang['requests']['contact_now']; ?>
 							</a>
 							<button id="order-button-<?= $offer_id; ?>" class="btn btn-sm btn-success rounded-0">
-								Order Now
+								<?= $lang['proposal']['nav']['order_now']; ?>
 							</button>
 						</div>
 					</div>

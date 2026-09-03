@@ -168,7 +168,7 @@ function renderFooterSection($links, $site_url = "") {
 <?php endif; ?>
 <?php if(isset($_SESSION['admin_email']) && $_SESSION['admin_email'] == "demo@internetprofis.at"): ?>
     <div class="fixed-bottom bg-danger text-white d-flex align-items-center justify-content-center shadow-lg" style="height: 50px; z-index: 9999;">
-        <strong>Demo Mode:</strong> Saving, updating or deleting is disabled.
+        <strong><?= $lang['demo_mode']['heading']; ?></strong> <?= $lang['demo_mode']['disabled_notice']; ?>
     </div>
     <style>body { padding-bottom: 50px !important; }</style>
 <?php endif; ?>

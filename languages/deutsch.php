@@ -1224,4 +1224,18 @@ $lang['greetings']['morning'] = "Guten Morgen";
 $lang['greetings']['afternoon'] = "Guten Tag";
 $lang['greetings']['evening'] = "Guten Abend";
 
+$lang['proposal']['proposal_image'] = "Auftragsbild";
+$lang['packages']['update_package_details'] = "Paketdetails aktualisieren";
+$lang['payment']['select_payment_method_to_order'] = "Zahlungsmethode für die Bestellung auswählen";
+$lang['proposal']['specify_proposal_details'] = "Auftragsdetails angeben";
+$lang['proposal']['select_proposal_to_offer'] = "Auftrag/Dienstleistung für das Angebot auswählen";
+$lang['payment']['select_payment_method'] = "Zahlungsmethode auswählen";
+$lang['payment_settings']['ref_number'] = "Referenznummer";
+$lang['payment_settings']['receipt_image'] = "Beleg-Bild";
+$lang['proposals']['add_video_in_proposal'] = "Video zum Auftrag hinzufügen";
+$lang['warning']['email_already_taken'] = "Diese E-Mail-Adresse wird bereits verwendet. Bitte melden Sie sich stattdessen an.";
+$lang['button']['chat'] = "Chat";
+$lang['demo_mode']['heading'] = "Demo-Modus:";
+$lang['demo_mode']['disabled_notice'] = "Speichern, Aktualisieren und Löschen ist deaktiviert.";
+
 

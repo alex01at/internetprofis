@@ -38,7 +38,7 @@ $proposal_title = $row_proposals->proposal_title;
 
 <div class="modal-header"><!-- modal-header Starts -->
 
-<h5 class="modal-title"> Specify Your Proposal Details </h5>
+<h5 class="modal-title"> <?= $lang['proposal']['specify_proposal_details']; ?> </h5>
 
 <button class="close" data-dismiss="modal">
 <span> &times; </span>

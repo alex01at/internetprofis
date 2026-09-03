@@ -146,13 +146,13 @@
 <!-- <?php if($d_proposal_status == "modification"){ ?>
   
   <?php if($edited_proposals == 1){ ?>
-    <a href="submit_approval?proposal_id=<?= $proposal_id; ?>" onclick="return confirm('Are you sure you want  it to send for Approval.')" class="btn btn-success float-right ml-3">
-      Submit For Approval
+    <a href="submit_approval?proposal_id=<?= $proposal_id; ?>" onclick="return confirm(<?= json_encode($lang['proposals']['confirm_submit_approval']); ?>)" class="btn btn-success float-right ml-3">
+      <?= $lang['proposals']['submit_for_approval']; ?>
     </a>
   <?php }else{ ?>
-    
-    <a href="publish_proposal?proposal_id=<?= $proposal_id; ?>" onclick="return confirm('Are you sure you want to publish this proposal?')" class="btn btn-success float-right ml-3">
-      Publish Proposal
+
+    <a href="publish_proposal?proposal_id=<?= $proposal_id; ?>" onclick="return confirm(<?= json_encode($lang['proposals']['confirm_publish']); ?>)" class="btn btn-success float-right ml-3">
+      <?= $lang['proposals']['publish_proposal']; ?>
     </a>
   
   <?php } ?>

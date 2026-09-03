@@ -35,7 +35,7 @@
 
 	<h2><?=$lang['idea_suggest'];?> ...</h2>
 
-	<a href="index"><i class="fa fa-arrow-left"></i> General</a>
+	<a href="index"><i class="fa fa-arrow-left"></i> <?= $lang['feedback']['general']; ?></a>
 
     <div class="row mt-2"><!--- row Starts -->
 

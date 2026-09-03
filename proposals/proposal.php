@@ -287,7 +287,7 @@ echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">';
 	<div class="modal-dialog" style="max-width:800px;"><!-- modal-dialog Starts -->
 		<div class="modal-content"><!-- modal-content Starts -->
 			<div class="modal-header"><!-- modal-header Starts -->
-				Proposal Image <button class="close" data-dismiss="modal"><span>&times;</span></button>
+				<?= $lang['proposal']['proposal_image']; ?> <button class="close" data-dismiss="modal"><span>&times;</span></button>
 			</div><!-- modal-header Ends -->
 			<div class="modal-body text-center"><!-- modal-body p-0 Starts -->
 				

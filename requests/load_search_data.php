@@ -163,7 +163,7 @@ if($count_offers == 0){
 
 <td> 
 
-<?= $delivery_time; ?> <a href="#" class="remove-link remove_request_<?= $request_id; ?> text-success"> Remove Request </a>
+<?= $delivery_time; ?> <a href="#" class="remove-link remove_request_<?= $request_id; ?> text-success"> <?= $lang['requests']['remove_request']; ?> </a>
 
 </td>
 
@@ -180,13 +180,13 @@ $<?php if(!empty($request_budget)){ ?>
 <?php if($login_seller_offers == "0"){ ?>
 
 <button class="btn btn-success btn-sm mt-4 send_button_<?= $request_id; ?>" data-toggle="modal" data-target="#quota-finish">
-Send Offer
+<?= $lang['button']['send_offer']; ?>
 </button>
 
 <?php }else{ ?>
 
 <button class="btn btn-success btn-sm mt-4 send_button_<?= $request_id; ?>">
-Send Offer
+<?= $lang['button']['send_offer']; ?>
 </button>
 
 <?php } ?>

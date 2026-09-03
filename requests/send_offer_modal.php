@@ -121,7 +121,7 @@ $request_seller_image = $row_request_seller->seller_image;
 
 			<div class="modal-footer">
 
-				<button class="btn btn-secondary" data-dismiss="modal"> Close</button>
+				<button class="btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?></button>
 
 				<button class="btn btn-success" id="submit-proposal" data-toggle="modal" data-dismiss="modal" data-target="#submit-proposal-details" title="<?= $lang['requests']['choose_offer_before_continue']; ?>"><?= $lang['continue']; ?></button>
 

@@ -122,7 +122,7 @@ $site_border_color = $row_general_settings->site_border_color;
 <?php if(isset($_GET['not_available'])) { ?>
 <div class="alert alert-danger text-center mb-0 h6">
 <!-- Alert to show wrong url or unregistered account start -->
-<i class="fa fa-exclamation-circle"></i> The page or user you searched for is no longer available.
+<?= $lang['not_availble']; ?>
 </div>
 <!-- Alert to show wrong url or unregistered account end -->
 <?php } ?>

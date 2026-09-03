@@ -140,7 +140,7 @@ if($count_offers == 0){
 
 <td> 
 
-<?= $delivery_time; ?> <a href="#" class="remove-link remove_request_<?= $request_id; ?>"> Remove Request </a>
+<?= $delivery_time; ?> <a href="#" class="remove-link remove_request_<?= $request_id; ?>"> <?= $lang['requests']['remove_request']; ?> </a>
 
 </td>
 

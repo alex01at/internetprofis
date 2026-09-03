@@ -19,7 +19,7 @@ $login_seller_id = $row_login_seller->seller_id;
 
 <head>
 
-    <title><?= $site_name; ?> - <?= $lang["titles"]["manage_requests"]; $lang['budget']; ?></title>
+    <title><?= $site_name; ?> - <?= $lang["titles"]["manage_requests"]; ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="<?= $site_desc; ?>">
@@ -58,7 +58,7 @@ $login_seller_id = $row_login_seller->seller_id;
             <h1 class="pull-left"> <?= $lang["titles"]["manage_requests"]; ?> </h1>
 
             <a href="post_request" class="btn btn-success pull-right">
-                <i class="fa fa-plus-circle"></i> Post New Request
+                <i class="fa fa-plus-circle"></i> <?= $lang["titles"]["post_request"]; ?>
             </a>
 
         </div>
@@ -199,11 +199,11 @@ $login_seller_id = $row_login_seller->seller_id;
                                     <a href="view_offers?request_id=<?= $request_id; ?>" target="blank" class="btn btn-primary"><?= $lang['view_offers']; ?></a>
 
                                     <a href="pause_request?request_id=<?= $request_id; ?>" class="btn btn-primary">
-                                        Pause
+                                        <?= $lang['button']['pause']; ?>
                                     </a>
 
                                     <a href="delete_request?request_id=<?= $request_id; ?>" class="btn btn-danger">
-                                        Delete
+                                        <?= $lang['button']['delete']; ?>
                                     </a>
 
 
@@ -311,11 +311,11 @@ $login_seller_id = $row_login_seller->seller_id;
                                         <div class="dropdown-menu">
 
                                             <a href="active_request?request_id=<?= $request_id; ?>" class="dropdown-item">
-                                            Activate
+                                            <?= $lang['button']['activate']; ?>
                                             </a>
 
                                             <a href="delete_request?request_id=<?= $request_id; ?>" class="dropdown-item">
-                                            Delete
+                                            <?= $lang['button']['delete']; ?>
                                             </a>
 
                                         </div>
@@ -408,7 +408,7 @@ $login_seller_id = $row_login_seller->seller_id;
                                     <td>
 
                                     <a href="delete_request?request_id=<?= $request_id; ?>" class="btn btn-outline-danger">
-                                        Delete
+                                        <?= $lang['button']['delete']; ?>
                                     </a>
 
                                     </td>
@@ -498,7 +498,7 @@ $login_seller_id = $row_login_seller->seller_id;
                                     <td>
 
                                     <a href="delete_request?request_id=<?= $request_id; ?>" class="btn btn-outline-danger">
-                                        Delete
+                                        <?= $lang['button']['delete']; ?>
                                     </a>
 
                                     </td>

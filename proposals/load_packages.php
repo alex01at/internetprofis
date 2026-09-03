@@ -117,7 +117,7 @@ $attribute_value = $row_a->attribute_value;
 <td align="center">
  
 <button type="submit" class="btn btn btn-success">
-<i class="fa fa-floppy-o"></i> Update Package Details
+<i class="fa fa-floppy-o"></i> <?= $lang['packages']['update_package_details']; ?>
 </button>
  
 </td>

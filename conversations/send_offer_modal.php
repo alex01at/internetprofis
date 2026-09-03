@@ -16,7 +16,7 @@ $file = $input->post('file');
 <div class="modal-dialog"><!-- modal-dialog Starts -->
 <div class="modal-content"><!-- modal-content Starts -->
 <div class="modal-header"><!-- modal-header Starts -->
-<h5 class="modal-title"> Select A Proposal/Service To Offer </h5>
+<h5 class="modal-title"> <?= $lang['proposal']['select_proposal_to_offer']; ?> </h5>
 <button class="close" data-dismiss="modal"><span>&times;</span></button>
 </div><!-- modal-header Ends -->
 <div class="modal-body p-0"><!-- modal-body p-0 Starts -->

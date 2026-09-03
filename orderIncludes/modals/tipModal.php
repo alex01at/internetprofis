@@ -69,7 +69,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
           <div class="request-div" style="background-color: #d1ecf1;">
             <p> <b> Tip Amount: </b> <?= showPrice($amount); ?> </p>
             <p class="processing-fee"> <b> Processing Fee: </b> <?= showPrice($processing_fee); ?> </p>
-            <p class="processing-fee"> <b> Total </b> <?= showPrice($total); ?> </p>
+            <p class="processing-fee"> <b> <?= $lang['th']['total']; ?> </b> <?= showPrice($total); ?> </p>
           </div>
         </div>
         <div class="payment-options-list">

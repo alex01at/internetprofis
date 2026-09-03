@@ -84,7 +84,7 @@
 						<small>
 							|
 							<a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted">
-								<small><i class="fa fa-flag"></i> Report</small>
+								<small><i class="fa fa-flag"></i> <?= $lang['report_modal']['report']; ?></small>
 							</a> 
 						</small>
 					<?php } ?>

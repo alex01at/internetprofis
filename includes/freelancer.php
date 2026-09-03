@@ -19,7 +19,7 @@
 			  <img src="images/level_badge_3.png" class="level_badge">
 			<?php } ?>
 		</div>
-		<a id="chatBtn" data-toggle="tooltip" data-placement="top" title="<?=$lang['chat_with_me'];?>" href="conversations/message.php?seller_id=<?= $seller_id; ?>" class="btn btn-success mt-4 text-white "><i class="fa fa-comments-o" aria-hidden="true"></i> Chat</a>
+		<a id="chatBtn" data-toggle="tooltip" data-placement="top" title="<?=$lang['chat_with_me'];?>" href="conversations/message.php?seller_id=<?= $seller_id; ?>" class="btn btn-success mt-4 text-white "><i class="fa fa-comments-o" aria-hidden="true"></i> <?= $lang['button']['chat']; ?></a>
   </figure>
 	<div class="request-description">
 		<div class="row">

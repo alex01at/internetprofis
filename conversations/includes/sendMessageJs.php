@@ -226,7 +226,7 @@ function ShowSingleMessage(data){
 	li += `<a href="../${username} "> ${user_name_text} </a>`;
 	li += `<small class="text-muted"> ${data.message_date} </small>`;
 	li += '<small>|<a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted">';
-	li += '<small><i class="fa fa-flag"></i> Report</small></a></small></h6>';
+	li += '<small><i class="fa fa-flag"></i> <?= json_encode($lang['report_modal']['report']); ?></small></a></small></h6>';
 	li += `${data.message}`;
 	if(data.message_file != ""){
 		var fileExtension;		

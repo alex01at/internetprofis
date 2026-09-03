@@ -152,11 +152,11 @@ if(!empty($file)){
 
 <?php if($login_seller_id == $buyer_id){ ?>
 
-| <a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted"><i class="fa fa-flag"></i> Report</a> 
+| <a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted"><i class="fa fa-flag"></i> <?= $lang['report_modal']['report']; ?></a> 
 
 <?php }else{ ?>
 
-| <a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted"><i class="fa fa-flag"></i> Report</a> 
+| <a href="#" data-toggle="modal" data-target="#report-modal" class="text-muted"><i class="fa fa-flag"></i> <?= $lang['report_modal']['report']; ?></a> 
 
 <?php } ?>
 
@@ -269,11 +269,11 @@ if(!empty($file)){
 <center class="pb-4 mt-4"><!-- mb-4 mt-4 Starts --->
 <form method="post">
 <button name="complete" type="submit" class="btn btn-success">
-Accept & Review Order
+<?= $lang['order_conversations']['accept_review_order']; ?>
 </button>
 &nbsp;&nbsp;&nbsp;
 <button type="button" data-toggle="modal" data-target="#revision-request-modal" class="btn btn-success">
-Request A Revision
+<?= $lang['order_conversations']['request_a_revision']; ?>
 </button>
 </form>
 <?php 
@@ -289,7 +289,7 @@ if(isset($_POST['complete'])){
 <?php }elseif($status == "revision"){ ?>
 <div class="card mt-4">
   <div class="card-body">
-    <h5 class="text-center"><i class="fa fa-pencil-square-o"></i> Revison Requested By <?= $seller_user_name; ?> </h5>
+    <h5 class="text-center"><i class="fa fa-pencil-square-o"></i> <?= $lang['order_conversations']['revision_requested_by']; ?> <?= $seller_user_name; ?> </h5>
   </div>
 </div>
 <div class="
@@ -341,7 +341,7 @@ echo "message-div";
   <div class="card-body">
     <h5 class="text-center">
       <img src="images/svg/cancellation.svg" class="order-icon"/>
-      Cancellation Requested By <?= $seller_user_name; ?> 
+      <?= $lang['order_conversations']['cancellation_requested_by']; ?> <?= $seller_user_name; ?> 
     </h5>
   </div>
 </div>
@@ -491,7 +491,7 @@ if(isset($_POST['decline_request'])){
 
     <h5 class="text-center">
       <img src="images/svg/cancellation.svg" class="order-icon"/>
-      Cancellation Request Declined By <?= $seller_user_name; ?>
+      <?= $lang['order_conversations']['cancellation_declined_by']; ?> <?= $seller_user_name; ?>
     </h5>
 
   </div>
@@ -555,7 +555,7 @@ if($sender_id == $login_seller_id){
 
 <h5 class="text-danger">
 
-Cancellation Request Declined By <?= $receiver_name; ?>
+<?= $lang['order_conversations']['cancellation_declined_by']; ?> <?= $receiver_name; ?>
 
 </h5>
 
@@ -569,7 +569,7 @@ Cancellation Request Declined By <?= $receiver_name; ?>
 
    	<h5 class="text-center">
       <img src="images/svg/cancellation.svg" class="order-icon"/>
-      Cancellation Request By <?= $seller_user_name; ?>
+      <?= $lang['order_conversations']['cancellation_request_by']; ?> <?= $seller_user_name; ?>
     </h5>
 
    </div>
@@ -642,13 +642,13 @@ echo "message-div";
 
 <i class="fa fa-times fa-3x text-danger"></i>
 
-<h5 class="text-danger"> Order Cancelled By Mutual Agreement. </h5>
+<h5 class="text-danger"> <?= $lang['order_conversations']['cancelled_mutual_agreement']; ?> </h5>
 
 <p>
 
-Order Was Cancelled By A Mutual Agreement Between You and Your Buyer. <br>
+<?= $lang['order_conversations']['cancelled_mutual_agreement_buyer_desc']; ?> <br>
 
-Funds have been refunded to buyer's account.
+<?= $lang['order_conversations']['refunded_to_buyer_account']; ?>
 
 </p>
 
@@ -660,13 +660,13 @@ Funds have been refunded to buyer's account.
 
 <i class="fa fa-times fa-3x text-danger"></i>
 
-<h5 class="text-danger"> Order Cancelled By Mutual Agreement. </h5>
+<h5 class="text-danger"> <?= $lang['order_conversations']['cancelled_mutual_agreement']; ?> </h5>
 
 <p>
 
-Order was cancelled by a mutual agreement between you and your seller.<br>
+<?= $lang['order_conversations']['cancelled_mutual_agreement_seller_desc']; ?><br>
 
-The order funds have been refunded to your Shopping Balance.
+<?= $lang['order_conversations']['refunded_to_shopping_balance']; ?>
 
 </p>
 
@@ -701,11 +701,11 @@ The order funds have been refunded to your Shopping Balance.
 
   <i class="fa fa-times fa-3x text-danger"></i>
 
-  <h5 class="text-danger"> Order Cancelled By Customer Support. </h5>
+  <h5 class="text-danger"> <?= $lang['order_conversations']['cancelled_by_customer_support']; ?> </h5>
 
   <p>
 
-  Payment For This Order Has Been Refunded To Your <a href="revenue" class="link"> Shopping balance. </a>.
+  <?= $lang['order_conversations']['refunded_to_your']; ?> <a href="revenue" class="link"> <?= $lang['order_conversations']['shopping_balance']; ?> </a>.
 
   </p>
 
