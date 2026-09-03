@@ -5,6 +5,9 @@ $base_routes = [
     'credits'         => 'includes/credits.php',
     'change_language' => 'change_language.php',
     'view_withdrawals'=> 'view_withdrawals.php',
+    'view_refunds'    => 'view_refunds.php',
+    'mark_refund_processed' => 'mark_refund_processed.php',
+    'delete_refund'   => 'delete/delete_refund.php',
     'user_profile'    => 'user_profile.php'
 ];
 

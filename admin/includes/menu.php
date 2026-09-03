@@ -133,6 +133,11 @@ echo "<script>window.open('login','_self');</script>";
 							</a>
 						</li>
 						<li>
+							<a href="index?view_refunds">
+								<span class="mtext">Refunds</span>
+							</a>
+						</li>
+						<li>
 							<a href="index?view_referrals">
 								<span class="mtext">View All Referrals</span>
 							</a>

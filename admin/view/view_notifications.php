@@ -64,7 +64,9 @@ while($row_notifications = $select_notofications->fetch()){
 			if($reason == "message_spam" OR $reason == "order_spam"){
 				echo "View Conversation";
 			}elseif($reason == "payout_request"){
-				echo "View Payout"; 
+				echo "View Payout";
+			}elseif($reason == "refund_request"){
+				echo "View Refund";
 			}elseif($reason == "order" or $reason == "cancellation_request" or $reason == "decline_cancellation_request" or $reason == "accept_cancellation_request"){
 				echo "View Order"; 
 			}else{

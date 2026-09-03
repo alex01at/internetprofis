@@ -10,6 +10,7 @@ All notable changes to this project are documented here.
 - `dashboard.php` now shows the actual deployed release instead of a manually maintained value, with an update indicator when a newer release is available.
 - Added German as a selectable site language, with translated categories, subcategories, terms, support text, seller level badges, footer links, and homepage sections. Included a migration for sites that already have data.
 - Added a local test suite (`tests/`) that runs without a database: PHP syntax check, `$lang[]` key consistency check, a check for `$lang[]` keys whose English and German values are identical (usually meaning the German text was never actually translated), and two checks for recurring bug patterns (PHP tags embedded inside string literals, stray escaped `$lang` references). Wired into GitHub Actions to run on every push and pull request.
+- Added a right-of-withdrawal (Widerruf) page with the legally required model withdrawal form, linked from the footer under the language selector. Submissions notify admins through the existing alerts panel and are listed on a new Refunds page under Money in the admin sidebar; the submitting customer also receives an email confirming receipt.
 
 ### Changed
 

@@ -39,4 +39,9 @@ if($reason == "message_spam"){
    $message = "has just sent you an payout request";
    $url = "index?payouts&status=pending";
 
+}elseif($reason == "refund_request"){
+
+   $message = "has submitted a withdrawal (Widerruf) request.";
+   $url = "index?view_refunds";
+
 }

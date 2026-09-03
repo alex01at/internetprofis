@@ -107,6 +107,8 @@ function renderFooterSection($links, $site_url = "") {
                             </select>
                         <?php endif; ?>
 
+                        <a href="<?= $site_url; ?>/widerruf" class="d-block mt-2"><?= $lang['widerruf']['footer_link']; ?></a>
+
                         <?php if($enable_google_translate == 1): ?>
                             <div id="google_translate_element" class="mt-2"></div>
                         <?php endif; ?>

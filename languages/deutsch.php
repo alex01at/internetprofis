@@ -1306,4 +1306,24 @@ $lang['button']['read_more2'] = "Mehr lesen";
 $lang['crypto_return']['payment_checked_notice'] = "Ihre Zahlung wird so schnell wie möglich geprüft und Ihr Einkauf wird bestätigt. Bitte überprüfen Sie Ihr E-Mail-Konto.";
 $lang['crypto_return']['go_back_to_website'] = "Zurück zur Website";
 
+$lang['widerruf']['page_title'] = "Widerruf";
+$lang['widerruf']['footer_link'] = "Widerruf";
+$lang['widerruf']['intro'] = "Verbraucher haben das gesetzliche Recht, einen Vertrag innerhalb von 14 Tagen ohne Angabe von Gründen zu widerrufen. Um Ihr Widerrufsrecht auszuüben, füllen Sie bitte das folgende Formular aus und senden Sie es ab.";
+$lang['widerruf']['intro_note'] = "Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses bzw. des Erhalts der Ware oder Dienstleistung.";
+$lang['widerruf']['form_heading'] = "Muster-Widerrufsformular";
+$lang['widerruf']['recipient_prefix'] = "An:";
+$lang['widerruf']['address_placeholder'] = "Anschrift des Unternehmers hier einfügen";
+$lang['widerruf']['declaration_text'] = "Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung.";
+$lang['widerruf']['order_number'] = "Bestellnummer";
+$lang['widerruf']['order_number_placeholder'] = "z. B. #12345";
+$lang['widerruf']['ordered_date'] = "Bestellt am";
+$lang['widerruf']['received_date'] = "Erhalten am (falls zutreffend)";
+$lang['widerruf']['address'] = "Anschrift";
+$lang['widerruf']['reason_optional'] = "Grund (optional)";
+$lang['widerruf']['submit_button'] = "Widerruf absenden";
+$lang['widerruf']['submission_success'] = "Ihr Widerruf wurde erfolgreich übermittelt. Wir haben Ihnen eine Bestätigung per E-Mail gesendet.";
+$lang['widerruf']['address_required'] = "Anschrift ist erforderlich.";
+$lang['widerruf']['confirmation_email_subject'] = "Bestätigung Ihres Widerrufs";
+$lang['widerruf']['confirmation_email_message'] = "Wir bestätigen den Eingang Ihres Widerrufs. Wir werden Ihre Anfrage so schnell wie möglich bearbeiten und uns bei Rückfragen bei Ihnen melden.";
+
 
