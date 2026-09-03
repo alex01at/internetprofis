@@ -182,14 +182,14 @@ if($remain->d < 1){ $remain->d = 1; }
  <div class="card-body">
 
  	<h5 class="text-center">
-    <img src="images/svg/box.svg" class="order-icon"/> Order Delivered
+    <img src="images/svg/box.svg" class="order-icon"/> <?= $lang['order_conversations']['order_delivered']; ?>
   </h5>
 
   <?php if($seller_id == $login_seller_id){ ?>
-  <p class="text-center font-weight-bold pb-0">The buyer has <?= $remain->d; ?> day(s) to complete/respond to this order, otherwise it will be automatically marked as completed.</p>
+  <p class="text-center font-weight-bold pb-0"><?= $lang['order_conversations']['buyer_has']; ?> <?= $remain->d; ?> <?= $lang['order_conversations']['days_to_respond']; ?></p>
   <?php } else { ?>
 
-   <p class="text-center font-weight-bold pb-0">You have <?= $remain->d; ?> day(s) to complete/respond to this order, otherwise it will be automatically marked as completed.</p>
+   <p class="text-center font-weight-bold pb-0"><?= $lang['order_conversations']['you_have']; ?> <?= $remain->d; ?> <?= $lang['order_conversations']['days_to_respond']; ?></p>
   
   <?php } ?>
 
@@ -407,9 +407,9 @@ echo "message-div";
 
 		<center>
 
-			<button name="accept_request" class="btn btn-success btn-sm">Accept Request</button>
+			<button name="accept_request" class="btn btn-success btn-sm"><?= $lang['order_conversations']['accept_request']; ?></button>
 
-			<button name="decline_request" class="btn btn-success btn-sm">Decline Request</button>
+			<button name="decline_request" class="btn btn-success btn-sm"><?= $lang['order_conversations']['decline_request']; ?></button>
 
 	   </center>
 
@@ -685,11 +685,11 @@ The order funds have been refunded to your Shopping Balance.
 
   <i class="fa fa-times fa-3x text-danger"></i>
 
-  <h5 class="text-danger"> Order Cancelled By Admin. </h5>
+  <h5 class="text-danger"> <?= $lang['order_conversations']['order_cancelled_by_admin']; ?> </h5>
 
   <p>
-  Payment For This Order Was Refunded To Buyer's Shopping Balance. <br>
-  For Any Further Assistance, Please Contact Our <a href="/customer_support" class="link">Customer Support.</a>
+  <?= $lang['order_conversations']['refunded_to_buyer']; ?> <br>
+  <?= $lang['order_conversations']['further_assistance']; ?> <a href="/customer_support" class="link"><?= $lang['menu']['customer_support']; ?>.</a>
   </p>
 
   </div><!-- order-status-message Ends --->
