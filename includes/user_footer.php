@@ -150,7 +150,7 @@ if(!$count_reviews == 0){
 
                                 <li>
 
-                                <h3 align='center'> There is currently no positive review for this proposal/service. </h3>
+                                <h3 align='center'> ".$lang['reviews']['no_positive_proposal']." </h3>
 
                                 </li>
 
@@ -254,7 +254,7 @@ if(!$count_reviews == 0){
 
                                 <li>
 
-                                <h3 align='center'> There is currently no negative review for this seller. </h3>
+                                <h3 align='center'> ".$lang['reviews']['no_negative_seller']." </h3>
 
                                 </li>
 

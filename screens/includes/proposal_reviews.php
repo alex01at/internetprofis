@@ -56,7 +56,7 @@
 	<?php if(!$count_seller_review == 0){ ?>
 	<li class="rating-seller"><!-- rating-seller Starts -->
 	<h4><!-- h4 Starts -->
-	<span class="mr-1"> Seller's Feedback </span>
+	<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 	<?php
 	for($seller_i=0; $seller_i<$seller_rating; $seller_i++){
 	echo " <img class='rating' src='../../images/user_rate_full.png' > ";
@@ -92,7 +92,7 @@
 	echo "
 	<li>
 	<h3 class='$rtl' align='center'> 
-	There is currently no positive review for this proposal/service.
+	".$lang['reviews']['no_positive_proposal']."
 	</h3>
 	</li>";
 	}
@@ -139,7 +139,7 @@
 	<?php if(!$count_seller_review == 0){ ?>
 	<li class="rating-seller"><!-- rating-seller Starts -->
 	<h4><!-- h4 Starts -->
-	<span class="mr-1"> Seller's Feedback </span>
+	<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 	<?php
 	for($seller_i=0; $seller_i<$seller_rating; $seller_i++){
 	echo " <img class='rating' src='../../images/user_rate_full.png' > ";
@@ -175,7 +175,7 @@
 	echo "
 	<li>
 	<h3 align='center $rtl'> 
-	<i class='fa fa-smile-o'></i> There is currently no negative review for this proposal/service.
+	<i class='fa fa-smile-o'></i> ".$lang['reviews']['no_negative_proposal']."
 	</h3>
 	</li>";
 	}
@@ -222,7 +222,7 @@
 	<?php if(!$count_seller_review == 0){ ?>
 	<li class="rating-seller"><!-- rating-seller Starts -->
 	<h4><!-- h4 Starts -->
-	<span class="mr-1"> Seller's Feedback </span>
+	<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 	<?php
 	for($seller_i=0; $seller_i<$seller_rating; $seller_i++){
 	echo " <img class='rating' src='../../images/user_rate_full.png' > ";

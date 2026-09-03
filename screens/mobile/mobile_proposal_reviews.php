@@ -88,7 +88,7 @@ echo " <img class='rating' src='../../images/user_rate_blank.png' > ";
 
 <h4><!-- h4 Starts -->
 
-<span class="mr-1"> Seller's Feedback </span>
+<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 
 <?php
 
@@ -151,7 +151,7 @@ echo "
 <li>
 
 <h4 align='center'> 
-There is currently no positive review for this proposal.
+".$lang['reviews']['no_positive']."
 </h4>
 
 </li>
@@ -229,7 +229,7 @@ echo " <img class='rating' src='../../images/user_rate_blank.png' > ";
 
 <h4><!-- h4 Starts -->
 
-<span class="mr-1"> Seller's Feedback </span>
+<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 <?php
 
 for($seller_i=0; $seller_i<$seller_rating; $seller_i++){
@@ -292,7 +292,7 @@ echo "
 <li>
 
 <h4 align='center'> 
-There is currently no negative review for this proposal.
+".$lang['reviews']['no_negative']."
 </h4>
 
 </li>
@@ -371,7 +371,7 @@ echo " <img class='rating' src='../../images/user_rate_blank.png' > ";
 
 <h4><!-- h4 Starts -->
 
-<span class="mr-1"> Seller's Feedback </span>
+<span class="mr-1"> <?= $lang['order_details']['sellers_feedback']; ?> </span>
 <?php
 
 for($seller_i=0; $seller_i<$seller_rating; $seller_i++){

@@ -776,6 +776,9 @@ $lang['reviews']['no_negative'] = "There is currently no negative review for thi
 $lang['payment']['shopping_balance'] = "Shopping Balance";
 $lang['payment']['personal_balance'] = "Personal Balance -";
 $lang["sidebar"]["clear"] = "<i class='fa fa-times-circle'></i> Clear";
+$lang['reviews']['no_positive_proposal'] = "There is currently no positive review for this proposal/service.";
+$lang['reviews']['no_negative_proposal'] = "There is currently no negative review for this proposal/service.";
+$lang['reviews']['no_negative_seller'] = "There is currently no negative review for this seller.";
 
 $lang['button']['create_new_proposal'] = "Create A New Proposal";
 $lang['button']['save_changes'] = "Save Changes";

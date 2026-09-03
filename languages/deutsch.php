@@ -457,6 +457,9 @@ $lang['reviews']['no_negative'] = "Für dieses Angebot liegt derzeit keine negat
 $lang['payment']['shopping_balance'] = "Einkaufsguthaben";
 $lang['payment']['personal_balance'] = "Persönliches Guthaben -";
 $lang["sidebar"]["clear"] = "<i class='fa fa-times-circle'></i> Löschen";
+$lang['reviews']['no_positive_proposal'] = "Für dieses Angebot liegt derzeit keine positive Bewertung vor.";
+$lang['reviews']['no_negative_proposal'] = "Für dieses Angebot liegt derzeit keine negative Bewertung vor.";
+$lang['reviews']['no_negative_seller'] = "Für diesen Verkäufer liegt derzeit keine negative Bewertung vor.";
 $lang['button']['create_new_proposal'] = "Ein neues Angebot erstellen";
 $lang['button']['save_changes'] = "Änderungen speichern";
 $lang['button']['save_continue'] = "Speichern und weiter";
