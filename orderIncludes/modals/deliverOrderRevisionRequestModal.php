@@ -125,9 +125,9 @@
         <?php if($order_revisions != "unlimited" AND $order_revisions == $order_revisions_used){ ?>
           
           <?php if($order_revisions == 0){ ?>
-            <p class="lead">This Order Has No Revisions.</p>
+            <p class="lead"><?= $lang['order_details']['no_revisions']; ?></p>
           <?php }else{ ?>
-            <p class="lead">You have exhausted all your revision requests for this order. <b><?= $seller_user_name; ?></b> only provisioned <?= $order_revisions; ?> revisions for this order</p>
+            <p class="lead"><?= $lang['order_details']['revisions_exhausted']; ?> <b><?= $seller_user_name; ?></b> <?= $lang['order_details']['revisions_provisioned']; ?> <?= $order_revisions; ?> <?= $lang['order_details']['revisions_for_order']; ?></p>
           <?php } ?>
 
         <?php }else{ ?>

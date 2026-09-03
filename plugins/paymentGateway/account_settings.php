@@ -56,10 +56,10 @@ if(is_array($form_errors)){
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-md-4 col-form-label"> Id File </label>
+    <label class="col-md-4 col-form-label"> <?= $lang['payment_settings']['id_file']; ?> </label>
     <div class="col-md-8">
       <input type="file" name="id_file" class="form-control" id="cover" <?= (empty($id_file)) ? 'required' : ''; ?>>
-      <small class="text-muted">Please Upload Id Front And Back In Zip Format.</small>
+      <small class="text-muted"><?= $lang['payment_settings']['upload_id_zip']; ?></small>
       <?= (empty($id_file)) ? '' : '<p class="mb-0 small"><a href="plugins/paymentGateway/id_files/'.$id_file.'" class="text-primary" download><i class="fa fa-download"></i> '.$id_file.'</a></p>'; ?>
     </div>
   </div>
@@ -87,10 +87,10 @@ if(is_array($form_errors)){
       <input type="text" name="preferred_currency" class="form-control" value="<?= $preferred_currency; ?>" required="">
     </div>
   </div>
-  <button type="submit" name="update_moneygram" class="btn btn-success float-right">Update Moneygram Details</button>
+  <button type="submit" name="update_moneygram" class="btn btn-success float-right"><?= $lang['payment_settings']['update_moneygram']; ?></button>
 </form>
 <hr>
-<h5 class="mb-4"> Bank Transfer For Withdrawing Revenue </h5>
+<h5 class="mb-4"> <?= $lang['payment_settings']['bank_transfer_heading']; ?> </h5>
 <?php 
 $form_errors = Flash::render("bank_details_errors");
 if(is_array($form_errors)){
@@ -165,11 +165,11 @@ if(is_array($form_errors)){
     <!-- form-group row Starts -->
     <label class="col-md-4 col-form-label"> Swift Code (optional) </label>
     <div class="col-md-8">
-      <input type="text" name="swift_code" value="<?php echo $swift_code; ?>" placeholder="Enter Your Swift Code" class="form-control">
+      <input type="text" name="swift_code" value="<?php echo $swift_code; ?>" placeholder="<?= $lang['payment_settings']['enter_swift_code']; ?>" class="form-control">
     </div>
   </div>
   <!-- form-group row Ends -->
-  <button type="submit" name="update_bank_details" class="btn btn-success float-right">Update Bank Details</button>
+  <button type="submit" name="update_bank_details" class="btn btn-success float-right"><?= $lang['payment_settings']['update_bank_details']; ?></button>
 </form>
 <?php
 

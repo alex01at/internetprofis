@@ -58,7 +58,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
     <div class="modal-content">
       <div class="modal-header"><!-- modal-header Starts -->
         <h5 class="modal-title"> 
-          <span class="float-left">Payment For Order Tip.</span>
+          <span class="float-left"><?= $lang['order_tip']['payment_for_tip']; ?></span>
         </h5>
         <button class="closeExtendTimePayment close" data-dismiss="modal">
           <span> &times; </span>

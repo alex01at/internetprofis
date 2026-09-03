@@ -43,15 +43,15 @@ var x = setInterval(function(){
   if (distance < 0){
   clearInterval(x);
   <?php if(isset($_GET["selling_order"])){ ?>
-  document.getElementById("countdown-heading").innerHTML = "You Failed To Deliver Your Order On Time";
+  document.getElementById("countdown-heading").innerHTML = <?= json_encode($lang['order_details']['failed_to_deliver_seller']); ?>;
   <?php }elseif (isset($_GET["buying_order"])) { ?>
-    document.getElementById("countdown-heading").innerHTML = "Your Seller Failed To Deliver Your Order On Time";
+    document.getElementById("countdown-heading").innerHTML = <?= json_encode($lang['order_details']['failed_to_deliver_buyer']); ?>;
   <?php } ?>
   $("#countdown-timer .countdown-number").addClass("countdown-number-late");
-  document.getElementById("days").innerHTML = "<span class='red-color'>The</span>";
-  document.getElementById("hours").innerHTML = "<span class='red-color'>Order</span>";
-  document.getElementById("minutes").innerHTML = "<span class='red-color'>is</span>";
-  document.getElementById("seconds").innerHTML = "<span class='red-color'>Late!</span>";
+  document.getElementById("days").innerHTML = "<span class='red-color'>"+<?= json_encode($lang['order_details']['late_word1']); ?>+"</span>";
+  document.getElementById("hours").innerHTML = "<span class='red-color'>"+<?= json_encode($lang['order_details']['late_word2']); ?>+"</span>";
+  document.getElementById("minutes").innerHTML = "<span class='red-color'>"+<?= json_encode($lang['order_details']['late_word3']); ?>+"</span>";
+  document.getElementById("seconds").innerHTML = "<span class='red-color'>"+<?= json_encode($lang['order_details']['late_word4']); ?>+"</span>";
   }
 }, 1000);
 ////  Countdown Timer Code Ends  ////

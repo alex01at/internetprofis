@@ -16,8 +16,8 @@
         <div class="row">
           <div class="col-4">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="computer-tab" data-toggle="pill" href="#computer" role="tab">From Computer</a>
-              <a class="nav-link" id="embed-tab" data-toggle="pill" href="#embed" role="tab">Embed</a>
+              <a class="nav-link active" id="computer-tab" data-toggle="pill" href="#computer" role="tab"><?= $lang['proposals']['from_computer']; ?></a>
+              <a class="nav-link" id="embed-tab" data-toggle="pill" href="#embed" role="tab"><?= $lang['proposals']['embed']; ?></a>
             </div>
           </div>
           <div class="col-8">
@@ -25,11 +25,11 @@
               <input type="hidden" name="proposal_id" value="<?= escape($proposal_id); ?>">
               <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="computer" role="tabpanel">
-                  Select Video File From Computer
+                  <?= $lang['proposals']['select_video_from_computer']; ?>
                   <input type="file" name="proposal_file" id="v_file" class="form-control mt-2" accept="video/mp4,video/x-m4v,video/*"/>
                 </div>
                 <div class="tab-pane fade" id="embed" role="tabpanel">
-                  Paste Your Video Embed Code (Vimeo & YouTube)
+                  <?= $lang['proposals']['paste_video_embed_code']; ?>
                   <textarea name="proposal_video" class="form-control mt-2" rows="7"></textarea>
                 </div>
               </div>
@@ -38,7 +38,7 @@
         </div>
       </div><!-- modal-body Ends -->
       <div class="modal-footer p-2">
-        <button type="submit" form="video-form" class="float-right btn btn-success">Save Changes</button>
+        <button type="submit" form="video-form" class="float-right btn btn-success"><?= $lang['button']['save_changes']; ?></button>
       </div>
     </div><!-- modal-content Ends -->
   </div><!-- modal-dialog Ends -->
