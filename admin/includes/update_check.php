@@ -64,6 +64,28 @@ function githubApiGet($url){
 	return is_array($data) ? $data : null;
 }
 
+// Finds which release tag (if any) points at $sha. Cheap path first (does it
+// match the release we already fetched?), then checks recent releases
+// (capped, since each one needs its own API call to resolve tag -> commit).
+function resolveTagForCommit($githubRepo, $sha, $latestRelease, $latestCommit){
+	if($latestCommit && $sha === $latestCommit['sha']){
+		return $latestRelease['tag_name'];
+	}
+
+	$releases = githubApiGet("https://api.github.com/repos/$githubRepo/releases?per_page=10");
+	if(!is_array($releases)){ return null; }
+
+	foreach($releases as $release){
+		if(empty($release['tag_name'])){ continue; }
+		$commit = githubApiGet("https://api.github.com/repos/$githubRepo/commits/".rawurlencode($release['tag_name']));
+		if($commit && $commit['sha'] === $sha){
+			return $release['tag_name'];
+		}
+	}
+
+	return null;
+}
+
 // One-stop status check: where are we vs. the latest published release.
 function getUpdateStatus($githubRepo, $rootDir, $versionFile){
 	$rootDir = rtrim($rootDir, '/\\');
@@ -96,6 +118,18 @@ function getUpdateStatus($githubRepo, $rootDir, $versionFile){
 
 	if(!$status['deployedSha']){
 		return $status;
+	}
+
+	// A deployment tracked before release-name storage was added only has a
+	// commit SHA on file. Resolve it to a release tag where possible, so the
+	// dashboard can show "1.0.1" instead of a raw hash, and persist it so
+	// this lookup only has to happen once.
+	if(!$status['deployedTag']){
+		$resolvedTag = resolveTagForCommit($githubRepo, $status['deployedSha'], $latestRelease, $latestCommit);
+		if($resolvedTag){
+			$status['deployedTag'] = $resolvedTag;
+			writeDeployedVersion($versionFile, $status['deployedSha'], $resolvedTag);
+		}
 	}
 
 	$compareData = githubApiGet("https://api.github.com/repos/$githubRepo/compare/{$status['deployedSha']}...{$latestCommit['sha']}");
