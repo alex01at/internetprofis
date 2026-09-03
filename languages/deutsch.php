@@ -651,6 +651,7 @@ $lang['settings']['what_happens']['1'] = "Ihr Konto und Ihre Dienste werden nich
 $lang['settings']['what_happens']['2'] = "Alle offenen Bestellungen werden storniert und zurückerstattet!";
 $lang['settings']['what_happens']['3'] = "Sie können Ihr Konto nicht reaktivieren!";
 $lang['settings']['what_happens']['4'] = "Sie können Ihr Konto nicht wiederherstellen werden!";
+$lang['settings']['why_leaving'] = "Warum möchten Sie uns verlassen?";
 $lang['settings']['reason']['1'] = "Wählen Sie einen Grund";
 $lang['settings']['reason']['2'] = "Die Servicequalität ist niedriger als erwartet";
 $lang['settings']['reason']['3'] = "Keine Zeit";

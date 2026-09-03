@@ -178,11 +178,11 @@ if(isset($_POST['submit_payoneer_email'])){
     <div class="col-md-8">
       <select name="enable_sound" class="form-control">
         <?php if($login_seller_enable_sound == "yes"){ ?>
-          <option value="yes"> Yes </option>
-          <option value="no"> No </option>
+          <option value="yes"> <?= $lang['yes']; ?> </option>
+          <option value="no"> <?= $lang['no']; ?> </option>
         <?php }elseif($login_seller_enable_sound == "no"){ ?>
-          <option value="no"> No </option>
-          <option value="yes"> Yes </option>
+          <option value="no"> <?= $lang['no']; ?> </option>
+          <option value="yes"> <?= $lang['yes']; ?> </option>
         <?php } ?>
       </select>
     </div>
@@ -192,11 +192,11 @@ if(isset($_POST['submit_payoneer_email'])){
     <div class="col-md-8">
       <select name="enable_notifications" class="form-control">
         <?php if($login_seller_enable_notifications == "1"){ ?>
-          <option value="1"> Yes </option>
-          <option value="0"> No </option>
+          <option value="1"> <?= $lang['yes']; ?> </option>
+          <option value="0"> <?= $lang['no']; ?> </option>
         <?php }elseif($login_seller_enable_notifications == "0"){ ?>
-          <option value="0"> No </option>
-          <option value="1"> Yes </option>
+          <option value="0"> <?= $lang['no']; ?> </option>
+          <option value="1"> <?= $lang['yes']; ?> </option>
         <?php } ?>
       </select>
     </div>
@@ -338,7 +338,7 @@ if(isset($_POST['submit_payoneer_email'])){
   </button>
   <?php }elseif($current_balance == 0){ ?>
   <div class="form-group">
-    <label> Why Are You Leaving? </label>
+    <label> <?= $lang['settings']['why_leaving']; ?> </label>
     <select name="deactivate_reason" class="form-control" required>
       <option value=""> <?= $lang['settings']['reason']['1']; ?> </option>
       <option> <?= $lang['settings']['reason']['2']; ?> </option>

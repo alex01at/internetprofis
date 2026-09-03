@@ -1016,6 +1016,7 @@ $lang['settings']['what_happens']['3'] = "You won't be able to re-activate your 
 $lang['settings']['what_happens']['4'] = "You won't be able to restore your account.";
 
 
+$lang['settings']['why_leaving'] = "Why Are You Leaving?";
 $lang['settings']['reason']['1'] = "Choose A Reason";
 $lang['settings']['reason']['2'] = "The quality of service was less than expected";
 $lang['settings']['reason']['3'] = "I just don't have the time";
