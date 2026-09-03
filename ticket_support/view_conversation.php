@@ -53,7 +53,7 @@ if(isset($_POST['new_message']) && !empty($_POST['new_message'])){
         if($insert_support_ticket){          
 
            echo "<script>
-              alert('Message submitted successfully.');
+              alert(".json_encode($lang['alert']['message_submitted']).");
               window.open('support?view_conversation&ticket_id=$ticket_id','_self')
             </script>";
 

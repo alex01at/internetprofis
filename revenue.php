@@ -88,7 +88,7 @@ $withdrawLimitText = "";
    		<div class="col-md-12">
 			<h2 class="pull-left"><?= $lang["titles"]["revenue"]; ?></h2>
 			<p class="lead pull-right">
-			Available For Withdrawal: <span class="font-weight-bold text-success"> <?= showPrice($current_balance); ?> </span>
+			<?= $lang['revenue']['available_for_withdrawal']; ?>: <span class="font-weight-bold text-success"> <?= showPrice($current_balance); ?> </span>
 			</p>
 		</div>
 		<div class="col-md-12">

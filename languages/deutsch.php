@@ -1297,5 +1297,20 @@ $lang['warning']['select_instant_delivery_file'] = "Bitte wählen Sie eine Datei
 $lang['proposals']['enable_video_calling'] = "Videoanrufe aktivieren";
 $lang['proposals']['price_per_minute'] = "Preis pro Minute";
 $lang['proposals']['days_within_video_schedule'] = "Tage, innerhalb derer eine Videositzung geplant werden kann";
+$lang['referral']['proposal_referral_notice'] = "Wenn jemand diesen Auftrag über Ihren persönlichen Empfehlungslink kauft, erhalten Sie";
+$lang['referral']['from_every_purchase'] = "bei jedem Kauf.";
+$lang['alert']['proposal_removed_top_rated'] = "Herzlichen Glückwunsch, der Auftrag wurde erfolgreich aus der Bestenliste entfernt.";
+$lang['alert']['request_activated'] = "Eine Anfrage wurde aktiviert.";
+$lang['requests']['max_offers_per_day'] = "Sie können maximal 10 Angebote pro Tag senden. Sie haben Ihr heutiges Limit erreicht. Bitte versuchen Sie es morgen erneut.";
+$lang['alert']['request_deleted'] = "Eine Anfrage wurde erfolgreich gelöscht.";
+$lang['alert']['offer_submitted'] = "Ihr Angebot wurde erfolgreich übermittelt.";
+$lang['alert']['request_paused'] = "Eine Anfrage wurde pausiert.";
+$lang['revenue']['available_for_withdrawal'] = "Verfügbar zur Auszahlung";
+$lang['alert']['message_submitted'] = "Nachricht erfolgreich übermittelt.";
+$lang['alert']['language_deleted'] = "Eine Sprache wurde gelöscht.";
+$lang['alert']['skill_deleted'] = "Eine Fähigkeit wurde gelöscht.";
+$lang['warning']['error_sending_to_mobile_money'] = "Entschuldigung, beim Senden Ihres Geldes an Ihr Mobile-Money-Konto ist ein Fehler aufgetreten.";
+$lang['warning']['amount_higher_than_balance'] = "Hoppla! Der eingegebene Betrag ist höher als Ihr aktuelles Guthaben.";
+$lang['warning']['error_sending_to_bitcoin_wallet'] = "Entschuldigung, beim Senden Ihres Geldes an Ihr Bitcoin-Wallet ist ein Fehler aufgetreten.";
 
 

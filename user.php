@@ -12,7 +12,7 @@ if(isset($_SESSION['seller_user_name'])){
     $delete_language_id = $input->get('delete_language');
     $delete_language = $db->delete("languages_relation",array("relation_id"=>$delete_language_id,"seller_id"=>$login_seller_id));
     if($delete_language->rowCount() == 1){
-      echo "<script>alert('One Language has been deleted.')</script>";
+      echo "<script>alert(".json_encode($lang['alert']['language_deleted']).")</script>";
       echo "<script> window.open('$login_seller_user_name','_self') </script>";
     }else{
       echo "<script> window.open('$login_seller_user_name','_self') </script>";
@@ -22,7 +22,7 @@ if(isset($_SESSION['seller_user_name'])){
     $delete_skill_id = $input->get('delete_skill');
     $delete_skill = $db->delete("skills_relation",array("relation_id"=>$delete_skill_id,"seller_id"=>$login_seller_id));
     if($delete_skill->rowCount() == 1){
-      echo "<script>alert('One skill has been deleted.')</script>";
+      echo "<script>alert(".json_encode($lang['alert']['skill_deleted']).")</script>";
       echo "<script> window.open('$login_seller_user_name','_self') </script>";
     }else{
       echo "<script> window.open('$login_seller_user_name','_self') </script>";

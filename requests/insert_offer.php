@@ -47,7 +47,7 @@ $data['request_id'] = $request_id;
 send_mail($data);
 
 if($update_seller){
-	echo "<script>alert('Your offer has been submitted successfully.')</script>";
+	echo "<script>alert(".json_encode($lang['alert']['offer_submitted']).")</script>";
 	echo "<script>window.open('$site_url/requests/buyer_requests','_self')</script>";
 }
 

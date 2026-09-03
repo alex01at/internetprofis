@@ -31,7 +31,7 @@ $proposal_referral_code = $row_proposal->proposal_referral_code;
 
 <div class="modal-body">
 
-<h6>If anyone buys this proposal with your unique referral link, you will get <?= $proposal_referral_money; ?>% from every purchase.</h6>
+<h6><?= $lang['referral']['proposal_referral_notice']; ?> <?= $proposal_referral_money; ?>% <?= $lang['referral']['from_every_purchase']; ?></h6>
 
 <input class="form-control mb-1" disabled value="<?= $site_url . "/referral?proposal_id=$proposal_id&referral_code=" . $proposal_referral_code . "&referrer_id=$login_seller_id"; ?>">
 

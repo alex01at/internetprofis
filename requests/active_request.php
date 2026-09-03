@@ -18,7 +18,7 @@ $update_request = $db->update("buyer_requests",array("request_status"=>'active')
 
 if($update_request->rowCount() == 1){
 	
-echo "<script>alert('One request has been activated.');</script>";
+echo "<script>alert(".json_encode($lang['alert']['request_activated']).");</script>";
 	
 echo "<script>window.open('manage_requests','_self')</script>";
 	

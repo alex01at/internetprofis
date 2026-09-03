@@ -88,7 +88,7 @@ if(isset($_POST['withdraw'])){
 		if($err){
 
 			echo "<script>
-			alert('Sorry An error occurred During Sending Your Money To Your Mobile Money Account.');
+			alert(".json_encode($lang['warning']['error_sending_to_mobile_money']).");
 			window.open('revenue','_self')
 			</script>";
 		
@@ -125,7 +125,7 @@ if(isset($_POST['withdraw'])){
 		}
 
 	}else{
-		echo "<script>alert('Opps! the amount you entered is higher than your current balance.');</script>";
+		echo "<script>alert(".json_encode($lang['warning']['amount_higher_than_balance']).");</script>";
 		echo "<script>window.open('revenue','_self')</script>";
 	}
 	}else{

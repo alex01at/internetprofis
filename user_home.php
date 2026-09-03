@@ -565,7 +565,7 @@
       </div>
       <div class="modal-body">
         <center>
-        <h5>You can only send a max of 10 offers per day. Today you've maxed out. Try again tomorrow. </h5>
+        <h5><?= $lang['requests']['max_offers_per_day']; ?></h5>
         </center>
       </div>
       <div class="modal-footer">

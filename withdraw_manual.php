@@ -81,7 +81,7 @@ if(isset($_POST['withdraw'])){
 
 		}else{
 			
-			echo "<script>alert('Opps! the amount you entered is higher than your current balance.');</script>";
+			echo "<script>alert(".json_encode($lang['warning']['amount_higher_than_balance']).");</script>";
 			echo "<script>window.open('revenue','_self')</script>";
 				
 		}

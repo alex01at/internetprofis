@@ -20,7 +20,7 @@ if($delete_request->rowCount() == 1){
 
 $delete_send_offers = $db->delete("send_offers",array('request_id' => $request_id)); 
 	
-echo "<script>alert('One request has been deleted successfully.');</script>";
+echo "<script>alert(".json_encode($lang['alert']['request_deleted']).");</script>";
 	
 echo "<script>window.open('manage_requests','_self')</script>";
 	
