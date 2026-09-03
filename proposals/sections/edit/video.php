@@ -13,21 +13,21 @@ $video_schedules = $db->select("video_schedules");
 <form action="#" method="post" class="video-form"><!--- form Starts -->
 
   <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 col-form-label">Enable video calling:</label>
+    <label class="col-md-4 col-form-label"><?= $lang['proposals']['enable_video_calling']; ?>:</label>
     <div class="col-md-5">
       <input type="checkbox" name="enable" class="mt-3" value="1" <?php if($enable==1){echo "checked";} ?>>
     </div>
   </div>
   
   <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 col-form-label">Price per minute:</label>
+    <label class="col-md-4 col-form-label"><?= $lang['proposals']['price_per_minute']; ?>:</label>
     <div class="col-md-5">
       <input type="text" name="price_per_minute" class="form-control" value="<?= $price_per_minute; ?>">
     </div>
   </div>
 
   <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 col-form-label">Days within which a video session can be scheduled:</label>
+    <label class="col-md-4 col-form-label"><?= $lang['proposals']['days_within_video_schedule']; ?>:</label>
     <div class="col-md-5">
       <select name="days_within_scheduled" class="form-control">
         <?php foreach($video_schedules as $schedule){ ?>

@@ -63,15 +63,15 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 			<div class="order-details">
 				<div class="request-div">
 					<h4 class="mb-3">
-					<b>FEATURE LISTING FEE & INFO:</b> <span class="price float-right d-none d-sm-block mb-3 font-weight-bold"><?= showPrice($featured_fee); ?></span>
+					<b><?= $lang['proposals']['feature_listing_fee_info']; ?></b> <span class="price float-right d-none d-sm-block mb-3 font-weight-bold"><?= showPrice($featured_fee); ?></span>
 					</h4>
 					<p>
-						You are about to pay a feature listing fee for your proposal/service. This will make this proposal/service feature on our "Featured proposal/service" spots. The fee is <?= showPrice($featured_fee); ?> and the duration is <?= $featured_duration; ?> Days. Please use any of the following payment methods below to complete payment.
+						<?= $lang['proposals']['feature_listing_pay_notice']; ?> <?= showPrice($featured_fee); ?> <?= $lang['proposals']['feature_listing_duration_notice']; ?> <?= $featured_duration; ?> <?= $lang['proposals']['days_suffix']; ?> <?= $lang['proposals']['feature_listing_payment_methods_notice']; ?>
 					</p>
-					<h4><b>SUMMARY:</b></h4>
-					<p><b>Proposal Title:</b> <?= $proposal_title; ?></p>
-					<p><b>Feature Listing Fee:</b> <?= showPrice($featured_fee); ?></p>
-					<p class="processing-fee"><b>Processing Fee:</b> <?= showPrice($processing_fee); ?></p>
+					<h4><b><?= $lang['proposals']['summary_heading']; ?></b></h4>
+					<p><b><?= $lang['label']['proposal_title']; ?>:</b> <?= $proposal_title; ?></p>
+					<p><b><?= $lang['proposals']['feature_listing_fee']; ?>:</b> <?= showPrice($featured_fee); ?></p>
+					<p class="processing-fee"><b><?= $lang['order_details']['processing_fee']; ?>:</b> <?= showPrice($processing_fee); ?></p>
 					<p><b><?= $lang['proposals']['listing_duration']; ?></b> <?= $featured_duration; ?> <?= $lang['proposals']['days_suffix']; ?></p>
 				</div>
 			</div>
@@ -197,7 +197,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
          <button class="btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?> </button>
           <?php if($current_balance >= $featured_fee){ ?>
          		<form action="../shopping_balance" method="post" id="shopping-balance-form">
-						<button class="btn btn-success" type="submit" name="pay_featured_proposal_listing" onclick="return confirm('Are you sure you want to pay for the feature listing with your shopping balance ?')">
+						<button class="btn btn-success" type="submit" name="pay_featured_proposal_listing" onclick="return confirm(<?= json_encode($lang['confirm']['pay_feature_listing_with_shopping_balance']); ?>)">
 							<?= $lang['button']['pay_with_shopping']; ?>
 						</button>
 					</form>

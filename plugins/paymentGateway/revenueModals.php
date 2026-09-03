@@ -33,14 +33,14 @@ $row_settings = $select_settings->fetch();
 				<center><!-- center Starts -->
 					<?php if(empty($bank_name) or empty($bank_country) or empty($bank_state_province_region) or empty($bank_city) or empty($account_name) or empty($account_no)){ ?>
 					<p class="lead">
-						In order to transfer funds to your Bank account, you will need to add your Bank details in your
-						<a href="<?= escape($site_url); ?>/settings?account_settings" class="text-success">account settings</a> tab.
+						<?= $lang['revenue']['add_bank_details']; ?>
+						<a href="<?= escape($site_url); ?>/settings?account_settings" class="text-success"><?= $lang['revenue']['account_settings_link']; ?></a> <?= $lang['revenue']['tab_suffix']; ?>
 					</p>
 	        <?php }else{ ?>
 					<p class="lead">
-						Your revenue funds will be transferred to: 
-						<br> Bank Name : <strong><?= $bank_name; ?></strong>
-						<br> Account No : <strong><?= $account_no; ?></strong>
+						<?= $lang['revenue']['funds_transferred_to']; ?>
+						<br> <?= $lang['payment_settings']['bank_name']; ?> : <strong><?= $bank_name; ?></strong>
+						<br> <?= $lang['payment_settings']['account_no']; ?> : <strong><?= $account_no; ?></strong>
 					</p>
 					<form action="withdraw_manual" method="post">
 						<input type="hidden" name="method" value="bank_transfer">
@@ -55,7 +55,7 @@ $row_settings = $select_settings->fetch();
 						</div>
 						<div class="form-group row">
 							<div class="col-md-8 offset-md-3">
-							  <input type="submit" name="withdraw" value="Transfer" class="btn btn-success form-control" >
+							  <input type="submit" name="withdraw" value="<?= $lang['revenue']['transfer']; ?>" class="btn btn-success form-control" >
 							</div>
 						</div>
 					</form>
@@ -80,18 +80,18 @@ $row_settings = $select_settings->fetch();
 				<center><!-- center Starts -->
 	       <?php if(empty($id_type) or empty($id_file) or empty($full_name) or empty($address) or empty($mobile_no) or empty($preferred_currency)){ ?>
 					<p class="lead">
-						In order to transfer funds to your moneygram, you will need to add your moneygram details in your
+						<?= $lang['revenue']['add_moneygram_details']; ?>
 						<a href="<?= escape($site_url); ?>/settings?account_settings" class="text-success">
-							account settings
-						</a> tab.
+							<?= $lang['revenue']['account_settings_link']; ?>
+						</a> <?= $lang['revenue']['tab_suffix']; ?>
 					</p>
 	        <?php }else{ ?>
-					<p class="lead mb-2">Your revenue funds will be transferred to:</p>
+					<p class="lead mb-2"><?= $lang['revenue']['funds_transferred_to']; ?></p>
 					<p class="mt-0 ">
-						Full Name : <strong><?= $full_name; ?></strong>
-						<br> Address/Location : <strong><?= $address; ?></strong>
-						<br> Mobile No : <strong><?= $mobile_no; ?></strong>
-						<br> Currency : <strong><?= $preferred_currency; ?></strong>
+						<?= $lang['payment_settings']['full_name']; ?> : <strong><?= $full_name; ?></strong>
+						<br> <?= $lang['payment_settings']['address']; ?> : <strong><?= $address; ?></strong>
+						<br> <?= $lang['payment_settings']['mobile_no']; ?> : <strong><?= $mobile_no; ?></strong>
+						<br> <?= $lang['payment_settings']['preferred_currency']; ?> : <strong><?= $preferred_currency; ?></strong>
 					</p>
 					<form action="withdraw_manual" method="post">
 						<input type="hidden" name="method" value="moneygram">
@@ -106,7 +106,7 @@ $row_settings = $select_settings->fetch();
 						</div>
 						<div class="form-group row">
 							<div class="col-md-8 offset-md-3">
-							  <input type="submit" name="withdraw" value="Transfer" class="btn btn-success form-control" >
+							  <input type="submit" name="withdraw" value="<?= $lang['revenue']['transfer']; ?>" class="btn btn-success form-control" >
 							</div>
 						</div>
 					</form>

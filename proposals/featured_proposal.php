@@ -51,7 +51,7 @@ if(isset($_SESSION['proposal_id'])){
 		$sale = array("buyer_id" => $login_seller_id,"work_id" => $proposal_id,"payment_method" => $payment_method,"amount" => $featured_fee,"profit"=> $adminProfit,"processing_fee"=>$processing_fee,"action"=>"featured_fee","date"=>date("F d, Y h:i A"));
 
 		if(insertSale($sale)){
-			echo "<script>alert('Congrats, Your Proposal has been feature listed on this website.')</script>";
+			echo "<script>alert(".json_encode($lang['alert']['proposal_feature_listed']).")</script>";
 			if($f_createProposal == 0){
 				echo "<script>window.open('view_proposals.php','_self');</script>";
 			}elseif($f_createProposal == 1){

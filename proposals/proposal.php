@@ -340,7 +340,7 @@ echo '<link href="../../styles/desktop_proposals.css" rel="stylesheet">';
 
 				if($insert_notification){
 					send_report_email("proposal",$proposal_seller_user_name,$proposal_url,$date);
-					echo "<script>alert('Your Report Has Been Successfully Submitted.')</script>";
+					echo "<script>alert(".json_encode($lang['report_modal']['report_submitted']).")</script>";
 					echo "<script>window.open('$proposal_url','_self')</script>";
 				}
 			}

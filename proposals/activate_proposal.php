@@ -23,12 +23,12 @@ if(isset($_GET['proposal_id'])){
       if($status == "pause"){
 
          $update_proposal = $db->update("proposals",array("proposal_status"=>'active'),array("proposal_id"=>$proposal_id,"proposal_seller_id"=>$login_seller_id));
-         echo "<script>alert('Your proposal has been successfully activated!');</script>";
+         echo "<script>alert(".json_encode($lang['alert']['proposal_activated']).");</script>";
 
       }elseif($status == "admin_pause") {
 
          $update_proposal = $db->update("proposals",array("proposal_status"=>'pending'),array("proposal_id"=>$proposal_id,"proposal_seller_id"=>$login_seller_id));
-         echo "<script>alert('Proposal/Service submitted successfully for approval.');</script>";
+         echo "<script>alert(".json_encode($lang['alert']['submitted_for_approval']).");</script>";
 
       }  
 

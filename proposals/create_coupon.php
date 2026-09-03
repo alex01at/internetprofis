@@ -151,7 +151,7 @@ if(isset($_POST['submit'])){
   "coupon_code" => "required",
   "coupon_limit" => "number|required",
   "proposal_id" => "required");
-  $messages = array("proposal_id" => "You must need to select a proposal for coupon.");
+  $messages = array("proposal_id" => $lang['validation']['select_proposal_for_coupon']);
   $val = new Validator($_POST,$rules,$messages);
   if($val->run() == false){
     Flash::add("form_errors",$val->get_all_errors());
@@ -164,12 +164,12 @@ if(isset($_POST['submit'])){
     unset($data['submit']);
     $check_coupons = $db->count("coupons",array("coupon_code" => $coupon_code));
     if($check_coupons == 1){
-      echo "<script>alert('Coupon Code Has Been Applied Already.');</script>";
+      echo "<script>alert(".json_encode($lang['warning']['coupon_already_applied']).");</script>";
     }else{
       $insert_coupon = $db->insert("coupons",$data);
       if($insert_coupon){
       $insert_id = $db->lastInsertId();
-      echo "<script>alert('Coupon code created successfully.');</script>";
+      echo "<script>alert(".json_encode($lang['alert']['coupon_created']).");</script>";
       echo "<script>window.open('view_coupons?proposal_id=$proposal_id','_self');</script>";
       } 
     }

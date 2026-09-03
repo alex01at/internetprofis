@@ -18,7 +18,7 @@ $update_proposal = $db->update("proposals",array("proposal_status"=>'pause'),arr
 
 if($update_proposal->rowCount() == 1){
 	
-echo "<script>alert('Your proposal has been successfully paused!');</script>";
+echo "<script>alert(".json_encode($lang['alert']['proposal_paused']).");</script>";
 	
 echo "<script>window.open('view_proposals.php','_self');</script>";
 	

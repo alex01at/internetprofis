@@ -237,7 +237,7 @@ $(document).ready(function(){
       var img_name = data.files[0].name;
 
       if(img_type == "proposal_img1"){
-        alert("First Slide Must Need To Be An Image Not Audio.");
+        alert(<?= json_encode($lang['warning']['first_slide_must_be_image']); ?>);
       }else{
 
       $('#wait').addClass("loader");
@@ -296,7 +296,7 @@ $(document).ready(function(){
 
       }else{
 
-        alert("Your File Format Extension Is Not Supported.");
+        alert(<?= json_encode($lang['alert']['extension_not_supported']); ?>);
 
       }
 

@@ -92,7 +92,7 @@ $(document).ready(function(){
     size = this.files[0].size/1024;
     // alert(size);
     if(size > 100000){
-      alert("You exceeded our max upload size limit.");
+      alert(<?= json_encode($lang['warning']['exceeded_max_upload_size']); ?>);
       $(this).val("");
     }
 
@@ -231,10 +231,10 @@ $(document).ready(function(){
        var loaded_file=parseInt($('.instant_file_loaded').length);
        if (enable_button==1 || enable_button == "1") {
            if (instant_delivery_message == "" || instant_delivery_file == null) {
-               alert("Please Enter Delivery Message.");
+               alert(<?= json_encode($lang['warning']['enter_delivery_message']); ?>);
            } else if (loaded_file < 1) {
                if (instant_delivery_file == "" || instant_delivery_file == null) {
-                   alert("Please Select Instant Delivery File.");
+                   alert(<?= json_encode($lang['warning']['select_instant_delivery_file']); ?>);
                }else{
                    var form_data = new FormData(this);
                    form_data.append('proposal_id',<?= $proposal_id; ?>);
