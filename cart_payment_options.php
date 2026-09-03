@@ -152,7 +152,7 @@ if($seller_verification != "ok"){
 								<div class="col-11">
 									<p class="lead mt-2">
 					
-					               Personal Balance - <b><?= $login_seller_user_name; ?></b> 
+					               <?= $lang['payment']['personal_balance']; ?> <b><?= $login_seller_user_name; ?></b> 
 					               <span class="text-success font-weight-bold"><?= showPrice($current_balance); ?></span>
 
 									</p>

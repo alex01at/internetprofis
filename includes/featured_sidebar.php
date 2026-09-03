@@ -171,7 +171,7 @@
   <div class="card-header bg-success">
     <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['categories']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_cat_id clearlink" onclick="clearCat()">
-    <i class="fa fa-times-circle"></i> Clear Filter
+    <?= $lang['sidebar']['clear_filter']; ?>
     </button>
   </div>
   <div class="card-body">
@@ -199,7 +199,7 @@
   <div class="card-header bg-success">
     <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['delivery_time']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_delivery_time clearlink" onclick="clearDelivery()">
-    <i class="fa fa-times-circle"></i> Clear Filter
+    <?= $lang['sidebar']['clear_filter']; ?>
     </button>
   </div>
   <div class="card-body">
@@ -227,7 +227,7 @@
   <div class="card-header bg-success">
     <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['seller_level']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_level clearlink" onclick="clearLevel()">
-    <i class="fa fa-times-circle"></i> Clear Filter
+    <?= $lang['sidebar']['clear_filter']; ?>
     </button>
   </div>
   <div class="card-body">
@@ -255,7 +255,7 @@
   <div class="card-header bg-success">
     <h3 class="<?=($lang_dir == "right" ? 'float-right':'float-left')?> text-white h5"><?= $lang['sidebar']['seller_lang']; ?></h3>
     <button class="btn btn-secondary btn-sm <?=($lang_dir == "right" ? 'float-left':'float-right')?> clear_seller_language clearlink" onclick="clearLanguage()">
-    <i class="fa fa-times-circle"></i> Clear Filter
+    <?= $lang['sidebar']['clear_filter']; ?>
     </button>
   </div>
   <div class="card-body">

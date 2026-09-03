@@ -311,7 +311,7 @@ if(isset($_POST['code'])){
 						</div>
 						<div class="col-11">
 							<p class="lead mt-2">
-							Personal Balance - <?= $login_seller_user_name; ?>
+							<?= $lang['payment']['personal_balance']; ?> <?= $login_seller_user_name; ?>
 							<span class="text-success font-weight-bold"><?= showPrice($current_balance); ?></span>
 							</p>
 						</div>

@@ -80,9 +80,9 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 				<div class="payment-options mb-2">
 					<input type="radio" name="payment_option" id="shopping-balance" class="radio-custom" checked>
 					<label for="shopping-balance" class="radio-custom-label" ></label>
-					<span class="lead font-weight-bold"> Shopping Balance </span>
+					<span class="lead font-weight-bold"> <?= $lang['payment']['shopping_balance']; ?> </span>
 					<p class="lead ml-5">
-					Personal Balance - <?= $login_seller_user_name; ?> <span class="text-success font-weight-bold"> <?= showPrice($current_balance); ?> </span>
+					<?= $lang['payment']['personal_balance']; ?> <?= $login_seller_user_name; ?> <span class="text-success font-weight-bold"> <?= showPrice($current_balance); ?> </span>
 					</p>
 				</div>
                 <?php if($enable_paypal == "yes" or $enable_stripe == "yes" or $enable_mercadopago == "1" or $enable_coinpayments == "yes" or $enable_dusupay == "yes"){ ?>
@@ -194,7 +194,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
             </div>
 		</div>
 		<div class="modal-footer">
-         <button class="btn btn-secondary" data-dismiss="modal"> Close </button>
+         <button class="btn btn-secondary" data-dismiss="modal"> <?= $lang['button']['close']; ?> </button>
           <?php if($current_balance >= $featured_fee){ ?>
          		<form action="../shopping_balance" method="post" id="shopping-balance-form">
 						<button class="btn btn-success" type="submit" name="pay_featured_proposal_listing" onclick="return confirm('Are you sure you want to pay for the feature listing with your shopping balance ?')">
