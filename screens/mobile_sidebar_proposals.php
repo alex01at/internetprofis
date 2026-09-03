@@ -40,7 +40,7 @@
 </div>
 <div class="proposal-price">
 <a class="js-proposal-card-imp-data" href="#">
-<small>Starting At</small><?= showPrice($proposal_price); ?>
+<small><?= $lang['proposals']['starting_at']; ?></small><?= showPrice($proposal_price); ?>
 </a>
 </div>
 </div>

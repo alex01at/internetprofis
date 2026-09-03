@@ -4,7 +4,7 @@
 	<div class="search-bar d-none"><!--- search-bar Starts --->
 	<div class="input-group"><!--- input-group Starts --->
       <input type="text" class="form-control" placeholder="Search for a username">
-      <span class="input-group-addon"> <a href="#">Close</a> </span>
+      <span class="input-group-addon"> <a href="#"><?= $lang['button']['close']; ?></a> </span>
     </div><!--- input-group Ends --->
 	</div><!--- search-bar Ends --->
     <div class="dropdown float-left mt-1"><!--- dropdown float-left mt-1 Starts --->

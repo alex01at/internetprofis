@@ -37,7 +37,7 @@
       <div class="col-md-12 <?= $textRight; ?>">
         <nav class="nav-breadcrumb <?= $floatRight; ?>" aria-label="breadcrumb">
           <ol class="breadcrumb bg-white pl-0">
-            <li class="breadcrumb-item"><a href="<?= $site_url; ?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?= $site_url; ?>"><?= $lang['home']['home']; ?></a></li>
             <li class="breadcrumb-item active"><?= $page_title; ?></li>
           </ol>
         </nav>

@@ -33,7 +33,7 @@
   <?php require_once("../includes/header.php"); ?>
   <div class="container pt-5 pb-5"><!-- Container starts -->
 
-    <h2><a class="text-dark" href="index">General</a></h2>
+    <h2><a class="text-dark" href="index"><?= $lang['feedback']['general']; ?></a></h2>
 
     <div class="row"><!--- row Starts -->
 

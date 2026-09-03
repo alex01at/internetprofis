@@ -110,7 +110,7 @@ if($seller_verification != "ok"): ?>
                 <div class="modal-footer">
                     <input type="hidden" name="img_type" value="">
                     <button class="btn btn-success crop_image">Crop & Save</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ $request_seller_image = $row_request_seller->seller_image;
 
 			<div class="modal-header">
 
-				<h5 class="modal-title">Select A Proposal/Service To Offer</h5>
+				<h5 class="modal-title"><?= $lang['requests']['select_proposal_to_offer']; ?></h5>
 
 				<button class="close" data-dismiss="modal"> <span> &times;</span></button>
 				
@@ -123,7 +123,7 @@ $request_seller_image = $row_request_seller->seller_image;
 
 				<button class="btn btn-secondary" data-dismiss="modal"> Close</button>
 
-				<button class="btn btn-success" id="submit-proposal" data-toggle="modal" data-dismiss="modal" data-target="#submit-proposal-details" title="Choose an offer before clicking continue">Continue</button>
+				<button class="btn btn-success" id="submit-proposal" data-toggle="modal" data-dismiss="modal" data-target="#submit-proposal-details" title="<?= $lang['requests']['choose_offer_before_continue']; ?>"><?= $lang['continue']; ?></button>
 
 			</div>
 

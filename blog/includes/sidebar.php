@@ -29,7 +29,7 @@
 </div><!--- card Ends -->
 
 <div class="card card-primary">
-	<div class="card-header <?= $textRight; ?>">Categories</div>
+	<div class="card-header <?= $textRight; ?>"><?= $lang['sidebar']['categories']; ?></div>
 	<div class="card-body">
 		<ul class="mb-0 list-unstyled ml-3 mr-3 <?= $textRight; ?>">
 			<?php

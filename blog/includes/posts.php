@@ -31,7 +31,7 @@ if(isset($_GET['search'])){
 $count_posts = $posts->rowCount();
 
 if($count_posts == 0){
-	echo "<h2 class='h3 text-center bg-white p-5'>No Posts Found.</h2>";
+	echo "<h2 class='h3 text-center bg-white p-5'>".$lang['blog']['no_posts_found']."</h2>";
 }
 
 while($post = $posts->fetch()){
@@ -66,7 +66,7 @@ $cat_name = !empty($row_cat->cat_name) ? $row_cat->cat_name:'' ;
 		   	<a href="#"><?= $post_meta->author; ?></a> 
 		   </p>
 		   <p class="post-content <?= $textRight; ?>"><?= $content; ?>...</p>
-		   <a href="<?= $post->id; ?>/<?= $url; ?>" class="btn btn-success float-right">Read More</a>
+		   <a href="<?= $post->id; ?>/<?= $url; ?>" class="btn btn-success float-right"><?= $lang['blog']['read_more']; ?></a>
 	   </div>
 	</div>
 </div><!--- card Ends --->

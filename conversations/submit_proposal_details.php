@@ -113,7 +113,7 @@ $proposal_title = $row_proposals->proposal_title;
 
 <div class="modal-footer"><!--- modal-footer Starts --->
 
-<button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#send-offer-modal">Back</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#send-offer-modal"><?= $lang['button']['back']; ?></button>
 
 <button type="submit" class="btn btn-success">Submit Offer</button>
 

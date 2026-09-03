@@ -35,7 +35,7 @@
 
 	<div class="container pt-5 pb-5"><!-- Container starts -->
 
-		<h2><a class="text-dark" href="#">General</a></h2>
+		<h2><a class="text-dark" href="#"><?= $lang['feedback']['general']; ?></a></h2>
 
 		<div class="row"><!--- row Starts -->
 

@@ -24,7 +24,7 @@
 
         <button class="btn btn-success crop_image">Crop Image</button>
 
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 
       </div>
 

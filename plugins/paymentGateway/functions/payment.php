@@ -64,7 +64,7 @@ class Payment{
 			}
 			Twocheckout_Charge::redirect($params);
 	  }catch(Twocheckout_Error $e){
-	    $statusMsg = '<h2>Transaction failed!</h2>';
+	    $statusMsg = '<h2>'.$lang['payment']['transaction_failed'].'</h2>';
 	    $statusMsg .= '<p>'.$e->getMessage().'</p>';
 	  }
 	}
@@ -74,6 +74,7 @@ class Payment{
 		global $dir;
 		global $input;
 		global $site_url;
+		global $lang;
 
 		$get_payment_settings = $db->select("payment_settings");
 		$row_payment_settings = $get_payment_settings->fetch();

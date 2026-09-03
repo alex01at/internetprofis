@@ -196,7 +196,7 @@ $login_seller_id = $row_login_seller->seller_id;
                                 <td class="text-center">
 
 
-                                    <a href="view_offers?request_id=<?= $request_id; ?>" target="blank" class="btn btn-primary">View Offers</a>
+                                    <a href="view_offers?request_id=<?= $request_id; ?>" target="blank" class="btn btn-primary"><?= $lang['view_offers']; ?></a>
 
                                     <a href="pause_request?request_id=<?= $request_id; ?>" class="btn btn-primary">
                                         Pause

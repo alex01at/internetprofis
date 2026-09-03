@@ -49,7 +49,7 @@ if (isset($levels[$seller_level])) {
                             <img src="<?= $site_url; ?>/images/<?= $badge; ?>">
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
                         </div>
                     </div>
                 </div>

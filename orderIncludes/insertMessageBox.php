@@ -61,7 +61,7 @@
          require_once("plugins/videoPlugin/videoCall/orderVideoCall.php"); 
       }
     ?>
-    <button type="submit" class="btn btn-success float-right">Send</button>
+    <button type="submit" class="btn btn-success float-right"><?= $lang['button']['send']; ?></button>
     <div class="clearfix"></div>
     <p></p>
     <div class="form-row align-items-center message-attacment"><!-- form-row align-items-center message-attacment Starts -->

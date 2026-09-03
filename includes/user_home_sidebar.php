@@ -202,7 +202,7 @@ if (count($proposal_reviews) > 0) {
 			</div>
 	      <div class="proposal-price">
 		      <a class="js-proposal-card-imp-data">
-		      	<small>Starting At</small><?= showPrice($proposal_price); ?>
+		      	<small><?= $lang['proposals']['starting_at']; ?></small><?= showPrice($proposal_price); ?>
 		      </a>
 	      </div>
 	     </footer><!--- proposal-card-footer Ends --->
@@ -354,7 +354,7 @@ if (count($proposal_reviews) > 0) {
 
     <div class="proposal-price">
     <a class="js-proposal-card-imp-data">
-    <small>Starting At</small><?= showPrice($proposal_price); ?>
+    <small><?= $lang['proposals']['starting_at']; ?></small><?= showPrice($proposal_price); ?>
     </a>
     </div>
     </footer><!--- proposal-card-footer Ends --->

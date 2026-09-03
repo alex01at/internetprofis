@@ -7,7 +7,7 @@
          <div class="modal-header"><!-- modal-header Starts -->
             
             <h5 class="modal-title"> 
-               <span class="float-left">Mobile Money  </span>
+               <span class="float-left">Mobile Money</span>
             </h5>
 
             <button class="closeExtendTimePayment close" data-dismiss="modal">
@@ -21,14 +21,14 @@
             <form method="post" action="<?= $form_action; ?>" <?= (isset($extendTimePayment))?"target='_blank'":""; ?>>
             
                <div class="form-group">
-                  <label>Mobile Money Account Number</label>
-                  <input type="text" name="account_number" placeholder="Enter Your Mobile Money Account Number" class="form-control" required=""/>
+                  <label><?= $lang['dusupay']['account_number']; ?></label>
+                  <input type="text" name="account_number" placeholder="<?= $lang['dusupay']['account_number_placeholder']; ?>" class="form-control" required=""/>
                </div>
-               
+
                <?php if($dusupay_provider_id == "vodafone_gh"){ ?>
                   <div class="form-group">
-                     <label>Mobile Money Voucher</label>
-                     <input type="text" name="voucher" placeholder="Enter Your Mobile Money Voucher" class="form-control" required=""/>
+                     <label><?= $lang['dusupay']['voucher']; ?></label>
+                     <input type="text" name="voucher" placeholder="<?= $lang['dusupay']['voucher_placeholder']; ?>" class="form-control" required=""/>
                   </div>
                <?php } ?>
 

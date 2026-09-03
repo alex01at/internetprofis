@@ -35,7 +35,7 @@
 <div class="card"><!--- card Starts -->
 	<div class="card-body <?= $textRight; ?>"><!--- card-body Starts -->
 
-		<h4><a class="text-dark" href="#">General</a></h4>
+		<h4><a class="text-dark" href="#"><?= $lang['feedback']['general']; ?></a></h4>
 
 		<a class="btn btn-success mb-4" href="post-idea">
 			<i class="fa fa-plus-circle"></i> <?= $lang['post_new_idea'];?>
