@@ -32,7 +32,7 @@
 		  
 		<a class="" href="<?= $site_url; ?>/dashboard" >
 
-		<img src="<?= $site_url; ?>/images/icon1.png"><span class="d-lg-none"> <?= $lang['dashboard']['title']; ?></span>
+		<img src="<?= $site_url; ?>/images/icon1.png"><span class="d-lg-none"> <?= $lang['menu']['dashboard']; ?></span>
 
 		</a>
 		  
@@ -46,7 +46,7 @@
 	                
 	                	<span class="d-lg-none">
 
-			 			<?= $lang['notifications']; ?> 
+			 			<?= $lang['menu']['notifications']; ?> 
 	                    
 	                    <?php if($count_unread_notifications > 0){ ?>
 	                    
@@ -74,7 +74,7 @@
 
 				 		<span class="d-lg-none">
 
-				 		<?= $lang['messages']; ?> 
+				 		<?= $lang['menu']['messages']; ?> 
                             
                         <?php if($count_unread_inbox_messages > 0 ){ ?>
                             
@@ -102,7 +102,7 @@
                         
                           <span class="d-lg-none">
 
-				 			<?= $lang['favorites']; ?>  
+				 			<?= $lang['menu']['favorites']; ?>  
                             
                             <?php if($count_favourites > 0){ ?>
                             
@@ -125,7 +125,7 @@
                         
 				 		<span class="d-lg-none">
 
-				 			<?= $lang['cart']; ?> 
+				 			<?= $lang['menu']['cart']; ?> 
                             
                             <?php if($count_cart > 0){ ?>
                             
@@ -174,13 +174,13 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/dashboard">
 
-						<?= $lang['dashboard']['title']; ?>
+						<?= $lang['menu']['dashboard']; ?>
 
 						</a>
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#selling-2">
 
-						<?= $lang['selling']; ?>
+						<?= $lang['menu']['selling']; ?>
 
 						</a>
 
@@ -188,25 +188,25 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/selling_orders">
 
-						<?= $lang['orders']; ?>
+						<?= $lang['menu']['orders']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/proposals/view_proposals">
 
-						<?= $lang['my_proposals']; ?>
+						<?= $lang['menu']['my_proposals']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/requests/buyer_requests">
 
-						<?= $lang['buyer_requests']; ?>
+						<?= $lang['menu']['buyer_requests']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/revenue">
 
-						<?= $lang['revenues']; ?>
+						<?= $lang['menu']['revenues']; ?>
 
 						</a>
 
@@ -214,7 +214,7 @@
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#buying-2">
 
-						<?= $lang['buying']; ?>
+						<?= $lang['menu']['buying']; ?>
 
 						</a>
 
@@ -222,19 +222,19 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/buying_orders">
 
-						<?= $lang['orders']; ?>
+						<?= $lang['menu']['orders']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/purchases">
 
-						<?= $lang['purchases']; ?>
+						<?= $lang['menu']['purchases']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/favorites">
 
-						<?= $lang['favorites']; ?>
+						<?= $lang['menu']['favorites']; ?>
 
 						</a>
 
@@ -243,7 +243,7 @@
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#requests-2">
 
-						<?= $lang['requests']; ?>
+						<?= $lang['menu']['requests']; ?>
 
 						</a>
 
@@ -251,13 +251,13 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/requests/post_request">
 
-						<?= $lang['post_request']; ?>
+						<?= $lang['menu']['post_request']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/requests/manage_requests">
 
-						<?= $lang['manage_requests']; ?>
+						<?= $lang['menu']['manage_requests']; ?>
 
 						</a>
 
@@ -266,7 +266,7 @@
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#contacts-2">
 
-						<?= $lang['contacts']; ?>
+						<?= $lang['menu']['contacts']; ?>
 
 						</a>
 
@@ -274,13 +274,13 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/manage_contacts?my_buyers">
 
-						<?= $lang['my_buyers']; ?>
+						<?= $lang['menu']['my_buyers']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/manage_contacts?my_sellers">
 
-						<?= $lang['my_sellers']; ?>
+						<?= $lang['menu']['my_sellers']; ?>
 
 						</a>
 
@@ -289,7 +289,7 @@
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#referrals-2">
 
-						<?= $lang['my_referrals']['title']; ?>
+						<?= $lang['menu']['my_referrals']; ?>
 
 						</a>
 
@@ -299,7 +299,7 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/my_referrals">
 
-						<?= $lang['user_referrals']; ?>
+						<?= $lang['menu']['user_referrals']; ?>
 
 						</a>
 
@@ -307,7 +307,7 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/proposal_referrals">
 
-						<?= $lang['proposal_referrals']; ?>
+						<?= $lang['menu']['proposal_referrals']; ?>
 
 						</a>
 
@@ -316,21 +316,21 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/conversations/inbox">
 
-						<?= $lang['inbox_messages']; ?>
+						<?= $lang['menu']['inbox_messages']; ?>
 
 						</a>
 
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/<?= $_SESSION['seller_user_name']; ?>">
 
-						<?= $lang['my_profile']; ?>
+						<?= $lang['menu']['my_profile']; ?>
 
 						</a>
 
 
 						<a class="dropdown-item dropdown-toggle" href="#" data-toggle="collapse" data-target="#settings-2">
 
-						<?= $lang['settings']; ?>
+						<?= $lang['menu']['settings']; ?>
 
 						</a>
 
@@ -338,13 +338,13 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/settings?profile_settings">
 
-						<?= $lang['profile_settings']; ?>
+						<?= $lang['menu']['profile_settings']; ?>
 
 						</a>
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/settings?account_settings">
 
-						<?= $lang['account_settings']; ?>
+						<?= $lang['menu']['account_settings']; ?>
 
 						</a>
 
@@ -354,7 +354,7 @@
 
 						<a class="dropdown-item" href="<?= $site_url; ?>/logout">
 
-						<?= $lang['logout']; ?>
+						<?= $lang['menu']['logout']; ?>
 
 						</a>
 
