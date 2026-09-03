@@ -66,7 +66,7 @@ if($check_seller_email > 0){
 <div class="container mt-5"><!--- container mt-5 Starts -->
 <div class="row justify-content-center"><!--- row justify-content-center Starts -->
 <div class="col-lg-5 col-md-7"><!--- col-lg-5 col-md-7 Starts -->
-<h2 class="text-center"> Onboarding... </h2>
+<h2 class="text-center"> <?= $lang['onboarding']; ?> </h2>
 <div class="box-login mt-4"><!--- box-login mt-4 Starts -->
 <img class="logo img-fluid" src="<?= $_SESSION['picture']; ?>">
 <?php 
@@ -83,21 +83,21 @@ if(is_array($form_errors)){
 <?php } ?>
 <form action="" method="post"><!-- form Starts -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="form-control-label font-weight-bold"> Full Name </label>
-<input type="text" class="form-control" name="name" value="<?= $_SESSION['givenName'] . "" . $_SESSION['familyName']; ?>" placeholder="Enter Your Full Name" required>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['full_name']; ?> </label>
+<input type="text" class="form-control" name="name" value="<?= $_SESSION['givenName'] . "" . $_SESSION['familyName']; ?>" placeholder="<?= $lang['placeholder']['full_name']; ?>" required>
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="form-control-label font-weight-bold"> Username </label>
-<input type="text" class="form-control" name="u_name" placeholder="Enter Your Username" required>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['username']; ?> </label>
+<input type="text" class="form-control" name="u_name" placeholder="<?= $lang['placeholder']['username']; ?>" required>
 <small class="form-text text-muted">
-<span class="danger">NB: Username can't be changed once created.</span>
+<span class="danger"><?= $lang['username_cant_change']; ?></span>
 </small>
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="form-control-label font-weight-bold"> Email </label>
-<input type="email" class="form-control" disabled name="email" value="<?= $_SESSION['email'] ?>" placeholder="Enter Your Email" required>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['email']; ?> </label>
+<input type="email" class="form-control" disabled name="email" value="<?= $_SESSION['email'] ?>" placeholder="<?= $lang['placeholder']['email']; ?>" required>
 </div><!-- form-group Ends -->
-<input type="submit" name="continue" class="btn btn-success btn-block" value="Continue">
+<input type="submit" name="continue" class="btn btn-success btn-block" value="<?= $lang['continue']; ?>">
 </form><!--- form Ends -->
 </div><!-- text-center mt-3 Ends -->
 </div><!--- box-login mt-4 Ends -->

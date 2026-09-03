@@ -204,9 +204,9 @@ $buyer_image = getImageUrl2("sellers","seller_image",$row_buyer->seller_image);
 
 <h6> <?= $buyer_user_name; ?> </h6>
 
-<a href="<?= $buyer_user_name; ?>" target="blank" class="text-success" > User Profile </a> | 
+<a href="<?= $buyer_user_name; ?>" target="blank" class="text-success" > <?= $lang['requests']['user_profile']; ?> </a> | 
 
-<a href="buying_history?buyer_id=<?= $buyer_id; ?>" class="text-success"> History </a>
+<a href="buying_history?buyer_id=<?= $buyer_id; ?>" class="text-success"> <?= $lang['history']['title']; ?> </a>
 
 </div>
 
@@ -337,9 +337,9 @@ $seller_user_name = @$row_seller->seller_user_name;
 
 <h6> <?= $seller_user_name; ?> </h6>
 
-<a href="<?= $seller_user_name; ?>" target="blank" class="text-success" > User Profile </a> | 
+<a href="<?= $seller_user_name; ?>" target="blank" class="text-success" > <?= $lang['requests']['user_profile']; ?> </a> | 
 
-<a href="selling_history?seller_id=<?= $seller_id; ?>" target="blank" class="text-success" > History </a>
+<a href="selling_history?seller_id=<?= $seller_id; ?>" target="blank" class="text-success" > <?= $lang['history']['title']; ?> </a>
 
 </div>
 

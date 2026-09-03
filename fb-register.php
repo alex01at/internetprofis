@@ -72,7 +72,7 @@ if($check_seller_email > 0){
 
 <div class="col-lg-5 col-md-7"><!--- col-lg-5 col-md-7 Starts -->
 
-<h2 class="text-center"> Continue To <?= $site_name; ?> </h2>
+<h2 class="text-center"> <?= $lang['continue_to']; ?> <?= $site_name; ?> </h2>
 
 <div class="box-login mt-4"><!--- box-login mt-4 Starts -->
 
@@ -101,22 +101,22 @@ if(is_array($form_errors)){
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="form-control-label font-weight-bold"> Full Name </label>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['full_name']; ?> </label>
 
-<input type="text" class="form-control" name="name" value="<?= $_SESSION['userData']['first_name'] . " " . $_SESSION['userData']['last_name'] ?>" placeholder="Enter Your Full Name" required>
+<input type="text" class="form-control" name="name" value="<?= $_SESSION['userData']['first_name'] . " " . $_SESSION['userData']['last_name'] ?>" placeholder="<?= $lang['placeholder']['full_name']; ?>" required>
 
 </div><!-- form-group Ends -->
 
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="form-control-label font-weight-bold"> Username </label>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['username']; ?> </label>
 
-<input type="text" class="form-control" name="u_name" placeholder="Enter Your Username" required>
+<input type="text" class="form-control" name="u_name" placeholder="<?= $lang['placeholder']['username']; ?>" required>
 
 <small class="form-text text-muted">
 
-Note: Usernames cannot be changed once an account is registered.
+<?= $lang['username_cant_change2']; ?>
 
 </small>
 
@@ -126,14 +126,14 @@ Note: Usernames cannot be changed once an account is registered.
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="form-control-label font-weight-bold"> Email </label>
+<label class="form-control-label font-weight-bold"> <?= $lang['label']['email']; ?> </label>
 
-<input type="email" class="form-control" disabled name="email" value="<?= $_SESSION['userData']['email'] ?>" placeholder="Enter Your Email" required>
+<input type="email" class="form-control" disabled name="email" value="<?= $_SESSION['userData']['email'] ?>" placeholder="<?= $lang['placeholder']['email']; ?>" required>
 
 </div><!-- form-group Ends -->
 
 
-<input type="submit" name="continue" class="btn btn-success btn-block" value="Continue">
+<input type="submit" name="continue" class="btn btn-success btn-block" value="<?= $lang['continue']; ?>">
 
 </form><!--- form Ends -->
 
