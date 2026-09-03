@@ -48,7 +48,7 @@ There's no SSH access to the live host, so changes are also verified locally bef
 bash tests/run.sh
 ```
 
-It runs five checks, none of which need a database connection:
+It runs six checks, none of which need a database connection:
 
 -`tests/check-syntax.php` - runs `php -l` across the whole codebase (excluding vendored third-party libraries) to catch fatal syntax errors before upload.
 
@@ -59,5 +59,7 @@ It runs five checks, none of which need a database connection:
 -`tests/check-stray-backslashes.php` - catches a `\$lang` artifact left behind by a scripted find-and-replace.
 
 -`tests/check-identical-values.php` - flags `$lang[]` keys whose English and German text is byte-identical, usually meaning the German version was never actually translated. A small allowlist inside the script covers legitimately-identical values (brand names, country names, common loanwords).
+
+-`tests/check-mailer-require.php` - `send_mail()` is defined in `functions/mailer.php`, which `includes/db.php` does NOT load automatically; every page that calls it has to require it itself, directly or through something like `functions/email.php`. This walks each caller's actual require/include chain (resolving the codebase's common `$dir/...` pattern) and flags any file where that chain never reaches `functions/mailer.php` - the exact bug that caused a fatal error on every widerruf.php submission. A small allowlist covers fragments that are only ever `include()`'d into a page that already loaded the mailer itself.
 
 These same checks also run automatically on every push and pull request via GitHub Actions (`.github/workflows/tests.yml`).

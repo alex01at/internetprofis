@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here.
 
+## 2026-09-04
+
+### Added
+
+- Added the withdrawal_notices table to the base install schema (gigtodo.sql), so a fresh install has it without needing to separately run the migration.
+- Added tests/check-mailer-require.php: statically walks each send_mail() caller's require/include chain and flags any that never reach functions/mailer.php, where the function is actually defined.
+
+### Fixed
+
+- Fixed a fatal error on every widerruf.php submission: it called send_mail() without requiring functions/mailer.php first (includes/db.php doesn't pull that in automatically). Also fixed the same bug, found independently by the new check, in proposals/sections/edit/publish.php - its require path was missing two levels of `../` and pointed at a directory that doesn't exist, which would have fataled the first time a draft proposal's publish tab was opened.
+
 ## 2026-09-03
 
 ### Added

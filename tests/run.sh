@@ -34,6 +34,11 @@ php tests/check-identical-values.php
 if [ $? -ne 0 ]; then status=1; fi
 
 echo ""
+echo "=== Mailer require check ==="
+php tests/check-mailer-require.php
+if [ $? -ne 0 ]; then status=1; fi
+
+echo ""
 if [ $status -eq 0 ]; then
     echo "All checks passed."
 else

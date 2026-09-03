@@ -1,6 +1,6 @@
 <?php
 
-require_once("../functions/email.php");
+require_once("../../../functions/email.php");
 
 $featured_proposal = $row_proposal->proposal_featured;
 
