@@ -174,6 +174,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="<?= $site_author; ?>">
 <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
 <link href="styles/styles.css" rel="stylesheet">
 <link href="styles/categories_nav_styles.css" rel="stylesheet">
  

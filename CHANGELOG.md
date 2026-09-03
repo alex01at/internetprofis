@@ -25,6 +25,7 @@ All notable changes to this project are documented here.
 - Removed a handful of confirmed-unused PHP files.
 - Fixed upload directories that would not have existed after a fresh checkout, since empty directories aren't tracked by git.
 - Fixed the dashboard showing a raw commit hash instead of a release name for deployments tracked before release-name storage existed; the name is now resolved automatically.
+- Fixed missing icons across 25 pages (checkout, cart, login, dashboard, knowledge bank, and others) caused by a missing Font Awesome stylesheet link.
 
 ## 2026-08-27
 

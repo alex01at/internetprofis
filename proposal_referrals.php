@@ -40,6 +40,7 @@ $referral_money = $row_general_settings->referral_money;
  
 
 <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
 <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 <link href="styles/styles.css" rel="stylesheet">
 <link href="styles/user_nav_styles.css" rel="stylesheet">

@@ -20,6 +20,7 @@ require_once("includes/db.php");
 
 
 <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
 
 <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 

@@ -81,6 +81,7 @@ if(isset($_POST['access'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
     <link href="styles/custom.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
      

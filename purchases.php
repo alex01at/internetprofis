@@ -28,6 +28,7 @@ $login_seller_id = $row_login_seller->seller_id;
 <meta name="author" content="<?= $site_author; ?>">
  
 <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
 <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 <link href="styles/styles.css" rel="stylesheet">
 <link href="styles/user_nav_styles.css" rel="stylesheet">

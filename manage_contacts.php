@@ -28,6 +28,7 @@ $login_seller_id = $row_login_seller->seller_id;
  
 
 <link href="styles/bootstrap.css" rel="stylesheet">
+<link href="font_awesome/css/font-awesome.css" rel="stylesheet">
 
 <link href="styles/custom.css" rel="stylesheet"> <!-- Custom css code from modified in admin panel --->
 
