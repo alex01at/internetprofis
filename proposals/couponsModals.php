@@ -2,24 +2,24 @@
   <div class="modal-dialog"><!-- modal-dialog Starts -->
   <div class="modal-content"><!-- modal-content Starts -->
   <div class="modal-header"><!-- modal-header Starts -->
-  <h5 class="modal-title"> Add Coupon </h5> 
+  <h5 class="modal-title"> <?= $lang['coupons']['add_coupon']; ?> </h5> 
   <button class="close" data-dismiss="modal"> <span> &times; </span> </button>
   </div><!-- modal-header Ends -->
   <div class="modal-body"><!-- modal-body Starts -->
   <form action="" method="post"><!--- form Starts --->
   <div class="form-group row"><!--- form-group row Starts --->
-  <label class="col-md-4 control-label"> Coupon Title : </label>
+  <label class="col-md-4 control-label"> <?= $lang['label']['coupon_title']; ?> </label>
   <div class="col-md-8">
   <input type="text" name="coupon_title" class="form-control" required>
   </div>
   </div><!--- form-group row Ends --->
 
   <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 control-label"> Coupon Price : </label>
+    <label class="col-md-4 control-label"> <?= $lang['label']['coupon_price']; ?> </label>
     <div class="col-md-4 pr-0"><!--- col-md-4 Starts --->
       <select name="coupon_type" class="coupon-type form-control" required>
-        <option value="fixed_price"> Fixed Price </option>
-        <option value="discount_price"> Discount Percentage </option>
+        <option value="fixed_price"> <?= $lang['fixed_price']; ?> </option>
+        <option value="discount_price"> <?= $lang['coupons']['discount_percentage']; ?> </option>
       </select>
     </div><!--- col-md-4 Ends --->
     <div class="col-md-4"><!--- col-md-4 Starts --->
@@ -31,13 +31,13 @@
   </div><!--- form-group row Ends --->
 
   <div class="form-group row"><!--- form-group row Starts --->
-  <label class="col-md-4 control-label"> Coupon Code : </label>
+  <label class="col-md-4 control-label"> <?= $lang['label']['coupon_code']; ?> </label>
   <div class="col-md-8">
   <input type="text" name="coupon_code" class="form-control" required>
   </div>
   </div><!--- form-group row Ends --->
   <div class="form-group row"><!--- form-group row Starts --->
-  <label class="col-md-4 control-label"> Coupon Limit : </label>
+  <label class="col-md-4 control-label"> <?= $lang['label']['coupon_limit']; ?> </label>
   <div class="col-md-8">
   <input type="number" name="coupon_limit" class="form-control" value="1" min="1">
   </div>
@@ -45,7 +45,7 @@
   <div class="form-group row"><!--- form-group row Starts --->
   <label class="col-md-4 control-label"></label>
   <div class="col-md-8">
-  <input type="submit" name="add" class="btn btn-success form-control" value="Insert Coupon">
+  <input type="submit" name="add" class="btn btn-success form-control" value="<?= $lang['coupons']['insert_coupon']; ?>">
   </div>
   </div><!--- form-group row Ends --->
   </form><!--- form Ends --->
@@ -64,28 +64,28 @@ $coupon_id = $row_coupons->coupon_id;
 <div class="modal-dialog"><!-- modal-dialog Starts -->
 <div class="modal-content"><!-- modal-content Starts -->
 <div class="modal-header"><!-- modal-header Starts -->
-<h5 class="modal-title"> Edit Coupon </h5> 
+<h5 class="modal-title"> <?= $lang['coupons']['edit_coupon']; ?> </h5> 
 <button class="close" data-dismiss="modal"> <span> &times; </span> </button>
 </div><!-- modal-header Ends -->
 <div class="modal-body"><!-- modal-body Starts -->
   <form action="" method="post"><!--- form Starts --->
     <input type="hidden" name="coupon_id" value="<?= $coupon_id; ?>">
     <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 control-label"> Coupon Title : </label>
+    <label class="col-md-4 control-label"> <?= $lang['label']['coupon_title']; ?> </label>
     <div class="col-md-8">
     <input type="text" name="coupon_title" class="form-control" required value="<?= $row_coupons->coupon_title; ?>">
     </div>
     </div><!--- form-group row Ends --->
     <div class="form-group row"><!--- form-group row Starts --->
-      <label class="col-md-4 control-label"> Coupon Price : </label>
+      <label class="col-md-4 control-label"> <?= $lang['label']['coupon_price']; ?> </label>
       <div class="col-md-4 pr-0">
         <select name="coupon_type" class="coupon-type form-control">
           <?php if($row_coupons->coupon_type == "fixed_price"){ ?>
-          <option value="fixed_price"> Fixed Price </option>
-          <option value="discount_price"> Discount Percentage </option>
+          <option value="fixed_price"> <?= $lang['fixed_price']; ?> </option>
+          <option value="discount_price"> <?= $lang['coupons']['discount_percentage']; ?> </option>
           <?php }else{ ?>
-          <option value="discount_price"> Discount Percentage </option>
-          <option value="fixed_price"> Fixed Price </option>
+          <option value="discount_price"> <?= $lang['coupons']['discount_percentage']; ?> </option>
+          <option value="fixed_price"> <?= $lang['fixed_price']; ?> </option>
           <?Php } ?>
         </select>
       </div>
@@ -102,13 +102,13 @@ $coupon_id = $row_coupons->coupon_id;
       </div>
     </div><!--- form-group row Ends --->
     <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 control-label"> Coupon Code : </label>
+    <label class="col-md-4 control-label"> <?= $lang['label']['coupon_code']; ?> </label>
     <div class="col-md-8">
     <input type="text" name="coupon_code" class="form-control" required value="<?= $row_coupons->coupon_code; ?>">
     </div>
     </div><!--- form-group row Ends --->
     <div class="form-group row"><!--- form-group row Starts --->
-    <label class="col-md-4 control-label"> Coupon Limit : </label>
+    <label class="col-md-4 control-label"> <?= $lang['label']['coupon_limit']; ?> </label>
     <div class="col-md-8">
     <input type="number" name="coupon_limit" class="form-control" value="<?= $row_coupons->coupon_limit; ?>" min="1">
     </div>
@@ -116,7 +116,7 @@ $coupon_id = $row_coupons->coupon_id;
     <div class="form-group row"><!--- form-group row Starts --->
     <label class="col-md-4 control-label"></label>
     <div class="col-md-8">
-    <input type="submit" name="update" class="btn btn-success form-control" value="Update Coupon">
+    <input type="submit" name="update" class="btn btn-success form-control" value="<?= $lang['coupons']['update_coupon']; ?>">
     </div>
     </div><!--- form-group row Ends --->
   </form><!--- form Ends --->

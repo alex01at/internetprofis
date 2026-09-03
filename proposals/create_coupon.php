@@ -68,8 +68,8 @@ $login_seller_language = $row_login_seller->seller_language;
                       <label class="col-md-3 control-label"> <?= $lang['label']['coupon_price']; ?> </label>
                       <div class="col-md-3">
                         <select name="coupon_type" class="coupon-type form-control" required>
-                          <option value="fixed_price"> Fixed Price </option>
-                          <option value="discount_price"> Discount Percentage </option>
+                          <option value="fixed_price"> <?= $lang['fixed_price']; ?> </option>
+                          <option value="discount_price"> <?= $lang['coupons']['discount_percentage']; ?> </option>
                         </select>
                       </div>
                       <div class="col-md-3">
@@ -100,7 +100,7 @@ $login_seller_language = $row_login_seller->seller_language;
                         <label class="col-md-3 control-label"> <?= $lang['label']['select_proposal']; ?> </label>
                         <div class="col-md-6">
                             <select name="proposal_id" class="form-control" required>
-                              <option value=""> Select A Proposal/Service to Apply Coupon </option>
+                              <option value=""> <?= $lang['coupons']['select_proposal_for_coupon']; ?> </option>
                               <?php 
                                 $get_proposals = $db->select("proposals",array("proposal_status"=>'active',"proposal_seller_id"=>$login_seller_id));
                                 while($row_proposals = $get_proposals->fetch()){

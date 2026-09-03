@@ -46,7 +46,7 @@ $login_seller_vacation = $row_login_seller->seller_vacation;
 <div class="card-body pt-4"><!-- card-body Starts -->
 <h2 class="mb-0 float-left"> <?= $lang['titles']['view_coupons']; ?> </h2>
 <p class="lead float-right">
-<button class="btn btn-success" data-toggle="modal" data-target="#add"><i class="fa fa-plus-circle"></i> Add New Coupon</button>
+<button class="btn btn-success" data-toggle="modal" data-target="#add"><i class="fa fa-plus-circle"></i> <?= $lang['coupons']['add_new_coupon']; ?></button>
 </p>
 <div class="clearfix mb-2"></div>
 <div class="table-responsive border border-secondary rounded" style="min-height: 200px;"><!-- table-responsive border border-secondary rounded Starts -->
@@ -68,7 +68,7 @@ $proposal_id = $input->get('proposal_id');
 $get_coupons = $db->select("coupons",array("proposal_id"=>$proposal_id));
 $count_coupons = $get_coupons->rowCount();
 if($count_coupons == 0){
-echo "<td colspan='6' align='center'><h5>You Have Not Created Any Coupons Of This Proposal Yet.</h5></td>";
+echo "<td colspan='6' align='center'><h5>".$lang['coupons']['no_coupons_yet']."</h5></td>";
 }
 while($row_coupons = $get_coupons->fetch()){
 $coupon_id = $row_coupons->coupon_id;

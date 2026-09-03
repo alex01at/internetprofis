@@ -820,6 +820,14 @@ $lang['resolution_center']['order_does_meet_requirements'] = "Order does meet re
 $lang['resolution_center']['seller_asked_cancel'] = "Seller asked me to cancel.";
 $lang['resolution_center']['seller_cannot_do_task'] = "Seller cannot do required task.";
 $lang['resolution_center']['submit_cancellation_request'] = "Submit Cancellation Request";
+$lang['coupons']['add_coupon'] = "Add Coupon";
+$lang['coupons']['edit_coupon'] = "Edit Coupon";
+$lang['coupons']['discount_percentage'] = "Discount Percentage";
+$lang['coupons']['insert_coupon'] = "Insert Coupon";
+$lang['coupons']['update_coupon'] = "Update Coupon";
+$lang['coupons']['select_proposal_for_coupon'] = "Select A Proposal/Service to Apply Coupon";
+$lang['coupons']['add_new_coupon'] = "Add New Coupon";
+$lang['coupons']['no_coupons_yet'] = "You Have Not Created Any Coupons Of This Proposal Yet.";
 
 $lang['button']['create_new_proposal'] = "Create A New Proposal";
 $lang['button']['save_changes'] = "Save Changes";
