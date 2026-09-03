@@ -2778,6 +2778,26 @@ CREATE TABLE `unread_messages` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `withdrawal_notices`
+--
+
+CREATE TABLE `withdrawal_notices` (
+  `id` int(10) NOT NULL,
+  `seller_id` int(10) NOT NULL,
+  `order_number` text COLLATE utf8mb4_unicode_ci,
+  `full_name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ordered_date` text COLLATE utf8mb4_unicode_ci,
+  `received_date` text COLLATE utf8mb4_unicode_ci,
+  `reason` text COLLATE utf8mb4_unicode_ci,
+  `status` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `withdrawals`
 --
 
@@ -3394,6 +3414,12 @@ ALTER TABLE `unread_messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `withdrawal_notices`
+--
+ALTER TABLE `withdrawal_notices`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `withdrawals`
 --
 ALTER TABLE `withdrawals`
@@ -4001,6 +4027,12 @@ ALTER TABLE `top_proposals`
 -- AUTO_INCREMENT for table `unread_messages`
 --
 ALTER TABLE `unread_messages`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `withdrawal_notices`
+--
+ALTER TABLE `withdrawal_notices`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
