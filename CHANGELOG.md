@@ -5,6 +5,27 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-09-03
 
+### Hinzugefügt
+
+- **Dashboard zeigt jetzt die echte, von GitHub kommende Version statt
+  einem von Hand gepflegten Datenbankwert.** "Current Version" im
+  Dashboard kam bisher direkt aus `app_info.version` – einem Feld, das
+  manuell in der Datenbank gepflegt wird und nichts mit dem tatsächlich
+  deployten Stand zu tun hat. Zeigt jetzt den über denselben Mechanismus
+  wie `app_update.php` verfolgten Release-Tag (`admin/.deployed_version`),
+  mit Rückfallebenen (kurze Commit-SHA, falls nur ein roher Git-Stand
+  bekannt ist; der alte `app_info.version`-Wert nur, wenn noch gar nichts
+  verfolgt wird). Sobald ein neuerer Release verfügbar ist, erscheint
+  direkt daneben ein kleines "Update"-Abzeichen, das zu
+  `index?app_update` verlinkt.
+  Die gemeinsame Status-Logik wurde aus `app_update.php` in eine geteilte
+  Datei (`admin/includes/update_check.php`) ausgelagert, damit
+  `dashboard.php` sie nicht dupliziert. `admin/.deployed_version`
+  speichert jetzt zusätzlich zur Commit-SHA auch den Release-Namen
+  (altes reines SHA-Format wird weiterhin gelesen). Gegen das echte
+  Repo verifiziert (v1.0.0 als Basis markiert → korrekt `1.0.1` als
+  neueren Release erkannt).
+
 ### Behoben (Bugs)
 
 - **"Update now"-Button in `app_update.php` erschien nie, obwohl ein
