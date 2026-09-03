@@ -162,11 +162,11 @@ function watermarkImage($image,$data){
         <div class="col-md-10 offset-md-1">
           <ul class="nav nav-tabs mb-3 mt-3">
             <li class="nav-item">
-              <a href="#order-activity" data-toggle="tab" class="nav-link active make-black ">Order Activity</a>
+              <a href="#order-activity" data-toggle="tab" class="nav-link active make-black "><?= $lang['order_details']['order_activity']; ?></a>
             </li>
             <?php if($order_status == "pending" or $order_status == "progress" or $order_status == "delivered" or $order_status == "revision requested"){ ?>
             <li class="nav-item">
-              <a href="#resolution-center" data-toggle="tab" class="nav-link make-black">Resolution Center</a>
+              <a href="#resolution-center" data-toggle="tab" class="nav-link make-black"><?= $lang['order_details']['resolution_center']; ?></a>
             </li>
             <?php } ?>
           </ul>

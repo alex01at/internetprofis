@@ -55,7 +55,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header text-center make-white">
-          <h2>My Tickets List</h2>          
+          <h2><?= $lang['ticket_support']['my_tickets_list']; ?></h2>
           </div>
           <div class="card-body">            
             <div class="table-responsive">
@@ -82,7 +82,7 @@
                       <td><?= $ticket->order_number; ?></td>
                       <td><?= $ticket->order_rule; ?></td>
                       <td><?= ucfirst($ticket->status); ?></td>
-                      <td><a class="btn btn-success" href="<?= $site_url."/support?view_conversation&ticket_id=".$ticket->ticket_id; ?>">View</a></td>
+                      <td><a class="btn btn-success" href="<?= $site_url."/support?view_conversation&ticket_id=".$ticket->ticket_id; ?>"><?= $lang['button']['view']; ?></a></td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>

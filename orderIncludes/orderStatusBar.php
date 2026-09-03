@@ -22,10 +22,10 @@
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <h5 class="float-left mt-2">
-        <i class="fa fa-lg fa-times-circle text-danger"></i> Order Cancelled, Payment Has Been Refunded To Buyer.
+        <i class="fa fa-lg fa-times-circle text-danger"></i> <?= $lang['order_details']['order_cancelled_refunded']; ?>
         </h5>
         <h5 class="float-right mt-2">
-          Status: <span class="text-muted">Cancelled</span>
+          <?= $lang['th']['status']; ?>: <span class="text-muted"><?= $lang['order_details']['cancelled']; ?></span>
         </h5>
       </div>
     </div>

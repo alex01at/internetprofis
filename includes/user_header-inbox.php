@@ -81,7 +81,7 @@ $site_border_color = $row_general_settings->site_border_color;
         <div class="search-browse-inner">
           <form id="gnav-search" class="search-nav expanded-search apply-nav-height" method="post">
             <div class="gnav-search-inner clearable">
-              <label for="search-query" class="screen-reader-only">Search for items</label>
+              <label for="search-query" class="screen-reader-only"><?= $lang['search_for_items']; ?></label>
               <div class="search-input-wrapper text-field-wrapper">
                 <input id="search-query" class="rounded" name="search_query"
                   placeholder="<?= $lang['search']['placeholder']; ?>" value="<?= @$_SESSION["search_query"]; ?>"  autocomplete="off">

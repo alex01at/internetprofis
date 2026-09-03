@@ -59,7 +59,7 @@
 			<option value="<?= $language_id; ?>"> <?= $language_title; ?> </option>
 			<?php } ?>
 
-			<option value="custom">Custom Language</option>
+			<option value="custom"><?= $lang['custom_language']; ?></option>
 
 			</select>
 
@@ -242,7 +242,7 @@
 
 		<?php } ?>
 
-		<option value="custom">Custom Skill</option>
+		<option value="custom"><?= $lang['custom_skill']; ?></option>
 
 		</select>
 

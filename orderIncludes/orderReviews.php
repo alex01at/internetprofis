@@ -113,7 +113,7 @@ if ($count_all_reviews == "00") {
 
                             <h4>
 
-                                <span class="mr-1">Seller's Feedback</span>
+                                <span class="mr-1"><?= $lang['order_details']['sellers_feedback']; ?></span>
 
                                 <?php
 
@@ -183,7 +183,7 @@ if ($count_all_reviews == "00") {
 
                         <div class="form-group">
 
-                            <label class="h6 text-white">Review Rating</label>
+                            <label class="h6 text-white"><?= $lang['order_details']['review_rating']; ?></label>
 
                             <select name="rating" class="rating-select">
 
@@ -283,7 +283,7 @@ if ($count_all_reviews == "00") {
 
                         <div class="form-group">
 
-                            <label class="h6 text-white">Review Rating</label>
+                            <label class="h6 text-white"><?= $lang['order_details']['review_rating']; ?></label>
 
                             <select name="rating" class="rating-select">
 
