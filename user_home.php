@@ -63,7 +63,7 @@
                                 <i class="fa fa-wallet fa-2x text-success"></i>
                             </div>
                             <div class="col-9">
-                                <h5 class="card-title text-muted">Balance</h5>
+                                <h5 class="card-title text-muted"><?= $lang["dashboard"]['balance']; ?></h5>
                                 <h4 class="card-text"><?= showPrice($current_balance); ?></h4>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 <i class="fa fa-spinner fa-2x text-warning"></i>
                             </div>
                             <div class="col-9">
-                                <h5 class="card-title text-muted">Pending</h5>
+                                <h5 class="card-title text-muted"><?= $lang["dashboard"]['pending']; ?></h5>
                                 <h4 class="card-text"><?= $count_orders; ?></h4>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                                 <i class="fa fa-check fa-2x text-primary"></i>
                             </div>
                             <div class="col-9">
-                                <h5 class="card-title text-muted">Completed</h5>
+                                <h5 class="card-title text-muted"><?= $lang["dashboard"]['completed']; ?></h5>
                                 <h4 class="card-text"><?= $count_completed_orders; ?></h4>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                 <i class="fa fa-bullhorn fa-2x text-info"></i>
                             </div>
                             <div class="col-9">
-                                <h5 class="card-title text-muted">Active Gigs</h5>
+                                <h5 class="card-title text-muted"><?= $lang["dashboard"]['active_gigs']; ?></h5>
                                 <h4 class="card-text"><?= $count_active_proposals; ?></h4>
                             </div>
                         </div>
@@ -447,10 +447,10 @@
             <table class="table table-hover mb-0">
               <thead class="thead-light">
                 <tr>
-                  <th>Request Message</th>
-                  <th>Offers</th>
-                  <th>Duration</th>
-                  <th>Budget</th>
+                  <th><?= $lang['requests']['request_message']; ?></th>
+                  <th><?= $lang['th']['offers']; ?></th>
+                  <th><?= $lang['th']['duration']; ?></th>
+                  <th><?= $lang['th']['budget']; ?></th>
                 </tr>
               </thead>
               <tbody>
@@ -569,7 +569,7 @@
         </center>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
       </div>
     </div>
   </div>

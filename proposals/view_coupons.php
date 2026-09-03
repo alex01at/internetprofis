@@ -53,12 +53,12 @@ $login_seller_vacation = $row_login_seller->seller_vacation;
 <table class="table table-hover"><!-- table table-hover Starts -->
 <thead>
 <tr align="center" class="card-header">
-<th>Coupon Title</th>
-<th>Coupon Code</th>
-<th>Coupon Price</th>
-<th>Coupon Limit</th>
-<th>Coupon Used</th>
-<th>Coupon Actions</th>
+<th><?= $lang['coupons']['title']; ?></th>
+<th><?= $lang['coupons']['code']; ?></th>
+<th><?= $lang['coupons']['price']; ?></th>
+<th><?= $lang['coupons']['limit']; ?></th>
+<th><?= $lang['coupons']['used']; ?></th>
+<th><?= $lang['coupons']['actions']; ?></th>
 </tr>
 </thead>
 <tbody>
@@ -94,13 +94,13 @@ $proposal_id = $row_coupons->proposal_id;
 <td><?= $coupon_used; ?></td>
 <td>
 <div class="dropdown"><!--- dropdown Starts --->
-<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Actions</button>
+<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><?= $lang['coupons']['actions']; ?></button>
 <div class="dropdown-menu"><!--- dropdown-menu Starts --->
 <a class="dropdown-item" data-toggle="modal" href="#" data-target="#edit-<?= $coupon_id; ?>">
-<i class="fa fa-pencil-alt"></i> Edit
+<i class="fa fa-pencil-alt"></i> <?= $lang['button']['edit']; ?>
 </a>
 <a class="dropdown-item" href="view_coupons?proposal_id=<?= $proposal_id; ?>&delete_coupon=<?= $coupon_id; ?>">
-<i class="fa fa-trash-alt"></i> Delete
+<i class="fa fa-trash-alt"></i> <?= $lang['button']['delete']; ?>
 </a>
 </div><!--- dropdown-menu Ends --->
 </div><!--- dropdown Ends --->
