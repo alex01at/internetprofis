@@ -273,7 +273,7 @@ $withdrawLimitText = "";
 							<form action="withdraw_manual" method="post">
 								<input type="hidden" name="method" value="paypal">
 								<div class="form-group row">
-									<label class="col-md-3 col-form-label font-weight-bold">Amount</label>
+									<label class="col-md-3 col-form-label font-weight-bold"><?= $lang['th']['amount']; ?></label>
 									<div class="col-md-8">
 										<div class="input-group">
 											<span class="input-group-addon font-weight-bold"> $ </span>
@@ -291,7 +291,7 @@ $withdrawLimitText = "";
 						</center>
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 					</div>
 				</div>
 			</div>
@@ -318,7 +318,7 @@ $withdrawLimitText = "";
 							<form action="withdraw_manual" method="post">
 								<input type="hidden" name="method" value="payoneer">
 								<div class="form-group row">
-									<label class="col-md-3 col-form-label font-weight-bold">Amount</label>
+									<label class="col-md-3 col-form-label font-weight-bold"><?= $lang['th']['amount']; ?></label>
 									<div class="col-md-8">
 										<div class="input-group">
 											<span class="input-group-addon font-weight-bold"> $ </span>
@@ -336,7 +336,7 @@ $withdrawLimitText = "";
 						</center>
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 					</div>
 				</div>
 			</div>
@@ -360,7 +360,7 @@ $withdrawLimitText = "";
 		<div class="modal-body text-center"><!-- modal-body Starts -->
 		<?php if(empty($login_seller_account_number) or empty($login_seller_account_name)){ ?>
 		<p class="lead">
-		For Withdraw Payments To Your Mobile Money Account Please Add Your Mobile Money Account Details In <a href="#" class="text-success" id="settings-link">Account Settings Tab</a>
+		<?= $lang['revenue']['add_mobile_money_prefix']; ?> <a href="#" class="text-success" id="settings-link"><?= $lang['revenue']['account_settings_tab']; ?></a>
 		</p>
 		<?php }else{ ?>
 		<p class="modal-lead">
@@ -418,7 +418,7 @@ $withdrawLimitText = "";
 				<form action="<?= ($wish_do_manual_payouts == 1)?"withdraw_manual":"withdraw_wallet"; ?>" method="post">
 					<input type="hidden" name="method" value="bitcoin wallet">
 					<div class="form-group row">
-					<label class="col-md-3 col-form-label font-weight-bold">Amount</label>
+					<label class="col-md-3 col-form-label font-weight-bold"><?= $lang['th']['amount']; ?></label>
 						<div class="col-md-8">
 							<div class="input-group">
 							<span class="input-group-addon font-weight-bold"> $ </span>
@@ -436,7 +436,7 @@ $withdrawLimitText = "";
 			</center>
 			</div>
 			<div class="modal-footer">
-			<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<button class="btn btn-secondary" data-dismiss="modal"><?= $lang['button']['close']; ?></button>
 			</div>
 		</div>
 	</div>

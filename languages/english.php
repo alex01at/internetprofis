@@ -939,6 +939,11 @@ $lang['coupon_code']['already_used']= "Your Coupon Code Is Already Used.";
 
 /// Purchases 
 $lang['purchases']['no_purchases'] = "You have no purchases to display.";
+$lang['history']['sales_to'] = "Sales To";
+$lang['history']['purchases_from'] = "Purchases From";
+$lang['history']['results_found'] = "Results Found";
+$lang['revenue']['add_mobile_money_prefix'] = "For Withdraw Payments To Your Mobile Money Account Please Add Your Mobile Money Account Details In";
+$lang['revenue']['account_settings_tab'] = "Account Settings Tab";
 
 
 /// Change Password Page

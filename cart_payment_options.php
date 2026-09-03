@@ -301,7 +301,7 @@ if($seller_verification != "ok"){
 					<hr>
 					<p class="processing-fee"><?= $lang['cart']['processing_fee'];?> <span class="float-right"><?= showPrice($processing_fee); ?> </span></p>
 					<hr class="processing-fee">
-					<p>Total <span class="float-right font-weight-bold total-price"><?= showPrice($total); ?></span></p>
+					<p><?= $lang['cart']['total2']; ?> <span class="float-right font-weight-bold total-price"><?= showPrice($total); ?></span></p>
 					<hr>
 					<?php if($current_balance >= $sub_total){ ?>
 					<form action="shopping_balance" method="post" id="shopping-balance-form">

@@ -566,6 +566,11 @@ $lang['coupon_code']['not_apply']= "Der Code Ihres Gutscheins gilt nicht für ei
 Warenkorb!";
 $lang['coupon_code']['already_used']= "Der Code Ihres Gutscheins wurde bereits verwendet!";
 $lang['purchases']['no_purchases'] = "Sie haben keine Einkäufe zu zeigen.";
+$lang['history']['sales_to'] = "Verkäufe an";
+$lang['history']['purchases_from'] = "Einkäufe von";
+$lang['history']['results_found'] = "Ergebnisse gefunden";
+$lang['revenue']['add_mobile_money_prefix'] = "Um Zahlungen auf Ihr Mobile-Money-Konto auszahlen zu lassen, fügen Sie bitte Ihre Mobile-Money-Kontodaten hinzu unter";
+$lang['revenue']['account_settings_tab'] = "Kontoeinstellungen";
 $lang['change_password']['heading'] = "Hallo, {user_name}! Sie können Ihr Passwort hier ändern.";
 $lang['notifications']['all'] = "Alle Benachrichtigungen";
 $lang['notifications']['no_notifications'] = "Sie haben im Moment keine. Benachrichtigungen.";

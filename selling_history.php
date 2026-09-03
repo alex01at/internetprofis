@@ -75,16 +75,16 @@ $count_orders = $sel_orders->rowCount();
 
 <div class="col-md-12">
 
-<h2>Purchases From <a href="<?= $seller_user_name; ?>" ><?= ucfirst($seller_user_name); ?></a> </h2>
+<h2><?= $lang['history']['purchases_from']; ?> <a href="<?= $seller_user_name; ?>" ><?= ucfirst($seller_user_name); ?></a> </h2>
 
-<h6><?= $count_orders; ?> Results Found</h6>
+<h6><?= $count_orders; ?> <?= $lang['history']['results_found']; ?></h6>
 
 </div>
 
 </div>
 
 <div class="row">
-p
+
 <div class="col-md-12 mt-1 mb-3">
 
 <div class="table-responsive box-table mt-3">
@@ -92,14 +92,14 @@ p
 	<table class="table table-bordered">
 
 		<thead>
-			
-			<tr> 
 
-				<th>ORDER SUMMARY</th>
-				<th>ORDER DATE</th>
-				<th>DUE ON</th>
-				<th>TOTAL</th>
-				<th>STATUS</th>
+			<tr>
+
+				<th><?= $lang['th']['order_summary']; ?></th>
+				<th><?= $lang['th']['order_date']; ?></th>
+				<th><?= $lang['th']['due_on']; ?></th>
+				<th><?= $lang['th']['total']; ?></th>
+				<th><?= $lang['th']['status']; ?></th>
 				
 
 			</tr>

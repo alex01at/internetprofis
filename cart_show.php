@@ -92,7 +92,7 @@ while($row_cart = $select_cart->fetch()){
 </div><!--- cart-proposal Ends --->
 <?php } ?>
 
-<h3 class="float-right"> Total : <?= showPrice($total); ?> </h3>
+<h3 class="float-right"> <?= $lang['cart']['total']; ?> <?= showPrice($total); ?> </h3>
 </div><!--- card-body Ends --->
 </div><!--- card mb-3 Ends --->
 </div><!--- col-md-7 Ends --->
@@ -102,32 +102,32 @@ while($row_cart = $select_cart->fetch()){
     <div class="card-body cart-order-details">
       <p><?=$lang['cart']['subtotal'] ;?><span class="float-right"><?= showPrice($total); ?></span></p>
       <hr>
-      <p>Apply Coupon Code</p>
+      <p><?= $lang['cart']['apply_coupon_code']; ?></p>
       <form class="input-group" method="post">
-      <input type="text" name="code" class="form-control apply-disabled" placeholder="Enter Coupon Code">
-      <button type="submit" name="coupon_submit" class="input-group-addon btn btn-success">Apply</button>
+      <input type="text" name="code" class="form-control apply-disabled" placeholder="<?= $lang['cart']['enter_coupon_code']; ?>">
+      <button type="submit" name="coupon_submit" class="input-group-addon btn btn-success"><?= $lang['button']['apply']; ?></button>
       </form>
       <?php
       $coupon_usage = "no";
       ?>
       <hr>
       <?php if($coupon_usage == "not_valid"){ ?>
-      <p class="coupon-response mt-2 p-2 bg-danger text-white"> Your Coupon Code Is Not Valid. </p>
+      <p class="coupon-response mt-2 p-2 bg-danger text-white"> <?= $lang['coupon_code']['not_valid']; ?> </p>
       <?php }elseif($coupon_usage == "no" & isset($_GET['coupon_applied'])){ ?>
-      <p class="coupon-response mt-2 p-2 bg-success text-white">Your coupon code has been applied successfully.</p>
+      <p class="coupon-response mt-2 p-2 bg-success text-white"><?= $lang['coupon_code']['applied']; ?></p>
       <?php }elseif($coupon_usage == "expired"){ ?>
-      <p class="coupon-response mt-2 p-2 bg-danger text-white"> Your Coupon Code Is Expired. </p>
+      <p class="coupon-response mt-2 p-2 bg-danger text-white"> <?= $lang['coupon_code']['expired']; ?> </p>
       <?php }elseif($coupon_usage == "not_apply"){ ?>
-      <p class="coupon-response mt-2 p-2 bg-success text-white"> Your coupon code does not apply to proposal/service in your cart. </p>
+      <p class="coupon-response mt-2 p-2 bg-success text-white"> <?= $lang['coupon_code']['not_apply']; ?> </p>
       <?php } ?>
       <?php if($coupon_usage != "no"){ ?>
       <hr>
       <?php } ?>
-      <p>Processing Fee <span class="float-right"><?= showPrice($processing_fee); ?></span></p>
+      <p><?= $lang['cart']['processing_fee']; ?> <span class="float-right"><?= showPrice($processing_fee); ?></span></p>
       <hr>
-      <p>Total<span class="font-weight-bold float-right"><?= showPrice($total+$processing_fee); ?></span></p>
+      <p><?= $lang['cart']['total2']; ?><span class="font-weight-bold float-right"><?= showPrice($total+$processing_fee); ?></span></p>
       <hr>
-      <a href="cart_payment_options" class="btn btn-lg btn-success btn-block">Proceed To Payment</a>
+      <a href="cart_payment_options" class="btn btn-lg btn-success btn-block"><?= $lang['button']['proceed_to_payment']; ?></a>
     </div>
   </div>
 </div><!--- col-md-5 Ends --->
