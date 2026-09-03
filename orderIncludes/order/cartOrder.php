@@ -182,7 +182,7 @@ if(isset($_SESSION['cart_seller_id'])){
 	unset($_SESSION['reference_no']);
 	unset($_SESSION['method']);
 	
-	echo "<script>alert('Your order has been placed, Thank you.');</script>";
+	echo "<script>alert(".json_encode($lang['alert']['order_placed']).");</script>";
 	echo "<script>window.open('buying_orders','_self')</script>";
 
 }

@@ -7,8 +7,8 @@
           <span class="border border-success rounded p-1">Order: #<?= $order_number; ?></span>
         </h5>
         <h5 class="float-right mt-2">
-          Status: <span class="text-muted">
-          <?php if($order_status == "progress"){ echo "In"; } ?> 
+          <?= $lang['th']['status']; ?>: <span class="text-muted">
+          <?php if($order_status == "progress"){ echo $lang['order_conversations']['in_progress_prefix']; } ?>
           <?= ucwords($order_status); ?>
           </span>
         </h5>

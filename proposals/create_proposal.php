@@ -181,7 +181,7 @@ if($seller_verification != "ok"): ?>
                     success: function(data){
                         $('#insertimageModal').modal('hide');
                         $('input[type=hidden][name='+ name +']').val(data);
-                        swal("Success!", "Image has been cropped.", "success");
+                        swal(<?= json_encode($lang['alert']['success']); ?>, <?= json_encode($lang['alert']['image_cropped']); ?>, "success");
                     }
                 });
             });

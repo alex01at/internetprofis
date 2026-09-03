@@ -1312,5 +1312,16 @@ $lang['alert']['skill_deleted'] = "Eine Fähigkeit wurde gelöscht.";
 $lang['warning']['error_sending_to_mobile_money'] = "Entschuldigung, beim Senden Ihres Geldes an Ihr Mobile-Money-Konto ist ein Fehler aufgetreten.";
 $lang['warning']['amount_higher_than_balance'] = "Hoppla! Der eingegebene Betrag ist höher als Ihr aktuelles Guthaben.";
 $lang['warning']['error_sending_to_bitcoin_wallet'] = "Entschuldigung, beim Senden Ihres Geldes an Ihr Bitcoin-Wallet ist ein Fehler aufgetreten.";
+$lang['validation']['letters_only_no_urls'] = "Bitte geben Sie nur Buchstaben (einschließlich Umlaute), Groß- und Kleinschreibung und maximal ein Leerzeichen ein. URLs sind nicht erlaubt.";
+$lang['warning']['login_and_activate'] = "Bitte melden Sie sich bei Ihrem Konto an und klicken Sie auf den Aktivierungslink.";
+$lang['order_details']['tip_amount'] = "Trinkgeldbetrag";
+$lang['order_conversations']['in_progress_prefix'] = "In";
+$lang['alert']['order_placed'] = "Ihre Bestellung wurde aufgegeben, vielen Dank.";
+$lang['alert']['order_placed_successfully'] = "Ihre Bestellung wurde erfolgreich aufgegeben, vielen Dank.";
+$lang['alert']['success'] = "Erfolgreich!";
+$lang['alert']['image_cropped'] = "Das Bild wurde zugeschnitten.";
+$lang['button']['see_less'] = "Weniger anzeigen";
+$lang['button']['read_less'] = "Weniger lesen";
+$lang['button']['read_more2'] = "Mehr lesen";
 
 

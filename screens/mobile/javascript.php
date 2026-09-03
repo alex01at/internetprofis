@@ -46,21 +46,21 @@ $(document).ready(function(){
 	<?php } ?>
 
 	$(document).on("click", ".seller-info .see-more", function(event){
-		$(this).text("See less").addClass("see-less").removeClass("see-more");;
+		$(this).text(<?= json_encode($lang['button']['see_less']); ?>).addClass("see-less").removeClass("see-more");;
 		$(".seller-info").addClass("show");
 	});
 
 	$(document).on("click", ".seller-info .see-less", function(event){
-		$(this).text("See more").addClass("see-more").removeClass("see-less");;
+		$(this).text(<?= json_encode($lang['see_more']); ?>).addClass("see-more").removeClass("see-less");;
 		$(".seller-info").removeClass("show");
 	});
 
 	$(".gig-info-desc .see-more").click(function(){
 		text = $(this).text();
-		if (text === "Read more") {
-		  $(this).text("Read less");
+		if (text === <?= json_encode($lang['button']['read_more2']); ?>) {
+		  $(this).text(<?= json_encode($lang['button']['read_less']); ?>);
 		}else{
-		  $(this).text("Read more");
+		  $(this).text(<?= json_encode($lang['button']['read_more2']); ?>);
 		}
 		$(".gig-info-desc").toggleClass("show");
 	});

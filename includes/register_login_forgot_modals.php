@@ -112,7 +112,7 @@ const regex = /^(?!https?:\/\/)[a-zA-ZäöüßÄÖÜß ]+$/;
 input.addEventListener("input", function() {
   if (!regex.test(input.value)) {
     // Fehlermeldung anzeigen
-    alert("Bitte geben Sie nur Buchstaben (einschließlich Umlaute), Groß- und Kleinschreibung und maximal ein Leerzeichen ein. URLs sind nicht erlaubt.");
+    alert(<?= json_encode($lang['validation']['letters_only_no_urls']); ?>);
     // Absenden des Formulars verhindern
     event.preventDefault();
     input.value = "";

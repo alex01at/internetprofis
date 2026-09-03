@@ -7,7 +7,7 @@ require_once("db.php");
 if(!isset($_SESSION['seller_user_name'])){
 	
 	echo "<script> 
-	alert('Please login to your account and click on the activation link.');
+	alert(".json_encode($lang['warning']['login_and_activate']).");
 	window.open('../login','_self'); 
 	</script>";
 	

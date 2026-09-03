@@ -117,7 +117,7 @@ if(isset($_SESSION['message_offer_id'])){
 
 		echo "
 		<script>
-		alert('Your order has been placed successfully, thank you.');
+		alert(".json_encode($lang['alert']['order_placed_successfully']).");
 		window.open('order_details?order_id=$insert_order_id','_self');
 		</script>";
 

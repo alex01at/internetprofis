@@ -67,8 +67,8 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
       <div class="modal-body p-0">
         <div class="order-details">
           <div class="request-div" style="background-color: #d1ecf1;">
-            <p> <b> Tip Amount: </b> <?= showPrice($amount); ?> </p>
-            <p class="processing-fee"> <b> Processing Fee: </b> <?= showPrice($processing_fee); ?> </p>
+            <p> <b> <?= $lang['order_details']['tip_amount']; ?>: </b> <?= showPrice($amount); ?> </p>
+            <p class="processing-fee"> <b> <?= $lang['order_details']['processing_fee']; ?>: </b> <?= showPrice($processing_fee); ?> </p>
             <p class="processing-fee"> <b> <?= $lang['th']['total']; ?> </b> <?= showPrice($total); ?> </p>
           </div>
         </div>
