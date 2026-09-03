@@ -5,6 +5,25 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
 ## 2026-09-03
 
+### Behoben (Bugs)
+
+- **"Update now"-Button in `app_update.php` erschien nie, obwohl ein
+  neuerer Release veröffentlicht war.** Echter Logik-Bug, kein
+  Bedien-/Anzeigeproblem: Die GitHub-Compare-API liefert bei
+  `compare/BASE...HEAD` den Status relativ zu `BASE`. Im Code ist
+  `BASE = $deployedSha`, `HEAD = $latestCommit` (der Release-Commit) –
+  `"ahead"` bedeutet also, dass der **Release** neuer ist als das
+  Deployment (Update verfügbar). Der Code hatte die Zweige vertauscht:
+  bei `"ahead"` wurde nur eine passive Info ohne Button gezeigt, der
+  Button erschien nur im (seltenen) `"diverged"`-Fall. Im
+  Normalfall – ein neuerer Release existiert, nichts ist lokal
+  abgewichen – ist der Status aber `"ahead"`, weshalb der Button nie
+  auftauchte. Zusätzlich war auch die Commit-/Dateizahl-Anzeige
+  betroffen (`behind_by` statt `ahead_by` verwendet). Gegen das echte
+  Repo verifiziert: Vergleich zwischen dem v1.0.0- und dem
+  1.0.1-Release-Commit liefert `status: ahead, ahead_by: 14, 36
+  Dateien` – genau der Fall, der jetzt korrekt den Button zeigt.
+
 ### Geändert
 
 - **`app_update.php`-Layout an die tatsächliche Mehrheits-Konvention
