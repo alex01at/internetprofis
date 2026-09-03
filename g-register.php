@@ -115,7 +115,7 @@ if(isset($_POST['continue'])){
 	"name" => "required",
 	"u_name" => "required");
 
-	$messages = array("name" => "Full Name Is Required.","u_name" => "User Name Is Required.");
+	$messages = array("name" => $lang['validation']['full_name_required2'],"u_name" => $lang['validation']['username_required2']);
 
 	$val = new Validator($_POST,$rules,$messages);
 

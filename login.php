@@ -18,8 +18,8 @@ if(isset($_POST['access'])){
         "seller_pass" => "required"
     ];
     $messages = [
-        "seller_user_name" => "Benutzername oder E-Mail ist erforderlich.",
-        "seller_pass" => "Passwort ist erforderlich."
+        "seller_user_name" => $lang['validation']['username_or_email_required'],
+        "seller_pass" => $lang['validation']['password_required']
     ];
     
     $val = new Validator($_POST, $rules, $messages);

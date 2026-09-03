@@ -1237,5 +1237,24 @@ $lang['warning']['email_already_taken'] = "Diese E-Mail-Adresse wird bereits ver
 $lang['button']['chat'] = "Chat";
 $lang['demo_mode']['heading'] = "Demo-Modus:";
 $lang['demo_mode']['disabled_notice'] = "Speichern, Aktualisieren und Löschen ist deaktiviert.";
+$lang['note']['phone_format'] = "Bitte geben Sie eine 10-stellige Telefonnummer im folgenden Format ein:";
+$lang['validation']['full_name_required'] = "Der vollständige Name ist erforderlich.";
+$lang['validation']['email_required'] = "Die E-Mail-Adresse ist erforderlich.";
+$lang['validation']['country_required'] = "Das Land ist erforderlich.";
+$lang['validation']['main_language_required'] = "Die Hauptkonversationssprache ist erforderlich.";
+$lang['warning']['email_already_chosen'] = "Diese E-Mail-Adresse wird bereits verwendet. Bitte wählen Sie eine andere.";
+$lang['alert']['profile_settings_updated'] = "Profileinstellungen erfolgreich aktualisiert!";
+$lang['validation']['username_or_email_required'] = "Benutzername oder E-Mail ist erforderlich.";
+$lang['validation']['password_required'] = "Passwort ist erforderlich.";
+$lang['validation']['username_required'] = "Benutzername ist erforderlich.";
+$lang['validation']['full_name_required2'] = "Vollständiger Name ist erforderlich.";
+$lang['validation']['username_required2'] = "Benutzername ist erforderlich.";
+$lang['validation']['confirm_password_required'] = "Passwortbestätigung ist erforderlich.";
+$lang['validation']['old_password_required'] = "Altes Passwort ist erforderlich.";
+$lang['validation']['new_password_required'] = "Neues Passwort ist erforderlich.";
+$lang['validation']['new_password_again_required'] = "Wiederholung des neuen Passworts ist erforderlich.";
+$lang['warning']['old_password_invalid'] = "Ihr altes Passwort ist ungültig, bitte versuchen Sie es erneut!";
+$lang['warning']['new_password_no_match'] = "Ihr neues Passwort stimmt nicht überein.";
+$lang['alert']['password_updated_relogin'] = "Passwort erfolgreich aktualisiert, melden Sie sich mit Ihrem neuen Passwort an.";
 
 

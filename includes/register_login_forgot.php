@@ -23,10 +23,10 @@ if(isset($_POST['register'])){
     );
 
     $messages = array(
-        "name" => "Full Name Is Required.",
-        "u_name" => "User Name Is Required.",
-        "pass" => "Password Is Required.",
-        "con_pass" => "Confirm Password Is Required."
+        "name" => $lang['validation']['full_name_required2'],
+        "u_name" => $lang['validation']['username_required2'],
+        "pass" => $lang['validation']['password_required'],
+        "con_pass" => $lang['validation']['confirm_password_required']
     );
     
     $val = new Validator($_POST,$rules,$messages);
@@ -199,7 +199,7 @@ if(isset($_POST['register'])){
  */
 if(isset($_POST['login'])){
     $rules = array("seller_user_name" => "required", "seller_pass" => "required");
-    $messages = array("seller_user_name" => "Username Is Required.", "seller_pass" => "Password Is Required.");
+    $messages = array("seller_user_name" => $lang['validation']['username_required'], "seller_pass" => $lang['validation']['password_required']);
     $val = new Validator($_POST, $rules, $messages);
 
     if($val->run() == false){

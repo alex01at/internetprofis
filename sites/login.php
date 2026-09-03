@@ -159,7 +159,7 @@ if(isset($_SESSION['seller_user_name'])){
 	$rules = array(
 	"seller_user_name" => "required",
 	"seller_pass" => "required");
-	$messages = array("seller_user_name" => "Username Is Required.","seller_pass" => "Password Is Required.");
+	$messages = array("seller_user_name" => $lang['validation']['username_required'],"seller_pass" => $lang['validation']['password_required']);
 	$val = new Validator($_POST,$rules,$messages);
 
 	if($val->run() == false){

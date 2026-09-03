@@ -270,7 +270,7 @@ if(isset($_POST['submit_payoneer_email'])){
   "old_pass" => "required",
   "new_pass" => "required",
   "new_pass_again" => "required");
-  $messages = array("old_pass" => "Old Password Is Required.","new_pass" => "New Password Is Required.","new_pass_again"=>"New Password Again Is Required.");
+  $messages = array("old_pass" => $lang['validation']['old_password_required'],"new_pass" => $lang['validation']['new_password_required'],"new_pass_again"=>$lang['validation']['new_password_again_required']);
   $val = new Validator($_POST,$rules,$messages);
   if($val->run() == false){
     Flash::add("change_pass_errors",$val->get_all_errors());
@@ -288,21 +288,21 @@ if(isset($_POST['submit_payoneer_email'])){
     echo "<script>
       swal({
         type: 'warning',
-        html: $('<div>').addClass('some-class').text('Your old password is invalid, please try again!.'),
+        html: $('<div>').addClass('some-class').text(".json_encode($lang['warning']['old_password_invalid'])."),
         animation: false,
         customClass: 'animated tada'
       });
       </script>";
     }else{
       if($new_pass!=$new_pass_again){
-       echo "<script>alert('Your New Password dose not match.');</script>";
+       echo "<script>alert(".json_encode($lang['warning']['new_password_no_match']).");</script>";
       }else{
         $encrypted_password = password_hash($new_pass, PASSWORD_DEFAULT);
         $update_pass = $db->update("sellers",array("seller_pass"=>$encrypted_password),array("seller_id" => $login_seller_id));
         echo "<script>
         swal({
           type: 'success',
-          text: 'Password updated successfully, login with your new password.',
+          text: ".json_encode($lang['alert']['password_updated_relogin']).",
           timer: 3000,
           onOpen: function(){
             swal.showLoading();

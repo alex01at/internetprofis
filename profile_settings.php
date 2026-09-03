@@ -52,7 +52,7 @@
       
       </div>
 
-      <small class="text-muted">Please enter 10 digit phone number only like this: <b>2561040358</b> </small>
+      <small class="text-muted"><?= $lang['note']['phone_format']; ?> <b>2561040358</b> </small>
     </div>
   </div>
 
@@ -215,7 +215,7 @@
     var size = $(this)[0].files[0].size; 
     var ext = $(this).val().split('.').pop().toLowerCase();
     if($.inArray(ext,['jpeg','jpg','gif','png']) == -1){
-    alert('Your File Extension Is Not Allowed.');
+    alert(<?= json_encode($lang['alert']['extension_not_supported']); ?>);
     $(this).val('');
     }else{
     crop(this);
@@ -258,7 +258,7 @@
     "seller_country" => "required",
     "seller_language" => "required");
 
-    $messages = array("seller_name" => "Full Name Is required.","seller_email" => "Email Is Required.","seller_country"=>"Country Is Required.","seller_language"=>"Main Conversational Language Is Required.");
+    $messages = array("seller_name" => $lang['validation']['full_name_required'],"seller_email" => $lang['validation']['email_required'],"seller_country"=>$lang['validation']['country_required'],"seller_language"=>$lang['validation']['main_language_required']);
     $val = new Validator($_POST,$rules,$messages);
     if($val->run() == false){
       Flash::add("form_errors",$val->get_all_errors());
@@ -290,8 +290,8 @@
 
           echo "
           <script>
-            swal('','This Email Has Been Already Chosen, Please Try Another One.','warning');
-          </script>"; 
+            swal('',".json_encode($lang['warning']['email_already_chosen']).",'warning');
+          </script>";
 
         }else{
 
@@ -335,7 +335,7 @@
               echo "<script>
               swal({
                 type: 'success',
-                text: 'Profile settings updated successfully!',
+                text: ".json_encode($lang['alert']['profile_settings_updated']).",
                 timer: 3000,
                 onOpen: function(){
                   swal.showLoading()
