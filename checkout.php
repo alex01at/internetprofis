@@ -199,7 +199,7 @@ require_once("includes/header.php");
 if($seller_verification != "ok"){
 echo "
 <div class='alert alert-danger rounded-0 mt-0 text-center'>
-Please confirm your email to use this feature.
+".$lang["confirm_email_required"]."
 </div>";
 }else{
 

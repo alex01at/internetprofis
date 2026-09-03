@@ -204,9 +204,9 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
                               <?php } ?>
 										<a href="pause_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['proposals']['deactivate_proposal']; ?></a>
                               <a href="view_coupons?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['coupons']['view_coupons']; ?></a>
-                              <a href="view_referrals?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> View Referrals</a>
-										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+                              <a href="view_referrals?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['proposals']['view_referrals']; ?></a>
+										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['edit']; ?> </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 										<script>
@@ -228,7 +228,7 @@ if(!isset($_GET['paused']) and !isset($_GET['pending']) and !isset($_GET['modifi
 						</table>
                        <?php
                             if($count_proposals == 0){
-                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-meh-o'></i> You currently have no proposals/services to sell.</h3></center>";
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-meh-o'></i> ".$lang['view_proposals']['no_active']."</h3></center>";
                             }
                        ?>
 					</div>
@@ -283,17 +283,17 @@ EOT;
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> Preview </a>
-										<a 
-                              href="activate_proposal?proposal_id=<?= $proposal_id; ?>" 
+										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> <?= $lang['proposals']['preview']; ?> </a>
+										<a
+                              href="activate_proposal?proposal_id=<?= $proposal_id; ?>"
                               class="dropdown-item"
                               <?= $onclick; ?>
-                              > 
-                              Activate
+                              >
+                              <?= $lang['button']['activate']; ?>
                               </a>
-										<a href="view_referrals?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> View Referrals</a>
-										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+										<a href="view_referrals?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['proposals']['view_referrals']; ?></a>
+										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['edit']; ?> </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 									</td>
@@ -303,7 +303,7 @@ EOT;
 						</table>
                        <?php
                             if($count_proposals == 0){
-                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no paused proposals/services.</h3></center>";
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> ".$lang['view_proposals']['no_paused']."</h3></center>";
                             }
                        ?>
 					</div>
@@ -347,9 +347,9 @@ EOT;
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> Preview </a>
-										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> <?= $lang['proposals']['preview']; ?> </a>
+										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['edit']; ?> </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 									</td>
@@ -359,7 +359,7 @@ EOT;
 						</table>
                         <?php
                             if($count_proposals == 0){
-                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no proposals/services pending.</h3></center>";
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> ".$lang['view_proposals']['no_pending']."</h3></center>";
                             }
                        ?>
 					</div>
@@ -393,10 +393,10 @@ EOT;
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="submit_approval?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Submit For Approval </a>
-										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> Preview </a>
-										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+										<a href="submit_approval?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['proposals']['submit_for_approval']; ?> </a>
+										<a href="<?= $login_seller_user_name; ?>/<?= $proposal_url; ?>" class="dropdown-item"> <?= $lang['proposals']['preview']; ?> </a>
+										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['edit']; ?> </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 									</td>
@@ -406,7 +406,7 @@ EOT;
 						</table>
                        <?php
                             if($count_proposals == 0){
-                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no modifications requested.</h3></center>";
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> ".$lang['view_proposals']['no_modifications']."</h3></center>";
                             }
                        ?>
 					</div>
@@ -450,8 +450,8 @@ EOT;
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Edit </a>
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+										<a href="edit_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['edit']; ?> </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 									</td>
@@ -461,7 +461,7 @@ EOT;
 						</table>
                        <?php
                         if($count_proposals == 0){
-                          echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no proposals/services in draft.</h3></center>";
+                          echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> ".$lang['view_proposals']['no_draft']."</h3></center>";
                         }
                        ?>
 					</div>
@@ -505,7 +505,7 @@ EOT;
 										<div class="dropdown">
 										<button class="btn btn-success dropdown-toggle" data-toggle="dropdown"></button>
 										<div class="dropdown-menu">
-										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> Delete </a>
+										<a href="delete_proposal?proposal_id=<?= $proposal_id; ?>" class="dropdown-item"> <?= $lang['button']['delete']; ?> </a>
 										</div>
 										</div>
 									</td>
@@ -515,7 +515,7 @@ EOT;
 						</table>
                         <?php
                             if($count_proposals == 0){
-                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> You currently have no proposals/services declined.</h3></center>";
+                                echo "<center><h3 class='pt-4 pb-4'><i class='fa fa-smile-o'></i> ".$lang['view_proposals']['no_declined']."</h3></center>";
                             }
                        ?>
 					</div>

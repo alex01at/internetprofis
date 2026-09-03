@@ -213,9 +213,9 @@
                     <?php include($dir . "images/svg/notification.svg"); ?>
                     </span>
                     <div class="flag-body">
-                      Notifications
+                      <?= $lang['menu']['notifications']; ?>
                       <?php if($count_unread_notifications > 0){ ?>
-                      <span class="badge badge-pill badge-danger"> <?= $count_unread_notifications; ?> New</span>
+                      <span class="badge badge-pill badge-danger"> <?= $count_unread_notifications; ?> <?= $lang['new']; ?></span>
                       <?php } ?>
                     </div>
                   </div>
@@ -228,9 +228,9 @@
                     <?php include($dir . "images/svg/email.svg"); ?>
                     </span>
                     <div class="flag-body">
-                      Messages
+                      <?= $lang['menu']['messages']; ?>
                       <?php if($count_unread_inbox_messages > 0){ ?>
-                      <span class="badge badge-pill badge-danger"> <?= $count_unread_inbox_messages; ?> New</span>
+                      <span class="badge badge-pill badge-danger"> <?= $count_unread_inbox_messages; ?> <?= $lang['new']; ?></span>
                       <?php } ?>
                     </div>
                   </div>
@@ -243,7 +243,7 @@
                     <?php include($dir . "images/svg/heart.svg"); ?>
                     </span>
                     <div class="flag-body">
-                      Favorites
+                      <?= $lang['menu']['favorites']; ?>
                       <?php if($count_favourites > 0){ ?>
                       <span class="badge badge-pill badge-danger"> <?= $count_favourites; ?></span>
                       <?php } ?>
@@ -258,7 +258,7 @@
                     <?php include($dir . "images/svg/basket.svg"); ?>
                     </span>
                     <div class="flag-body">
-                      Cart
+                      <?= $lang['menu']['cart']; ?>
                       <?php if($count_cart > 0){ ?>
                         <span class="badge badge-pill badge-danger"> <?= $count_cart; ?></span>
                       <?php } ?>
@@ -285,7 +285,7 @@
             <ul class="mobile-sub-catnav-container list-unstyled mobile-catnav-margin">
               <li class="p-xs-1 bb-xs-1 text-body-larger strong subnav-item a11y-focus-only">
                 <a class="p-xs-1 display-inline-block text-underline" href="<?= $site_url; ?>/dashboard">
-                View Dashboard Home
+                <?= $lang['menu']['view_dashboard_home']; ?>
                 </a>
               </li>
               <li class="p-xs-2 bb-xs-1 text-body-larger subnav-item" data-uid="s-1" data-name="<?= $lang["menu"]['selling']; ?>">
@@ -393,7 +393,7 @@
               </li>
               <li class="p-xs-1 bb-xs-1 text-body-larger strong">
                 <a class="p-xs-1 display-inline-block text-underline" href="<?= $site_url; ?>/proposals/create_proposal">
-                Create A New Proposal
+                <?= $lang['button']['create_new_proposal']; ?>
                 </a>
               </li>
             </ul>

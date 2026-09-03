@@ -80,7 +80,7 @@ $total = $sub_total + $processing_fee;
 <!DOCTYPE html>
 <html lang="en" class="ui-toolkit">
 <head>
-	<title> <?= $site_name; ?> - Payment Options</title>
+	<title> <?= $site_name; ?> - <?= $lang['payment_options']; ?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="keywords" content="<?= $site_keywords; ?>">
@@ -117,7 +117,7 @@ $site_logo_image = getImageUrl2("general_settings","site_logo",$row_general_sett
 if($seller_verification != "ok"){
 	echo "
 	<div class='alert alert-danger rounded-0 mt-0 text-center'>
-		Please confirm your email to use this feature.
+		".$lang["confirm_email_required"]."
 	</div>";
 }else{
 
@@ -142,7 +142,7 @@ if($seller_verification != "ok"){
 				<div class="col-md-12 mb-3">
 					<div class="card payment-options">
 						<div class="card-header">
-							<h5><i class="fa fa-dollar"></i> Available Shopping Balance</h5>
+							<h5><i class="fa fa-dollar"></i> <?= $lang['cart']['available_shopping_balance']; ?></h5>
 						</div>
 						<div class="card-body">
 							<div class="row">
