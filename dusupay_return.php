@@ -24,7 +24,7 @@ $status = $input->get('status');
 // }
 
 if($status == "COMPLETED" or $status == "accepted" OR $status == "PENDING"){
-   $message = "Your payment will be checked as soon as possible and your shopping will be confirmed. Please follow your email account.";
+   $message = $lang['crypto_return']['payment_checked_notice'];
 }elseif($status == "FAILED"){
    $message = $input->get('message');
 }elseif($status == "CANCELLED"){
@@ -95,7 +95,7 @@ if($status == "COMPLETED" or $status == "accepted" OR $status == "PENDING"){
                <p class="lead"><?= $message; ?></p>
 
                <a href="index" class="text-success">
-                  <i class="fa fa-arrow-left"></i> &nbsp;Go Back To Website
+                  <i class="fa fa-arrow-left"></i> &nbsp;<?= $lang['crypto_return']['go_back_to_website']; ?>
                </a>
 
             </div>

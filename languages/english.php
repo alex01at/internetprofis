@@ -1598,4 +1598,6 @@ $lang['alert']['image_cropped'] = "Image has been cropped.";
 $lang['button']['see_less'] = "See less";
 $lang['button']['read_less'] = "Read less";
 $lang['button']['read_more2'] = "Read more";
+$lang['crypto_return']['payment_checked_notice'] = "Your payment will be checked as soon as possible and your shopping will be confirmed. Please follow your email account.";
+$lang['crypto_return']['go_back_to_website'] = "Go Back To Website";
 // $lang['notifier_plugin']['payout_approved'] = "";

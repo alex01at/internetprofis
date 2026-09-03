@@ -63,11 +63,11 @@ if(!isset($_SESSION['seller_user_name'])){
                </h1>
 
                <p class="lead">
-                  Your payment will be checked as soon as possible and your shopping will be confirmed. Please follow your email account.
+                  <?= $lang['crypto_return']['payment_checked_notice']; ?>
                </p>
 
                <a href="index" class="text-success">
-                  <i class="fa fa-arrow-left"></i> &nbsp;Go Back To Website
+                  <i class="fa fa-arrow-left"></i> &nbsp;<?= $lang['crypto_return']['go_back_to_website']; ?>
                </a>
 
             </div>

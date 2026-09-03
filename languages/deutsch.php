@@ -1323,5 +1323,7 @@ $lang['alert']['image_cropped'] = "Das Bild wurde zugeschnitten.";
 $lang['button']['see_less'] = "Weniger anzeigen";
 $lang['button']['read_less'] = "Weniger lesen";
 $lang['button']['read_more2'] = "Mehr lesen";
+$lang['crypto_return']['payment_checked_notice'] = "Ihre Zahlung wird so schnell wie möglich geprüft und Ihr Einkauf wird bestätigt. Bitte überprüfen Sie Ihr E-Mail-Konto.";
+$lang['crypto_return']['go_back_to_website'] = "Zurück zur Website";
 
 
