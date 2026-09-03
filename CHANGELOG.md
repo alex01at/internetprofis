@@ -27,6 +27,7 @@ All notable changes to this project are documented here.
 - Fixed the dashboard showing a raw commit hash instead of a release name for deployments tracked before release-name storage existed; the name is now resolved automatically.
 - Fixed missing icons across 25 pages (checkout, cart, login, dashboard, knowledge bank, and others) caused by a missing Font Awesome stylesheet link.
 - Translated several hardcoded English strings that ignored the site language (knowledge bank empty state, dashboard greeting, mobile purchase form, feedback empty state), and translated the referral/affiliate text, which had never been localized. Also fixed the "Knowledge Bank" page title showing the old script's brand name, and a broken link in the referral text caused by invalid syntax inside the translation string.
+- Completed a site-wide sweep of hardcoded English strings across the frontend (checkout, orders, proposals, conversations, requests, payments, tickets, feedback, blog): several hundred strings across roughly 90 files now go through the site's language system instead of always showing English. Also translated the German transactional email templates, which had been an unmodified copy of the English ones.
 
 ## 2026-08-27
 
