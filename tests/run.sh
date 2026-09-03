@@ -29,6 +29,11 @@ php tests/check-stray-backslashes.php
 if [ $? -ne 0 ]; then status=1; fi
 
 echo ""
+echo "=== Identical-value check ==="
+php tests/check-identical-values.php
+if [ $? -ne 0 ]; then status=1; fi
+
+echo ""
 if [ $status -eq 0 ]; then
     echo "All checks passed."
 else

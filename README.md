@@ -48,7 +48,7 @@ There's no SSH access to the live host, so changes are also verified locally bef
 bash tests/run.sh
 ```
 
-It runs four checks, none of which need a database connection:
+It runs five checks, none of which need a database connection:
 
 -`tests/check-syntax.php` - runs `php -l` across the whole codebase (excluding vendored third-party libraries) to catch fatal syntax errors before upload.
 
@@ -57,5 +57,7 @@ It runs four checks, none of which need a database connection:
 -`tests/check-embedded-tags.php` - uses PHP's tokenizer to find a `<?=` or `<?php` tag accidentally typed inside an already-open string literal, where it silently never evaluates instead of throwing an error.
 
 -`tests/check-stray-backslashes.php` - catches a `\$lang` artifact left behind by a scripted find-and-replace.
+
+-`tests/check-identical-values.php` - flags `$lang[]` keys whose English and German text is byte-identical, usually meaning the German version was never actually translated. A small allowlist inside the script covers legitimately-identical values (brand names, country names, common loanwords).
 
 These same checks also run automatically on every push and pull request via GitHub Actions (`.github/workflows/tests.yml`).

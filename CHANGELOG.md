@@ -9,7 +9,7 @@ All notable changes to this project are documented here.
 - Added database migration support to the application updater. SQL files placed in `migrations/` are shown for review and applied only on explicit confirmation, tracked in a `schema_migrations` table so each one runs once. Same statement blocklist as the plugin installer.
 - `dashboard.php` now shows the actual deployed release instead of a manually maintained value, with an update indicator when a newer release is available.
 - Added German as a selectable site language, with translated categories, subcategories, terms, support text, seller level badges, footer links, and homepage sections. Included a migration for sites that already have data.
-- Added a local test suite (`tests/`) that runs without a database: PHP syntax check, `$lang[]` key consistency check, and two checks for recurring bug patterns (PHP tags embedded inside string literals, stray escaped `$lang` references). Wired into GitHub Actions to run on every push and pull request.
+- Added a local test suite (`tests/`) that runs without a database: PHP syntax check, `$lang[]` key consistency check, a check for `$lang[]` keys whose English and German values are identical (usually meaning the German text was never actually translated), and two checks for recurring bug patterns (PHP tags embedded inside string literals, stray escaped `$lang` references). Wired into GitHub Actions to run on every push and pull request.
 
 ### Changed
 
@@ -32,6 +32,7 @@ All notable changes to this project are documented here.
 - Extended the translation sweep to strings the initial pass missed: text containing a colon, and strings inside `alert()`/`confirm()`/`swal()`/`.text()` calls and PHP validator message arrays. Uncovered and fixed two long-standing bugs along the way: the mobile navigation menu referenced undefined `$lang[]` keys and showed blank labels sitewide, and two strings in the language files themselves had an unevaluated `<?= ?>` baked in, displaying literally instead of the site name/URL.
 - Fixed the order resolution center's "order does not meet requirements" option, which was missing the "not" in both languages and said the opposite of what it meant.
 - Removed 20 duplicate and 13 unused key definitions from the language files.
+- Translated 28 German strings that had been left as an untranslated copy of the English text (payment method buttons/settings, referral pages, Bitcoin wallet warning, and others), found with the new identical-value check.
 
 ## 2026-08-27
 
