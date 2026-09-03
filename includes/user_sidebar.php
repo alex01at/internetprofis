@@ -76,10 +76,10 @@
 			<select class="form-control" name="language_level" required="">
 
 				<option class="hidden"><?= $lang['label']['select_level']; ?></option>
-				<option value="basic"> Basic </option>
-				<option value="Fluent"> Fluent </option>
-				<option value="Conversational"> Conversational </option>
-				<option value="Native or Bilingual"> Native or Bilingual </option>
+				<option value="basic"> <?= $lang['packages']['basic']; ?> </option>
+				<option value="Fluent"> <?= $lang['language_level']['fluent']; ?> </option>
+				<option value="Conversational"> <?= $lang['language_level']['conversational']; ?> </option>
+				<option value="Native or Bilingual"> <?= $lang['language_level']['native_or_bilingual']; ?> </option>
 
 			</select>
 
@@ -259,9 +259,9 @@
 		<select class="form-control" name="skill_level" required="">
 
 		<option value="" class="hidden"><?= $lang['label']['select_level']; ?></option>
-		<option> Beginner </option>
-		<option> Intermediate </option>
-		<option> Expert </option>
+		<option> <?= $lang['skill_level']['beginner']; ?> </option>
+		<option> <?= $lang['skill_level']['intermediate']; ?> </option>
+		<option> <?= $lang['skill_level']['expert']; ?> </option>
 
 		</select>
 
