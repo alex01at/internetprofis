@@ -15,6 +15,20 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
   verwenden stattdessen ein einfaches `main-container`-Wrapper-Div mit
   Titel direkt in der Karte. `app_update.php` entsprechend angepasst.
 
+- **Restliche 26 Seiten mit alter `breadcrumbs`-Kopfzeile ebenfalls
+  angepasst**, auf Wunsch. Jetzt einheitlich `main-container` + Titel
+  in der Karte, wie oben für `app_update.php` beschrieben. Sonderfälle
+  einzeln behandelt statt mechanisch durchgezogen: `view_pages.php`
+  hatte einen echten "Add Page"-Button in der alten Breadcrumb-Leiste –
+  bleibt erhalten, jetzt neben dem Titel. `update_plugin.php`s
+  dynamischer Titel (`<?= $pluginName ?>`) bleibt erhalten.
+  `view_order_files.php`/`view_inbox_files.php` hatten ihre
+  Breadcrumb-Leiste bereits auskommentiert (kein sichtbarer Effekt,
+  aber auch kein Ersatz-Titel) – toten Kommentar entfernt, sauberen
+  Titel ergänzt. Alle 26 Dateien einzeln mit `php -l` geprüft und
+  manuell verifiziert, dass der neue Titel innerhalb von
+  `main-container` landet.
+
 ### Rückgängig gemacht
 
 - Die 9 im vorigen Punkt entfernten Dateien auf Wunsch wiederhergestellt.
