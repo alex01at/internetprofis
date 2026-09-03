@@ -6,32 +6,32 @@
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-body">
-              <h3 class="text-center"> Order Cancellation Request</h3>
+              <h3 class="text-center"> <?= $lang['resolution_center']['order_cancellation_request']; ?></h3>
             </div>
           </div>
           <form method="post">
             <div class="form-group">
-              <textarea name="cancellation_message" placeholder="Please be as detailed as possible..." rows="10" class="form-control" required></textarea>
+              <textarea name="cancellation_message" placeholder="<?= $lang['resolution_center']['be_as_detailed_as_possible']; ?>" rows="10" class="form-control" required></textarea>
             </div>
             <div class="form-group">
-              <label class="font-weight-bold"> Cancellation Request Reason </label>
+              <label class="font-weight-bold"> <?= $lang['resolution_center']['cancellation_request_reason']; ?> </label>
               <select name="cancellation_reason" class="form-control">
-                <option class="hidden"> Select Cancellation Reason </option>
+                <option class="hidden"> <?= $lang['resolution_center']['select_cancellation_reason']; ?> </option>
                 <?php if($seller_id == $login_seller_id){ ?>
-                <option> Buyer is not responding. </option>
-                <option> Buyer is extremely rude. </option>
-                <option> Buyer requested that I cancel this order.</option>
-                <option> Buyer expects more than what this proposal can offer.</option>
+                <option> <?= $lang['resolution_center']['buyer_not_responding']; ?> </option>
+                <option> <?= $lang['resolution_center']['buyer_extremely_rude']; ?> </option>
+                <option> <?= $lang['resolution_center']['buyer_requested_cancel']; ?></option>
+                <option> <?= $lang['resolution_center']['buyer_expects_more']; ?></option>
                 <?php }elseif($buyer_id == $login_seller_id){ ?>
-                <option> Seller is not responding. </option>
-                <option> Seller is extremely rude. </option>
-                <option> Order does meet requirements. </option>
-                <option> Seller asked me to cancel. </option>
-                <option> Seller cannot do required task. </option>
+                <option> <?= $lang['resolution_center']['seller_not_responding']; ?> </option>
+                <option> <?= $lang['resolution_center']['seller_extremely_rude']; ?> </option>
+                <option> <?= $lang['resolution_center']['order_does_meet_requirements']; ?> </option>
+                <option> <?= $lang['resolution_center']['seller_asked_cancel']; ?> </option>
+                <option> <?= $lang['resolution_center']['seller_cannot_do_task']; ?> </option>
                 <?php }  ?>
               </select>
             </div>
-            <input type="submit" name="submit_cancellation_request" value="Submit Cancellation Request" class="btn btn-success float-right">
+            <input type="submit" name="submit_cancellation_request" value="<?= $lang['resolution_center']['submit_cancellation_request']; ?>" class="btn btn-success float-right">
           </form>
         </div>
       </div>
