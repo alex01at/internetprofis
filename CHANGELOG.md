@@ -3,6 +3,33 @@
 Alle nennenswerten Änderungen an diesem Projekt werden hier dokumentiert.
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.0.0/).
 
+## 2026-09-03
+
+### Entfernt
+
+- **9 weitere, bestätigt tote PHP-Dateien entfernt** — gefunden durch
+  systematische Prüfung aller "Fragment"-Verzeichnisse (Dateien, die nur
+  eingebunden, nie direkt aufgerufen werden sollen) gegen Referenzen in
+  PHP **und** JS, inklusive erweiterungsloser AJAX-URLs (relative Pfade
+  ohne Verzeichnis-Präfix wie `includes/msgHeader`). Diese zusätzliche
+  Prüfung hat `conversations/includes/showSingle.php`/`msgHeader.php`
+  sowie 9 `includes/comp/*.php`-Dateien vor einer fälschlichen Löschung
+  bewahrt — die sind echte, aktiv genutzte AJAX-Endpunkte.
+  Entfernt: `admin/view/view_countries.php` (ersetzt durch das geroutete
+  `admin/countries.php`), `admin/view/view_pages.php` (ersetzt durch
+  `admin/includes/pages.php`), `admin/view/view_suggestions.php`
+  (zugehöriges Feature bereits in `admin/index.php` auskommentiert),
+  `admin/includes/right_sidebar.php`, `admin/includes/profile_card.php`
+  (verwaiste Fragmente), `includes/comp/mobile_nav.php` (ersetzt durch
+  `includes/comp/mobile_menu.php`), `includes/no_cat.php`,
+  `includes/process.php` und `includes/session_config.php` (die letzten
+  beiden waren schon länger als unbenutzt bekannt, jetzt entfernt).
+  **Bewusst nicht entfernt:** `admin/includes/download.php` — anders als
+  die anderen keine tote Codeleiche, sondern eine vollständige,
+  funktionierende Datei-Download-Funktion für Auftragsdateien (inkl.
+  Wasserzeichen-Logik und S3-Unterstützung), die aktuell nur nirgends
+  verlinkt ist.
+
 ## 2026-08-27
 
 ### Entfernt
