@@ -85,7 +85,9 @@ echo "<script>window.open('login','_self');</script>";
 
                             <div class="col-md-6">
 
-                                <input type="file" name="image" class="form-control">
+                                <input type="hidden" name="image" id="picker_image" value="">
+                                <div class="mb-2"><img id="preview_image" src="" style="max-height:80px;" class="d-none"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('image','languages')">Choose Image</button>
 
                             </div>
 
@@ -179,16 +181,11 @@ if(isset($_POST['submit'])){
 
       $title = $input->post('title');
           
-      $image = $_FILES['image']['name'];
-      $tmp_image = $_FILES['image']['tmp_name'];
-
-      $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-      $file_extension = strtolower(pathinfo($image,PATHINFO_EXTENSION));
-      if(!in_array($file_extension,$allowed)){
-         echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
+      $image = $input->post('image'); // already uploaded by the image picker
+      if(empty($image)){
+         echo "<script>alert('Language Image Is Required.')</script>";
       }else{
-          
-         uploadToS3("languages_images/$image",$tmp_image);
+
          $check_languages = $db->count("languages",array("title"=>$title));
              
          if($check_languages == 1){

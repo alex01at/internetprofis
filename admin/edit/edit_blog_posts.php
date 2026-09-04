@@ -79,13 +79,9 @@ if(isset($_GET['edit_blog'])){
 				<div class="form-group row"><!--- form-group row Starts --->
 					<label class="col-md-3 control-label"> Post Image: </label>
 					<div class="col-md-7">
-						<input type="file" name="image" class="form-control">
-						<br>
-						<?php if(!empty($post->image)){ ?>
-							<img src="<?= getImageUrl("posts",$post->image); ?>" width="100" height="55">
-						<?php }else{ ?>
-							<img src="../images/cat_images/empty-image.jpg" width="70" height="55">
-						<?php } ?>
+						<input type="hidden" name="image" id="picker_image" value="<?= htmlspecialchars($post->image); ?>">
+						<div class="mb-2"><img id="preview_image" src="<?= !empty($post->image) ? getImageUrl("posts",$post->image) : '../images/cat_images/empty-image.jpg'; ?>" width="100" height="55"></div>
+						<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('image','posts')">Choose Image</button>
 					</div>
 				</div><!--- form-group row Ends --->
 
@@ -148,33 +144,17 @@ if(isset($_POST['update'])){
 	unset($data['title']);
 	unset($data['content']);
 
-	$image = $_FILES['image']['name'];
-	$tmp_image = $_FILES['image']['tmp_name'];
+	$image = $input->post('image'); // already uploaded by the image picker, or unchanged
+	$isS3 = ($image == $post->image) ? $post->isS3 : $enable_s3;
 
-	$allowed = array('jpeg','jpg','gif','png','webp');
-	$file_extension = pathinfo($image, PATHINFO_EXTENSION);
-
-	if(!in_array($file_extension,$allowed) & !empty($image)){
-		echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-	}else{
-
-		if(empty($image)){
-			$image = $post->image;
-			$isS3 = $post->isS3;
-		}else{
-			uploadToS3("post_images/$image",$tmp_image);
-			$isS3 = $enable_s3;
-		}
-
-		$data['isS3'] = $isS3;
-		$data['image'] = $image;
-		$data['status'] = 1;
-		$update = $db->update("posts",$data,["id"=>$post->id]);
-		if($update){
-			$update_post_meta = $db->update("posts_meta", $post_meta_data,["post_id" => $edit_id, "language_id" => $adminLanguage]);
-			$insert_log = $db->insert_log($admin_id,"post",$post->id,"updated");
-			echo "<script>alert_success('One Post has been Updated Successfully.','index?posts');</script>";
-		}
+	$data['isS3'] = $isS3;
+	$data['image'] = $image;
+	$data['status'] = 1;
+	$update = $db->update("posts",$data,["id"=>$post->id]);
+	if($update){
+		$update_post_meta = $db->update("posts_meta", $post_meta_data,["post_id" => $edit_id, "language_id" => $adminLanguage]);
+		$insert_log = $db->insert_log($admin_id,"post",$post->id,"updated");
+		echo "<script>alert_success('One Post has been Updated Successfully.','index?posts');</script>";
 	}
 }
 

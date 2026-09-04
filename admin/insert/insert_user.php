@@ -151,7 +151,9 @@ echo "<script>window.open('login','_self');</script>";
 
                             <div class="col-md-6">
 
-                                <input type="file" name="admin_image" class="form-control" required>
+                                <input type="hidden" name="admin_image" id="picker_admin_image" value="">
+                                <div class="mb-2"><img id="preview_admin_image" src="" style="max-height:80px;" class="d-none"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('admin_image','admins')">Choose Image</button>
 
                             </div>
 
@@ -422,51 +424,39 @@ if(isset($_POST['submit'])){
       $admin_email = $input->post('admin_email');
       $admin_pass = $input->post('admin_pass');
       $confirm_admin_pass = $input->post('confirm_admin_pass');
-      $admin_image = $_FILES['admin_image']['name'];
-      $tmp_admin_image = $_FILES['admin_image']['tmp_name'];
+      $admin_image = $input->post('admin_image'); // already uploaded by the image picker
 
-      $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-      $file_extension = pathinfo($admin_image, PATHINFO_EXTENSION);
+      $count_email = $db->count("admins",array("admin_email" => $admin_email));
 
-      if(!in_array($file_extension,$allowed)){
-         echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
+      if($count_email > 0){
+         echo "<script>alert('This Email Is Already Chosen, Please Try Another One.');</script>";
       }else{
 
-         $count_email = $db->count("admins",array("admin_email" => $admin_email));
-
-         if($count_email > 0){
-            echo "<script>alert('This Email Is Already Chosen, Please Try Another One.');</script>";
+         if($admin_pass !== $confirm_admin_pass){
+            echo "<script>alert('Your Password Does Not Match, Please Try Again.');</script>";
          }else{
-          	
-            if($admin_pass !== $confirm_admin_pass){
-               echo "<script>alert('Your Password Does Not Match, Please Try Again.');</script>";
-            }else{
-              	
-               $enctyp_password = password_hash($admin_pass, PASSWORD_DEFAULT);
 
-               uploadToS3("admin_images/$admin_image",$tmp_admin_image);
+            $enctyp_password = password_hash($admin_pass, PASSWORD_DEFAULT);
 
-               $data = $input->post();
+            $data = $input->post();
 
-               $data['isS3'] = $enable_s3;
-               $data['admin_pass'] = $enctyp_password;
-               $data['admin_image'] = $admin_image;
+            $data['isS3'] = $enable_s3;
+            $data['admin_pass'] = $enctyp_password;
+            $data['admin_image'] = $admin_image;
 
-               unset($data['confirm_admin_pass']);
-               unset($data['submit']);
+            unset($data['confirm_admin_pass']);
+            unset($data['submit']);
 
-               $insert_admin = $db->insert("admins",$data);
-                  	
-               if($insert_admin){
+            $insert_admin = $db->insert("admins",$data);
 
-                  $insert_id = $db->lastInsertId();
-                  $insert_rights = $db->insert("admin_rights",['admin_id'=>$insert_id]);
-                  	
-                  echo "<script>alert('Admin account created successfully.');</script>";
-                  echo "<script>window.open('index?view_users','_self');</script>";
+            if($insert_admin){
 
-               }	
-              	
+               $insert_id = $db->lastInsertId();
+               $insert_rights = $db->insert("admin_rights",['admin_id'=>$insert_id]);
+
+               echo "<script>alert('Admin account created successfully.');</script>";
+               echo "<script>window.open('index?view_users','_self');</script>";
+
             }
 
          }

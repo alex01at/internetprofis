@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## 2026-09-05
+
+### Added
+
+- Added a shared image picker to admin image-upload fields (category, blog category, blog post, home card, home section box, knowledge-base article, language flag, admin avatar, and the site logo/favicon/watermark settings): choosing an image now opens a modal to reuse an already-uploaded image from the relevant folder, or upload a new one, instead of always requiring a fresh upload. The upload/slider fields that also accept video files, and the plugin installer and support-ticket attachment uploads, keep their plain file inputs.
+
+### Fixed
+
+- Fixed three spots where the local/S3 storage flag for an uploaded image was computed but never actually saved to the database row, which could make `getImageUrl()` resolve the wrong storage location for that image later: the admin avatar on `admin/user_profile.php`, a copy-paste bug in `admin/edit/edit_article.php` where all three of its image fields were saving the same field's flag instead of their own, and all four image fields on the site logo settings page.
+
+### Changed
+
+- Knowledge-base article images (`admin/insert/insert_article.php`) no longer get a timestamp appended to their filename to avoid collisions; the new picker system handles re-uploads by filename instead.
+
 ## 2026-09-04
 
 ### Added

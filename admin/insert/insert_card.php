@@ -80,7 +80,9 @@ if(is_array($form_errors)){
                             <!--- form-group row Starts --->
                             <label class="col-md-3 control-label"> Card Image : </label>
                             <div class="col-md-6">
-                                <input type="file" name="card_image" class="form-control" required="">
+                                <input type="hidden" name="card_image" id="picker_card_image" value="">
+                                <div class="mb-2"><img id="preview_card_image" src="" style="max-height:80px;" class="d-none"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('card_image','home_cards')">Choose Image</button>
                             </div>
                         </div>
                         <!--- form-group row Ends --->
@@ -122,22 +124,14 @@ if(isset($_POST['submit'])){
       $card_title = $input->post('card_title');
       $card_desc = $input->post('card_description');
       $card_link = $input->post('card_link');
-      $card_image = $_FILES['card_image']['name'];
-      $tmp_name = $_FILES['card_image']['tmp_name'];
-      $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-      $file_extension = pathinfo($card_image, PATHINFO_EXTENSION);
-      if(!in_array($file_extension,$allowed)){
-      echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-      }else{
-         uploadToS3("images/card_images/$card_image",$tmp_name);
-         $insert_card = $db->insert("home_cards",array("language_id" => $adminLanguage,"block_id" => $block_id,"card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$enable_s3));
-         if($insert_card){
-            $insert_id = $db->lastInsertId();
-            $insert_log = $db->insert_log($admin_id,"section_card",$insert_id,"inserted");
-            echo "<script>
-               alert_success('One Card has been Inserted Successfully.','index?theme_settings');
-            </script>";
-         }
+      $card_image = $input->post('card_image'); // already uploaded by the image picker
+      $insert_card = $db->insert("home_cards",array("language_id" => $adminLanguage,"block_id" => $block_id,"card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$enable_s3));
+      if($insert_card){
+         $insert_id = $db->lastInsertId();
+         $insert_log = $db->insert_log($admin_id,"section_card",$insert_id,"inserted");
+         echo "<script>
+            alert_success('One Card has been Inserted Successfully.','index?theme_settings');
+         </script>";
       }
    }
 }

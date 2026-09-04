@@ -105,29 +105,21 @@ if(isset($_POST['insert'])){
 	$data = $input->post();
 	$data['date_time'] = date("F d, Y");
 	unset($data['insert']);	
-	$cat_image = $_FILES['cat_image']['name'];
-	$tmp_cat_image = $_FILES['cat_image']['tmp_name'];
-	$allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-	$file_extension = pathinfo($cat_image, PATHINFO_EXTENSION);
-	if(!in_array($file_extension,$allowed) & !empty($cat_image)){
-	   echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-	}else{
-		uploadToS3("images/blog_cat_images/$cat_image",$tmp_cat_image);      
-		$isS3 = $enable_s3;
-		$post_categories = $db->insert("post_categories",array("date_time"=>$data['date_time'],'cat_image' => $cat_image, 'isS3'=> $isS3));
-		if($post_categories){
-			$insert_id = $db->lastInsertId();
-			$get_languages = $db->select("languages");
-			while($row_languages = $get_languages->fetch()){
-				$id = $row_languages->id;
-				$insert = $db->insert("post_categories_meta",["cat_id"=>$insert_id,"language_id"=>$id]);
-			}
-			unset($data['date_time']);
-			$update_meta = $db->update("post_categories_meta",$data,array("cat_id" => $insert_id, "language_id" => $adminLanguage));
-			$insert_log = $db->insert_log($admin_id,"post_cat",$insert_id,"updated");
-			echo "<script>alert('One Post Category has been Inserted Successfully.');</script>";
-			echo "<script>window.open('index?post_categories','_self');</script>";
+	$cat_image = $input->post('cat_image'); // already uploaded by the image picker
+	$isS3 = $enable_s3;
+	$post_categories = $db->insert("post_categories",array("date_time"=>$data['date_time'],'cat_image' => $cat_image, 'isS3'=> $isS3));
+	if($post_categories){
+		$insert_id = $db->lastInsertId();
+		$get_languages = $db->select("languages");
+		while($row_languages = $get_languages->fetch()){
+			$id = $row_languages->id;
+			$insert = $db->insert("post_categories_meta",["cat_id"=>$insert_id,"language_id"=>$id]);
 		}
+		unset($data['date_time']);
+		$update_meta = $db->update("post_categories_meta",$data,array("cat_id" => $insert_id, "language_id" => $adminLanguage));
+		$insert_log = $db->insert_log($admin_id,"post_cat",$insert_id,"updated");
+		echo "<script>alert('One Post Category has been Inserted Successfully.');</script>";
+		echo "<script>window.open('index?post_categories','_self');</script>";
 	}
 }
 ?>

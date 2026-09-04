@@ -116,43 +116,37 @@ if(!isset($_SESSION['admin_email'])){
           <label for="file-input" class=" form-control-label">Right Image (optional)</label>
           </div>
           <div class="col-12 col-md-9">
-          <input type="file" id="file-input" name="right_image" class="form-control-file">
-          <br>
+          <input type="hidden" name="right_image" id="picker_right_image" value="<?= htmlspecialchars($r_image); ?>">
+          <div class="mb-2"><img id="preview_right_image" src="<?= !empty($r_image) ? $show_right_image : '../article/article_images/No-image.jpg'; ?>" width="70" height="55"></div>
+          <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('right_image','knowledge_bank')">Choose Image</button>
             <?php if(!empty($r_image)){ ?>
-            <img src="<?= $show_right_image; ?>" width="70" height="55">
             <br>
             <a href="index?edit_article=<?= $article_id; ?>&delete_image=right_image" class="btn btn-sm btn-danger mt-2"><i class="fa fa-trash"></i> Remove Image</a>
-            <?php }else{ ?>
-            <img src="../article/article_images/No-image.jpg" width="70" height="55">
             <?php } ?>
           </div>
           </div>
           <div class="row form-group">
             <div class="col col-md-3">
-           <label for="file-input" class=" form-control-label">Top Image (optional)</label></div>
+           <label class=" form-control-label">Top Image (optional)</label></div>
             <div class="col-12 col-md-9">
-            <input type="file" id="file-input" name="top_image" class="form-control-file">
-            <br>
+            <input type="hidden" name="top_image" id="picker_top_image" value="<?= htmlspecialchars($t_image); ?>">
+            <div class="mb-2"><img id="preview_top_image" src="<?= !empty($t_image) ? $show_top_image : '../article/article_images/No-image.jpg'; ?>" width="70" height="55"></div>
+            <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('top_image','knowledge_bank')">Choose Image</button>
            <?php if(!empty($t_image)){ ?>
-              <img src="<?= $show_top_image; ?>" width="70" height="55">
               <br>
               <a href="index?edit_article=<?= $article_id; ?>&delete_image=top_image" class="btn btn-sm btn-danger mt-2"><i class="fa fa-trash"></i> Remove Image</a>
-            <?php }else{ ?>
-              <img src="../article/article_images/No-image.jpg" width="70" height="55">
             <?php } ?>
             </div>
           </div>
           <div class="row form-group">
             <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Bottom Image (optional)</label></div>
             <div class="col-12 col-md-9">
-              <input type="file" id="file-multiple-input" name="bottom_image" class="form-control-file">
-              <br>
+              <input type="hidden" name="bottom_image" id="picker_bottom_image" value="<?= htmlspecialchars($b_image); ?>">
+              <div class="mb-2"><img id="preview_bottom_image" src="<?= !empty($b_image) ? $show_bottom_image : '../article/article_images/No-image.jpg'; ?>" width="70" height="55"></div>
+              <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('bottom_image','knowledge_bank')">Choose Image</button>
             <?php if(!empty($b_image)){ ?>
-              <img src="<?= $show_bottom_image; ?>>" width="70" height="55">
               <br>
               <a href="index?edit_article=<?= $article_id; ?>&delete_image=bottom_image" class="btn btn-sm btn-danger mt-2"><i class="fa fa-trash"></i> Remove Image</a>
-            <?php }else{ ?>            
-              <img src="../article/article_images/No-image.jpg" width="70" height="55">
             <?php } ?>
             </div>
           </div>
@@ -197,58 +191,19 @@ if(isset($_POST['submit'])){
     $cat_id = $input->post('cat_id');
     $article_status = $input->post('article_status');
     $article_body = removeJava($_POST['article_body']);
-    $right_image = $_FILES['right_image']['name'];
-    $right_image_tmp = $_FILES['right_image']['tmp_name'];
-    $top_image = $_FILES['top_image']['name'];
-    $top_image_tmp = $_FILES['top_image']['tmp_name'];
-    $bottom_image = $_FILES['bottom_image']['name'];
-    $bottom_image_tmp = $_FILES['bottom_image']['tmp_name'];
-    $right_extension = pathinfo($right_image, PATHINFO_EXTENSION);
-    $top_extension = pathinfo($top_image, PATHINFO_EXTENSION);
-    $bottom_extension = pathinfo($bottom_image, PATHINFO_EXTENSION);
-    $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-    if(!in_array($right_extension,$allowed) & !empty($right_image) or !in_array($top_extension,$allowed) & !empty($top_image) or !in_array($bottom_extension,$allowed) & !empty($bottom_image)){
-    echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-    }else{
-    
-      if(empty($right_image)){
-        $right_image = $r_image;
-        $right_image_s3 = $r_image_s3;
-      }else{
-        $right_image = pathinfo($right_image, PATHINFO_FILENAME);
-        $right_image = $right_image."_".time().".$right_extension";
-        uploadToS3("article_images/$right_image",$right_image_tmp);
-        $bottom_image_s3 = $enable_s3;
-      }
-      
-      if(empty($top_image)){
-        $top_image = $t_image;
-        $top_image_s3 = $t_image_s3;
-      }else{
-        $top_image = pathinfo($top_image, PATHINFO_FILENAME);
-        $top_image = $top_image."_".time().".$top_extension";
-        uploadToS3("article_images/$top_image",$top_image_tmp);
-        $bottom_image_s3 = $enable_s3;
-      }
+    $right_image = $input->post('right_image'); // already uploaded by the image picker, or unchanged
+    $top_image = $input->post('top_image');
+    $bottom_image = $input->post('bottom_image');
+    $right_image_s3 = ($right_image == $r_image) ? $r_image_s3 : $enable_s3;
+    $top_image_s3 = ($top_image == $t_image) ? $t_image_s3 : $enable_s3;
+    $bottom_image_s3 = ($bottom_image == $b_image) ? $b_image_s3 : $enable_s3;
 
-      if(empty($bottom_image)){
-        $bottom_image = $b_image;
-        $bottom_image_s3 = $b_image_s3;
-      }else{
-        $bottom_image = pathinfo($bottom_image, PATHINFO_FILENAME);
-        $bottom_image = $bottom_image."_".time().".$bottom_extension";
-        uploadToS3("article_images/$bottom_image",$bottom_image_tmp);
-        $bottom_image_s3 = $enable_s3;
-      }
+    $update_article = $db->update("knowledge_bank",array("cat_id"=>$cat_id,"article_heading"=>$article_heading,"article_body"=>$article_body,"right_image"=>$right_image,"top_image"=>$top_image,"bottom_image"=>$bottom_image,"right_image_s3"=>$right_image_s3,"top_image_s3"=>$top_image_s3,"bottom_image_s3"=>$bottom_image_s3,"article_status"=>$article_status),array("article_id"=>$edit_id));
 
-      $update_article = $db->update("knowledge_bank",array("cat_id"=>$cat_id,"article_heading"=>$article_heading,"article_body"=>$article_body,"right_image"=>$right_image,"top_image"=>$top_image,"bottom_image"=>$bottom_image,"right_image_s3"=>$right_image_s3,"top_image_s3"=>$top_image_s3,"bottom_image_s3"=>$bottom_image_s3,"article_status"=>$article_status),array("article_id"=>$edit_id));
-
-      if($update_article){
-        $insert_log = $db->insert_log($admin_id,"article",$edit_id,"updated");
-        echo "<script>alert('Article Updated successfully.');</script>";
-        echo "<script>window.open('index?view_articles','_self');</script>";
-      }
-
+    if($update_article){
+      $insert_log = $db->insert_log($admin_id,"article",$edit_id,"updated");
+      echo "<script>alert('Article Updated successfully.');</script>";
+      echo "<script>window.open('index?view_articles','_self');</script>";
     }
 
   }

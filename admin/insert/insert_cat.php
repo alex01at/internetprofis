@@ -76,7 +76,9 @@ if(!isset($_SESSION['admin_email'])){
                             <!--- form-group row Starts --->
                             <label class="col-md-4 control-label"> Category Image : </label>
                             <div class="col-md-6">
-                                <input type="file" name="cat_image" class="form-control">
+                                <input type="hidden" name="cat_image" id="picker_cat_image" value="">
+                                <div class="mb-2"><img id="preview_cat_image" src="" style="max-height:80px;" class="d-none"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('cat_image','categories')">Choose Image</button>
                             </div>
                         </div>
                         <!--- form-group row Ends --->
@@ -139,35 +141,27 @@ if(isset($_POST['submit'])){
         $cat_desc = $input->post('cat_desc');
         $cat_featured = $input->post('cat_featured');
         $enable_watermark = $input->post('enable_watermark');
-        $cat_image = $_FILES['cat_image']['name'];
-        $tmp_cat_image = $_FILES['cat_image']['tmp_name'];
-        $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-        $file_extension = pathinfo($cat_image, PATHINFO_EXTENSION);
-        if(!in_array($file_extension,$allowed) & !empty($cat_image)){
-            echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
+        $cat_image = $input->post('cat_image'); // already uploaded by the image picker
+        if($videoPlugin == 1){
+            $video = $input->post('video');
+            $reminder_emails = $input->post('reminder_emails');
+            $missed_session_emails = $input->post('missed_session_emails');
+            $warning_message = $input->post('warning_message');
+            $insert_cat = $db->insert("categories",["cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$enable_s3,"video"=>$video,"reminder_emails"=>$reminder_emails,"missed_session_emails"=>$missed_session_emails,"warning_message"=>$warning_message]);
         }else{
-            uploadToS3("images/cat_images/$cat_image",$tmp_cat_image);
-            if($videoPlugin == 1){
-                $video = $input->post('video');
-                $reminder_emails = $input->post('reminder_emails');
-                $missed_session_emails = $input->post('missed_session_emails');
-                $warning_message = $input->post('warning_message');
-                $insert_cat = $db->insert("categories",["cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$enable_s3,"video"=>$video,"reminder_emails"=>$reminder_emails,"missed_session_emails"=>$missed_session_emails,"warning_message"=>$warning_message]);
-            }else{
-                $insert_cat = $db->insert("categories",["cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"isS3"=>$enable_s3]);
+            $insert_cat = $db->insert("categories",["cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"isS3"=>$enable_s3]);
+        }
+        if($insert_cat){
+            $insert_id = $db->lastInsertId();
+            $get_languages = $db->select("languages");
+            while($row_languages = $get_languages->fetch()){
+                $id = $row_languages->id;
+                $insert = $db->insert("cats_meta",array("cat_id"=>$insert_id,"language_id"=>$id));
             }
-            if($insert_cat){
-                $insert_id = $db->lastInsertId();
-                $get_languages = $db->select("languages");
-                while($row_languages = $get_languages->fetch()){
-                    $id = $row_languages->id;
-                    $insert = $db->insert("cats_meta",array("cat_id"=>$insert_id,"language_id"=>$id));
-                }
-                $update_meta = $db->update("cats_meta",array("cat_title" => $cat_title,"cat_desc" => $cat_desc),array("cat_id" => $insert_id, "language_id" => $adminLanguage));
-                $insert_log = $db->insert_log($admin_id,"cat",$insert_id,"inserted");
-                echo "<script>alert('One Category Has Been Inserted.');</script>";
-                echo "<script>window.open('index?view_cats','_self');</script>"; 
-            }
+            $update_meta = $db->update("cats_meta",array("cat_title" => $cat_title,"cat_desc" => $cat_desc),array("cat_id" => $insert_id, "language_id" => $adminLanguage));
+            $insert_log = $db->insert_log($admin_id,"cat",$insert_id,"inserted");
+            echo "<script>alert('One Category Has Been Inserted.');</script>";
+            echo "<script>window.open('index?view_cats','_self');</script>";
         }
     }
 }

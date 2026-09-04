@@ -37,7 +37,9 @@ echo "<script>window.open('login','_self');</script>";
 						</div>
 						<div class="form-group mt-2">
 							<label for="cat_image">Image</label>
-							<input class="form-control input-md" type="file" name="cat_image">
+							<input type="hidden" name="cat_image" id="picker_cat_image" value="">
+							<div class="mb-2"><img id="preview_cat_image" src="" style="max-height:80px;" class="d-none"></div>
+							<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('cat_image','post_categories')">Choose Image</button>
 						</div>
 						<div class="form-group">
 							<input class="form-control btn btn-success" name="insert" type="submit"

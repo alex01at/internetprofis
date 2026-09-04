@@ -53,7 +53,9 @@
 						<div class="form-group row"><!--- form-group row Starts --->
 							<label class="col-md-3 control-label"> Post Image: </label>
 							<div class="col-md-7">
-								<input type="file" name="image" class="form-control" required=""/>
+								<input type="hidden" name="image" id="picker_image" value="">
+								<div class="mb-2"><img id="preview_image" src="" style="max-height:80px;" class="d-none"></div>
+								<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('image','posts')">Choose Image</button>
 							</div>
 						</div><!--- form-group row Ends --->
 
@@ -114,33 +116,22 @@ if(isset($_POST['insert_post'])){
 	unset($data['author']);
 	unset($data['content']);
 
-	$image = $_FILES['image']['name'];
-	$tmp_image = $_FILES['image']['tmp_name'];
+	$image = $input->post('image'); // already uploaded by the image picker
 
-	$allowed = array('jpeg','jpg','gif','png','webp');
-	$file_extension = pathinfo($image, PATHINFO_EXTENSION);
-
-	if(!in_array($file_extension,$allowed) & !empty($image)){
-		echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";	  
-	}else{
-		
-		uploadToS3("post_images/$image",$tmp_image);
-		
-		$data['isS3'] = $enable_s3;
-		$data['image'] = $image;
-		$data['status'] = 1;
-		$insert = $db->insert("posts",$data);
-		if($insert){
-			$insert_id = $db->lastInsertId();
-			$get_languages = $db->select("languages");
-			while($row_languages = $get_languages->fetch()){
-				$id = $row_languages->id;
-				$insert = $db->insert("posts_meta",array("post_id"=>$insert_id,"language_id"=>$id));
-			}
-			$update_meta = $db->update("posts_meta",$post_meta,array("post_id" => $insert_id, "language_id" => $adminLanguage));
-			$insert_log = $db->insert_log($admin_id,"post",$insert_id,"inserted");
-			echo "<script>alert_success('One Post has been Inserted Successfully.','index?blog');</script>";
-		}			
+	$data['isS3'] = $enable_s3;
+	$data['image'] = $image;
+	$data['status'] = 1;
+	$insert = $db->insert("posts",$data);
+	if($insert){
+		$insert_id = $db->lastInsertId();
+		$get_languages = $db->select("languages");
+		while($row_languages = $get_languages->fetch()){
+			$id = $row_languages->id;
+			$insert = $db->insert("posts_meta",array("post_id"=>$insert_id,"language_id"=>$id));
+		}
+		$update_meta = $db->update("posts_meta",$post_meta,array("post_id" => $insert_id, "language_id" => $adminLanguage));
+		$insert_log = $db->insert_log($admin_id,"post",$insert_id,"inserted");
+		echo "<script>alert_success('One Post has been Inserted Successfully.','index?blog');</script>";
 	}
 }
 

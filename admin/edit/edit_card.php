@@ -89,8 +89,9 @@ if(is_array($form_errors)){
                      <!--- form-group row Starts --->
                      <label class="col-md-3 control-label"> Card Image : </label>
                      <div class="col-md-6">
-                        <input type="file" name="card_image" class="form-control">
-                        <br><img src="<?= getImageUrl("home_cards",$b_image); ?>" width="70">
+                        <input type="hidden" name="card_image" id="picker_card_image" value="<?= htmlspecialchars($b_image); ?>">
+                        <div class="mb-2"><img id="preview_card_image" src="<?= getImageUrl("home_cards",$b_image); ?>" width="70"></div>
+                        <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('card_image','home_cards')">Choose Image</button>
                      </div>
                   </div>
                   <!--- form-group row Ends --->
@@ -131,25 +132,13 @@ if(isset($_POST['update_card'])){
         $card_desc = $input->post('card_description');
         $card_link = $input->post('card_link');
         $alt = $input->post('alt');
-        $card_image = $_FILES['card_image']['name'];
-        $tmp_name = $_FILES['card_image']['tmp_name'];
-        $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-        $file_extension = pathinfo($card_image, PATHINFO_EXTENSION);
-        if(!in_array($file_extension,$allowed) & !empty($card_image)){
-            echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-        }else{
-         if(empty($card_image)){
-            $card_image = $b_image;
-         }else{
-            uploadToS3("images/card_images/$card_image",$tmp_name);
-            $isS3 = $enable_s3;
-         }
-         $update_card = $db->update("home_cards",array("card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$isS3),array("card_id" => $card_id));
-         if($update_card){
-            $insert_log = $db->insert_log($admin_id,"card",$edit_id,"updated");
-            echo "<script>alert_success('Card Successfully Updated.','index?theme_settings');</script>";
-         }
-      }
+        $card_image = $input->post('card_image'); // already uploaded by the image picker, or unchanged
+        $isS3 = ($card_image == $b_image) ? $isS3 : $enable_s3;
+        $update_card = $db->update("home_cards",array("card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$isS3),array("card_id" => $card_id));
+        if($update_card){
+           $insert_log = $db->insert_log($admin_id,"card",$edit_id,"updated");
+           echo "<script>alert_success('Card Successfully Updated.','index?theme_settings');</script>";
+        }
    }
 }
 ?>

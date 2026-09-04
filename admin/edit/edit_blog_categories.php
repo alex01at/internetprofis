@@ -42,13 +42,9 @@ $show_image = getImageUrl("post_categories",$cat->cat_image);
 		            <div class="form-group row"><!--- form-group row Starts --->
 			            <label class="col-md-3 control-label"> Category Image : </label>
 			            <div class="col-md-6">
-				            <input type="file" name="cat_image" class="form-control">
-				            <br>
-				            <?php if(!empty($cat->cat_image)){ ?>
-				            	<img src="<?= $show_image; ?>" width="70" height="55">
-				            <?php }else{ ?>
-				            	<img src="../images/blog_cat_images/empty-image.jpg" width="70" height="55">
-				            <?php } ?>
+				            <input type="hidden" name="cat_image" id="picker_cat_image" value="<?= htmlspecialchars($cat->cat_image); ?>">
+				            <div class="mb-2"><img id="preview_cat_image" src="<?= !empty($cat->cat_image) ? $show_image : '../images/blog_cat_images/empty-image.jpg'; ?>" width="70" height="55"></div>
+				            <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('cat_image','post_categories')">Choose Image</button>
 			            </div>
 		            </div><!--- form-group row Ends --->
 						<div class="form-group row"><!--- form-group row Starts --->
@@ -68,31 +64,18 @@ if(isset($_POST['update'])){
 	$data = $input->post();
 	$data['date_time'] = date("F d, Y");
 	unset($data['update']);
-	$cat_image = $_FILES['cat_image']['name'];
-	$tmp_cat_image = $_FILES['cat_image']['tmp_name'];
-	$allowed = array('jpeg','jpg','gif','png','svg','tif','ico','webp');
-	$file_extension = pathinfo($cat_image, PATHINFO_EXTENSION);
-	if(!in_array($file_extension,$allowed) & !empty($cat_image)){
-		echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-	}else{
-		if(empty($cat_image)){
-			$cat_image = $cat->cat_image;
-			$isS3 = $cat->isS3;
-		}else{
-         uploadToS3("images/blog_cat_images/$cat_image",$tmp_cat_image);
-         $isS3 = $enable_s3;
-      	}
-    	$update = $db->update("post_categories", array('cat_image' => $cat_image, 'isS3' => $isS3 ),array("id" => $cat->id));
-    	unset($data['date_time']);
-    	unset($data['cat_image']);
-		$update = $db->update("post_categories_meta",$data,array(
-			"cat_id" => $row_meta->cat_id,
-			'language_id' => $adminLanguage
-		) );
-		if($update){
-			$insert_log = $db->insert_log($admin_id,"post_cat",$row_meta->cat_id,"updated");
-			echo "<script>alert_success('One Post Category has been Updated Successfully.','index?post_categories');</script>";
-		}
+	$cat_image = $input->post('cat_image'); // already uploaded by the image picker, or unchanged
+	$isS3 = ($cat_image == $cat->cat_image) ? $cat->isS3 : $enable_s3;
+	$update = $db->update("post_categories", array('cat_image' => $cat_image, 'isS3' => $isS3 ),array("id" => $cat->id));
+	unset($data['date_time']);
+	unset($data['cat_image']);
+	$update = $db->update("post_categories_meta",$data,array(
+		"cat_id" => $row_meta->cat_id,
+		'language_id' => $adminLanguage
+	) );
+	if($update){
+		$insert_log = $db->insert_log($admin_id,"post_cat",$row_meta->cat_id,"updated");
+		echo "<script>alert_success('One Post Category has been Updated Successfully.','index?post_categories');</script>";
 	}
 }
 ?>

@@ -84,7 +84,9 @@ if(is_array($form_errors)){
                      <!--- form-group row Starts --->
                      <label class="col-md-3 control-label"> Box Image : </label>
                      <div class="col-md-6">
-                        <input type="file" name="box_image" class="form-control" required="">
+                        <input type="hidden" name="box_image" id="picker_box_image" value="">
+                        <div class="mb-2"><img id="preview_box_image" src="" style="max-height:80px;" class="d-none"></div>
+                        <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('box_image','section_boxes')">Choose Image</button>
                      </div>
                   </div>
                   <!--- form-group row Ends --->
@@ -125,20 +127,12 @@ if(isset($_POST['submit'])){
       $block_id = $input->post('block_id');
       $box_title = $input->post('box_title');
       $box_desc = $input->post('box_desc');
-      $box_image = $_FILES['box_image']['name'];
-      $tmp_name = $_FILES['box_image']['tmp_name'];
-      $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-      $file_extension = pathinfo($box_image, PATHINFO_EXTENSION);
-      if(!in_array($file_extension,$allowed)){
-         echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-      }else{
-         uploadToS3("images/box_images/$box_image",$tmp_name);
-         $insert_box = $db->insert("section_boxes",array("language_id" => $adminLanguage,"block_id" => $block_id,"box_title" => $box_title,"box_desc" => $box_desc,"box_image" => $box_image,"isS3"=>$enable_s3));
-         if($insert_box){
-            $insert_id = $db->lastInsertId();
-            $insert_log = $db->insert_log($admin_id,"section_box",$insert_id,"inserted");
-            echo "<script>alert_success('One Box Successfully Inserted.','index?theme_settings');</script>";
-         }
+      $box_image = $input->post('box_image'); // already uploaded by the image picker
+      $insert_box = $db->insert("section_boxes",array("language_id" => $adminLanguage,"block_id" => $block_id,"box_title" => $box_title,"box_desc" => $box_desc,"box_image" => $box_image,"isS3"=>$enable_s3));
+      if($insert_box){
+         $insert_id = $db->lastInsertId();
+         $insert_log = $db->insert_log($admin_id,"section_box",$insert_id,"inserted");
+         echo "<script>alert_success('One Box Successfully Inserted.','index?theme_settings');</script>";
       }
    }
 }

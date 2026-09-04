@@ -70,13 +70,9 @@ $isS3 = $row_edit->isS3;
                             <!--- form-group row Starts --->
                             <label class="col-md-3 control-label"> Language Image : </label>
                             <div class="col-md-6">
-                                <input type="file" name="image" class="form-control" />
-                                <br>
-                                <?php if(!empty($image)){ ?>
-                                <img src="<?= getImageUrl("languages",$image); ?>" width="70" height="55">
-                                <?php }else{ ?>
-                                <img src="../languages/images/empty-image.jpg" width="70" height="55">
-                                <?php } ?>
+                                <input type="hidden" name="image" id="picker_image" value="<?= htmlspecialchars($image); ?>">
+                                <div class="mb-2"><img id="preview_image" src="<?= !empty($image) ? getImageUrl("languages",$image) : '../languages/images/empty-image.jpg'; ?>" width="70" height="55"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('image','languages')">Choose Image</button>
                             </div>
                         </div>
                         <!--- form-group row Ends --->
@@ -128,26 +124,14 @@ $isS3 = $row_edit->isS3;
 if(isset($_POST['update_language'])){
    $default_lang = $input->post('default_lang');
    $direction = $input->post('direction');
-   $image = $_FILES['image']['name'];
-   $tmp_image = $_FILES['image']['tmp_name'];
-   $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-   $file_extension = pathinfo($image, PATHINFO_EXTENSION);
-   if(!in_array($file_extension,$allowed) & !empty($image)){
-   echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-   }else{
-      if(empty($image)){
-        $image = $l_image;
-      }else{
-        uploadToS3("languages_images/$image",$tmp_image);
-        $isS3 = $enable_s3;
-      }
-      if($default_lang == 1){ $db->update("languages",["default_lang"=> 0]); }
-      $update_language = $db->update("languages",array("default_lang"=>$default_lang,"direction" => $direction,"image"=>$image,"isS3"=>$isS3),array("id" => $id));
-      if($update_language){
-         $insert_log = $db->insert_log($admin_id,"language",$id,"updated");
-         echo "<script>alert('One Language Has Been Updated.');</script>";
-         echo "<script>window.open('index?view_languages','_self');</script>";
-      }
+   $image = $input->post('image'); // already uploaded by the image picker, or unchanged
+   $isS3 = ($image == $l_image) ? $isS3 : $enable_s3;
+   if($default_lang == 1){ $db->update("languages",["default_lang"=> 0]); }
+   $update_language = $db->update("languages",array("default_lang"=>$default_lang,"direction" => $direction,"image"=>$image,"isS3"=>$isS3),array("id" => $id));
+   if($update_language){
+      $insert_log = $db->insert_log($admin_id,"language",$id,"updated");
+      echo "<script>alert('One Language Has Been Updated.');</script>";
+      echo "<script>window.open('index?view_languages','_self');</script>";
    }
 }
 ?>

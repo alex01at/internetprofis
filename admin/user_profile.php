@@ -96,10 +96,9 @@ echo "<script>window.open('login','_self');</script>";
 												</div>
 												<div class="form-group">
 													<label>Admin Image</label>
-													<input type="file" name="admin_image" class="form-control">
-													<br>
-													<img src="<?= getImageUrl("admins",$showImage); ?>" width="80px"
-														height="80px">
+													<input type="hidden" name="admin_image" id="picker_admin_image" value="<?= htmlspecialchars($a_image); ?>">
+													<div class="mb-2"><img id="preview_admin_image" src="<?= getImageUrl("admins",$showImage); ?>" width="80px" height="80px"></div>
+													<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('admin_image','admins')">Choose Image</button>
 												</div>
 												<div class="form-group">
 													<label>Login Time</label>
@@ -298,9 +297,9 @@ if(isset($_POST['update'])){
    $confirm_admin_pass = $input->post('confirm_admin_pass');
    $login_time = $input->post('login_time');
 	
-   $admin_image = $_FILES['admin_image']['name'];
-   $tmp_admin_image = $_FILES['admin_image']['tmp_name'];
-	
+   $admin_image = $input->post('admin_image'); // already uploaded by the image picker, or unchanged
+   $isS3 = ($admin_image == $a_image) ? $isS3 : $enable_s3;
+
    if(empty($admin_pass) and empty($confirm_admin_pass)){
       $encrypt_password = $a_pass;
    }else{
@@ -312,30 +311,13 @@ if(isset($_POST['update'])){
       }
    }
 
-   $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-   $file_extension = pathinfo($admin_image, PATHINFO_EXTENSION);
+   $update_admin = $db->update("admins",["admin_name"=>$admin_name,"admin_email"=>$admin_email,"admin_pass"=>$encrypt_password,"admin_image"=>$admin_image,"isS3"=>$isS3,"admin_contact"=>$admin_contact,"admin_country"=>$admin_country,"admin_job"=>$admin_job,"admin_about"=>$admin_about,"login_time"=>$login_time],["admin_id"=>$a_id]);
 
-   if(!in_array($file_extension,$allowed) & !empty($admin_image)){
-      echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-   }else{
-
-      if(empty($admin_image)){
-         $admin_image = $a_image;
-         $isS3 = $isS3;
-      }else{
-         uploadToS3("admin_images/$admin_image",$tmp_admin_image);
-         $isS3 = $enable_s3;
-      }
-
-      $update_admin = $db->update("admins",["admin_name"=>$admin_name,"admin_email"=>$admin_email,"admin_pass"=>$encrypt_password,"admin_image"=>$admin_image,"admin_contact"=>$admin_contact,"admin_country"=>$admin_country,"admin_job"=>$admin_job,"admin_about"=>$admin_about,"login_time"=>$login_time],["admin_id"=>$a_id]);
-
-      if($update_admin){
-         echo "
-         <script>
-            alert_success('Your User Profile Has Been Updated Successfully,So Please Login Again.','logout');
-         </script>";
-      }
-
+   if($update_admin){
+      echo "
+      <script>
+         alert_success('Your User Profile Has Been Updated Successfully,So Please Login Again.','logout');
+      </script>";
    }
 	
 }

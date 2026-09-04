@@ -106,9 +106,9 @@ if(is_array($form_errors)){
 
 <div class="col-md-6">
 
-<input type="file" name="box_image" class="form-control" >
-
-<br><img src="<?= getImageUrl("section_boxes",$b_image); ?>" width="70">
+<input type="hidden" name="box_image" id="picker_box_image" value="<?= htmlspecialchars($b_image); ?>">
+<div class="mb-2"><img id="preview_box_image" src="<?= getImageUrl("section_boxes",$b_image); ?>" width="70"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('box_image','section_boxes')">Choose Image</button>
 
 </div>
 
@@ -161,32 +161,14 @@ if(isset($_POST['update_box'])){
 
     $box_title = $input->post('box_title');
     $box_desc = $input->post('box_desc');
-    $box_image = $_FILES['box_image']['name'];
-    $tmp_name = $_FILES['box_image']['tmp_name'];
+    $box_image = $input->post('box_image'); // already uploaded by the image picker, or unchanged
+    $isS3 = ($box_image == $b_image) ? $isS3 : $enable_s3;
 
-    $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-    $file_extension = pathinfo($box_image, PATHINFO_EXTENSION);
+    $update_box = $db->update("section_boxes",array("box_title" => $box_title,"box_desc" => $box_desc, "box_image" => $box_image,"isS3"=>$isS3),array("box_id" => $box_id));
 
-    if(!in_array($file_extension,$allowed) & !empty($box_image)){
-      
-      echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-      
-    }else{
-
-      if(empty($box_image)){
-        $box_image = $b_image;
-      }else{
-        uploadToS3("images/box_images/$box_image",$tmp_name);
-        $isS3 = $enable_s3;
-      }
-
-      $update_box = $db->update("section_boxes",array("box_title" => $box_title,"box_desc" => $box_desc, "box_image" => $box_image,"isS3"=>$isS3),array("box_id" => $box_id));
-      	
-      if($update_box){
-        $insert_log = $db->insert_log($admin_id,"box",$edit_id,"updated");
-        echo "<script>alert_success('One Box Successfully Updated.','index?layout_settings');</script>";
-      }
-    	
+    if($update_box){
+      $insert_log = $db->insert_log($admin_id,"box",$edit_id,"updated");
+      echo "<script>alert_success('One Box Successfully Updated.','index?layout_settings');</script>";
     }
 
   }

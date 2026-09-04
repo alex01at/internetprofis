@@ -18,6 +18,10 @@ $s_logo_image = $row_general_settings->site_logo_image;
 $s_mobile_logo = $row_general_settings->site_mobile_logo;
 $s_logo = $row_general_settings->site_logo;
 $s_watermark = $row_general_settings->site_watermark;
+$s_favicon_s3 = $row_general_settings->site_favicon_s3;
+$s_logo_image_s3 = $row_general_settings->site_logo_image_s3;
+$s_mobile_logo_s3 = $row_general_settings->site_mobile_logo_s3;
+$s_logo_s3 = $row_general_settings->site_logo_s3;
 
 
 ?>
@@ -44,9 +48,10 @@ $s_watermark = $row_general_settings->site_watermark;
 <div class="col-md-6">
 <div class="input-group">
 <span class="input-group-addon"><b><i class="fa fa-paper-plane"></i></b></span>
-<input type="file" name="site_favicon" class="form-control">
+<input type="hidden" name="site_favicon" id="picker_site_favicon" value="<?= htmlspecialchars($s_favicon); ?>">
 </div>
-<img class="mt-1" src="<?= $site_favicon; ?>" width="30" height="30">
+<div class="mb-2"><img class="mt-1" id="preview_site_favicon" src="<?= $site_favicon; ?>" width="30" height="30"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('site_favicon','general_settings')">Choose Image</button>
 </div>
 </div>
 <!--- form-group row Ends --->
@@ -91,9 +96,10 @@ $s_watermark = $row_general_settings->site_watermark;
 <span class="input-group-addon">
 <b><i class="fa fa-paper-plane"></i></b>
 </span>
-<input type="file" name="site_logo_image" class="form-control">
+<input type="hidden" name="site_logo_image" id="picker_site_logo_image" value="<?= htmlspecialchars($s_logo_image); ?>">
 </div>
-<img style="margin-top:7px;" src="<?= $site_logo_image; ?>" width="90" height="30">
+<div class="mb-2"><img style="margin-top:7px;" id="preview_site_logo_image" src="<?= $site_logo_image; ?>" width="90" height="30"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('site_logo_image','general_settings')">Choose Image</button>
 </div>
 </div>
 <!--- form-group row Ends --->
@@ -120,10 +126,10 @@ $s_watermark = $row_general_settings->site_watermark;
 <span class="input-group-addon">
 <b><i class="fa fa-paper-plane"></i></b>
 </span>
-<input type="file" name="site_mobile_logo" class="form-control">
+<input type="hidden" name="site_mobile_logo" id="picker_site_mobile_logo" value="<?= htmlspecialchars($s_mobile_logo); ?>">
 </div>
-<img class="mt-1" src="<?= $site_mobile_logo; ?>" width="25" height="25">
-<br>
+<div class="mb-2"><img class="mt-1" id="preview_site_mobile_logo" src="<?= $site_mobile_logo; ?>" width="25" height="25"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('site_mobile_logo','general_settings')">Choose Image</button>
 </div>
 </div><!--- form-group row Ends --->
 
@@ -135,9 +141,10 @@ $s_watermark = $row_general_settings->site_watermark;
 <span class="input-group-addon">
 <b><i class="fa fa-paper-plane"></i></b>
 </span>
-<input type="file" name="site_logo" class="form-control">
+<input type="hidden" name="site_logo" id="picker_site_logo" value="<?= htmlspecialchars($s_logo); ?>">
 </div>
-<img class="mt-1" src="<?= $site_logo; ?>" width="110" height="40">
+<div class="mb-2"><img class="mt-1" id="preview_site_logo" src="<?= $site_logo; ?>" width="110" height="40"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('site_logo','general_settings')">Choose Image</button>
 </div>
 </div><!--- form-group row Ends --->
 
@@ -148,9 +155,10 @@ $s_watermark = $row_general_settings->site_watermark;
       <span class="input-group-addon">
         <b><i class="fa fa-paper-plane"></i></b>
       </span>
-      <input type="file" name="site_watermark" class="form-control">
+      <input type="hidden" name="site_watermark" id="picker_site_watermark" value="<?= htmlspecialchars($s_watermark); ?>">
     </div>
-    <img class="mt-1" src="../images/<?= $s_watermark; ?>" width="110" height="40">
+    <div class="mb-2"><img class="mt-1" id="preview_site_watermark" src="../images/<?= $s_watermark; ?>" width="110" height="40"></div>
+    <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('site_watermark','general_settings')">Choose Image</button>
   </div>
 </div>
 <div class="form-group row">
@@ -191,91 +199,41 @@ if(isset($_POST['logo_update'])){
 	$enable_mobile_logo = $input->post('enable_mobile_logo');
   $site_logo_type = $input->post('site_logo_type');
 	$site_logo_text = $input->post('site_logo_text');
-	
 
-  $site_favicon = $_FILES['site_favicon']['name'];
-	$site_favicon_tmp = $_FILES['site_favicon']['tmp_name'];
-	
-  $site_logo = $_FILES['site_logo']['name'];
-	$site_logo_tmp = $_FILES['site_logo']['tmp_name']; 
+  $site_favicon = $input->post('site_favicon'); // already uploaded by the image picker, or unchanged
+  $site_logo = $input->post('site_logo');
+  $site_mobile_logo = $input->post('site_mobile_logo');
+  $site_logo_image = $input->post('site_logo_image');
+  $site_watermark = $input->post('site_watermark');
 
-  $site_mobile_logo = $_FILES['site_mobile_logo']['name'];
-  $site_mobile_logo_tmp = $_FILES['site_mobile_logo']['tmp_name'];
-	
-  $site_logo_image = $_FILES['site_logo_image']['name'];
-	$site_logo_image_tmp = $_FILES['site_logo_image']['tmp_name'];
-
-  $site_watermark = $_FILES['site_watermark']['name'];
-  $site_watermark_tmp = $_FILES['site_watermark']['tmp_name'];
-
-	$favicon_extension = pathinfo($site_favicon, PATHINFO_EXTENSION);
-	$logo_extension = pathinfo($site_logo, PATHINFO_EXTENSION);
-	$logo_image_extension = pathinfo($site_logo_image, PATHINFO_EXTENSION);
-	$allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-
-	if(!in_array($favicon_extension,$allowed) & !empty($site_favicon) or !in_array($logo_extension,$allowed) & !empty($site_logo) or !in_array($logo_image_extension,$allowed) & !empty($site_logo_image)){
-		echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-	}else{
-
-    if(empty($site_favicon)){
-      $site_favicon = $s_favicon;
-      $site_favicon_s3 = $s_favicon_s3;
-    }else{
-      uploadToS3("images/$site_favicon",$site_favicon_tmp);
-      $site_favicon_s3 = $enable_s3;
-    }
-
-    if(empty($site_logo)){
-      $site_logo = $s_logo;
-      $site_logo_s3 = $s_logo_s3;
-    }else{
-      uploadToS3("images/$site_logo",$site_logo_tmp);
-      $site_logo_s3 = $enable_s3;
-    }
-
-    if(empty($site_mobile_logo)){
-      $site_mobile_logo = $s_mobile_logo;
-      $site_mobile_logo_s3 = $s_mobile_logo_s3;
-    }else{
-      uploadToS3("images/$site_mobile_logo",$site_mobile_logo_tmp);
-      $site_mobile_logo_s3 = $enable_s3;
-    }
-
-    if(empty($site_logo_image)){
-      $site_logo_image = $s_logo_image;
-      $site_logo_image_s3 = $s_logo_image_s3;
-    }else{
-      uploadToS3("images/$site_logo_image",$site_logo_image_tmp);
-      $site_logo_image_s3 = $enable_s3;
-    }
-
-    if(empty($site_watermark)){
-      $site_watermark = $s_watermark;
-    }else{
-      move_uploaded_file($site_watermark_tmp, "../images/$site_watermark");
-    }
+  $site_favicon_s3 = ($site_favicon == $s_favicon) ? $s_favicon_s3 : $enable_s3;
+  $site_logo_s3 = ($site_logo == $s_logo) ? $s_logo_s3 : $enable_s3;
+  $site_mobile_logo_s3 = ($site_mobile_logo == $s_mobile_logo) ? $s_mobile_logo_s3 : $enable_s3;
+  $site_logo_image_s3 = ($site_logo_image == $s_logo_image) ? $s_logo_image_s3 : $enable_s3;
 
 		$logo_settings = $db->update("general_settings",array(
-      
+
       "site_favicon" => $site_favicon,
+      "site_favicon_s3" => $site_favicon_s3,
       "site_logo_type" => $site_logo_type,
       "site_logo_text" => $site_logo_text,
       "site_logo_image" => $site_logo_image,
+      "site_logo_image_s3" => $site_logo_image_s3,
       "enable_mobile_logo"=>$enable_mobile_logo,
       "site_mobile_logo"=>$site_mobile_logo,
+      "site_mobile_logo_s3" => $site_mobile_logo_s3,
       "site_logo" => $site_logo,
+      "site_logo_s3" => $site_logo_s3,
       "site_watermark" => $site_watermark
-      
+
     ));
 
 		if($logo_settings){
 			$insert_log = $db->insert_log($admin_id,"general_settings","","updated");
-			
-				echo "<script>alert_success('Logo Settings has been updated successfully.','index?logo_settings');</script>";
-		  
-    }
 
-	}
+				echo "<script>alert_success('Logo Settings has been updated successfully.','index?logo_settings');</script>";
+
+    }
 }
 ?>
 <?php } ?>

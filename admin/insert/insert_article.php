@@ -78,22 +78,31 @@ echo "<script>window.open('login','_self');</script>";
                   placeholder="Start Typing Here..." class="form-control"></textarea></div>
             </div>
             <div class="row form-group">
-              <div class="col col-md-3"><label for="file-input" class=" form-control-label">Right Image
+              <div class="col col-md-3"><label class=" form-control-label">Right Image
                   (optional)</label></div>
-              <div class="col-12 col-md-9"><input type="file" id="file-input" name="right_image"
-                  class="form-control-file"></div>
-            </div>
-            <div class="row form-group">
-              <div class="col col-md-3"><label for="file-input" class=" form-control-label">Top Image (optional)</label>
+              <div class="col-12 col-md-9">
+                <input type="hidden" name="right_image" id="picker_right_image" value="">
+                <div class="mb-2"><img id="preview_right_image" src="" style="max-height:80px;" class="d-none"></div>
+                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('right_image','knowledge_bank')">Choose Image</button>
               </div>
-              <div class="col-12 col-md-9"><input type="file" id="file-input" name="top_image"
-                  class="form-control-file"></div>
             </div>
             <div class="row form-group">
-              <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Bottom Image
+              <div class="col col-md-3"><label class=" form-control-label">Top Image (optional)</label>
+              </div>
+              <div class="col-12 col-md-9">
+                <input type="hidden" name="top_image" id="picker_top_image" value="">
+                <div class="mb-2"><img id="preview_top_image" src="" style="max-height:80px;" class="d-none"></div>
+                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('top_image','knowledge_bank')">Choose Image</button>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col col-md-3"><label class=" form-control-label">Bottom Image
                   (optional)</label></div>
-              <div class="col-12 col-md-9"><input type="file" id="file-multiple-input" name="bottom_image"
-                  class="form-control-file"></div>
+              <div class="col-12 col-md-9">
+                <input type="hidden" name="bottom_image" id="picker_bottom_image" value="">
+                <div class="mb-2"><img id="preview_bottom_image" src="" style="max-height:80px;" class="d-none"></div>
+                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('bottom_image','knowledge_bank')">Choose Image</button>
+              </div>
             </div>
             <div class="row form-group">
               <div class="col col-md-3"></div>
@@ -134,41 +143,15 @@ if(isset($_POST['submit'])){
     $cat_id = $input->post('cat_id');
     $article_status = $input->post('article_status');
     $article_body = removeJava($_POST['article_body']);
-    $right_image = $_FILES['right_image']['name'];
-    $right_image_tmp = $_FILES['right_image']['tmp_name'];
-    $top_image = $_FILES['top_image']['name'];
-    $top_image_tmp = $_FILES['top_image']['tmp_name'];
-    $bottom_image = $_FILES['bottom_image']['name'];
-    $bottom_image_tmp = $_FILES['bottom_image']['tmp_name'];
-    $right_extension = pathinfo($right_image, PATHINFO_EXTENSION);
-    $top_extension = pathinfo($top_image, PATHINFO_EXTENSION);
-    $bottom_extension = pathinfo($bottom_image, PATHINFO_EXTENSION);
-    $allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-    if(!in_array($right_extension,$allowed) & !empty($right_image) or !in_array($top_extension,$allowed) & !empty($top_image) or !in_array($bottom_extension,$allowed) & !empty($bottom_image)){
-      echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
-    }else{
-      if(!empty($right_image)){
-        $right_image = pathinfo($right_image, PATHINFO_FILENAME);
-        $right_image = $right_image."_".time().".$right_extension";
-        uploadToS3("article_images/$right_image",$right_image_tmp);
-      }
-      if(!empty($top_image)){
-        $top_image = pathinfo($top_image, PATHINFO_FILENAME);
-        $top_image = $top_image."_".time().".$top_extension";
-        uploadToS3("article_images/$top_image",$top_image_tmp);
-      }
-      if(!empty($bottom_image)){
-        $bottom_image = pathinfo($bottom_image, PATHINFO_FILENAME);
-        $bottom_image = $bottom_image."_".time().".$bottom_extension";
-        uploadToS3("article_images/$bottom_image",$bottom_image_tmp);
-      }
-      $insert_article = $db->insert("knowledge_bank",array("language_id" => $adminLanguage,"cat_id"=>$cat_id,"article_url"=>$article_url,"article_heading"=>$article_heading,"article_body"=>$article_body,"right_image"=>$right_image,"top_image"=>$top_image,"bottom_image"=>$bottom_image,"right_image_s3"=>$enable_s3,"top_image_s3"=>$enable_s3,"bottom_image_s3"=>$enable_s3,"article_status"=>$article_status));
-      if($insert_article){
-        $insert_id = $db->lastInsertId();
-        $insert_log = $db->insert_log($admin_id,"article",$insert_id,"inserted");
-        echo "<script>alert('Article inserted successfully.');</script>";
-        echo "<script>window.open('index?view_articles','_self');</script>";
-      }
+    $right_image = $input->post('right_image'); // already uploaded by the image picker
+    $top_image = $input->post('top_image');
+    $bottom_image = $input->post('bottom_image');
+    $insert_article = $db->insert("knowledge_bank",array("language_id" => $adminLanguage,"cat_id"=>$cat_id,"article_url"=>$article_url,"article_heading"=>$article_heading,"article_body"=>$article_body,"right_image"=>$right_image,"top_image"=>$top_image,"bottom_image"=>$bottom_image,"right_image_s3"=>$enable_s3,"top_image_s3"=>$enable_s3,"bottom_image_s3"=>$enable_s3,"article_status"=>$article_status));
+    if($insert_article){
+      $insert_id = $db->lastInsertId();
+      $insert_log = $db->insert_log($admin_id,"article",$insert_id,"inserted");
+      echo "<script>alert('Article inserted successfully.');</script>";
+      echo "<script>window.open('index?view_articles','_self');</script>";
     }
   }
 }

@@ -118,13 +118,9 @@ $get_default_language_meta = $db->select("cats_meta", array("cat_id" => $edit_id
                             <!--- form-group row Starts --->
                             <label class="col-md-3 control-label"> Category Image : </label>
                             <div class="col-md-5">
-                                <input type="file" name="cat_image" class="form-control">
-                                <br>
-                                <?php if(!empty($c_image)){ ?>
-                                <img src="<?= $show_image; ?>" width="70" height="55">
-                                <?php }else{ ?>
-                                <img src="../images/cat_images/empty-image.jpg" width="70" height="55">
-                                <?php } ?>
+                                <input type="hidden" name="cat_image" id="picker_cat_image" value="<?= htmlspecialchars($c_image); ?>">
+                                <div class="mb-2"><img id="preview_cat_image" src="<?= !empty($c_image) ? $show_image : '../images/cat_images/empty-image.jpg'; ?>" width="70" height="55"></div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="openImagePicker('cat_image','categories')">Choose Image</button>
                             </div>
                         </div>
                         <!--- form-group row Ends --->
@@ -189,36 +185,24 @@ if(isset($_POST['update_cat'])){
         $cat_desc = $input->post('cat_desc');
 		$cat_featured = $input->post('cat_featured');
         $enable_watermark = $input->post('enable_watermark');
-		$cat_image = $_FILES['cat_image']['name'];
-		$tmp_cat_image = $_FILES['cat_image']['tmp_name'];
-		$allowed = array('jpeg','jpg','gif','png','tif','ico','webp');
-		$file_extension = pathinfo($cat_image, PATHINFO_EXTENSION);
-		if(!in_array($file_extension,$allowed) & !empty($cat_image)){
-			echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
+		$cat_image = $input->post('cat_image'); // already uploaded by the image picker, or unchanged
+		$isS3 = ($cat_image == $c_image) ? $isS3 : $enable_s3;
+		if($videoPlugin == 1){
+			$video = $input->post('video');
+			$reminder_emails = $input->post('reminder_emails');
+			$missed_session_emails = $input->post('missed_session_emails');
+			$warning_message = $input->post('warning_message');
+			$update_cat = $db->update("categories",array("cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$isS3,"video"=>$video,"reminder_emails"=>$reminder_emails,"missed_session_emails"=>$missed_session_emails,"warning_message"=>$warning_message),array("cat_id"=>$edit_id));
 		}else{
-			if(empty($cat_image)){
-				$cat_image = $c_image;
-			}else{
-            uploadToS3("images/cat_images/$cat_image",$tmp_cat_image);
-            $isS3 = $enable_s3;
-         }
-			if($videoPlugin == 1){
-				$video = $input->post('video');
-				$reminder_emails = $input->post('reminder_emails');
-				$missed_session_emails = $input->post('missed_session_emails');
-				$warning_message = $input->post('warning_message');
-				$update_cat = $db->update("categories",array("cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$isS3,"video"=>$video,"reminder_emails"=>$reminder_emails,"missed_session_emails"=>$missed_session_emails,"warning_message"=>$warning_message),array("cat_id"=>$edit_id));
-			}else{
-				$update_cat = $db->update("categories",array("cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$isS3),array("cat_id"=>$edit_id));
-			}
-			if($update_cat){
-				$update_meta = $db->update("cats_meta",array("cat_title" => $cat_title,"cat_desc" => $cat_desc),array("cat_id" => $edit_id, "language_id" => $adminLanguage));
-				$insert_log = $db->insert_log($admin_id,"cat",$edit_id,"updated");
-				echo "<script>alert('One Category Has Been Updated.');</script>";
-				echo "<script>window.open('index?categories','_self');</script>";
-			}
+			$update_cat = $db->update("categories",array("cat_url"=>$cat_url,"cat_image"=>$cat_image,"cat_featured"=>$cat_featured,"enable_watermark"=>$enable_watermark,"isS3"=>$isS3),array("cat_id"=>$edit_id));
 		}
-	}	
+		if($update_cat){
+			$update_meta = $db->update("cats_meta",array("cat_title" => $cat_title,"cat_desc" => $cat_desc),array("cat_id" => $edit_id, "language_id" => $adminLanguage));
+			$insert_log = $db->insert_log($admin_id,"cat",$edit_id,"updated");
+			echo "<script>alert('One Category Has Been Updated.');</script>";
+			echo "<script>window.open('index?categories','_self');</script>";
+		}
+	}
 }
 ?>
 </div>

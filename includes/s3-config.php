@@ -37,7 +37,7 @@ $config = array(
 
 $allowedExtensions = array("jpg", "jpeg", "png", "gif", "webp", "eps", "svg", "pdf", "txt", "docx", "pptx", "zip", "rar", "tar");
 
-$allowedImageExtensions = array("jpg", "jpeg", "png", "gif", "webp", "svg");
+$allowedImageExtensions = array("jpg", "jpeg", "png", "gif", "webp", "svg", "ico", "tif");
 
 function getImageColumn($table){
 	
