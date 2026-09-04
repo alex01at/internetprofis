@@ -8,6 +8,7 @@ All notable changes to this project are documented here.
 
 - Added the withdrawal_notices table to the base install schema (gigtodo.sql), so a fresh install has it without needing to separately run the migration.
 - Added tests/check-mailer-require.php: statically walks each send_mail() caller's require/include chain and flags any that never reach functions/mailer.php, where the function is actually defined.
+- Added a boxed/full-width layout choice for the frontend, in Admin -> Settings -> Theme Settings -> Basic Settings.
 
 ### Fixed
 

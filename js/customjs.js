@@ -4,6 +4,12 @@ $(document).ready(function(){
 	var enable_sound = $("#custom-js").data("enable-sound");
 	var enable_notifications = $("#custom-js").data("enable-notifications");
 	var disable_messages = $("#custom-js").data("disable-messages");
+	var site_layout = $("#custom-js").data("site-layout");
+
+	// Site Layout
+	if(site_layout === "boxed"){
+		$("html, body").addClass("boxed-layout");
+	}
 
 	// Langauge
 	$("#languageSelect").change(function(){

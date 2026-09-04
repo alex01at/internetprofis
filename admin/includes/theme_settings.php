@@ -18,10 +18,62 @@ $count_bar = $get_bar->rowCount();
 @$text_color = $row_bar->text_color;
 @$bar_text = $row_bar->bar_text;
 
+@$site_layout = $row_general_settings->site_layout ?: 'full';
+
 ?>
 
 
 <div class="main-container">
+
+<div class="row"><!--- 2 row Starts --->
+<div class="col-lg-12"><!--- col-lg-12 Starts --->
+<div class="card mb-5"><!--- card mb-5 Starts --->
+<div class="card-header"><!--- card-header Starts --->
+<h4 class="h4"><i class="fa fa-th-large fa-fw"></i> Basic Settings </h4>
+</div><!--- card-header Ends --->
+<div class="card-body"><!--- card-body Starts --->
+<form method="post"><!--- form Starts --->
+
+<div class="form-group row"><!--- form-group row Starts --->
+  <label class="col-md-3 control-label"> Site Layout : </label>
+  <div class="col-md-6">
+    <select name="site_layout" class="form-control">
+      <option value="full" <?= ($site_layout=='full')?'selected':''; ?>> Full Width </option>
+      <option value="boxed" <?= ($site_layout=='boxed')?'selected':''; ?>> Boxed </option>
+    </select>
+    <small class="form-text text-muted">Boxed constrains the whole site to a centered, max-width column instead of stretching edge to edge.</small>
+  </div>
+</div><!--- form-group row Ends --->
+
+<div class="form-group row"><!--- form-group row Starts --->
+<label class="col-md-3 control-label"></label>
+<div class="col-md-6">
+<input type="submit" name="update_site_layout" class="btn btn-success form-control" value="Update Basic Settings">
+</div>
+</div><!--- form-group row Ends --->
+
+</form><!--- form Ends --->
+</div><!--- card-body Ends --->
+</div><!--- card mb-5 Ends --->
+</div><!--- col-lg-12 Ends --->
+</div><!--- 2 row Ends --->
+
+<?php
+
+if(isset($_POST['update_site_layout'])){
+
+  $site_layout_post = $input->post('site_layout');
+
+  $update_site_layout = $db->update("general_settings",["site_layout" => $site_layout_post]);
+
+  if($update_site_layout){
+    echo "
+    <script>alert_success('Basic Settings Has Been Updated Successfully.','index?theme_settings')</script>";
+  }
+
+}
+
+?>
 
 <div class="row"><!--- 2 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->

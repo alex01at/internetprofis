@@ -76,6 +76,7 @@ if(empty(DB_HOST) and empty(DB_USER) and empty(DB_NAME)){
 	$edited_proposals = $row_general_settings->edited_proposals;
 	$enable_websocket = $row_general_settings->enable_websocket;
 	$websocket_address = $row_general_settings->websocket_address;
+	$site_layout = $row_general_settings->site_layout ?? 'full';
 
 	$get_currencies = $db->select("currencies",array("id" => $site_currency));
 	$row_currencies = $get_currencies->fetch();

@@ -1495,7 +1495,8 @@ CREATE TABLE `general_settings` (
   `post_footer_color` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `header_color` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `navbar_color` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `disable_processing_fee` int(10) COLLATE utf8mb4_unicode_ci NOT NULL
+  `disable_processing_fee` int(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `site_layout` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'full'
 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -42,6 +42,7 @@ if(isset($_SESSION['seller_user_name'])){
   data-enable-sound="<?= $login_seller_enable_sound ?? '0'; ?>"
   data-enable-notifications="<?= $login_seller_enable_notifications ?? '0'; ?>"
   data-disable-messages="<?= $disable_messages ?? '0'; ?>"
+  data-site-layout="<?= $site_layout ?? 'full'; ?>"
   defer>
 </script>
 
