@@ -53,10 +53,12 @@ if(is_array($form_errors)){
                      <div class="col-md-6">
                         <select name="block_id" class="form-control" required="">
                         <?php
+                        $preselect_block_id = $input->get('block_id');
                         $get_boxes_blocks = $db->query("SELECT * FROM home_layout_blocks WHERE language_id = :lang AND block_type = 'boxes' ORDER BY position ASC",array("lang" => $adminLanguage));
                         while($row_boxes_block = $get_boxes_blocks->fetch()){
+                            $selected = ($preselect_block_id == $row_boxes_block->id) ? "selected" : "";
                         ?>
-                        <option value="<?= $row_boxes_block->id; ?>">Boxes (block #<?= $row_boxes_block->id; ?>)</option>
+                        <option value="<?= $row_boxes_block->id; ?>" <?= $selected; ?>>Boxes (block #<?= $row_boxes_block->id; ?>)</option>
                         <?php } ?>
                         </select>
                      </div>

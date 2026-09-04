@@ -41,10 +41,12 @@ if(is_array($form_errors)){
                             <div class="col-md-6">
                                 <select name="block_id" class="form-control" required="">
                                 <?php
+                                $preselect_block_id = $input->get('block_id');
                                 $get_cards_blocks = $db->query("SELECT * FROM home_layout_blocks WHERE language_id = :lang AND block_type = 'cards' ORDER BY position ASC",array("lang" => $adminLanguage));
                                 while($row_cards_block = $get_cards_blocks->fetch()){
+                                    $selected = ($preselect_block_id == $row_cards_block->id) ? "selected" : "";
                                 ?>
-                                <option value="<?= $row_cards_block->id; ?>">Cards Carousel (block #<?= $row_cards_block->id; ?>)</option>
+                                <option value="<?= $row_cards_block->id; ?>" <?= $selected; ?>>Cards Carousel (block #<?= $row_cards_block->id; ?>)</option>
                                 <?php } ?>
                                 </select>
                             </div>

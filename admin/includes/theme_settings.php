@@ -211,6 +211,7 @@ Which sections appear on the logged-out homepage, in what order. Cards and Boxes
 $total_blocks = count($layout_blocks);
 foreach($layout_blocks as $b_i => $block){
 	$block_label = $layout_block_labels[$block->block_type] ?? ucfirst($block->block_type);
+	$item_count = null;
 	if(in_array($block->block_type,array("cards","boxes"))){
 		$item_count = $db->count($block->block_type == "cards" ? "home_cards" : "section_boxes",array("block_id" => $block->id));
 		$block_label .= " (block #".$block->id.", ".$item_count." item".($item_count == 1 ? "" : "s").")";
@@ -228,13 +229,21 @@ foreach($layout_blocks as $b_i => $block){
 </td>
 <td>
 <?php if($b_i > 0){ ?>
-<a href="index?move_layout_block=<?= $block->id; ?>&dir=up" title="Move Up"><i class="fa fa-arrow-up"></i></a>
+<a href="index?move_layout_block=<?= $block->id; ?>&dir=up" title="Move Up" class="btn btn-sm btn-outline-secondary">&#9650; Up</a>
 <?php } ?>
 <?php if($b_i < $total_blocks - 1){ ?>
-&nbsp; <a href="index?move_layout_block=<?= $block->id; ?>&dir=down" title="Move Down"><i class="fa fa-arrow-down"></i></a>
+&nbsp; <a href="index?move_layout_block=<?= $block->id; ?>&dir=down" title="Move Down" class="btn btn-sm btn-outline-secondary">&#9660; Down</a>
 <?php } ?>
-&nbsp; <a href="index?toggle_layout_block=<?= $block->id; ?>" title="<?= ($block->enabled == "yes") ? "Hide" : "Show"; ?>"><i class="fa fa-<?= ($block->enabled == "yes") ? "eye-slash" : "eye"; ?>"></i></a>
-&nbsp; <a href="#" onclick="alert_confirm('Delete this homepage section? Any cards/boxes in it will be kept but unassigned, not deleted.','index.php?delete_layout_block=<?= $block->id; ?>');" title="Delete"><i class="fa fa-trash"></i></a>
+&nbsp; <a href="index?toggle_layout_block=<?= $block->id; ?>" title="<?= ($block->enabled == "yes") ? "Hide" : "Show"; ?>" class="btn btn-sm btn-outline-secondary"><?= ($block->enabled == "yes") ? "Hide" : "Show"; ?></a>
+&nbsp; <a href="#" onclick="alert_confirm('Delete this homepage section? Any cards/boxes in it will be kept but unassigned, not deleted.','index.php?delete_layout_block=<?= $block->id; ?>');" title="Delete" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete</a>
+<?php if($block->block_type == "cards"){ ?>
+&nbsp; <a href="index?insert_card&block_id=<?= $block->id; ?>" class="btn btn-sm btn-outline-success">+ Add Card Here</a>
+<?php }elseif($block->block_type == "boxes"){ ?>
+&nbsp; <a href="index?insert_box&block_id=<?= $block->id; ?>" class="btn btn-sm btn-outline-success">+ Add Box Here</a>
+<?php } ?>
+<?php if($item_count === 0){ ?>
+<br><small class="text-danger">This section is empty and won't show on the homepage until it has at least one item.</small>
+<?php } ?>
 </td>
 </tr>
 <?php } ?>
