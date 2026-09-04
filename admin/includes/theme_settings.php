@@ -20,6 +20,23 @@ $count_bar = $get_bar->rowCount();
 
 @$site_layout = $row_general_settings->site_layout ?: 'full';
 
+$get_layout_blocks = $db->query("SELECT * FROM home_layout_blocks WHERE language_id = :lang ORDER BY position ASC",array("lang" => $adminLanguage));
+$layout_blocks = $get_layout_blocks ? $get_layout_blocks->fetchAll() : [];
+
+$layout_block_labels = array(
+	"hero" => "Hero",
+	"cards" => "Cards Carousel",
+	"categories" => "Featured Categories",
+	"boxes" => "Boxes",
+	"proposals" => "Featured Proposals"
+);
+
+// Hero, Categories and Proposals stay singleton per language.
+$existing_block_types = array_map(function($b){ return $b->block_type; }, $layout_blocks);
+$can_add_hero = !in_array("hero", $existing_block_types);
+$can_add_categories = !in_array("categories", $existing_block_types);
+$can_add_proposals = !in_array("proposals", $existing_block_types);
+
 ?>
 
 
@@ -166,6 +183,81 @@ if(isset($_POST['update_bar'])){
 }
 
 ?>
+
+<div class="row"><!--- 2 row Starts --->
+<div class="col-lg-12"><!--- col-lg-12 Starts --->
+<div class="card mb-5"><!--- card mb-5 Starts --->
+<div class="card-header"><!--- card-header Starts --->
+<h4 class="h4">
+<i class="fa fa-sitemap fa-fw"></i> Homepage Layout
+<small class="text-muted">
+Which sections appear on the logged-out homepage, in what order. Cards and Boxes can have more than one instance, each with its own content.
+</small>
+</h4>
+</div><!--- card-header Ends --->
+<div class="card-body"><!--- card-body Starts --->
+<div class="table-responsive">
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>#</th>
+<th>Section</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$total_blocks = count($layout_blocks);
+foreach($layout_blocks as $b_i => $block){
+	$block_label = $layout_block_labels[$block->block_type] ?? ucfirst($block->block_type);
+	if(in_array($block->block_type,array("cards","boxes"))){
+		$item_count = $db->count($block->block_type == "cards" ? "home_cards" : "section_boxes",array("block_id" => $block->id));
+		$block_label .= " (block #".$block->id.", ".$item_count." item".($item_count == 1 ? "" : "s").")";
+	}
+?>
+<tr>
+<td><?= $b_i + 1; ?></td>
+<td><?= htmlspecialchars($block_label); ?></td>
+<td>
+<?php if($block->enabled == "yes"){ ?>
+<span class="badge badge-success">Enabled</span>
+<?php }else{ ?>
+<span class="badge badge-secondary">Hidden</span>
+<?php } ?>
+</td>
+<td>
+<?php if($b_i > 0){ ?>
+<a href="index?move_layout_block=<?= $block->id; ?>&dir=up" title="Move Up"><i class="fa fa-arrow-up"></i></a>
+<?php } ?>
+<?php if($b_i < $total_blocks - 1){ ?>
+&nbsp; <a href="index?move_layout_block=<?= $block->id; ?>&dir=down" title="Move Down"><i class="fa fa-arrow-down"></i></a>
+<?php } ?>
+&nbsp; <a href="index?toggle_layout_block=<?= $block->id; ?>" title="<?= ($block->enabled == "yes") ? "Hide" : "Show"; ?>"><i class="fa fa-<?= ($block->enabled == "yes") ? "eye-slash" : "eye"; ?>"></i></a>
+&nbsp; <a href="#" onclick="alert_confirm('Delete this homepage section? Any cards/boxes in it will be kept but unassigned, not deleted.','index.php?delete_layout_block=<?= $block->id; ?>');" title="Delete"><i class="fa fa-trash"></i></a>
+</td>
+</tr>
+<?php } ?>
+</tbody>
+</table>
+</div>
+
+<form method="get" action="index" class="form-inline">
+<input type="hidden" name="insert_layout_block" value="1">
+<select name="block_type" class="form-control mr-2 mb-2">
+<?php if($can_add_hero){ ?><option value="hero">Hero</option><?php } ?>
+<option value="cards">Cards Carousel</option>
+<?php if($can_add_categories){ ?><option value="categories">Featured Categories</option><?php } ?>
+<option value="boxes">Boxes</option>
+<?php if($can_add_proposals){ ?><option value="proposals">Featured Proposals</option><?php } ?>
+</select>
+<button type="submit" class="btn btn-success mb-2"><i class="fa fa-plus-circle"></i> Add Section</button>
+</form>
+
+</div><!--- card-body Ends --->
+</div><!--- card mb-5 Ends --->
+</div><!--- col-lg-12 Ends --->
+</div><!--- 2 row Ends --->
 
 <div class="row"><!--- 4 row Starts --->
 <div class="col-lg-12"><!--- col-lg-12 Starts --->
@@ -398,6 +490,7 @@ $card_desc = $row_cards->card_desc;
 <div class="col-lg-4 col-md-6 mb-lg-0 mb-3"><!--- col-lg-4 col-md-6 mb-lg-0 mb-3 Starts --->
 <div class="card mb-3"><!--- card Starts --->
 <div class="card-header text-center"><!--- card-header text-center Starts --->
+<span class="badge badge-secondary float-left">Block #<?= $row_cards->block_id; ?></span>
 <h4 class="h4"> <?= $card_title; ?> </h4>
 </div><!--- card-header text-center Ends --->
 <div class="card-body"><!--- card-body Starts --->
@@ -447,6 +540,7 @@ $box_desc = $row_boxes->box_desc;
 <div class="col-lg-4 col-md-6 mb-lg-0 mb-3"><!--- col-lg-4 col-md-6 mb-lg-0 mb-3 Starts --->
 <div class="card mb-3"><!--- card Starts --->
 <div class="card-header text-center"><!--- card-header text-center Starts --->
+<span class="badge badge-secondary float-left">Block #<?= $row_boxes->block_id; ?></span>
 <h4 class="h4">
 <?= $box_title; ?>
 </h4>

@@ -1534,26 +1534,57 @@ CREATE TABLE `home_cards` (
   `card_link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `card_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `isS3` int(10) NOT NULL,
-  `alt` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL
+  `alt` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `block_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `home_cards`
 --
 
-INSERT INTO `home_cards` (`card_id`, `language_id`, `card_title`, `card_desc`, `card_link`, `card_image`, `isS3`) VALUES
-(1, 1, 'Logo Design', 'Build Your Brand', 'https://www.gigtodo.com/categories/graphics-design/logo-design', '1.jpg', 0),
-(2, 1, 'Social Media', 'Reach More Customers', 'https://www.gigtodo.com/categories/digital-marketing/social-media-marketing', '2.jpg', 0),
-(3, 1, 'Voice Talent', 'The Perfect Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0),
-(4, 1, 'Translation', 'Go Global.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0),
-(5, 1, 'Illustration', 'Color Your Dreams', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0),
-(6, 1, 'Photoshop Expert', 'Hire A Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0),
-(7, 2, 'Logo-Design', 'Baue deine Marke auf', 'https://www.gigtodo.com/categories/graphics-design/logo-design', '1.jpg', 0),
-(8, 2, 'Social Media', 'Erreiche mehr Kunden', 'https://www.gigtodo.com/categories/digital-marketing/social-media-marketing', '2.jpg', 0),
-(9, 2, 'Sprechertalent', 'Der perfekte Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0),
-(10, 2, 'Übersetzung', 'Werde international.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0),
-(11, 2, 'Illustration', 'Verleih deinen Träumen Farbe', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0),
-(12, 2, 'Photoshop-Experte', 'Engagiere einen Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0);
+INSERT INTO `home_cards` (`card_id`, `language_id`, `card_title`, `card_desc`, `card_link`, `card_image`, `isS3`, `block_id`) VALUES
+(1, 1, 'Logo Design', 'Build Your Brand', 'https://www.gigtodo.com/categories/graphics-design/logo-design', '1.jpg', 0, 2),
+(2, 1, 'Social Media', 'Reach More Customers', 'https://www.gigtodo.com/categories/digital-marketing/social-media-marketing', '2.jpg', 0, 2),
+(3, 1, 'Voice Talent', 'The Perfect Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0, 2),
+(4, 1, 'Translation', 'Go Global.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0, 2),
+(5, 1, 'Illustration', 'Color Your Dreams', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0, 2),
+(6, 1, 'Photoshop Expert', 'Hire A Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0, 2),
+(7, 2, 'Logo-Design', 'Baue deine Marke auf', 'https://www.gigtodo.com/categories/graphics-design/logo-design', '1.jpg', 0, 7),
+(8, 2, 'Social Media', 'Erreiche mehr Kunden', 'https://www.gigtodo.com/categories/digital-marketing/social-media-marketing', '2.jpg', 0, 7),
+(9, 2, 'Sprechertalent', 'Der perfekte Voiceover', 'https://www.gigtodo.com/categories/video-animation', '7.jpg', 0, 7),
+(10, 2, 'Übersetzung', 'Werde international.', 'https://www.gigtodo.com/categories/writing-translation/translation', '4.jpg', 0, 7),
+(11, 2, 'Illustration', 'Verleih deinen Träumen Farbe', 'https://www.gigtodo.com/categories/graphics-design/illustration', '5.jpg', 0, 7),
+(12, 2, 'Photoshop-Experte', 'Engagiere einen Designer', 'https://www.gigtodo.com/categories/graphics-design/photoshop-editing', '6.jpg', 0, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_layout_blocks`
+--
+
+CREATE TABLE `home_layout_blocks` (
+  `id` int(10) NOT NULL,
+  `language_id` int(10) NOT NULL,
+  `block_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` int(10) NOT NULL,
+  `enabled` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `home_layout_blocks`
+--
+
+INSERT INTO `home_layout_blocks` (`id`, `language_id`, `block_type`, `position`, `enabled`) VALUES
+(1, 1, 'hero', 1, 'yes'),
+(2, 1, 'cards', 2, 'yes'),
+(3, 1, 'categories', 3, 'yes'),
+(4, 1, 'boxes', 4, 'yes'),
+(5, 1, 'proposals', 5, 'yes'),
+(6, 2, 'hero', 1, 'yes'),
+(7, 2, 'cards', 2, 'yes'),
+(8, 2, 'categories', 3, 'yes'),
+(9, 2, 'boxes', 4, 'yes'),
+(10, 2, 'proposals', 5, 'yes');
 
 -- --------------------------------------------------------
 
@@ -2302,20 +2333,21 @@ CREATE TABLE `section_boxes` (
   `box_title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `box_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `box_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `isS3` int(10) NOT NULL
+  `isS3` int(10) NOT NULL,
+  `block_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `section_boxes`
 --
 
-INSERT INTO `section_boxes` (`box_id`, `language_id`, `box_title`, `box_desc`, `box_image`, `isS3`) VALUES
-(4, 1, 'Your Terms', 'Whatever you need to simplify your to do list, no&lt;br&gt; matter your budget.\r\n', 'time.png', 0),
-(5, 1, 'Your Timeline', 'Find services based on your goals and deadlines,&lt;br&gt; its that simple.', 'desk.png', 0),
-(6, 1, 'Your Safety', 'Your payment is always secure, GigToDo is built to protect your peace of mind.', 'tv.png', 0),
-(7, 2, 'Deine Bedingungen', 'Was auch immer du brauchst, um deine To-do-Liste zu vereinfachen&lt;br&gt; ganz gleich, welches Budget du hast.', 'time.png', 0),
-(8, 2, 'Dein Zeitplan', 'Finde Dienstleistungen passend zu deinen Zielen und Deadlines&lt;br&gt; so einfach ist das.', 'desk.png', 0),
-(9, 2, 'Deine Sicherheit', 'Deine Zahlung ist immer sicher, für ein gutes Gefühl bei jeder Bestellung.', 'tv.png', 0);
+INSERT INTO `section_boxes` (`box_id`, `language_id`, `box_title`, `box_desc`, `box_image`, `isS3`, `block_id`) VALUES
+(4, 1, 'Your Terms', 'Whatever you need to simplify your to do list, no&lt;br&gt; matter your budget.\r\n', 'time.png', 0, 4),
+(5, 1, 'Your Timeline', 'Find services based on your goals and deadlines,&lt;br&gt; its that simple.', 'desk.png', 0, 4),
+(6, 1, 'Your Safety', 'Your payment is always secure, GigToDo is built to protect your peace of mind.', 'tv.png', 0, 4),
+(7, 2, 'Deine Bedingungen', 'Was auch immer du brauchst, um deine To-do-Liste zu vereinfachen&lt;br&gt; ganz gleich, welches Budget du hast.', 'time.png', 0, 9),
+(8, 2, 'Dein Zeitplan', 'Finde Dienstleistungen passend zu deinen Zielen und Deadlines&lt;br&gt; so einfach ist das.', 'desk.png', 0, 9),
+(9, 2, 'Deine Sicherheit', 'Deine Zahlung ist immer sicher, für ein gutes Gefühl bei jeder Bestellung.', 'tv.png', 0, 9);
 
 -- --------------------------------------------------------
 
@@ -3031,6 +3063,12 @@ ALTER TABLE `home_cards`
   ADD PRIMARY KEY (`card_id`);
 
 --
+-- Indexes for table `home_layout_blocks`
+--
+ALTER TABLE `home_layout_blocks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `home_section`
 --
 ALTER TABLE `home_section`
@@ -3645,6 +3683,12 @@ ALTER TABLE `hide_seller_messages`
 --
 ALTER TABLE `home_cards`
   MODIFY `card_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `home_layout_blocks`
+--
+ALTER TABLE `home_layout_blocks`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `home_section`

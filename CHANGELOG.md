@@ -9,6 +9,7 @@ All notable changes to this project are documented here.
 - Added the withdrawal_notices table to the base install schema (gigtodo.sql), so a fresh install has it without needing to separately run the migration.
 - Added tests/check-mailer-require.php: statically walks each send_mail() caller's require/include chain and flags any that never reach functions/mailer.php, where the function is actually defined.
 - Added a boxed/full-width layout choice for the frontend, in Admin -> Settings -> Theme Settings -> Basic Settings.
+- Added a configurable homepage layout: the logged-out homepage's sections (Hero, Cards, Featured Categories, Boxes, Featured Proposals) can now be reordered, shown/hidden, and deleted/re-added from a new "Homepage Layout" panel in Admin -> Settings -> Theme Settings. Cards and Boxes additionally support multiple independent instances, each with its own content, via a new "Section" field when adding a card or box.
 
 ### Fixed
 

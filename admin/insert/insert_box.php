@@ -49,6 +49,21 @@ if(is_array($form_errors)){
                   <!--- form Starts --->
                   <div class="form-group row">
                      <!--- form-group row Starts --->
+                     <label class="col-md-3 control-label"> Section : </label>
+                     <div class="col-md-6">
+                        <select name="block_id" class="form-control" required="">
+                        <?php
+                        $get_boxes_blocks = $db->query("SELECT * FROM home_layout_blocks WHERE language_id = :lang AND block_type = 'boxes' ORDER BY position ASC",array("lang" => $adminLanguage));
+                        while($row_boxes_block = $get_boxes_blocks->fetch()){
+                        ?>
+                        <option value="<?= $row_boxes_block->id; ?>">Boxes (block #<?= $row_boxes_block->id; ?>)</option>
+                        <?php } ?>
+                        </select>
+                     </div>
+                  </div>
+                  <!--- form-group row Ends --->
+                  <div class="form-group row">
+                     <!--- form-group row Starts --->
                      <label class="col-md-3 control-label"> Box Title : </label>
                      <div class="col-md-6">
                         <input type="text" name="box_title" class="form-control" required="">
@@ -94,6 +109,7 @@ if(is_array($form_errors)){
 <?php
 if(isset($_POST['submit'])){
    $rules = array(
+   "block_id" => "required",
    "box_title" => "required",
    "box_desc" => "required",
    "box_image" => "required");
@@ -104,6 +120,7 @@ if(isset($_POST['submit'])){
      Flash::add("form_data",$_POST);
      echo "<script> window.open('index?insert_box','_self');</script>";
    }else{
+      $block_id = $input->post('block_id');
       $box_title = $input->post('box_title');
       $box_desc = $input->post('box_desc');
       $box_image = $_FILES['box_image']['name'];
@@ -114,7 +131,7 @@ if(isset($_POST['submit'])){
          echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
       }else{
          uploadToS3("images/box_images/$box_image",$tmp_name);
-         $insert_box = $db->insert("section_boxes",array("language_id" => $adminLanguage,"box_title" => $box_title,"box_desc" => $box_desc,"box_image" => $box_image,"isS3"=>$enable_s3));
+         $insert_box = $db->insert("section_boxes",array("language_id" => $adminLanguage,"block_id" => $block_id,"box_title" => $box_title,"box_desc" => $box_desc,"box_image" => $box_image,"isS3"=>$enable_s3));
          if($insert_box){
             $insert_id = $db->lastInsertId();
             $insert_log = $db->insert_log($admin_id,"section_box",$insert_id,"inserted");

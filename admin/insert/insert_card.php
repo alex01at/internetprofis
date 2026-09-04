@@ -37,6 +37,21 @@ if(is_array($form_errors)){
                         <!--- form Starts --->
                         <div class="form-group row">
                             <!--- form-group row Starts --->
+                            <label class="col-md-3 control-label"> Section : </label>
+                            <div class="col-md-6">
+                                <select name="block_id" class="form-control" required="">
+                                <?php
+                                $get_cards_blocks = $db->query("SELECT * FROM home_layout_blocks WHERE language_id = :lang AND block_type = 'cards' ORDER BY position ASC",array("lang" => $adminLanguage));
+                                while($row_cards_block = $get_cards_blocks->fetch()){
+                                ?>
+                                <option value="<?= $row_cards_block->id; ?>">Cards Carousel (block #<?= $row_cards_block->id; ?>)</option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <!--- form-group row Ends --->
+                        <div class="form-group row">
+                            <!--- form-group row Starts --->
                             <label class="col-md-3 control-label"> Card Title : </label>
                             <div class="col-md-6">
                                 <input type="text" name="card_title" class="form-control" required="">
@@ -90,6 +105,7 @@ if(is_array($form_errors)){
 <?php
 if(isset($_POST['submit'])){
    $rules = array(
+   "block_id" => "required",
    "card_title" => "required",
    "card_description" => "required",
    "card_link" => "required",
@@ -100,6 +116,7 @@ if(isset($_POST['submit'])){
    Flash::add("form_data",$_POST);
    echo "<script> window.open('index?insert_card','_self');</script>";
    }else{
+      $block_id = $input->post('block_id');
       $card_title = $input->post('card_title');
       $card_desc = $input->post('card_description');
       $card_link = $input->post('card_link');
@@ -111,7 +128,7 @@ if(isset($_POST['submit'])){
       echo "<script>alert('Your File Format Extension Is Not Supported.')</script>";
       }else{
          uploadToS3("images/card_images/$card_image",$tmp_name);
-         $insert_card = $db->insert("home_cards",array("language_id" => $adminLanguage,"card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$enable_s3));
+         $insert_card = $db->insert("home_cards",array("language_id" => $adminLanguage,"block_id" => $block_id,"card_title" => $card_title,"card_desc" => $card_desc,"card_link" => $card_link,"card_image" => $card_image,"isS3"=>$enable_s3));
          if($insert_card){
             $insert_id = $db->lastInsertId();
             $insert_log = $db->insert_log($admin_id,"section_card",$insert_id,"inserted");
